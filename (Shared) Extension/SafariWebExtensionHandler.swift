@@ -5,11 +5,12 @@
 //  Created by Zack Qattan on 12/21/23.
 //
 
+import OSLog
 import SafariServices
-import os.log
+import UkatonMacros
 
+@StaticLogger
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
-
     func beginRequest(with context: NSExtensionContext) {
         let request = context.inputItems.first as? NSExtensionItem
 
@@ -27,12 +28,11 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             message = request?.userInfo?["message"]
         }
 
-        os_log(.default, "Received message from browser.runtime.sendNativeMessage: %@ (profile: %@)", String(describing: message), profile?.uuidString ?? "none")
+        logger.debug("Received message from browser.runtime.sendNativeMessage: \(String(describing: message)) (profile: \(profile?.uuidString ?? "none")")
 
         let response = NSExtensionItem()
-        response.userInfo = [ SFExtensionMessageKey: [ "echo": message ] ]
+        response.userInfo = [SFExtensionMessageKey: ["echo": message]]
 
-        context.completeRequest(returningItems: [ response ], completionHandler: nil)
+        context.completeRequest(returningItems: [response], completionHandler: nil)
     }
-
 }
