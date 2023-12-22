@@ -13,9 +13,71 @@
 		5F89492F2B3508E400AF3341 /* NativeWebKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F89492E2B3508E400AF3341 /* NativeWebKitApp.swift */; };
 		5F8949312B3508E400AF3341 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8949302B3508E400AF3341 /* ContentView.swift */; };
 		5F8949362B3508E500AF3341 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8949352B3508E500AF3341 /* Preview Assets.xcassets */; };
+		5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */; };
+		5FA4BEA02B35119F00138B35 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9F2B35119F00138B35 /* _locales */; };
+		5FA4BEA22B35119F00138B35 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA12B35119F00138B35 /* images */; };
+		5FA4BEA42B35119F00138B35 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA32B35119F00138B35 /* manifest.json */; };
+		5FA4BEA62B35119F00138B35 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA52B35119F00138B35 /* background.js */; };
+		5FA4BEA82B35119F00138B35 /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA72B35119F00138B35 /* content.js */; };
+		5FA4BEAA2B35119F00138B35 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA92B35119F00138B35 /* popup.html */; };
+		5FA4BEAC2B35119F00138B35 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEAB2B35119F00138B35 /* popup.css */; };
+		5FA4BEAE2B35119F00138B35 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEAD2B35119F00138B35 /* popup.js */; };
+		5FA4BEB22B35119F00138B35 /* (iOS) Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5FA4BE9A2B35119F00138B35 /* (iOS) Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5FA4BED42B35121700138B35 /* (Mac) Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5FA4BEBB2B35121700138B35 /* (Mac) Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5FA4BED92B3516B300138B35 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */; };
+		5FA4BEDA2B3516E300138B35 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA52B35119F00138B35 /* background.js */; };
+		5FA4BEDB2B3516E300138B35 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEAB2B35119F00138B35 /* popup.css */; };
+		5FA4BEDC2B3516E300138B35 /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA72B35119F00138B35 /* content.js */; };
+		5FA4BEDD2B3516E300138B35 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA32B35119F00138B35 /* manifest.json */; };
+		5FA4BEDE2B3516E300138B35 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA92B35119F00138B35 /* popup.html */; };
+		5FA4BEDF2B3516E300138B35 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEAD2B35119F00138B35 /* popup.js */; };
+		5FA4BEE02B3516EE00138B35 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9F2B35119F00138B35 /* _locales */; };
+		5FA4BEE12B3516F100138B35 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA12B35119F00138B35 /* images */; };
 		5FD60D762B350DF700D6F98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD60D752B350DF700D6F98C /* Assets.xcassets */; };
 		5FD60D772B350DF700D6F98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD60D752B350DF700D6F98C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5FA4BEB02B35119F00138B35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F87CF042B33B59900E951E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FA4BE992B35119F00138B35;
+			remoteInfo = Extension;
+		};
+		5FA4BED22B35121700138B35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F87CF042B33B59900E951E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FA4BEBA2B35121700138B35;
+			remoteInfo = Extension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5FA4BEB62B35119F00138B35 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5FA4BEB22B35119F00138B35 /* (iOS) Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FA4BED82B35121700138B35 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5FA4BED42B35121700138B35 /* (Mac) Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5F87CF0C2B33B59900E951E7 /* (iOS) NativeWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "(iOS) NativeWebKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,6 +93,20 @@
 		5F8949352B3508E500AF3341 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F8949372B3508E500AF3341 /* NativeWebKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NativeWebKit.entitlements; sourceTree = "<group>"; };
 		5FA4BE952B35113B00138B35 /* TODO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
+		5FA4BE9A2B35119F00138B35 /* (iOS) Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(iOS) Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		5FA4BE9F2B35119F00138B35 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
+		5FA4BEA12B35119F00138B35 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		5FA4BEA32B35119F00138B35 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		5FA4BEA52B35119F00138B35 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
+		5FA4BEA72B35119F00138B35 /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = content.js; sourceTree = "<group>"; };
+		5FA4BEA92B35119F00138B35 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
+		5FA4BEAB2B35119F00138B35 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
+		5FA4BEAD2B35119F00138B35 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
+		5FA4BEAF2B35119F00138B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FA4BEBB2B35121700138B35 /* (Mac) Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(Mac) Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FA4BED02B35121700138B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FA4BED12B35121700138B35 /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
 		5FD60D752B350DF700D6F98C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +119,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5F8949292B3508E400AF3341 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FA4BE972B35119F00138B35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FA4BEB82B35121700138B35 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -69,6 +159,8 @@
 				5F87CF1F2B33B67800E951E7 /* (Shared) Extension */,
 				5F89491B2B35089300AF3341 /* (iOS) App */,
 				5F89492D2B3508E400AF3341 /* (Mac) App */,
+				5FA4BE9B2B35119F00138B35 /* (iOS) Extension */,
+				5FA4BEBC2B35121700138B35 /* (Mac) Extension */,
 				5F87CF0D2B33B59900E951E7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +170,8 @@
 			children = (
 				5F87CF0C2B33B59900E951E7 /* (iOS) NativeWebKit.app */,
 				5F89492C2B3508E400AF3341 /* (Mac) NativeWebKit.app */,
+				5FA4BE9A2B35119F00138B35 /* (iOS) Extension.appex */,
+				5FA4BEBB2B35121700138B35 /* (Mac) Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +186,8 @@
 		5F87CF1F2B33B67800E951E7 /* (Shared) Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5FA4BE9E2B35119F00138B35 /* Resources */,
+				5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */,
 			);
 			path = "(Shared) Extension";
 			sourceTree = "<group>";
@@ -136,6 +232,38 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5FA4BE9B2B35119F00138B35 /* (iOS) Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5FA4BEAF2B35119F00138B35 /* Info.plist */,
+			);
+			path = "(iOS) Extension";
+			sourceTree = "<group>";
+		};
+		5FA4BE9E2B35119F00138B35 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5FA4BE9F2B35119F00138B35 /* _locales */,
+				5FA4BEA12B35119F00138B35 /* images */,
+				5FA4BEA32B35119F00138B35 /* manifest.json */,
+				5FA4BEA52B35119F00138B35 /* background.js */,
+				5FA4BEA72B35119F00138B35 /* content.js */,
+				5FA4BEA92B35119F00138B35 /* popup.html */,
+				5FA4BEAB2B35119F00138B35 /* popup.css */,
+				5FA4BEAD2B35119F00138B35 /* popup.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5FA4BEBC2B35121700138B35 /* (Mac) Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5FA4BED02B35121700138B35 /* Info.plist */,
+				5FA4BED12B35121700138B35 /* Extension.entitlements */,
+			);
+			path = "(Mac) Extension";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,10 +274,12 @@
 				5F87CF082B33B59900E951E7 /* Sources */,
 				5F87CF092B33B59900E951E7 /* Frameworks */,
 				5F87CF0A2B33B59900E951E7 /* Resources */,
+				5FA4BEB62B35119F00138B35 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5FA4BEB12B35119F00138B35 /* PBXTargetDependency */,
 			);
 			name = "(iOS) NativeWebKit";
 			productName = NativeWebKit;
@@ -163,15 +293,51 @@
 				5F8949282B3508E400AF3341 /* Sources */,
 				5F8949292B3508E400AF3341 /* Frameworks */,
 				5F89492A2B3508E400AF3341 /* Resources */,
+				5FA4BED82B35121700138B35 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5FA4BED32B35121700138B35 /* PBXTargetDependency */,
 			);
 			name = "(Mac) NativeWebKit";
 			productName = NativeWebKit;
 			productReference = 5F89492C2B3508E400AF3341 /* (Mac) NativeWebKit.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5FA4BE992B35119F00138B35 /* (iOS) Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FA4BEB32B35119F00138B35 /* Build configuration list for PBXNativeTarget "(iOS) Extension" */;
+			buildPhases = (
+				5FA4BE962B35119F00138B35 /* Sources */,
+				5FA4BE972B35119F00138B35 /* Frameworks */,
+				5FA4BE982B35119F00138B35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "(iOS) Extension";
+			productName = Extension;
+			productReference = 5FA4BE9A2B35119F00138B35 /* (iOS) Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5FA4BEBA2B35121700138B35 /* (Mac) Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FA4BED52B35121700138B35 /* Build configuration list for PBXNativeTarget "(Mac) Extension" */;
+			buildPhases = (
+				5FA4BEB72B35121700138B35 /* Sources */,
+				5FA4BEB82B35121700138B35 /* Frameworks */,
+				5FA4BEB92B35121700138B35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "(Mac) Extension";
+			productName = Extension;
+			productReference = 5FA4BEBB2B35121700138B35 /* (Mac) Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -187,6 +353,12 @@
 						CreatedOnToolsVersion = 15.2;
 					};
 					5F89492B2B3508E400AF3341 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					5FA4BE992B35119F00138B35 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					5FA4BEBA2B35121700138B35 = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
@@ -206,6 +378,8 @@
 			targets = (
 				5F87CF0B2B33B59900E951E7 /* (iOS) NativeWebKit */,
 				5F89492B2B3508E400AF3341 /* (Mac) NativeWebKit */,
+				5FA4BE992B35119F00138B35 /* (iOS) Extension */,
+				5FA4BEBA2B35121700138B35 /* (Mac) Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -226,6 +400,36 @@
 			files = (
 				5F8949362B3508E500AF3341 /* Preview Assets.xcassets in Resources */,
 				5FD60D772B350DF700D6F98C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FA4BE982B35119F00138B35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FA4BEA62B35119F00138B35 /* background.js in Resources */,
+				5FA4BEAC2B35119F00138B35 /* popup.css in Resources */,
+				5FA4BEAA2B35119F00138B35 /* popup.html in Resources */,
+				5FA4BEA22B35119F00138B35 /* images in Resources */,
+				5FA4BEA42B35119F00138B35 /* manifest.json in Resources */,
+				5FA4BEA02B35119F00138B35 /* _locales in Resources */,
+				5FA4BEA82B35119F00138B35 /* content.js in Resources */,
+				5FA4BEAE2B35119F00138B35 /* popup.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FA4BEB92B35121700138B35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FA4BEDD2B3516E300138B35 /* manifest.json in Resources */,
+				5FA4BEDF2B3516E300138B35 /* popup.js in Resources */,
+				5FA4BEDE2B3516E300138B35 /* popup.html in Resources */,
+				5FA4BEDC2B3516E300138B35 /* content.js in Resources */,
+				5FA4BEE12B3516F100138B35 /* images in Resources */,
+				5FA4BEDB2B3516E300138B35 /* popup.css in Resources */,
+				5FA4BEE02B3516EE00138B35 /* _locales in Resources */,
+				5FA4BEDA2B3516E300138B35 /* background.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +454,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5FA4BE962B35119F00138B35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FA4BEB72B35121700138B35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FA4BED92B3516B300138B35 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5FA4BEB12B35119F00138B35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FA4BE992B35119F00138B35 /* (iOS) Extension */;
+			targetProxy = 5FA4BEB02B35119F00138B35 /* PBXContainerItemProxy */;
+		};
+		5FA4BED32B35121700138B35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5FA4BEBA2B35121700138B35 /* (Mac) Extension */;
+			targetProxy = 5FA4BED22B35121700138B35 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5F87CF192B33B59A00E951E7 /* Debug */ = {
@@ -370,6 +603,7 @@
 		5F87CF1C2B33B59A00E951E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "(iOS) App/NativeWebKit.entitlements";
@@ -392,7 +626,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -402,6 +636,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,6 +646,7 @@
 		5F87CF1D2B33B59A00E951E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "(iOS) App/NativeWebKit.entitlements";
@@ -433,7 +669,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -443,6 +679,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,6 +689,7 @@
 		5F8949392B3508E500AF3341 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -485,6 +723,7 @@
 		5F89493A2B3508E500AF3341 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -510,6 +749,141 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5FA4BEB42B35119F00138B35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3KF23SMC7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "(iOS) Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Extension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5FA4BEB52B35119F00138B35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3KF23SMC7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "(iOS) Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Extension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5FA4BED62B35121700138B35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "(Mac) Extension/Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3KF23SMC7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "(Mac) Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Extension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5FA4BED72B35121700138B35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "(Mac) Extension/Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X3KF23SMC7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "(Mac) Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Extension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -541,6 +915,24 @@
 			buildConfigurations = (
 				5F8949392B3508E500AF3341 /* Debug */,
 				5F89493A2B3508E500AF3341 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FA4BEB32B35119F00138B35 /* Build configuration list for PBXNativeTarget "(iOS) Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FA4BEB42B35119F00138B35 /* Debug */,
+				5FA4BEB52B35119F00138B35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FA4BED52B35121700138B35 /* Build configuration list for PBXNativeTarget "(Mac) Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FA4BED62B35121700138B35 /* Debug */,
+				5FA4BED72B35121700138B35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
