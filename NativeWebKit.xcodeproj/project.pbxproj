@@ -10,8 +10,6 @@
 		5F8949232B35089300AF3341 /* NativeWebKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F89491C2B35089300AF3341 /* NativeWebKitApp.swift */; };
 		5F8949262B35089300AF3341 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8949202B35089300AF3341 /* Preview Assets.xcassets */; };
 		5F8949272B35089300AF3341 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8949222B35089300AF3341 /* ContentView.swift */; };
-		5F89492F2B3508E400AF3341 /* NativeWebKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F89492E2B3508E400AF3341 /* NativeWebKitApp.swift */; };
-		5F8949312B3508E400AF3341 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8949302B3508E400AF3341 /* ContentView.swift */; };
 		5F8949362B3508E500AF3341 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8949352B3508E500AF3341 /* Preview Assets.xcassets */; };
 		5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */; };
 		5FA4BEA02B35119F00138B35 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9F2B35119F00138B35 /* _locales */; };
@@ -37,6 +35,16 @@
 		5FBD16A52B361B3400B8B1A5 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FBD16A42B361B3400B8B1A5 /* UkatonMacros */; };
 		5FBD16A72B361B3900B8B1A5 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FBD16A62B361B3900B8B1A5 /* UkatonMacros */; };
 		5FBD16A92B361B3B00B8B1A5 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FBD16A82B361B3B00B8B1A5 /* UkatonMacros */; };
+		5FBD16AB2B361C3900B8B1A5 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16AA2B361C3900B8B1A5 /* BrowserView.swift */; };
+		5FBD16AC2B361C3900B8B1A5 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16AA2B361C3900B8B1A5 /* BrowserView.swift */; };
+		5FBD16AD2B36239F00B8B1A5 /* NativeWebKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F89491C2B35089300AF3341 /* NativeWebKitApp.swift */; };
+		5FBD16B32B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16B22B362D2200B8B1A5 /* BrowserViewModel.swift */; };
+		5FBD16B42B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16B22B362D2200B8B1A5 /* BrowserViewModel.swift */; };
+		5FBD16BB2B36340500B8B1A5 /* BrowserWebView +UIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16BA2B36340500B8B1A5 /* BrowserWebView +UIViewRepresentable.swift */; };
+		5FBD16BD2B36347000B8B1A5 /* BrowserWebView+NSViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16BC2B36347000B8B1A5 /* BrowserWebView+NSViewRepresentable.swift */; };
+		5FBD16BF2B36523C00B8B1A5 /* BrowserWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16BE2B36523C00B8B1A5 /* BrowserWebView.swift */; };
+		5FBD16C02B36523C00B8B1A5 /* BrowserWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16BE2B36523C00B8B1A5 /* BrowserWebView.swift */; };
+		5FBD16C12B36539300B8B1A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8949222B35089300AF3341 /* ContentView.swift */; };
 		5FD60D762B350DF700D6F98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD60D752B350DF700D6F98C /* Assets.xcassets */; };
 		5FD60D772B350DF700D6F98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD60D752B350DF700D6F98C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -91,8 +99,6 @@
 		5F8949212B35089300AF3341 /* NativeWebKit.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = NativeWebKit.entitlements; sourceTree = "<group>"; };
 		5F8949222B35089300AF3341 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5F89492C2B3508E400AF3341 /* (Mac) NativeWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "(Mac) NativeWebKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F89492E2B3508E400AF3341 /* NativeWebKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeWebKitApp.swift; sourceTree = "<group>"; };
-		5F8949302B3508E400AF3341 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5F8949322B3508E500AF3341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F8949352B3508E500AF3341 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F8949372B3508E500AF3341 /* NativeWebKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NativeWebKit.entitlements; sourceTree = "<group>"; };
@@ -111,6 +117,11 @@
 		5FA4BEBB2B35121700138B35 /* (Mac) Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(Mac) Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA4BED02B35121700138B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FA4BED12B35121700138B35 /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
+		5FBD16AA2B361C3900B8B1A5 /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
+		5FBD16B22B362D2200B8B1A5 /* BrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewModel.swift; sourceTree = "<group>"; };
+		5FBD16BA2B36340500B8B1A5 /* BrowserWebView +UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserWebView +UIViewRepresentable.swift"; sourceTree = "<group>"; };
+		5FBD16BC2B36347000B8B1A5 /* BrowserWebView+NSViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserWebView+NSViewRepresentable.swift"; sourceTree = "<group>"; };
+		5FBD16BE2B36523C00B8B1A5 /* BrowserWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserWebView.swift; sourceTree = "<group>"; };
 		5FD60D752B350DF700D6F98C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,6 +199,9 @@
 		5F87CF1E2B33B66A00E951E7 /* (Shared) App */ = {
 			isa = PBXGroup;
 			children = (
+				5FBD16AE2B362CB600B8B1A5 /* Browser */,
+				5F89491C2B35089300AF3341 /* NativeWebKitApp.swift */,
+				5F8949222B35089300AF3341 /* ContentView.swift */,
 			);
 			path = "(Shared) App";
 			sourceTree = "<group>";
@@ -204,11 +218,10 @@
 		5F89491B2B35089300AF3341 /* (iOS) App */ = {
 			isa = PBXGroup;
 			children = (
-				5F89491C2B35089300AF3341 /* NativeWebKitApp.swift */,
+				5FBD16B82B3633EF00B8B1A5 /* BrowserWebView */,
 				5F89491E2B35089300AF3341 /* Assets.xcassets */,
-				5F89491F2B35089300AF3341 /* Preview Content */,
 				5F8949212B35089300AF3341 /* NativeWebKit.entitlements */,
-				5F8949222B35089300AF3341 /* ContentView.swift */,
+				5F89491F2B35089300AF3341 /* Preview Content */,
 			);
 			path = "(iOS) App";
 			sourceTree = "<group>";
@@ -224,8 +237,7 @@
 		5F89492D2B3508E400AF3341 /* (Mac) App */ = {
 			isa = PBXGroup;
 			children = (
-				5F89492E2B3508E400AF3341 /* NativeWebKitApp.swift */,
-				5F8949302B3508E400AF3341 /* ContentView.swift */,
+				5FBD16B92B3633F400B8B1A5 /* Browser */,
 				5F8949322B3508E500AF3341 /* Assets.xcassets */,
 				5F8949372B3508E500AF3341 /* NativeWebKit.entitlements */,
 				5F8949342B3508E500AF3341 /* Preview Content */,
@@ -278,6 +290,32 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5FBD16AE2B362CB600B8B1A5 /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				5FBD16AA2B361C3900B8B1A5 /* BrowserView.swift */,
+				5FBD16BE2B36523C00B8B1A5 /* BrowserWebView.swift */,
+				5FBD16B22B362D2200B8B1A5 /* BrowserViewModel.swift */,
+			);
+			path = Browser;
+			sourceTree = "<group>";
+		};
+		5FBD16B82B3633EF00B8B1A5 /* BrowserWebView */ = {
+			isa = PBXGroup;
+			children = (
+				5FBD16BA2B36340500B8B1A5 /* BrowserWebView +UIViewRepresentable.swift */,
+			);
+			path = BrowserWebView;
+			sourceTree = "<group>";
+		};
+		5FBD16B92B3633F400B8B1A5 /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				5FBD16BC2B36347000B8B1A5 /* BrowserWebView+NSViewRepresentable.swift */,
+			);
+			path = Browser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,6 +510,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F8949272B35089300AF3341 /* ContentView.swift in Sources */,
+				5FBD16BB2B36340500B8B1A5 /* BrowserWebView +UIViewRepresentable.swift in Sources */,
+				5FBD16B32B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
+				5FBD16AB2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
+				5FBD16BF2B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
 				5F8949232B35089300AF3341 /* NativeWebKitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,8 +522,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F8949312B3508E400AF3341 /* ContentView.swift in Sources */,
-				5F89492F2B3508E400AF3341 /* NativeWebKitApp.swift in Sources */,
+				5FBD16BD2B36347000B8B1A5 /* BrowserWebView+NSViewRepresentable.swift in Sources */,
+				5FBD16C12B36539300B8B1A5 /* ContentView.swift in Sources */,
+				5FBD16B42B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
+				5FBD16AC2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
+				5FBD16C02B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
+				5FBD16AD2B36239F00B8B1A5 /* NativeWebKitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
