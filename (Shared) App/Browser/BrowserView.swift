@@ -12,51 +12,42 @@ import WebKit
 
 struct BrowserView: View {
     @StateObject var browserViewModel = BrowserViewModel()
+    @FocusState var isUrlFocused: Bool
 
     var body: some View {
         VStack {
-            HStack {
-                Button(action: {
-                    browserViewModel.goBack()
-                }) {
-                    Image(systemName: "chevron.backward")
-                }
-                .disabled(!browserViewModel.canGoBack)
-
-                Button(action: {
-                    browserViewModel.goForward()
-                }) {
-                    Image(systemName: "chevron.forward")
-                }
-                .disabled(!browserViewModel.canGoForward)
-
-                .padding(.trailing, 5)
-
-                TextField("URL", text: $browserViewModel.urlString, onCommit: {
-                    browserViewModel.loadURLString()
-                })
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-
-                Button(action: {
-                    browserViewModel.reload()
-                }) {
-                    Image(systemName: "arrow.clockwise")
-                }
-            }
-            .padding(.horizontal)
-
             if let url = URL(string: browserViewModel.urlString) {
                 BrowserWebView(url: url,
                                viewModel: browserViewModel)
-                    .edgesIgnoringSafeArea(.all)
             } else {
                 Text("Please, enter a url.")
             }
         }
+        .modify {
+            #if os(macOS)
+            $0.toolbar {
+                ToolbarItemGroup(placement: .navigation) {
+                    toolbarItems
+                }
+            }
+            #endif
+        }
+
+        #if !os(macOS)
+        HStack {
+            toolbarItems
+        }
+        .padding(.horizontal)
+        .padding(.top, 1.0)
+        #endif
     }
 }
 
-#Preview {
+#Preview("") {
     BrowserView()
-        .frame(maxWidth: 400)
+        .modify {
+            #if os(macOS)
+            $0.frame(maxWidth: 300)
+            #endif
+        }
 }

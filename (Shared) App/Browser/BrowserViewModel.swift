@@ -12,9 +12,9 @@ import WebKit
 
 @StaticLogger
 class BrowserViewModel: NSObject, ObservableObject, WKNavigationDelegate {
-    weak var webView: WKWebView? {
+    weak var webView: WKWebView! {
         didSet {
-            webView?.navigationDelegate = self
+            webView.navigationDelegate = self
         }
     }
 
@@ -22,21 +22,42 @@ class BrowserViewModel: NSObject, ObservableObject, WKNavigationDelegate {
     @Published var canGoBack = false
     @Published var canGoForward = false
 
+    var formattedUrlString: String {
+        guard urlString.hasPrefix("http://") || urlString.hasPrefix("https://") else {
+            return "https://\(urlString)"
+        }
+        return urlString
+    }
+
+    var url: URL? {
+        URL(string: formattedUrlString)
+    }
+
     func loadURLString() {
-        if let url = URL(string: urlString) {
-            webView?.load(URLRequest(url: url))
+        if let url {
+            logger.debug("loading \(url.absoluteString)")
+            webView.load(URLRequest(url: url))
+        }
+        else {
+            let urlString = self.urlString
+            logger.warning("invalid urlString \(urlString)")
         }
     }
 
+    let searchPrefix: String = "https://www.google.com/search?q="
+    var isSearch: Bool {
+        urlString.hasPrefix(searchPrefix)
+    }
+
     func goBack() {
-        webView?.goBack()
+        webView.goBack()
     }
 
     func goForward() {
-        webView?.goForward()
+        webView.goForward()
     }
 
     func reload() {
-        webView?.reload()
+        webView.reload()
     }
 }
