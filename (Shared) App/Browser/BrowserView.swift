@@ -15,22 +15,24 @@ struct BrowserView: View {
     @FocusState var isUrlFocused: Bool
 
     var body: some View {
-        VStack {
-            if let url = URL(string: browserViewModel.urlString) {
-                BrowserWebView(url: url,
-                               viewModel: browserViewModel)
-            } else {
-                Text("Please, enter a url.")
-            }
-        }
-        .modify {
-            #if os(macOS)
-            $0.toolbar {
-                ToolbarItemGroup(placement: .navigation) {
-                    toolbarItems
+        GeometryReader { geometry in
+            VStack {
+                if let url = URL(string: browserViewModel.urlString) {
+                    BrowserWebView(url: url,
+                                   viewModel: browserViewModel)
+                } else {
+                    Text("Please, enter a url.")
                 }
             }
-            #endif
+            .modify {
+                #if os(macOS)
+                $0.toolbar {
+                    ToolbarItemGroup(placement: .navigation) {
+                        toolbarItems(geometry: geometry)
+                    }
+                }
+                #endif
+            }
         }
 
         #if !os(macOS)

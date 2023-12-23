@@ -17,6 +17,8 @@ struct BrowserWebView {
     func makeView() -> WKWebView {
         let webView = WKWebView()
 
+        webView.isInspectable = true
+
         #if !os(macOS)
         webView.isFindInteractionEnabled = true
         #endif
@@ -30,6 +32,7 @@ struct BrowserWebView {
         webView.configuration.allowsInlineMediaPlayback = true
         webView.configuration.allowsPictureInPictureMediaPlayback = true
         #endif
+
         viewModel.webView = webView
         webView.load(URLRequest(url: url))
         return webView

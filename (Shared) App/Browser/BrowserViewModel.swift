@@ -5,22 +5,24 @@
 //  Created by Zack Qattan on 12/22/23.
 //
 
+import Combine
 import OSLog
 import SwiftUI
 import UkatonMacros
 import WebKit
 
 @StaticLogger
-class BrowserViewModel: NSObject, ObservableObject, WKNavigationDelegate {
+class BrowserViewModel: NSObject, ObservableObject {
     weak var webView: WKWebView! {
         didSet {
-            webView.navigationDelegate = self
+            setWebViewNavigationDelegate()
+            #if !os(macOS)
+            setUIScrollViewDelegate()
+            #endif
         }
     }
 
     @Published var urlString = "https://www.apple.com"
-    @Published var canGoBack = false
-    @Published var canGoForward = false
 
     var formattedUrlString: String {
         guard urlString.hasPrefix("http://") || urlString.hasPrefix("https://") else {
@@ -48,6 +50,9 @@ class BrowserViewModel: NSObject, ObservableObject, WKNavigationDelegate {
     var isSearch: Bool {
         urlString.hasPrefix(searchPrefix)
     }
+
+    @Published var canGoBack = false
+    @Published var canGoForward = false
 
     func goBack() {
         webView.goBack()

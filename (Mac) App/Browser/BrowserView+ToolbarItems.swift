@@ -9,11 +9,13 @@ import SwiftUI
 
 extension BrowserView {
     @ViewBuilder
-    var toolbarItems: some View {
+    func toolbarItems(geometry: GeometryProxy) -> some View {
         goBackButton
         goForwardButton
 
-        HStack(spacing: 0) {
+        let width = max(geometry.size.width - 200, 100)
+
+        HStack(alignment: .center, spacing: 0) {
             searchImage
             searchField
             refreshButton
@@ -24,6 +26,7 @@ extension BrowserView {
             RoundedRectangle(cornerRadius: 8)
                 .stroke(Color.gray, lineWidth: 1)
         )
+        .frame(width: width)
     }
 }
 

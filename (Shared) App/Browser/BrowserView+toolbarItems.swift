@@ -35,7 +35,16 @@ extension BrowserView {
             isUrlFocused = true
         } label: {
             Image(systemName: "magnifyingglass")
+                .imageScale(imageScale)
         }
+    }
+
+    var imageScale: Image.Scale {
+        #if os(macOS)
+        .small
+        #else
+        .medium
+        #endif
     }
 
     @ViewBuilder
@@ -44,6 +53,7 @@ extension BrowserView {
             browserViewModel.reload()
         }) {
             Image(systemName: "arrow.clockwise")
+                .imageScale(imageScale)
         }
     }
 

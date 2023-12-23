@@ -7,7 +7,11 @@
 
 import WebKit
 
-extension BrowserViewModel {
+extension BrowserViewModel: WKNavigationDelegate {
+    func setWebViewNavigationDelegate() {
+        webView.navigationDelegate = self
+    }
+
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         if let newUrlString = webView.url?.absoluteString {
             urlString = newUrlString
