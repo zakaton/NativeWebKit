@@ -8,6 +8,7 @@
 import SwiftUI
 
 extension BrowserView {
+    @ViewBuilder
     var searchToolbarItems: some View {
         HStack {
             searchImage
@@ -21,6 +22,7 @@ extension BrowserView {
         )
     }
 
+    @ViewBuilder
     var navigationToolbarItems: some View {
         HStack {
             Spacer()

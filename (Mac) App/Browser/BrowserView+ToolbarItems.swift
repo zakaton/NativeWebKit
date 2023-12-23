@@ -14,7 +14,7 @@ extension BrowserView {
         goForwardButton
 
         HStack(spacing: 0) {
-            magnifyingGlassImage
+            searchImage
             searchField
             refreshButton
         }
