@@ -53,6 +53,7 @@ class BrowserViewModel: NSObject, ObservableObject {
 
     @Published var canGoBack = false
     @Published var canGoForward = false
+    @Published var title: String?
 
     func goBack() {
         webView.goBack()

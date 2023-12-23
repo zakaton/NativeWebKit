@@ -31,4 +31,10 @@ extension BrowserViewModel: WKNavigationDelegate {
             loadURLString()
         }
     }
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        canGoBack = webView.canGoBack
+        canGoForward = webView.canGoForward
+        title = webView.title
+    }
 }

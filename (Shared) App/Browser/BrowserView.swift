@@ -20,6 +20,11 @@ struct BrowserView: View {
                 if let url = URL(string: browserViewModel.urlString) {
                     BrowserWebView(url: url,
                                    viewModel: browserViewModel)
+                        .modify {
+                            if let title = browserViewModel.title {
+                                $0.navigationTitle(title)
+                            }
+                        }
                 } else {
                     Text("Please, enter a url.")
                 }
