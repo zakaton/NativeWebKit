@@ -44,11 +44,13 @@ extension BrowserView {
 
     @ViewBuilder
     var navigationToolbarItems: some View {
-        HStack {
+        HStack(alignment: .center) {
             Spacer()
             goBackButton
             Spacer()
             goForwardButton
+            Spacer()
+            shareButton
             Spacer()
 //            findButton
 //            Spacer()

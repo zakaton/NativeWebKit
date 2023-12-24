@@ -43,8 +43,10 @@ class BrowserViewModel: NSObject, ObservableObject {
             webView.load(URLRequest(url: url))
         }
         else {
-            let urlString = self.urlString
-            logger.warning("invalid urlString \(urlString)")
+            let currentUrlString = urlString
+            logger.warning("invalid urlString \"\(currentUrlString)\"")
+            urlString = searchPrefix + currentUrlString.replacingOccurrences(of: " ", with: "+")
+            loadURLString()
         }
     }
 

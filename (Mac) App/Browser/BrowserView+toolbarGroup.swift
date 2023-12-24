@@ -13,7 +13,7 @@ extension BrowserView {
         goBackButton
         goForwardButton
 
-        let width = max(geometry.size.width - 200, 100)
+        let width = max(geometry.size.width - 250, 100)
 
         HStack(alignment: .center, spacing: 0) {
             searchImage
@@ -27,6 +27,8 @@ extension BrowserView {
                 .stroke(Color.gray, lineWidth: 1)
         )
         .frame(width: width)
+
+        shareButton
     }
 }
 

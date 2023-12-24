@@ -47,7 +47,7 @@ struct BrowserView: View {
         .background(backgroundColor)
 
         #if !os(macOS)
-        HStack {
+        HStack(alignment: .center) {
             toolbarItems
         }
         .padding(.horizontal)

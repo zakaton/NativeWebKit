@@ -58,6 +58,14 @@ extension BrowserView {
     }
 
     @ViewBuilder
+    var shareButton: some View {
+        ShareLink(item: .init(browserViewModel.urlString)) {
+            Image(systemName: "square.and.arrow.up")
+                .imageScale(.medium)
+        }
+    }
+
+    @ViewBuilder
     var clearSearchFieldButton: some View {
         Button(action: {
             browserViewModel.urlString = ""
@@ -79,7 +87,7 @@ extension BrowserView {
             .modify {
                 #if !os(macOS)
                 $0
-                    .keyboardType(.URL)
+                    .keyboardType(.webSearch)
                     .onChange(of: isUrlFocused) { _, _ in
                         if isUrlFocused {
                             DispatchQueue.main.async {
