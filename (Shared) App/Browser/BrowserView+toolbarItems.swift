@@ -69,7 +69,7 @@ extension BrowserView {
 
     @ViewBuilder
     var searchField: some View {
-        TextField("URL", text: $browserViewModel.urlString, onCommit: {
+        TextField("Search or enter website name", text: $browserViewModel.urlString, onCommit: {
             browserViewModel.loadURLString()
         })
         .textFieldStyle(.plain)
@@ -84,6 +84,9 @@ extension BrowserView {
                         DispatchQueue.main.async {
                             UIApplication.shared.sendAction(#selector(UIResponder.selectAll(_:)), to: nil, from: nil, for: nil)
                         }
+                    }
+                    else {
+                        
                     }
                 }
                 .textInputAutocapitalization(.never)

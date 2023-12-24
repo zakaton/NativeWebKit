@@ -20,11 +20,12 @@ extension BrowserView {
                 refreshButton
             }
         }
-        .padding(5)
+        .padding(isUrlFocused ? 10 : 5)
         .overlay(
-            RoundedRectangle(cornerRadius: 8)
+            RoundedRectangle(cornerRadius: isUrlFocused ? 10 : 8)
                 .stroke(Color.gray, lineWidth: 1)
         )
+        .padding(.bottom, isUrlFocused ? 10 : 5)
     }
 
     @ViewBuilder

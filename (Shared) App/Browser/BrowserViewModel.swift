@@ -22,7 +22,7 @@ class BrowserViewModel: NSObject, ObservableObject {
         }
     }
 
-    static let defaultUrlString = "https://www.apple.com"
+    static let defaultUrlString = "https://www.google.com"
 
     @Published var urlString = defaultUrlString
 
