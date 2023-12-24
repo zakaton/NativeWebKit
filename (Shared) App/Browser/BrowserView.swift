@@ -7,37 +7,18 @@
 
 // https://medium.com/@yeeedward/messaging-between-wkwebview-and-native-application-in-swiftui-e985f0bfacf
 
+import Combine
 import OSLog
 import SwiftUI
 import UkatonMacros
 import WebKit
 
-extension URL {
-    var deepLinkScheme: String { "nativewebkit" }
-    var deepLinkPrefix: String { "\(deepLinkScheme)://" }
-    var isDeeplink: Bool {
-        scheme == deepLinkScheme
-    }
-
-    var deepLinkUrl: String? {
-        if isDeeplink {
-            var urlString = absoluteString.removePrefix(deepLinkPrefix)
-            if urlString.hasPrefix("https//") {
-                urlString = urlString.replacePrefix("https//", with: "https://")
-            }
-            if urlString.hasPrefix("http//") {
-                urlString = urlString.replacePrefix("http//", with: "http://")
-            }
-            return urlString
-        }
-        return nil
-    }
-}
-
 @StaticLogger
 struct BrowserView: View {
     @StateObject var browserViewModel = BrowserViewModel()
     @FocusState var isUrlFocused: Bool
+    @State var backgroundColor: Color = .clear
+    @State var showNavigationBar: Bool = true
 
     var body: some View {
         GeometryReader { geometry in
@@ -63,6 +44,7 @@ struct BrowserView: View {
             logger.debug("(ContentView) App was opened via URL: \(incomingURL)")
             handleIncomingURL(incomingURL)
         }
+        .background(backgroundColor)
 
         #if !os(macOS)
         HStack {

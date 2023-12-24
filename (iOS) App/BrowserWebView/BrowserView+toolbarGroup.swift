@@ -60,8 +60,25 @@ extension BrowserView {
     var toolbarItems: some View {
         VStack(spacing: 12) {
             searchToolbarItems
-            if !isUrlFocused {
+            if showNavigationBar {
                 navigationToolbarItems
+            }
+        }
+        .onChange(of: isUrlFocused) { _, _ in
+            if isUrlFocused {
+                withAnimation {
+                    showNavigationBar = false
+                }
+            }
+            else {
+                withAnimation {
+                    showNavigationBar = !browserViewModel.isDraggingUp
+                }
+            }
+        }
+        .onChange(of: browserViewModel.dragVelocity) { _, _ in
+            withAnimation {
+                showNavigationBar = !browserViewModel.isDraggingUp
             }
         }
     }

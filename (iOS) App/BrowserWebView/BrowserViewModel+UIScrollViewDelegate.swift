@@ -13,6 +13,8 @@ extension BrowserViewModel: UIScrollViewDelegate {
         webView.scrollView.keyboardDismissMode = .interactiveWithAccessory
         webView.scrollView.bounces = true
 
+        webView.scrollView.allowsKeyboardScrolling = true
+
         webView.scrollView.refreshControl = UIRefreshControl()
         webView.scrollView.refreshControl?.addTarget(self, action:
             #selector(handleRefreshControl),
@@ -26,4 +28,11 @@ extension BrowserViewModel: UIScrollViewDelegate {
             self.webView.scrollView.refreshControl?.endRefreshing()
         }
     }
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        dragVelocity = scrollView.panGestureRecognizer.velocity(in: scrollView.superview)
+    }
+
+    var isDragging: Bool { webView.scrollView.isDragging }
+    var isDraggingUp: Bool { dragVelocity.y < 0 }
 }

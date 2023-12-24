@@ -68,4 +68,6 @@ class BrowserViewModel: NSObject, ObservableObject {
     func reload() {
         webView.reload()
     }
+
+    @Published var dragVelocity: CGPoint = .zero
 }

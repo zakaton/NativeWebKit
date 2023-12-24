@@ -36,6 +36,8 @@
 		5FA4BEE42B361AB200138B35 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FA4BEE32B361AB200138B35 /* UkatonMacros */; };
 		5FBB632A2B38BC76008B18B9 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB63292B38BC76008B18B9 /* StringUtils.swift */; };
 		5FBB632B2B38BC76008B18B9 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB63292B38BC76008B18B9 /* StringUtils.swift */; };
+		5FBB632D2B38C473008B18B9 /* URLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB632C2B38C473008B18B9 /* URLUtils.swift */; };
+		5FBB632E2B38C473008B18B9 /* URLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB632C2B38C473008B18B9 /* URLUtils.swift */; };
 		5FBD16A52B361B3400B8B1A5 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FBD16A42B361B3400B8B1A5 /* UkatonMacros */; };
 		5FBD16A72B361B3900B8B1A5 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FBD16A62B361B3900B8B1A5 /* UkatonMacros */; };
 		5FBD16A92B361B3B00B8B1A5 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FBD16A82B361B3B00B8B1A5 /* UkatonMacros */; };
@@ -132,6 +134,7 @@
 		5FBB63272B38AA30008B18B9 /* -iOS--NativeWebKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "-iOS--NativeWebKit-Info.plist"; sourceTree = "<group>"; };
 		5FBB63282B38AA85008B18B9 /* -Mac--NativeWebKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "-Mac--NativeWebKit-Info.plist"; sourceTree = "<group>"; };
 		5FBB63292B38BC76008B18B9 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		5FBB632C2B38C473008B18B9 /* URLUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLUtils.swift; sourceTree = "<group>"; };
 		5FBD16AA2B361C3900B8B1A5 /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
 		5FBD16B22B362D2200B8B1A5 /* BrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewModel.swift; sourceTree = "<group>"; };
 		5FBD16BA2B36340500B8B1A5 /* BrowserWebView +UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserWebView +UIViewRepresentable.swift"; sourceTree = "<group>"; };
@@ -350,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				5FBD16C32B3676C600B8B1A5 /* ViewModifier.swift */,
+				5FBB632C2B38C473008B18B9 /* URLUtils.swift */,
 				5FBB63292B38BC76008B18B9 /* StringUtils.swift */,
 			);
 			path = utils;
@@ -557,6 +561,7 @@
 				5FBD16BF2B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
 				5FBD16CF2B376B2900B8B1A5 /* BrowserView+toolbarItems.swift in Sources */,
 				5F5E4BC12B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift in Sources */,
+				5FBB632D2B38C473008B18B9 /* URLUtils.swift in Sources */,
 				5FBD16C82B37520F00B8B1A5 /* NativeWebKitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,6 +579,7 @@
 				5FBD16C52B3676C600B8B1A5 /* ViewModifier.swift in Sources */,
 				5FBD16C02B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
 				5FBB632B2B38BC76008B18B9 /* StringUtils.swift in Sources */,
+				5FBB632E2B38C473008B18B9 /* URLUtils.swift in Sources */,
 				5FBD16D02B376B2900B8B1A5 /* BrowserView+toolbarItems.swift in Sources */,
 				5FBD16C72B36B63E00B8B1A5 /* NativeWebKitApp.swift in Sources */,
 			);
