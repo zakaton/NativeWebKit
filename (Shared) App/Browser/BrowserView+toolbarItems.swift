@@ -72,15 +72,24 @@ extension BrowserView {
         TextField("URL", text: $browserViewModel.urlString, onCommit: {
             browserViewModel.loadURLString()
         })
-        .autocorrectionDisabled(true)
-        .submitLabel(.go)
-        .focused($isUrlFocused)
         .textFieldStyle(.plain)
-        .textContentType(.URL)
-        .scrollDismissesKeyboard(.interactively)
+        .focused($isUrlFocused)
+        .autocorrectionDisabled(true)
         .modify {
             #if !os(macOS)
-            $0.keyboardType(.URL)
+            $0
+                .keyboardType(.URL)
+                .onChange(of: isUrlFocused) { _, _ in
+                    if isUrlFocused {
+                        DispatchQueue.main.async {
+                            UIApplication.shared.sendAction(#selector(UIResponder.selectAll(_:)), to: nil, from: nil, for: nil)
+                        }
+                    }
+                }
+                .textInputAutocapitalization(.never)
+                .submitLabel(.go)
+                .textContentType(.URL)
+                .scrollDismissesKeyboard(.interactively)
             #endif
         }
     }
