@@ -18,6 +18,7 @@ struct BrowserView: View {
         GeometryReader { geometry in
             VStack {
                 BrowserWebView(viewModel: browserViewModel)
+                    // .ignoresSafeArea(.all)
                     .modify {
                         if let title = browserViewModel.title {
                             $0.navigationTitle(title)

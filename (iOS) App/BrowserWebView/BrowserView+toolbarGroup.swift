@@ -9,9 +9,23 @@ import SwiftUI
 
 extension BrowserView {
     @ViewBuilder
+    var findButton: some View {
+        Button(action: {
+            if let findInteraction = browserViewModel.webView.findInteraction {
+                findInteraction.presentFindNavigator(showingReplace: false)
+            }
+        }) {
+            Image(systemName: "doc.text.magnifyingglass")
+                .imageScale(imageScale)
+        }
+    }
+
+    @ViewBuilder
     var searchToolbarItems: some View {
         HStack {
-            searchImage
+            if !isUrlFocused {
+                searchImage
+            }
             searchField
             if isUrlFocused {
                 clearSearchFieldButton
@@ -36,6 +50,8 @@ extension BrowserView {
             Spacer()
             goForwardButton
             Spacer()
+//            findButton
+//            Spacer()
         }
         .imageScale(.large)
     }

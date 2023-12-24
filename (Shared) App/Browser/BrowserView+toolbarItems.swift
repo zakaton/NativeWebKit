@@ -69,31 +69,34 @@ extension BrowserView {
 
     @ViewBuilder
     var searchField: some View {
-        TextField("Search or enter website name", text: $browserViewModel.urlString, onCommit: {
-            browserViewModel.loadURLString()
-        })
-        .textFieldStyle(.plain)
-        .focused($isUrlFocused)
-        .autocorrectionDisabled(true)
-        .modify {
-            #if !os(macOS)
-            $0
-                .keyboardType(.URL)
-                .onChange(of: isUrlFocused) { _, _ in
-                    if isUrlFocused {
-                        DispatchQueue.main.async {
-                            UIApplication.shared.sendAction(#selector(UIResponder.selectAll(_:)), to: nil, from: nil, for: nil)
+        TextField("Search or enter website name", text: $browserViewModel.urlString)
+            .onSubmit {
+                browserViewModel.loadURLString()
+            }
+            .textFieldStyle(.plain)
+            .focused($isUrlFocused)
+            .autocorrectionDisabled(true)
+            .modify {
+                #if !os(macOS)
+                $0
+                    .keyboardType(.URL)
+                    .onChange(of: isUrlFocused) { _, _ in
+                        if isUrlFocused {
+                            DispatchQueue.main.async {
+                                UIApplication.shared.sendAction(#selector(UIResponder.selectAll(_:)), to: nil, from: nil, for: nil)
+                            }
+                        }
+                        else {
+                            if let urlString = browserViewModel.webView.url?.absoluteString {
+                                browserViewModel.urlString = urlString
+                            }
                         }
                     }
-                    else {
-                        
-                    }
-                }
-                .textInputAutocapitalization(.never)
-                .submitLabel(.go)
-                .textContentType(.URL)
-                .scrollDismissesKeyboard(.interactively)
-            #endif
-        }
+                    .textInputAutocapitalization(.never)
+                    .submitLabel(.go)
+                    .textContentType(.URL)
+                    .scrollDismissesKeyboard(.interactively)
+                #endif
+            }
     }
 }
