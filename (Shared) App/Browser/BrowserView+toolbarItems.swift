@@ -57,12 +57,29 @@ extension BrowserView {
         }
     }
 
+    var shareImageScale: Image.Scale {
+        #if os(macOS)
+        .large
+        #else
+        .large
+        #endif
+    }
+
+    var shareImageYOffset: CGFloat {
+        #if os(macOS)
+        2
+        #else
+        -2
+        #endif
+    }
+
     @ViewBuilder
     var shareButton: some View {
         ShareLink(item: .init(browserViewModel.urlString)) {
             Image(systemName: "square.and.arrow.up")
-                .imageScale(.medium)
+                .imageScale(shareImageScale)
         }
+        .offset(y: shareImageYOffset)
     }
 
     @ViewBuilder
