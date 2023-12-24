@@ -17,17 +17,12 @@ struct BrowserView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                if let url = URL(string: browserViewModel.urlString) {
-                    BrowserWebView(url: url,
-                                   viewModel: browserViewModel)
-                        .modify {
-                            if let title = browserViewModel.title {
-                                $0.navigationTitle(title)
-                            }
+                BrowserWebView(viewModel: browserViewModel)
+                    .modify {
+                        if let title = browserViewModel.title {
+                            $0.navigationTitle(title)
                         }
-                } else {
-                    Text("Please, enter a url.")
-                }
+                    }
             }
             .modify {
                 #if os(macOS)

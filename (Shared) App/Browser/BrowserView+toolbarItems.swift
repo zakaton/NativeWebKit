@@ -58,6 +58,16 @@ extension BrowserView {
     }
 
     @ViewBuilder
+    var clearSearchFieldButton: some View {
+        Button(action: {
+            browserViewModel.urlString = ""
+        }) {
+            Image(systemName: "xmark.circle")
+                .imageScale(imageScale)
+        }
+    }
+
+    @ViewBuilder
     var searchField: some View {
         TextField("URL", text: $browserViewModel.urlString, onCommit: {
             browserViewModel.loadURLString()
@@ -66,6 +76,8 @@ extension BrowserView {
         .submitLabel(.go)
         .focused($isUrlFocused)
         .textFieldStyle(.plain)
+        .textContentType(.URL)
+        .scrollDismissesKeyboard(.interactively)
         .modify {
             #if !os(macOS)
             $0.keyboardType(.URL)

@@ -22,7 +22,9 @@ class BrowserViewModel: NSObject, ObservableObject {
         }
     }
 
-    @Published var urlString = "https://www.apple.com"
+    static let defaultUrlString = "https://www.apple.com"
+
+    @Published var urlString = defaultUrlString
 
     var formattedUrlString: String {
         guard urlString.hasPrefix("http://") || urlString.hasPrefix("https://") else {

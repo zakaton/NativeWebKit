@@ -11,7 +11,6 @@ import SwiftUI
 import WebKit
 
 struct BrowserWebView {
-    let url: URL
     @ObservedObject var viewModel: BrowserViewModel
 
     func makeView() -> WKWebView {
@@ -34,7 +33,7 @@ struct BrowserWebView {
         #endif
 
         viewModel.webView = webView
-        webView.load(URLRequest(url: url))
+        webView.load(URLRequest(url: viewModel.url!))
         return webView
     }
 }

@@ -13,7 +13,12 @@ extension BrowserView {
         HStack {
             searchImage
             searchField
-            refreshButton
+            if isUrlFocused {
+                clearSearchFieldButton
+            }
+            else {
+                refreshButton
+            }
         }
         .padding(5)
         .overlay(
@@ -38,7 +43,9 @@ extension BrowserView {
     var toolbarItems: some View {
         VStack(spacing: 12) {
             searchToolbarItems
-            navigationToolbarItems
+            if !isUrlFocused {
+                navigationToolbarItems
+            }
         }
     }
 }
