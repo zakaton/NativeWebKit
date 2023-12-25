@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F4EB0C22B38F8B500EF179D /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C12B38F8B500EF179D /* icon.icns */; };
 		5F4EB0C42B38F8B500EF179D /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C32B38F8B500EF179D /* ShareViewController.swift */; };
-		5F4EB0C72B38F8B500EF179D /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C52B38F8B500EF179D /* ShareViewController.xib */; };
 		5F4EB0CC2B38F8B500EF179D /* (Mac) Share Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F4EB0BF2B38F8B500EF179D /* (Mac) Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5F4EB0D12B39024300EF179D /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5F4EB0D02B39024300EF179D /* UkatonMacros */; };
 		5F5E4BBE2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */; };
 		5F5E4BBF2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */; };
 		5F5E4BC12B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BC02B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift */; };
@@ -120,7 +120,6 @@
 		5F4EB0BF2B38F8B500EF179D /* (Mac) Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(Mac) Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F4EB0C12B38F8B500EF179D /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		5F4EB0C32B38F8B500EF179D /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		5F4EB0C62B38F8B500EF179D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShareViewController.xib; sourceTree = "<group>"; };
 		5F4EB0C82B38F8B500EF179D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F4EB0C92B38F8B500EF179D /* Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Share.entitlements; sourceTree = "<group>"; };
 		5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
@@ -171,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F4EB0D12B39024300EF179D /* UkatonMacros in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +223,6 @@
 			children = (
 				5F4EB0C12B38F8B500EF179D /* icon.icns */,
 				5F4EB0C32B38F8B500EF179D /* ShareViewController.swift */,
-				5F4EB0C52B38F8B500EF179D /* ShareViewController.xib */,
 				5F4EB0C82B38F8B500EF179D /* Info.plist */,
 				5F4EB0C92B38F8B500EF179D /* Share.entitlements */,
 			);
@@ -414,6 +413,9 @@
 			dependencies = (
 			);
 			name = "(Mac) Share Extension";
+			packageProductDependencies = (
+				5F4EB0D02B39024300EF179D /* UkatonMacros */,
+			);
 			productName = Share;
 			productReference = 5F4EB0BF2B38F8B500EF179D /* (Mac) Share Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -560,7 +562,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F4EB0C72B38F8B500EF179D /* ShareViewController.xib in Resources */,
 				5F4EB0C22B38F8B500EF179D /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,17 +699,6 @@
 			targetProxy = 5FA4BED22B35121700138B35 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		5F4EB0C52B38F8B500EF179D /* ShareViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5F4EB0C62B38F8B500EF179D /* Base */,
-			);
-			name = ShareViewController.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5F4EB0CD2B38F8B600EF179D /* Debug */ = {
@@ -1247,6 +1237,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5F4EB0D02B39024300EF179D /* UkatonMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FA4BEE22B361AB200138B35 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
+			productName = UkatonMacros;
+		};
 		5FA4BEE32B361AB200138B35 /* UkatonMacros */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5FA4BEE22B361AB200138B35 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
