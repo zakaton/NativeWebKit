@@ -20,6 +20,10 @@ class ShareViewController: UIViewController {
     private let typeURL = UTType.url
     private let urlPrefix = "nativewebkit://"
 
+    func completeRequest() {
+        extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard let extensionItem = extensionContext?.inputItems.first as? NSExtensionItem,
@@ -33,7 +37,7 @@ class ShareViewController: UIViewController {
             self.handleIncomingURL(itemProvider: itemProvider)
         } else {
             logger.error("Error: No url or text found")
-            extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
+            self.completeRequest()
         }
     }
 
@@ -45,7 +49,7 @@ class ShareViewController: UIViewController {
             }
 
             guard let url = item as? NSURL else {
-                extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
+                self.completeRequest()
                 return
             }
 
