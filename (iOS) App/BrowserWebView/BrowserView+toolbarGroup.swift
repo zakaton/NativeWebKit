@@ -13,6 +13,9 @@ extension BrowserView {
         Button(action: {
             if let findInteraction = browserViewModel.webView.findInteraction {
                 findInteraction.presentFindNavigator(showingReplace: false)
+                withAnimation {
+                    isFindInteractionVisible = true
+                }
             }
         }) {
             Image(systemName: "doc.text.magnifyingglass")
@@ -61,9 +64,12 @@ extension BrowserView {
     @ViewBuilder
     var toolbarItems: some View {
         VStack(spacing: 8) {
-            searchToolbarItems
-            if showNavigationBar {
-                navigationToolbarItems
+            if !isFindInteractionVisible {
+                searchToolbarItems
+                if showNavigationBar {
+                    navigationToolbarItems
+                        .transition(.push(from: .top))
+                }
             }
         }
         .onChange(of: isUrlFocused) { _, _ in
@@ -82,6 +88,24 @@ extension BrowserView {
             if !isUrlFocused {
                 withAnimation {
                     showNavigationBar = !browserViewModel.isDraggingUp
+                }
+            }
+        }
+        .modify {
+            if browserViewModel.webView != nil, let findInteraction = browserViewModel.webView.findInteraction {
+                $0.onReceive(findInteraction.activeFindSession.publisher, perform: { _ in
+                    //  logger.debug("findInteraction change")
+                    withAnimation {
+                        isFindInteractionVisible = findInteraction.isFindNavigatorVisible
+                    }
+                })
+            }
+        }
+        .onReceive(keyboardPublisher) { _ in
+            // logger.debug("keyboardPublisher \(value, privacy: .public)")
+            if browserViewModel.webView != nil, let findInteraction = browserViewModel.webView.findInteraction {
+                withAnimation {
+                    isFindInteractionVisible = findInteraction.isFindNavigatorVisible
                 }
             }
         }

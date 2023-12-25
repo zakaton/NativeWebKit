@@ -19,6 +19,7 @@ struct BrowserView: View {
     @FocusState var isUrlFocused: Bool
     @State var backgroundColor: Color = .clear
     @State var showNavigationBar: Bool = true
+    @State var isFindInteractionVisible: Bool = false
 
     var body: some View {
         GeometryReader { geometry in
@@ -51,7 +52,7 @@ struct BrowserView: View {
             toolbarItems
         }
         .padding(.horizontal)
-        .padding(.top, 1.0)
+        .padding(.top, isFindInteractionVisible ? 0 : 1.0)
         #endif
     }
 

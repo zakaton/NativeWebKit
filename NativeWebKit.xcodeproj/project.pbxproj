@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F06B1952B3A1B8B00A0A1BB /* KeyboardPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F06B1942B3A1B8B00A0A1BB /* KeyboardPublisher.swift */; };
 		5F4130282B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */; };
 		5F4130292B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */; };
 		5F4EB0C22B38F8B500EF179D /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C12B38F8B500EF179D /* icon.icns */; };
@@ -130,6 +131,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F06B1942B3A1B8B00A0A1BB /* KeyboardPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPublisher.swift; sourceTree = "<group>"; };
 		5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKUIDelegate.swift"; sourceTree = "<group>"; };
 		5F4EB0BF2B38F8B500EF179D /* (Mac) Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(Mac) Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F4EB0C12B38F8B500EF179D /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
@@ -234,6 +236,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F06B1972B3A1BB900A0A1BB /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				5F06B1942B3A1B8B00A0A1BB /* KeyboardPublisher.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		5F0E4D7B2B350BA60027C202 /* (Shared) */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				5FBB63272B38AA30008B18B9 /* -iOS--NativeWebKit-Info.plist */,
+				5F06B1972B3A1BB900A0A1BB /* utils */,
 				5FBD16B82B3633EF00B8B1A5 /* BrowserWebView */,
 				5F89491E2B35089300AF3341 /* Assets.xcassets */,
 				5F8949212B35089300AF3341 /* NativeWebKit.entitlements */,
@@ -713,6 +724,7 @@
 				5FBD16BB2B36340500B8B1A5 /* BrowserWebView +UIViewRepresentable.swift in Sources */,
 				5FBD16B32B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
 				5FBD16AB2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
+				5F06B1952B3A1B8B00A0A1BB /* KeyboardPublisher.swift in Sources */,
 				5F5E4BBE2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
 				5FBD16C42B3676C600B8B1A5 /* ViewModifier.swift in Sources */,
 				5FBD16BF2B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
