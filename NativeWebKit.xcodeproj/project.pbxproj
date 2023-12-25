@@ -800,7 +800,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.Share;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -830,7 +830,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.Share;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -856,7 +856,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.Share;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -886,7 +886,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.Share;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1193,7 +1193,7 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.SafariExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1227,7 +1227,7 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.SafariExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1265,7 +1265,7 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.SafariExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1298,7 +1298,7 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.Extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.SafariExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
