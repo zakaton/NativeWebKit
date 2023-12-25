@@ -609,8 +609,8 @@
 				5F89492B2B3508E400AF3341 /* (Mac) NativeWebKit */,
 				5FA4BE992B35119F00138B35 /* (iOS) Safari Extension */,
 				5FA4BEBA2B35121700138B35 /* (Mac) Safari Extension */,
-				5F4EB0BE2B38F8B500EF179D /* (Mac) Share Extension */,
 				5F4EB0D52B39436E00EF179D /* (iOS) Share Extension */,
+				5F4EB0BE2B38F8B500EF179D /* (Mac) Share Extension */,
 			);
 		};
 /* End PBXProject section */
