@@ -9,14 +9,15 @@
 
 import AppKit
 import CoreServices
+import Foundation
 import OSLog
 import Social
 import UkatonMacros
+import UniformTypeIdentifiers
 
 @StaticLogger
 class ShareViewController: NSViewController {
-    private let typeText = String(kUTTypeText)
-    private let typeURL = String(kUTTypeURL)
+    private let typeURL = UTType.url
     private let urlPrefix = "nativewebkit://"
     private let groupName = "X3KF23SMC7.group.nativewebkit.share"
     private let urlDefaultName = "incomingURL"
@@ -35,7 +36,7 @@ class ShareViewController: NSViewController {
         logger.debug("extensionItem \(extensionItem.debugDescription, privacy: .public)")
         logger.debug("itemProvider \(itemProvider.debugDescription, privacy: .public)")
 
-        if itemProvider.hasItemConformingToTypeIdentifier(self.typeURL) {
+        if itemProvider.hasItemConformingToTypeIdentifier(self.typeURL.identifier) {
             logger.debug("will handle incoming url")
             self.handleIncomingURL(itemProvider: itemProvider)
         } else {
@@ -46,7 +47,7 @@ class ShareViewController: NSViewController {
 
     private func handleIncomingURL(itemProvider: NSItemProvider) {
         logger.debug("handleIncomingURL \(itemProvider.debugDescription, privacy: .public)")
-        itemProvider.loadItem(forTypeIdentifier: self.typeURL) { item, error in
+        itemProvider.loadItem(forTypeIdentifier: self.typeURL.identifier) { item, error in
             if let error {
                 self.logger.error("URL-Error: \(error.localizedDescription, privacy: .public)")
             }
