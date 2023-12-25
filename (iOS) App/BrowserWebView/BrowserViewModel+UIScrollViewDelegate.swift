@@ -19,6 +19,10 @@ extension BrowserViewModel: UIScrollViewDelegate {
         webView.scrollView.refreshControl?.addTarget(self, action:
             #selector(handleRefreshControl),
             for: .valueChanged)
+
+        if let findInteraction = webView.findInteraction {
+            logger.debug("FIND INTERACTION \(findInteraction.delegate.debugDescription, privacy: .public)")
+        }
     }
 
     @objc func handleRefreshControl() {

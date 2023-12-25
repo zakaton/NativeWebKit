@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F4130282B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */; };
+		5F4130292B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */; };
 		5F4EB0C22B38F8B500EF179D /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C12B38F8B500EF179D /* icon.icns */; };
 		5F4EB0C42B38F8B500EF179D /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C32B38F8B500EF179D /* ShareViewController.swift */; };
 		5F4EB0CC2B38F8B500EF179D /* (Mac) Share Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F4EB0BF2B38F8B500EF179D /* (Mac) Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -128,6 +130,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKUIDelegate.swift"; sourceTree = "<group>"; };
 		5F4EB0BF2B38F8B500EF179D /* (Mac) Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(Mac) Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F4EB0C12B38F8B500EF179D /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		5F4EB0C32B38F8B500EF179D /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -397,6 +400,7 @@
 				5FBD16CE2B376B2900B8B1A5 /* BrowserView+toolbarItems.swift */,
 				5FBD16BE2B36523C00B8B1A5 /* BrowserWebView.swift */,
 				5FBD16B22B362D2200B8B1A5 /* BrowserViewModel.swift */,
+				5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -705,6 +709,7 @@
 				5FBB632A2B38BC76008B18B9 /* StringUtils.swift in Sources */,
 				5FBD16CD2B37621600B8B1A5 /* BrowserView+toolbarGroup.swift in Sources */,
 				5F8949272B35089300AF3341 /* ContentView.swift in Sources */,
+				5F4130282B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */,
 				5FBD16BB2B36340500B8B1A5 /* BrowserWebView +UIViewRepresentable.swift in Sources */,
 				5FBD16B32B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
 				5FBD16AB2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
@@ -734,6 +739,7 @@
 				5FBB632E2B38C473008B18B9 /* URLUtils.swift in Sources */,
 				5FBD16D02B376B2900B8B1A5 /* BrowserView+toolbarItems.swift in Sources */,
 				5FBD16C72B36B63E00B8B1A5 /* NativeWebKitApp.swift in Sources */,
+				5F4130292B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

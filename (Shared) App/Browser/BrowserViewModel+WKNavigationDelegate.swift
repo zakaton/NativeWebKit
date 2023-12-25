@@ -36,5 +36,6 @@ extension BrowserViewModel: WKNavigationDelegate {
         canGoBack = webView.canGoBack
         canGoForward = webView.canGoForward
         title = webView.title
+        logger.debug("loaded \(webView.url?.absoluteString ?? "nil", privacy: .public)")
     }
 }

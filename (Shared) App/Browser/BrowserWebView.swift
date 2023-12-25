@@ -7,16 +7,25 @@
 
 // https://www.swiftyplace.com/blog/loading-a-web-view-in-swiftui-with-wkwebview
 
+import OSLog
 import SwiftUI
+import UkatonMacros
 import WebKit
 
+@StaticLogger
 struct BrowserWebView {
     @ObservedObject var viewModel: BrowserViewModel
+
+    init(viewModel: BrowserViewModel) {
+        self.viewModel = viewModel
+    }
 
     func makeView() -> WKWebView {
         let webView = WKWebView()
 
         webView.isInspectable = true
+        webView.allowsBackForwardNavigationGestures = true
+        webView.allowsLinkPreview = true
 
         #if !os(macOS)
         webView.isFindInteractionEnabled = true

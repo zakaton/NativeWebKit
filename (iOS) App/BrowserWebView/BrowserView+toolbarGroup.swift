@@ -16,7 +16,7 @@ extension BrowserView {
             }
         }) {
             Image(systemName: "doc.text.magnifyingglass")
-                .imageScale(imageScale)
+                .imageScale(.large)
         }
     }
 
@@ -52,15 +52,15 @@ extension BrowserView {
             Spacer()
             shareButton
             Spacer()
-//            findButton
-//            Spacer()
+            findButton
+            Spacer()
         }
         .imageScale(.large)
     }
 
     @ViewBuilder
     var toolbarItems: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 8) {
             searchToolbarItems
             if showNavigationBar {
                 navigationToolbarItems
@@ -79,8 +79,10 @@ extension BrowserView {
             }
         }
         .onChange(of: browserViewModel.dragVelocity) { _, _ in
-            withAnimation {
-                showNavigationBar = !browserViewModel.isDraggingUp
+            if !isUrlFocused {
+                withAnimation {
+                    showNavigationBar = !browserViewModel.isDraggingUp
+                }
             }
         }
     }

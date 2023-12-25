@@ -16,6 +16,7 @@ class BrowserViewModel: NSObject, ObservableObject {
     weak var webView: WKWebView! {
         didSet {
             setWebViewNavigationDelegate()
+            setWebViewUIDelegate()
             #if !os(macOS)
             setUIScrollViewDelegate()
             #endif
