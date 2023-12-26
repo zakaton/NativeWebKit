@@ -1,5 +1,5 @@
 //
-//  BrowserView+toolbarItems.swift
+//  BrowserView+navigation_mac.swift
 //  (Mac) NativeWebKit
 //
 //  Created by Zack Qattan on 12/23/23.

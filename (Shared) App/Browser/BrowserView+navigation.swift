@@ -1,5 +1,5 @@
 //
-//  BrowserView+toolbarItems.swift
+//  BrowserView+navigation.swift
 //  NativeWebKit
 //
 //  Created by Zack Qattan on 12/23/23.
@@ -8,6 +8,14 @@
 import SwiftUI
 
 extension BrowserView {
+    var toolbarImageScale: Image.Scale {
+        #if os(macOS)
+        .small
+        #else
+        .medium
+        #endif
+    }
+
     @ViewBuilder
     var goBackButton: some View {
         Button(action: {
@@ -39,21 +47,13 @@ extension BrowserView {
         .transition(.scale)
     }
 
-    var imageScale: Image.Scale {
-        #if os(macOS)
-        .small
-        #else
-        .medium
-        #endif
-    }
-
     @ViewBuilder
     var refreshButton: some View {
         Button(action: {
             browserViewModel.reload()
         }) {
             Image(systemName: "arrow.clockwise")
-                .imageScale(imageScale)
+                .imageScale(toolbarImageScale)
         }
     }
 
@@ -88,7 +88,7 @@ extension BrowserView {
             browserViewModel.urlString = ""
         }) {
             Image(systemName: "xmark.circle")
-                .imageScale(imageScale)
+                .imageScale(toolbarImageScale)
         }
     }
 

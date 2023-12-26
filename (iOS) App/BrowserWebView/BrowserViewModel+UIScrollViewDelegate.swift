@@ -31,9 +31,12 @@ extension BrowserViewModel: UIScrollViewDelegate {
     }
 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        dragVelocity = scrollView.panGestureRecognizer.velocity(in: scrollView.superview)
+        let newDragVelocity = scrollView.panGestureRecognizer.velocity(in: scrollView.superview)
+        dragVelocity = newDragVelocity
+        // logger.debug("dragVelocity \(newDragVelocity.y)")
     }
 
     var isDragging: Bool { webView.scrollView.isDragging }
     var isDraggingUp: Bool { dragVelocity.y < 0 }
+    var isDraggingDown: Bool { dragVelocity.y > 0 }
 }
