@@ -51,7 +51,7 @@ extension BrowserView {
                 }
             }
         }
-        .padding(.bottom, isUrlFocused ? 4 : 0)
+        .padding(.bottom, expandSearchBar ? 4 : 0)
     }
 
     @ViewBuilder
@@ -67,6 +67,10 @@ extension BrowserView {
             }
         }
         .onChange(of: isUrlFocused) { _, _ in
+            withAnimation {
+                expandSearchBar = isUrlFocused
+            }
+
             if isUrlFocused {
                 withAnimation {
                     showNavigationBar = false

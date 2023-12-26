@@ -26,11 +26,11 @@ extension BrowserView {
     @ViewBuilder
     var searchBar: some View {
         HStack(alignment: .center) {
-            if !isUrlFocused {
+            if !expandSearchBar {
                 searchImage
             }
             searchField
-            if isUrlFocused {
+            if expandSearchBar {
                 clearSearchFieldButton
             }
             else {
@@ -38,10 +38,10 @@ extension BrowserView {
             }
         }
         .padding(.horizontal, 7)
-        .padding(.vertical, isUrlFocused ? 10 : 5)
+        .padding(.vertical, expandSearchBar ? 10 : 5)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.gray, lineWidth: isUrlFocused ? 1.5 : 1)
+                .stroke(Color.gray, lineWidth: expandSearchBar ? 1.5 : 1)
         )
     }
 }

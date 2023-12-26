@@ -17,6 +17,7 @@ import WebKit
 struct BrowserView: View {
     @StateObject var browserViewModel = BrowserViewModel()
     @FocusState var isUrlFocused: Bool
+    @State var expandSearchBar: Bool = false
     @State var backgroundColor: Color = .clear
     @State var showNavigationBar: Bool = true
     @State var isFindInteractionVisible: Bool = false
