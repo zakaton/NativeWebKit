@@ -37,4 +37,8 @@ extension BrowserViewModel: WKNavigationDelegate {
         title = webView.title
         logger.debug("loaded \(webView.url?.absoluteString ?? "nil", privacy: .public)")
     }
+
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        updateNavigationControls()
+    }
 }
