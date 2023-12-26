@@ -30,13 +30,13 @@ extension BrowserView {
     }
 
     @ViewBuilder
-    var searchImage: some View {
+    var searchButton: some View {
         Button {
             isUrlFocused = true
         } label: {
             Image(systemName: "magnifyingglass")
-                .imageScale(imageScale)
         }
+        .transition(.scale)
     }
 
     var imageScale: Image.Scale {

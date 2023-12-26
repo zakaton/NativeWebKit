@@ -27,7 +27,7 @@ extension BrowserView {
     var searchToolbarItems: some View {
         HStack {
             if !isUrlFocused {
-                searchImage
+                searchButton
             }
             searchField
             if isUrlFocused {
