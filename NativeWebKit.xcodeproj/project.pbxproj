@@ -20,6 +20,7 @@
 		5F5E4BBE2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */; };
 		5F5E4BBF2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */; };
 		5F5E4BC12B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BC02B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift */; };
+		5F7FBFBA2B3A45DC0029F826 /* DeviceRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFB92B3A45DC0029F826 /* DeviceRotation.swift */; };
 		5F8949262B35089300AF3341 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8949202B35089300AF3341 /* Preview Assets.xcassets */; };
 		5F8949272B35089300AF3341 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8949222B35089300AF3341 /* ContentView.swift */; };
 		5F8949362B3508E500AF3341 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8949352B3508E500AF3341 /* Preview Assets.xcassets */; };
@@ -143,6 +144,7 @@
 		5F4EB0DD2B39436E00EF179D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
 		5F5E4BC02B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
+		5F7FBFB92B3A45DC0029F826 /* DeviceRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotation.swift; sourceTree = "<group>"; };
 		5F87CF0C2B33B59900E951E7 /* (iOS) NativeWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "(iOS) NativeWebKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F89491E2B35089300AF3341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F8949202B35089300AF3341 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				5F06B1942B3A1B8B00A0A1BB /* KeyboardPublisher.swift */,
+				5F7FBFB92B3A45DC0029F826 /* DeviceRotation.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				5F5E4BC12B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift in Sources */,
 				5FBB632D2B38C473008B18B9 /* URLUtils.swift in Sources */,
 				5FBD16C82B37520F00B8B1A5 /* NativeWebKitApp.swift in Sources */,
+				5F7FBFBA2B3A45DC0029F826 /* DeviceRotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

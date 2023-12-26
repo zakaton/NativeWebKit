@@ -65,7 +65,7 @@ extension BrowserView {
         #endif
     }
 
-    var shareImageYOffset: CGFloat {
+    var shareButtonYOffset: CGFloat {
         #if os(macOS)
         2
         #else
@@ -79,7 +79,7 @@ extension BrowserView {
             Image(systemName: "square.and.arrow.up")
                 .imageScale(shareImageScale)
         }
-        .offset(y: shareImageYOffset)
+        .offset(y: shareButtonYOffset)
     }
 
     @ViewBuilder
@@ -90,6 +90,25 @@ extension BrowserView {
             Image(systemName: "xmark.circle")
                 .imageScale(imageScale)
         }
+    }
+
+    var historyButtonYOffset: CGFloat {
+        #if os(macOS)
+        0
+        #else
+        -1.3
+        #endif
+    }
+
+    @ViewBuilder
+    var historyButton: some View {
+        Button(action: {
+            // TODO: - FILL
+        }) {
+            Image(systemName: "book")
+                .imageScale(.large)
+        }
+        .offset(y: historyButtonYOffset)
     }
 
     @ViewBuilder
@@ -124,4 +143,8 @@ extension BrowserView {
                 #endif
             }
     }
+}
+
+#Preview("") {
+    BrowserView()
 }

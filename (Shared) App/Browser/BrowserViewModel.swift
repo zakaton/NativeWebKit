@@ -62,10 +62,17 @@ class BrowserViewModel: NSObject, ObservableObject {
 
     func goBack() {
         webView.goBack()
+        updateNavigationControls()
     }
 
     func goForward() {
         webView.goForward()
+        updateNavigationControls()
+    }
+
+    func updateNavigationControls() {
+        canGoBack = webView.canGoBack
+        canGoForward = webView.canGoForward
     }
 
     func reload() {

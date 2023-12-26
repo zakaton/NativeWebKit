@@ -57,18 +57,62 @@ extension BrowserView {
             Spacer()
             findButton
             Spacer()
+            historyButton
+            Spacer()
         }
         .imageScale(.large)
     }
 
     @ViewBuilder
-    var toolbarItems: some View {
+    var bottomToolbarItems: some View {
         VStack(spacing: 8) {
             if !isFindInteractionVisible {
                 searchToolbarItems
                 if showNavigationBar {
                     navigationToolbarItems
                         .transition(.push(from: .top))
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    var topToolbarItems: some View {
+        HStack {
+            searchToolbarItems
+            navigationToolbarItems
+        }
+    }
+
+    @ViewBuilder
+    var toolbarItems: some View {
+        Group {
+            if !isKeyboardVisible || isUrlFocused {
+                if isPortrait {
+                    VStack(spacing: 8) {
+                        if !isFindInteractionVisible {
+                            searchToolbarItems
+                            if showNavigationBar {
+                                navigationToolbarItems
+                                    .transition(.push(from: .top))
+                            }
+                        }
+                    }
+                }
+                else {
+                    HStack(spacing: 6) {
+                        Spacer()
+                        goBackButton
+                        Spacer()
+                        goForwardButton
+                        Spacer()
+                        historyButton
+                        Spacer()
+                        searchToolbarItems
+                        Spacer()
+                        shareButton
+                        Spacer()
+                    }
                 }
             }
         }
@@ -101,8 +145,10 @@ extension BrowserView {
                 })
             }
         }
-        .onReceive(keyboardPublisher) { _ in
-            // logger.debug("keyboardPublisher \(value, privacy: .public)")
+        .onReceive(keyboardPublisher) { newIsKeyboardVisible in
+            logger.debug("keyboardPublisher \(newIsKeyboardVisible, privacy: .public)")
+            isKeyboardVisible = newIsKeyboardVisible
+
             if browserViewModel.webView != nil, let findInteraction = browserViewModel.webView.findInteraction {
                 withAnimation {
                     isFindInteractionVisible = findInteraction.isFindNavigatorVisible

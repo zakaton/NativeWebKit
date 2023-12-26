@@ -20,8 +20,23 @@ struct BrowserView: View {
     @State var backgroundColor: Color = .clear
     @State var showNavigationBar: Bool = true
     @State var isFindInteractionVisible: Bool = false
+    @State var isKeyboardVisible: Bool = false
+
+    @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+    @State private var orientation = UIDeviceOrientation.unknown
 
     var body: some View {
+        #if !os(macOS)
+        if !isPortrait {
+            HStack(alignment: .center) {
+                toolbarItems
+            }
+            .padding(.horizontal)
+            .padding(.top, 0.5)
+        }
+        #endif
+
         GeometryReader { geometry in
             VStack {
                 BrowserWebView(viewModel: browserViewModel)
@@ -46,14 +61,45 @@ struct BrowserView: View {
             handleIncomingURL(incomingURL)
         }
         .background(backgroundColor)
+        .onRotate { newOrientation in
+            // logger.debug("newOrientation \(newOrientation.rawValue)")
+            switch newOrientation {
+            case .unknown, .faceUp, .faceDown:
+                break
+            default:
+                orientation = newOrientation
+            }
+        }
+        .modify {
+            #if !os(macOS)
+            if !isPortrait {
+                $0.ignoresSafeArea(.all)
+            }
+            #endif
+        }
 
         #if !os(macOS)
-        HStack(alignment: .center) {
-            toolbarItems
+        if isPortrait {
+            HStack(alignment: .center) {
+                toolbarItems
+            }
+            .padding(.horizontal)
+            .padding(.top, isKeyboardVisible ? 0 : 1.0)
         }
-        .padding(.horizontal)
-        .padding(.top, isFindInteractionVisible ? 0 : 1.0)
         #endif
+    }
+
+    var isPortrait: Bool {
+        if orientation == .unknown {
+            return horizontalSizeClass == .compact && verticalSizeClass == .regular
+        }
+
+        return switch orientation {
+        case .landscapeLeft, .landscapeRight:
+            false
+        default:
+            true
+        }
     }
 
     func handleIncomingURL(_ url: URL) {
