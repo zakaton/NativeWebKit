@@ -4,6 +4,7 @@
 //
 //  Created by Zack Qattan on 12/25/23.
 //
+
 import WebKit
 
 extension BrowserViewModel: WKUIDelegate {

@@ -83,8 +83,26 @@ struct BrowserView: View {
             HStack(alignment: .center) {
                 toolbarItems
             }
+            .onTapGesture {
+                if !isKeyboardVisible {
+                    withAnimation {
+                        showNavigationBar.toggle()
+                    }
+                }
+            }
             .padding(.horizontal)
             .padding(.top, isKeyboardVisible ? 0 : 1.0)
+            .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                .onChanged { value in
+                    logger.debug("value \(value.translation.debugDescription)")
+                    if value.translation.height > 0 {
+                        if isUrlFocused {
+                            withAnimation {
+                                isUrlFocused = false
+                            }
+                        }
+                    }
+                })
         }
         #endif
     }

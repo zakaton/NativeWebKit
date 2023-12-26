@@ -136,6 +136,13 @@ extension BrowserView {
                             }
                         }
                     }
+//                    .onChange(of: browserViewModel.dragVelocity) { _, _ in
+//                        if isUrlFocused, browserViewModel.isDraggingUp {
+//                            withAnimation {
+//                                isUrlFocused = false
+//                            }
+//                        }
+//                    }
                     .textInputAutocapitalization(.never)
                     .submitLabel(.go)
                     .textContentType(.URL)

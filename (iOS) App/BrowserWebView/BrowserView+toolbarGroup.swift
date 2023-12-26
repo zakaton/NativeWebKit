@@ -146,7 +146,7 @@ extension BrowserView {
             }
         }
         .onReceive(keyboardPublisher) { newIsKeyboardVisible in
-            logger.debug("keyboardPublisher \(newIsKeyboardVisible, privacy: .public)")
+            // logger.debug("keyboardPublisher \(newIsKeyboardVisible, privacy: .public)")
             isKeyboardVisible = newIsKeyboardVisible
 
             if browserViewModel.webView != nil, let findInteraction = browserViewModel.webView.findInteraction {
