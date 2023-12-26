@@ -84,9 +84,9 @@ struct BrowserView: View {
                 toolbarItems
             }
             .onTapGesture {
-                if !isKeyboardVisible {
+                if !showNavigationBar, !isKeyboardVisible {
                     withAnimation {
-                        showNavigationBar.toggle()
+                        showNavigationBar = true
                     }
                 }
             }
