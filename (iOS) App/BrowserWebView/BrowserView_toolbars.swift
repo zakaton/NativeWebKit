@@ -51,6 +51,7 @@ extension BrowserView {
                 }
             }
         }
+        .padding(.bottom, isUrlFocused ? 4 : 0)
     }
 
     @ViewBuilder
