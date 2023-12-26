@@ -24,7 +24,9 @@ struct BrowserView: View {
 
     @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+    #if os(iOS)
     @State private var orientation = UIDeviceOrientation.unknown
+    #endif
 
     var body: some View {
         #if !os(macOS)
@@ -61,24 +63,28 @@ struct BrowserView: View {
             handleIncomingURL(incomingURL)
         }
         .background(backgroundColor)
-        .onRotate { newOrientation in
-            // logger.debug("newOrientation \(newOrientation.rawValue)")
-            switch newOrientation {
-            case .unknown, .faceUp, .faceDown:
-                break
-            default:
-                orientation = newOrientation
+        .modify {
+            #if os(iOS)
+            $0.onRotate { newOrientation in
+                // logger.debug("newOrientation \(newOrientation.rawValue)")
+                switch newOrientation {
+                case .unknown, .faceUp, .faceDown:
+                    break
+                default:
+                    orientation = newOrientation
+                }
             }
+            #endif
         }
         .modify {
-            #if !os(macOS)
+            #if os(iOS)
             if !isPortrait {
                 $0.ignoresSafeArea(.all)
             }
             #endif
         }
 
-        #if !os(macOS)
+        #if os(iOS)
         if isPortrait {
             HStack(alignment: .center) {
                 toolbarItems
@@ -107,6 +113,7 @@ struct BrowserView: View {
         #endif
     }
 
+    #if os(iOS)
     var isPortrait: Bool {
         if orientation == .unknown {
             return horizontalSizeClass == .compact && verticalSizeClass == .regular
@@ -119,6 +126,7 @@ struct BrowserView: View {
             true
         }
     }
+    #endif
 
     func handleIncomingURL(_ url: URL) {
         guard url.isDeeplink else {

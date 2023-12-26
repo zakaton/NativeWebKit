@@ -27,7 +27,7 @@ extension BrowserView {
     var searchToolbarItems: some View {
         HStack {
             if !isUrlFocused {
-                searchButton
+                searchImage
             }
             searchField
             if isUrlFocused {
@@ -136,7 +136,7 @@ extension BrowserView {
             }
         }
         .modify {
-            if browserViewModel.webView != nil, let findInteraction = browserViewModel.webView.findInteraction {
+            if let findInteraction = browserViewModel.webView.findInteraction {
                 $0.onReceive(findInteraction.activeFindSession.publisher, perform: { _ in
                     //  logger.debug("findInteraction change")
                     withAnimation {
@@ -149,7 +149,7 @@ extension BrowserView {
             // logger.debug("keyboardPublisher \(newIsKeyboardVisible, privacy: .public)")
             isKeyboardVisible = newIsKeyboardVisible
 
-            if browserViewModel.webView != nil, let findInteraction = browserViewModel.webView.findInteraction {
+            if let findInteraction = browserViewModel.webView.findInteraction {
                 withAnimation {
                     isFindInteractionVisible = findInteraction.isFindNavigatorVisible
                 }

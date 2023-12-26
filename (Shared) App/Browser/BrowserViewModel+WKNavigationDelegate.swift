@@ -8,7 +8,7 @@
 import WebKit
 
 extension BrowserViewModel: WKNavigationDelegate {
-    func setWebViewNavigationDelegate() {
+    func setWebViewNavigationDelegate(_ webView: WKWebView) {
         webView.navigationDelegate = self
     }
 
@@ -33,8 +33,7 @@ extension BrowserViewModel: WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        canGoBack = webView.canGoBack
-        canGoForward = webView.canGoForward
+        updateNavigationControls()
         title = webView.title
         logger.debug("loaded \(webView.url?.absoluteString ?? "nil", privacy: .public)")
     }

@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import WebKit
 
 extension BrowserViewModel: UIScrollViewDelegate {
-    func setUIScrollViewDelegate() {
+    func setUIScrollViewDelegate(_ webView: WKWebView) {
         webView.scrollView.delegate = self
         webView.scrollView.keyboardDismissMode = .interactiveWithAccessory
         webView.scrollView.bounces = true

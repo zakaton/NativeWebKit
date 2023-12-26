@@ -13,15 +13,36 @@ import WebKit
 
 @StaticLogger
 class BrowserViewModel: NSObject, ObservableObject {
-    weak var webView: WKWebView! {
-        didSet {
-            setWebViewNavigationDelegate()
-            setWebViewUIDelegate()
-            #if !os(macOS)
-            setUIScrollViewDelegate()
-            #endif
-        }
-    }
+    lazy var webView: WKWebView = {
+        let _webView = WKWebView()
+
+        _webView.isInspectable = true
+        _webView.allowsBackForwardNavigationGestures = true
+        _webView.allowsLinkPreview = true
+
+        #if !os(macOS)
+        _webView.isFindInteractionEnabled = true
+        #endif
+
+        _webView.configuration.preferences.isElementFullscreenEnabled = true
+        _webView.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
+        _webView.configuration.allowsAirPlayForMediaPlayback = true
+        _webView.configuration.mediaTypesRequiringUserActionForPlayback = .all
+        #if !os(macOS)
+        _webView.configuration.ignoresViewportScaleLimits = false
+        _webView.configuration.allowsInlineMediaPlayback = true
+        _webView.configuration.allowsPictureInPictureMediaPlayback = true
+        #endif
+
+        setWebViewNavigationDelegate(_webView)
+        setWebViewUIDelegate(_webView)
+        #if !os(macOS)
+        setUIScrollViewDelegate(_webView)
+        #endif
+
+        _webView.load(URLRequest(url: url!))
+        return _webView
+    }()
 
     static let defaultUrlString = "https://www.google.com"
 
@@ -62,12 +83,10 @@ class BrowserViewModel: NSObject, ObservableObject {
 
     func goBack() {
         webView.goBack()
-        updateNavigationControls()
     }
 
     func goForward() {
         webView.goForward()
-        updateNavigationControls()
     }
 
     func updateNavigationControls() {

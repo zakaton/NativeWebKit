@@ -8,7 +8,7 @@
 import WebKit
 
 extension BrowserViewModel: WKUIDelegate {
-    func setWebViewUIDelegate() {
+    func setWebViewUIDelegate(_ webView: WKWebView) {
         webView.uiDelegate = self
     }
 }

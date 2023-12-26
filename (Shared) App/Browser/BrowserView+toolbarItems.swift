@@ -30,7 +30,7 @@ extension BrowserView {
     }
 
     @ViewBuilder
-    var searchButton: some View {
+    var searchImage: some View {
         Button {
             isUrlFocused = true
         } label: {
