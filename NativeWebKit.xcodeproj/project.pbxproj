@@ -20,6 +20,7 @@
 		5F5E4BBE2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */; };
 		5F5E4BBF2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */; };
 		5F5E4BC12B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BC02B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift */; };
+		5F5FEFCF2B3B8DD700E4A5F0 /* FindToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5FEFCE2B3B8DD700E4A5F0 /* FindToolbar.swift */; };
 		5F7FBFBA2B3A45DC0029F826 /* DeviceRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFB92B3A45DC0029F826 /* DeviceRotation.swift */; };
 		5F7FBFBD2B3B4C5B0029F826 /* BrowserView+orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBC2B3B4C5B0029F826 /* BrowserView+orientation.swift */; };
 		5F7FBFBF2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */; };
@@ -148,6 +149,7 @@
 		5F4EB0DD2B39436E00EF179D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
 		5F5E4BC02B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
+		5F5FEFCE2B3B8DD700E4A5F0 /* FindToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindToolbar.swift; sourceTree = "<group>"; };
 		5F7FBFB92B3A45DC0029F826 /* DeviceRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotation.swift; sourceTree = "<group>"; };
 		5F7FBFBC2B3B4C5B0029F826 /* BrowserView+orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+orientation.swift"; sourceTree = "<group>"; };
 		5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+handleIncomingURL.swift"; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 			children = (
 				5FBD16BC2B36347000B8B1A5 /* BrowserWebView+NSViewRepresentable.swift */,
 				5FBD16C92B3761E000B8B1A5 /* BrowserView+navigation_mac.swift */,
+				5F5FEFCE2B3B8DD700E4A5F0 /* FindToolbar.swift */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 				5FBD16B42B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
 				5FBD16AC2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
 				5F5E4BBF2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
+				5F5FEFCF2B3B8DD700E4A5F0 /* FindToolbar.swift in Sources */,
 				5FBD16C52B3676C600B8B1A5 /* ViewModifier.swift in Sources */,
 				5FBD16C02B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
 				5FBB632B2B38BC76008B18B9 /* StringUtils.swift in Sources */,

@@ -23,6 +23,10 @@ struct BrowserView: View {
     @State var isFindInteractionVisible: Bool = false
     @State var isKeyboardVisible: Bool = false
 
+    #if os(macOS)
+    @EnvironmentObject var findToolbar: FindToolbar
+    #endif
+
     @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
 
@@ -34,6 +38,12 @@ struct BrowserView: View {
         #if !os(macOS)
         if !isPortrait {
             toolbarItems
+        }
+        #endif
+
+        #if os(macOS)
+        if findToolbar.isVisible {
+            Text("Toolbar!")
         }
         #endif
 
