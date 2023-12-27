@@ -24,6 +24,7 @@ struct BrowserView: View {
     @State var isKeyboardVisible: Bool = false
 
     #if os(macOS)
+    @FocusState var isFindFocused: Bool
     @State var findString: String = ""
     @ObservedObject var findToolbarModel: FindToolbarModel = .shared
     #endif

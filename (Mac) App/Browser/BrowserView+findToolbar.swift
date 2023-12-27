@@ -33,6 +33,7 @@ extension BrowserView {
                 }
                 .buttonStyle(.accessoryBar)
                 TextField("Search", text: $findString)
+                    .focused($isFindFocused)
                     .textFieldStyle(.plain)
                     .onSubmit {
                         find()
@@ -113,6 +114,11 @@ extension BrowserView {
         .padding(.top, 5)
         .padding(.trailing, 5)
         .padding(.bottom, 0)
+        .onAppear {
+            withAnimation {
+                isFindFocused = true
+            }
+        }
     }
 }
 
