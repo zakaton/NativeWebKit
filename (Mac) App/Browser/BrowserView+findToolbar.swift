@@ -6,15 +6,27 @@
 //
 
 import SwiftUI
+import WebKit
 
 extension BrowserView {
+    func find(isBackwards: Bool = false) {
+        if isBackwards {
+            findToolbarModel.configuration.backwards = true
+        }
+        findToolbarModel.find(findString, in: browserViewModel.webView)
+        findToolbarModel.configuration.backwards = false
+    }
+
     @ViewBuilder
     var findToolbar: some View {
         HStack(alignment: .center) {
             Spacer()
+            if !findString.isEmpty, let matchFound = findToolbarModel.matchFound, !matchFound {
+                Text("Not found")
+            }
             HStack(alignment: .center, spacing: 0) {
                 Button {
-                    // TODO: - FILL
+                    // TODO: - set focus
                 } label: {
                     Image(systemName: "magnifyingglass")
                         .imageScale(.small)
@@ -22,9 +34,15 @@ extension BrowserView {
                 .buttonStyle(.accessoryBar)
                 TextField("Search", text: $findString)
                     .textFieldStyle(.plain)
+                    .onSubmit {
+                        find()
+                    }
+                    .onChange(of: findString) {
+                        find()
+                    }
                 if !findString.isEmpty {
                     Button {
-                        // TODO: - FILL
+                        findString = ""
                     } label: {
                         Image(systemName: "xmark.circle")
                     }
@@ -41,10 +59,12 @@ extension BrowserView {
 
             HStack(alignment: .center, spacing: 0) {
                 Button {
-                    // TODO: - Previous
+                    find(isBackwards: true)
                 } label: {
                     Image(systemName: "chevron.left")
                 }
+                .accessibilityLabel("find previous")
+                .disabled(!(findToolbarModel.matchFound ?? false))
                 .buttonStyle(.accessoryBar)
                 .padding(.top, 1)
                 .padding(.horizontal, 2)
@@ -60,10 +80,12 @@ extension BrowserView {
                 }
 
                 Button {
-                    // TODO: - Next
+                    find()
                 } label: {
                     Image(systemName: "chevron.right")
                 }
+                .accessibilityLabel("find next")
+                .disabled(!(findToolbarModel.matchFound ?? false))
                 .buttonStyle(.accessoryBar)
                 .padding(.top, 1)
                 .padding(.horizontal, 2)
