@@ -76,10 +76,17 @@ class BrowserViewModel: NSObject, ObservableObject {
 
         let underPageBackgroundColorObservation = webView.observe(\.underPageBackgroundColor, options: [.new]) { [unowned self] _, value in
             logger.debug("observed new under page background color")
-            if let newThemeColor = value.newValue as? Color {
-                logger.debug("new under page background color \(newThemeColor.description)")
-                themeColor = newThemeColor
+            #if os(macOS)
+            if let newThemeColor = value.newValue as? NSColor {
+                self.logger.debug("new theme color \(newThemeColor.description)")
+                themeColor = .init(nsColor: newThemeColor)
             }
+            #else
+            if let newThemeColor = value.newValue as? UIColor {
+                self.logger.debug("new theme color \(newThemeColor.description)")
+                themeColor = .init(uiColor: newThemeColor)
+            }
+            #endif
         }
         observations.append(underPageBackgroundColorObservation)
     }
