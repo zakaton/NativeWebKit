@@ -24,6 +24,7 @@ class FindToolbarModel: ObservableObject {
     }
 
     func find(_ string: String, in webView: WKWebView) {
+        matchFound = nil
         webView.find(string, configuration: configuration, completionHandler: { findResult in
             self.matchFound = findResult.matchFound
         })
