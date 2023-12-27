@@ -20,9 +20,9 @@ struct NativeWebKitApp: App {
         }
         .windowToolbarStyle(.unified(showsTitle: false))
         .commands {
-            CommandMenu("History") {
-                // TODO: - reference some global webViewModel's history
-            }
+//            CommandMenu("History") {
+//                // TODO: - reference some global webViewModel's history
+//            }
 
             CommandGroup(after: .textEditing) {
                 Button("Find") {

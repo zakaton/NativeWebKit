@@ -28,6 +28,8 @@
 		5F77F7802B3CA39500BCBA92 /* BrowserView+HistorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F77E2B3CA39500BCBA92 /* BrowserView+HistorySheet.swift */; };
 		5F77F7822B3CA70700BCBA92 /* BrowserViewModel+history.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7812B3CA70700BCBA92 /* BrowserViewModel+history.swift */; };
 		5F77F7832B3CA70700BCBA92 /* BrowserViewModel+history.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7812B3CA70700BCBA92 /* BrowserViewModel+history.swift */; };
+		5F77F7882B3CB78600BCBA92 /* ShareViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7852B3CB77200BCBA92 /* ShareViewController+utils.swift */; };
+		5F77F7892B3CB78600BCBA92 /* ShareViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7852B3CB77200BCBA92 /* ShareViewController+utils.swift */; };
 		5F7FBFBA2B3A45DC0029F826 /* DeviceRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFB92B3A45DC0029F826 /* DeviceRotation.swift */; };
 		5F7FBFBD2B3B4C5B0029F826 /* BrowserView+orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBC2B3B4C5B0029F826 /* BrowserView+orientation.swift */; };
 		5F7FBFBF2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */; };
@@ -161,6 +163,7 @@
 		5F77F76E2B3C9FCA00BCBA92 /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
 		5F77F77E2B3CA39500BCBA92 /* BrowserView+HistorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+HistorySheet.swift"; sourceTree = "<group>"; };
 		5F77F7812B3CA70700BCBA92 /* BrowserViewModel+history.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+history.swift"; sourceTree = "<group>"; };
+		5F77F7852B3CB77200BCBA92 /* ShareViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShareViewController+utils.swift"; sourceTree = "<group>"; };
 		5F7FBFB92B3A45DC0029F826 /* DeviceRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotation.swift; sourceTree = "<group>"; };
 		5F7FBFBC2B3B4C5B0029F826 /* BrowserView+orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+orientation.swift"; sourceTree = "<group>"; };
 		5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+handleIncomingURL.swift"; sourceTree = "<group>"; };
@@ -377,10 +380,19 @@
 			path = Sheet;
 			sourceTree = "<group>";
 		};
+		5F77F7842B3CB76100BCBA92 /* (Shared) Share Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5F77F7852B3CB77200BCBA92 /* ShareViewController+utils.swift */,
+			);
+			path = "(Shared) Share Extension";
+			sourceTree = "<group>";
+		};
 		5F87CF032B33B59900E951E7 = {
 			isa = PBXGroup;
 			children = (
 				5FA4BE952B35113B00138B35 /* TODO.txt */,
+				5F77F7842B3CB76100BCBA92 /* (Shared) Share Extension */,
 				5F0E4D7B2B350BA60027C202 /* (Shared) */,
 				5F87CF1E2B33B66A00E951E7 /* (Shared) App */,
 				5F87CF1F2B33B67800E951E7 /* (Shared) Safari Extension */,
@@ -804,6 +816,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F77F7892B3CB78600BCBA92 /* ShareViewController+utils.swift in Sources */,
 				5F4EB0C42B38F8B500EF179D /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -812,6 +825,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F77F7882B3CB78600BCBA92 /* ShareViewController+utils.swift in Sources */,
 				5F4EB0D92B39436E00EF179D /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

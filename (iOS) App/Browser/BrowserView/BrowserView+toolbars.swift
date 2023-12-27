@@ -16,8 +16,8 @@ extension BrowserView {
             Spacer()
             goForwardButton
             Spacer()
-            historyButton
-            Spacer()
+//            historyButton
+//            Spacer()
             searchBar
             Spacer()
             shareButton
@@ -43,8 +43,8 @@ extension BrowserView {
                         Spacer()
                         findButton
                         Spacer()
-                        historyButton
-                        Spacer()
+//                        historyButton
+//                        Spacer()
                     }
                     .imageScale(.large)
                     .transition(.asymmetric(insertion: .push(from: .bottom), removal: .push(from: .top)))
