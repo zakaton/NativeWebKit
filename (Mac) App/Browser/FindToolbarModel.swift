@@ -15,7 +15,7 @@ import WebKit
 class FindToolbarModel: ObservableObject {
     static let shared = FindToolbarModel()
 
-    @Published var isVisible: Bool = true
+    @Published var isVisible: Bool = false
     @Published var caseSensitive: Bool = false {
         didSet {
             configuration.caseSensitive = caseSensitive

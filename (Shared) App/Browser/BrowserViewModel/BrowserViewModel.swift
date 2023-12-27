@@ -28,6 +28,7 @@ class BrowserViewModel: NSObject, ObservableObject {
         _webView.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
         _webView.configuration.allowsAirPlayForMediaPlayback = true
         _webView.configuration.mediaTypesRequiringUserActionForPlayback = .all
+        // _webView.configuration.preferences.inactiveSchedulingPolicy = .throttle
         #if !os(macOS)
         _webView.configuration.ignoresViewportScaleLimits = false
         _webView.configuration.allowsInlineMediaPlayback = true

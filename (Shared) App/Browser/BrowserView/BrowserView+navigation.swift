@@ -104,12 +104,15 @@ extension BrowserView {
     @ViewBuilder
     var historyButton: some View {
         Button(action: {
-            // TODO: - FILL
+            if browserViewModel.hasHistory {
+                sheet = .history
+            }
         }) {
             Image(systemName: "book")
                 .imageScale(.large)
         }
         .offset(y: historyButtonYOffset)
+        .disabled(!browserViewModel.hasHistory)
     }
 
     @ViewBuilder

@@ -1,5 +1,5 @@
 //
-//  BrowserView_toolbars.swift
+//  BrowserView+toolbars.swift
 //  (iOS) NativeWebKit
 //
 //  Created by Zack Qattan on 12/26/23.

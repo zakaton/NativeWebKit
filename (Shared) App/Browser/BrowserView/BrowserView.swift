@@ -22,6 +22,7 @@ struct BrowserView: View {
     @State var showNavigationBar: Bool = true
     @State var isFindInteractionVisible: Bool = false
     @State var isKeyboardVisible: Bool = false
+    @State var sheet: Sheet?
 
     #if os(macOS)
     @FocusState var isFindFocused: Bool
@@ -65,6 +66,15 @@ struct BrowserView: View {
                     }
                 }
                 #endif
+            }
+        }
+        .sheet(item: $sheet, onDismiss: {
+            logger.debug("sheet dismissed")
+        }) { sheet in
+            switch sheet {
+            case .history:
+                historySheet
+                    .presentationDetents([.medium])
             }
         }
         .onOpenURL { incomingURL in
