@@ -24,9 +24,22 @@ extension BrowserView {
             if !findString.isEmpty, let matchFound = findToolbarModel.matchFound, !matchFound {
                 Text("Not found")
             }
+            HStack(alignment: .center, spacing: 4) {
+                Button {
+                    findToolbarModel.caseSensitive.toggle()
+                } label: {
+                    Text("case sensitive?")
+                }
+                .buttonStyle(.plain)
+                Toggle(isOn: $findToolbarModel.caseSensitive) {}
+                    .onChange(of: findToolbarModel.caseSensitive) {
+                        find()
+                    }
+            }
+            .accessibilityLabel("toggle case sensitivity")
             HStack(alignment: .center, spacing: 0) {
                 Button {
-                    // TODO: - set focus
+                    isFindFocused = true
                 } label: {
                     Image(systemName: "magnifyingglass")
                         .imageScale(.small)
@@ -124,5 +137,5 @@ extension BrowserView {
 
 #Preview("") {
     BrowserView()
-        .frame(maxWidth: 300)
+        .frame(maxWidth: 400)
 }

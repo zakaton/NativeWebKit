@@ -16,6 +16,12 @@ class FindToolbarModel: ObservableObject {
     static let shared = FindToolbarModel()
 
     @Published var isVisible: Bool = true
+    @Published var caseSensitive: Bool = false {
+        didSet {
+            configuration.caseSensitive = caseSensitive
+        }
+    }
+
     @Published var matchFound: Bool? = nil
     let configuration: WKFindConfiguration = .init()
 
