@@ -14,26 +14,32 @@ import WebKit
 @StaticLogger
 class BrowserViewModel: NSObject, ObservableObject {
     lazy var webView: WKWebView = {
-        let _webView = WKWebView()
+        let configuration: WKWebViewConfiguration = .init()
+        configuration.applicationNameForUserAgent = "NativeWebKit"
 
-        _webView.isInspectable = true
-        _webView.allowsBackForwardNavigationGestures = true
-        _webView.allowsLinkPreview = true
+        let preferences: WKPreferences = .init()
+        preferences.isElementFullscreenEnabled = true
+        preferences.javaScriptCanOpenWindowsAutomatically = true
+        configuration.preferences = preferences
+
+        configuration.allowsAirPlayForMediaPlayback = true
+        configuration.mediaTypesRequiringUserActionForPlayback = .all
+        // configuration.preferences.inactiveSchedulingPolicy = .throttle
+        #if !os(macOS)
+        configuration.ignoresViewportScaleLimits = false
+        configuration.allowsInlineMediaPlayback = true
+        configuration.allowsPictureInPictureMediaPlayback = true
+        #endif
+
+        let _webView = WKWebView(frame: .zero, configuration: configuration)
 
         #if !os(macOS)
         _webView.isFindInteractionEnabled = true
         #endif
 
-        _webView.configuration.preferences.isElementFullscreenEnabled = true
-        _webView.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
-        _webView.configuration.allowsAirPlayForMediaPlayback = true
-        _webView.configuration.mediaTypesRequiringUserActionForPlayback = .all
-        // _webView.configuration.preferences.inactiveSchedulingPolicy = .throttle
-        #if !os(macOS)
-        _webView.configuration.ignoresViewportScaleLimits = false
-        _webView.configuration.allowsInlineMediaPlayback = true
-        _webView.configuration.allowsPictureInPictureMediaPlayback = true
-        #endif
+        _webView.isInspectable = true
+        _webView.allowsBackForwardNavigationGestures = true
+        _webView.allowsLinkPreview = true
 
         setWebViewNavigationDelegate(_webView)
         setWebViewUIDelegate(_webView)
