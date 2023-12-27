@@ -392,14 +392,14 @@
 			isa = PBXGroup;
 			children = (
 				5FA4BE952B35113B00138B35 /* TODO.txt */,
-				5F77F7842B3CB76100BCBA92 /* (Shared) Share Extension */,
 				5F0E4D7B2B350BA60027C202 /* (Shared) */,
 				5F87CF1E2B33B66A00E951E7 /* (Shared) App */,
-				5F87CF1F2B33B67800E951E7 /* (Shared) Safari Extension */,
 				5F89491B2B35089300AF3341 /* (iOS) App */,
 				5F89492D2B3508E400AF3341 /* (Mac) App */,
+				5F87CF1F2B33B67800E951E7 /* (Shared) Safari Extension */,
 				5FA4BE9B2B35119F00138B35 /* (iOS) Safari Extension */,
 				5FA4BEBC2B35121700138B35 /* (Mac) Safari Extension */,
+				5F77F7842B3CB76100BCBA92 /* (Shared) Share Extension */,
 				5F4EB0D72B39436E00EF179D /* (iOS) Share Extension */,
 				5F4EB0C02B38F8B500EF179D /* (Mac) Share Extension */,
 				5F87CF0D2B33B59900E951E7 /* Products */,

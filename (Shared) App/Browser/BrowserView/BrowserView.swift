@@ -18,7 +18,6 @@ struct BrowserView: View {
     @StateObject var browserViewModel = BrowserViewModel()
     @FocusState var isUrlFocused: Bool
     @State var expandSearchBar: Bool = false
-    @State var backgroundColor: Color = .clear
     @State var showNavigationBar: Bool = true
     @State var isFindInteractionVisible: Bool = false
     @State var isKeyboardVisible: Bool = false
@@ -81,7 +80,7 @@ struct BrowserView: View {
             logger.debug("(ContentView) App was opened via URL: \(incomingURL)")
             handleIncomingURL(incomingURL)
         }
-        .background(backgroundColor)
+        .background(browserViewModel.themeColor)
         .modify {
             #if os(iOS)
             $0.onRotate { newOrientation in

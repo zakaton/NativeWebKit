@@ -37,6 +37,7 @@ class BrowserViewModel: NSObject, ObservableObject {
 
         setWebViewNavigationDelegate(_webView)
         setWebViewUIDelegate(_webView)
+        setObservations(_webView)
         #if !os(macOS)
         setUIScrollViewDelegate(_webView)
         #endif
@@ -44,6 +45,44 @@ class BrowserViewModel: NSObject, ObservableObject {
         _webView.load(URLRequest(url: url!))
         return _webView
     }()
+
+    @Published var themeColor: Color = .clear
+
+    var observations: [NSKeyValueObservation] = []
+    func setObservations(_ webView: WKWebView) {
+        let titleObservation = webView.observe(\.title, options: [.new]) { [unowned self] _, value in
+            if let newTitle = value.newValue as? String, !newTitle.isEmpty {
+                logger.debug("new title \(newTitle)")
+                title = newTitle
+            }
+        }
+        observations.append(titleObservation)
+
+        let themeColorObservation = webView.observe(\.themeColor, options: [.new]) { [unowned self] _, value in
+            logger.debug("new theme color....\(webView.themeColor.debugDescription)")
+            #if os(macOS)
+            if let newThemeColor = value.newValue as? NSColor {
+                self.logger.debug("new theme color \(newThemeColor.description)")
+                themeColor = .init(nsColor: newThemeColor)
+            }
+            #else
+            if let newThemeColor = value.newValue as? UIColor {
+                self.logger.debug("new theme color \(newThemeColor.description)")
+                themeColor = .init(uiColor: newThemeColor)
+            }
+            #endif
+        }
+        observations.append(themeColorObservation)
+
+        let underPageBackgroundColorObservation = webView.observe(\.underPageBackgroundColor, options: [.new]) { [unowned self] _, value in
+            logger.debug("observed new under page background color")
+            if let newThemeColor = value.newValue as? Color {
+                logger.debug("new under page background color \(newThemeColor.description)")
+                themeColor = newThemeColor
+            }
+        }
+        observations.append(underPageBackgroundColorObservation)
+    }
 
     static let defaultUrlString = "https://www.google.com"
 

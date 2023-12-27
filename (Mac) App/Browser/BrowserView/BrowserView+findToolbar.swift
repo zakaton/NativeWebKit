@@ -126,7 +126,7 @@ extension BrowserView {
         }
         .padding(.top, 5)
         .padding(.trailing, 5)
-        .padding(.bottom, 0)
+        .padding(.bottom, 2)
         .onAppear {
             withAnimation {
                 isFindFocused = true
