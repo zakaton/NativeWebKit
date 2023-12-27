@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct NativeWebKitApp: App {
     #if os(macOS)
-    @StateObject var findToolbar: FindToolbar = .shared
+    @ObservedObject var findToolbar: FindToolbarModel = .shared
     #endif
 
     var body: some Scene {
@@ -19,7 +19,6 @@ struct NativeWebKitApp: App {
             ContentView()
         }
         .windowToolbarStyle(.unified(showsTitle: false))
-        .environmentObject(findToolbar)
         .commands {
             CommandMenu("History") {
                 // TODO: - reference some global webViewModel's history
@@ -27,7 +26,9 @@ struct NativeWebKitApp: App {
 
             CommandGroup(after: .textEditing) {
                 Button("Find") {
-                    findToolbar.isVisible.toggle()
+                    withAnimation {
+                        findToolbar.isVisible.toggle()
+                    }
                 }
                 .keyboardShortcut("F")
             }

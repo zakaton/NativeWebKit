@@ -31,7 +31,9 @@ extension BrowserView {
             }
             searchField
             if expandSearchBar {
-                clearSearchFieldButton
+                if !browserViewModel.urlString.isEmpty {
+                    clearSearchFieldButton
+                }
             }
             else {
                 refreshButton

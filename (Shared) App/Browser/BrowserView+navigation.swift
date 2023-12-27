@@ -10,7 +10,7 @@ import SwiftUI
 extension BrowserView {
     var toolbarImageScale: Image.Scale {
         #if os(macOS)
-        .small
+        .medium
         #else
         .medium
         #endif
@@ -43,6 +43,7 @@ extension BrowserView {
             isUrlFocused = true
         } label: {
             Image(systemName: "magnifyingglass")
+                .imageScale(toolbarImageScale)
         }
         .transition(.scale)
     }

@@ -10,6 +10,6 @@ import SwiftUI
 import UkatonMacros
 
 @Singleton()
-class FindToolbar: ObservableObject {
-    @Published var isVisible: Bool = false
+class FindToolbarModel: ObservableObject {
+    @Published var isVisible: Bool = true
 }

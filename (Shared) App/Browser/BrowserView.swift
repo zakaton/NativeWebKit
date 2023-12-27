@@ -24,7 +24,8 @@ struct BrowserView: View {
     @State var isKeyboardVisible: Bool = false
 
     #if os(macOS)
-    @EnvironmentObject var findToolbar: FindToolbar
+    @State var findString: String = ""
+    @ObservedObject var findToolbarModel: FindToolbarModel = .shared
     #endif
 
     @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
@@ -41,14 +42,13 @@ struct BrowserView: View {
         }
         #endif
 
-        #if os(macOS)
-        if findToolbar.isVisible {
-            Text("Toolbar!")
-        }
-        #endif
-
         GeometryReader { geometry in
-            VStack {
+            VStack(spacing: 0) {
+                #if os(macOS)
+                if findToolbarModel.isVisible {
+                    findToolbar
+                }
+                #endif
                 BrowserWebView(viewModel: browserViewModel)
                     .modify {
                         if let title = browserViewModel.title {
