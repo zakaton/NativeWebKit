@@ -122,7 +122,13 @@ class BrowserViewModel: NSObject, ObservableObject {
 
     // MARK: - Theme Color
 
-    @Published var themeColor: Color = .clear
+    @Published var themeColor: Color = .clear {
+        didSet {
+            didGetThemeColor = true
+        }
+    }
+
+    var didGetThemeColor: Bool = false
     let getBackgroundColorJavaScriptString: String = """
     (function getBackgroundColor(element) {
       // If no element is provided, default to document.body
