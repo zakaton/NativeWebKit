@@ -26,4 +26,21 @@ extension BrowserViewModel: WKUIDelegate {
         logger.debug("confirm \"\(message)\"")
         panel = .init(type: .confirm(completionHandler: completionHandler), message: message)
     }
+
+    func webView(_ webView: WKWebView, requestMediaCapturePermissionFor origin: WKSecurityOrigin, initiatedByFrame frame: WKFrameInfo, type: WKMediaCaptureType, decisionHandler: @escaping (WKPermissionDecision) -> Void) {
+        decisionHandler(.grant)
+    }
+
+    func webViewDidClose(_ webView: WKWebView) {
+        logger.debug("closed webView")
+    }
+
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if navigationAction.targetFrame == nil, let url = navigationAction.request.url {
+            logger.debug("new link \(url.absoluteString)")
+            urlString = url.absoluteString
+            loadURLString()
+        }
+        return nil
+    }
 }
