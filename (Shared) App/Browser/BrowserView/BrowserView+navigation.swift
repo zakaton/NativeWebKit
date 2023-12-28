@@ -105,7 +105,7 @@ extension BrowserView {
     var historyButton: some View {
         Button(action: {
             if browserViewModel.hasHistory {
-                sheet = .history
+                sheetType = .history
             }
         }) {
             Image(systemName: "book")

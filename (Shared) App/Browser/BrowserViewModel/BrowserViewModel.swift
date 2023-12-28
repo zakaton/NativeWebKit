@@ -13,6 +13,8 @@ import WebKit
 
 @StaticLogger
 class BrowserViewModel: NSObject, ObservableObject {
+    // MARK: - WKWebView
+
     lazy var webView: WKWebView = {
         let configuration: WKWebViewConfiguration = .init()
         configuration.applicationNameForUserAgent = "NativeWebKit"
@@ -59,7 +61,113 @@ class BrowserViewModel: NSObject, ObservableObject {
         return _webView
     }()
 
+    // MARK: - Url
+
+    static let defaultUrlString = "https://testpages.herokuapp.com/styled/alerts/alert-test.html"
+
+    @Published var urlString = defaultUrlString
+
+    var formattedUrlString: String {
+        guard urlString.hasPrefix("http://") || urlString.hasPrefix("https://") else {
+            return "https://\(urlString)"
+        }
+        return urlString
+    }
+
+    var url: URL? {
+        URL(string: formattedUrlString)
+    }
+
+    func loadURLString() {
+        if let url {
+            logger.debug("loading \(url.absoluteString)")
+            webView.load(URLRequest(url: url))
+        } else {
+            let currentUrlString = urlString
+            logger.warning("invalid urlString \"\(currentUrlString)\"")
+            urlString = searchPrefix + currentUrlString.replacingOccurrences(of: " ", with: "+")
+            loadURLString()
+        }
+    }
+
+    let searchPrefix: String = "https://www.google.com/search?q="
+    var isSearch: Bool {
+        urlString.hasPrefix(searchPrefix)
+    }
+
+    // MARK: - Navigation
+
+    @Published var canGoBack = false
+    @Published var canGoForward = false
+    @Published var title: String?
+
+    func goBack() {
+        webView.goBack()
+    }
+
+    func goForward() {
+        webView.goForward()
+    }
+
+    func updateNavigationControls() {
+        canGoBack = webView.canGoBack
+        canGoForward = webView.canGoForward
+    }
+
+    func reload() {
+        webView.reload()
+    }
+
+    @Published var dragVelocity: CGPoint = .zero
+
+    // MARK: - Theme Color
+
     @Published var themeColor: Color = .clear
+    let getBackgroundColorJavaScriptString: String = """
+    (function getBackgroundColor(element) {
+      // If no element is provided, default to document.body
+      element = element || document.body;
+
+      // Get the computed style of the current element
+      var computedStyle = window.getComputedStyle(element);
+
+      // Get the computed background color
+      var backgroundColor = computedStyle.backgroundColor;
+
+      // Parse the background color string into an array of numbers
+      var colorArray = backgroundColor.match(/\\d+/g).map(Number);
+
+      // If the array has fewer than 3 values, add 255 (fully opaque) for the alpha component
+      if (colorArray.length < 4) {
+        colorArray.push(255);
+      }
+
+      // If the alpha component is 0 (fully transparent), recursively check the parent element
+      if (colorArray[3] === 0 && element.parentElement) {
+        return getBackgroundColor(element.parentElement);
+      }
+
+      // Return the array representing RGBA components
+      return colorArray.map(value => value/255)
+    })()
+    """
+
+    func getThemeColorWithJavaScript() {
+        // ChatGPT made getBackgroundColor
+        webView.evaluateJavaScript(getBackgroundColorJavaScriptString, completionHandler: { [self] value, error in
+            if let error {
+                logger.error("error \(error.localizedDescription)")
+                return
+            }
+
+            if let rgba = value as? [Double], rgba.count == 4 {
+                logger.debug("themeColor rgba \(rgba)")
+                themeColor = .init(red: rgba[0], green: rgba[1], blue: rgba[2], opacity: rgba[3])
+            }
+        })
+    }
+
+    // MARK: - Observations
 
     var observations: [NSKeyValueObservation] = []
     func setObservations(_ webView: WKWebView) {
@@ -104,101 +212,12 @@ class BrowserViewModel: NSObject, ObservableObject {
         observations.append(underPageBackgroundColorObservation)
     }
 
-    func updateThemeColor() {
-        // ChatGPT made getBackgroundColor
-        webView.evaluateJavaScript("""
-        function getBackgroundColor(element) {
-          // If no element is provided, default to document.body
-          element = element || document.body;
+    // MARK: Panel
 
-          // Get the computed style of the current element
-          var computedStyle = window.getComputedStyle(element);
-
-          // Get the computed background color
-          var backgroundColor = computedStyle.backgroundColor;
-
-          // Parse the background color string into an array of numbers
-          var colorArray = backgroundColor.match(/\\d+/g).map(Number);
-
-          // If the array has fewer than 3 values, add 255 (fully opaque) for the alpha component
-          if (colorArray.length < 4) {
-            colorArray.push(255);
-          }
-
-          // If the alpha component is 0 (fully transparent), recursively check the parent element
-          if (colorArray[3] === 0 && element.parentElement) {
-            return getBackgroundColor(element.parentElement);
-          }
-
-          // Return the array representing RGBA components
-          return colorArray.map(value => value/255)
-        }
-        getBackgroundColor()
-        """, completionHandler: { [self] value, error in
-            if let error {
-                logger.error("error \(error.localizedDescription)")
-                return
-            }
-
-            if let rgba = value as? [Double], rgba.count == 4 {
-                logger.debug("themeColor rgba \(rgba)")
-                themeColor = .init(red: rgba[0], green: rgba[1], blue: rgba[2], opacity: rgba[3])
-            }
-        })
-    }
-
-    static let defaultUrlString = "https://www.google.com"
-
-    @Published var urlString = defaultUrlString
-
-    var formattedUrlString: String {
-        guard urlString.hasPrefix("http://") || urlString.hasPrefix("https://") else {
-            return "https://\(urlString)"
-        }
-        return urlString
-    }
-
-    var url: URL? {
-        URL(string: formattedUrlString)
-    }
-
-    func loadURLString() {
-        if let url {
-            logger.debug("loading \(url.absoluteString)")
-            webView.load(URLRequest(url: url))
-        } else {
-            let currentUrlString = urlString
-            logger.warning("invalid urlString \"\(currentUrlString)\"")
-            urlString = searchPrefix + currentUrlString.replacingOccurrences(of: " ", with: "+")
-            loadURLString()
+    @Published var showPanel: Bool = false
+    var panel: Panel? {
+        didSet {
+            showPanel = panel != nil
         }
     }
-
-    let searchPrefix: String = "https://www.google.com/search?q="
-    var isSearch: Bool {
-        urlString.hasPrefix(searchPrefix)
-    }
-
-    @Published var canGoBack = false
-    @Published var canGoForward = false
-    @Published var title: String?
-
-    func goBack() {
-        webView.goBack()
-    }
-
-    func goForward() {
-        webView.goForward()
-    }
-
-    func updateNavigationControls() {
-        canGoBack = webView.canGoBack
-        canGoForward = webView.canGoForward
-    }
-
-    func reload() {
-        webView.reload()
-    }
-
-    @Published var dragVelocity: CGPoint = .zero
 }

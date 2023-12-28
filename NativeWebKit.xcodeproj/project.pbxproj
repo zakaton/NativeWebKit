@@ -22,14 +22,20 @@
 		5F5E4BC12B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BC02B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift */; };
 		5F5FEFCF2B3B8DD700E4A5F0 /* FindToolbarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5FEFCE2B3B8DD700E4A5F0 /* FindToolbarModel.swift */; };
 		5F5FEFD12B3B95DE00E4A5F0 /* BrowserView+findToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5FEFD02B3B95DE00E4A5F0 /* BrowserView+findToolbar.swift */; };
-		5F77F76F2B3C9FCA00BCBA92 /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F76E2B3C9FCA00BCBA92 /* Sheet.swift */; };
-		5F77F7702B3C9FCA00BCBA92 /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F76E2B3C9FCA00BCBA92 /* Sheet.swift */; };
+		5F77F76F2B3C9FCA00BCBA92 /* SheetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F76E2B3C9FCA00BCBA92 /* SheetType.swift */; };
+		5F77F7702B3C9FCA00BCBA92 /* SheetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F76E2B3C9FCA00BCBA92 /* SheetType.swift */; };
 		5F77F77F2B3CA39500BCBA92 /* BrowserView+HistorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F77E2B3CA39500BCBA92 /* BrowserView+HistorySheet.swift */; };
 		5F77F7802B3CA39500BCBA92 /* BrowserView+HistorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F77E2B3CA39500BCBA92 /* BrowserView+HistorySheet.swift */; };
 		5F77F7822B3CA70700BCBA92 /* BrowserViewModel+history.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7812B3CA70700BCBA92 /* BrowserViewModel+history.swift */; };
 		5F77F7832B3CA70700BCBA92 /* BrowserViewModel+history.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7812B3CA70700BCBA92 /* BrowserViewModel+history.swift */; };
 		5F77F7882B3CB78600BCBA92 /* ShareViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7852B3CB77200BCBA92 /* ShareViewController+utils.swift */; };
 		5F77F7892B3CB78600BCBA92 /* ShareViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7852B3CB77200BCBA92 /* ShareViewController+utils.swift */; };
+		5F77F78D2B3DFF5300BCBA92 /* PanelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F78C2B3DFF5300BCBA92 /* PanelType.swift */; };
+		5F77F78E2B3DFF5300BCBA92 /* PanelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F78C2B3DFF5300BCBA92 /* PanelType.swift */; };
+		5F77F7902B3E072B00BCBA92 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F78F2B3E072B00BCBA92 /* Panel.swift */; };
+		5F77F7912B3E072B00BCBA92 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F78F2B3E072B00BCBA92 /* Panel.swift */; };
+		5F77F7932B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7922B3E1AD200BCBA92 /* BrowserView+alert.swift */; };
+		5F77F7942B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7922B3E1AD200BCBA92 /* BrowserView+alert.swift */; };
 		5F7FBFBA2B3A45DC0029F826 /* DeviceRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFB92B3A45DC0029F826 /* DeviceRotation.swift */; };
 		5F7FBFBD2B3B4C5B0029F826 /* BrowserView+orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBC2B3B4C5B0029F826 /* BrowserView+orientation.swift */; };
 		5F7FBFBF2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */; };
@@ -160,10 +166,13 @@
 		5F5E4BC02B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
 		5F5FEFCE2B3B8DD700E4A5F0 /* FindToolbarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindToolbarModel.swift; sourceTree = "<group>"; };
 		5F5FEFD02B3B95DE00E4A5F0 /* BrowserView+findToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+findToolbar.swift"; sourceTree = "<group>"; };
-		5F77F76E2B3C9FCA00BCBA92 /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
+		5F77F76E2B3C9FCA00BCBA92 /* SheetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetType.swift; sourceTree = "<group>"; };
 		5F77F77E2B3CA39500BCBA92 /* BrowserView+HistorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+HistorySheet.swift"; sourceTree = "<group>"; };
 		5F77F7812B3CA70700BCBA92 /* BrowserViewModel+history.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+history.swift"; sourceTree = "<group>"; };
 		5F77F7852B3CB77200BCBA92 /* ShareViewController+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShareViewController+utils.swift"; sourceTree = "<group>"; };
+		5F77F78C2B3DFF5300BCBA92 /* PanelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelType.swift; sourceTree = "<group>"; };
+		5F77F78F2B3E072B00BCBA92 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
+		5F77F7922B3E1AD200BCBA92 /* BrowserView+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+alert.swift"; sourceTree = "<group>"; };
 		5F7FBFB92B3A45DC0029F826 /* DeviceRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotation.swift; sourceTree = "<group>"; };
 		5F7FBFBC2B3B4C5B0029F826 /* BrowserView+orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+orientation.swift"; sourceTree = "<group>"; };
 		5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+handleIncomingURL.swift"; sourceTree = "<group>"; };
@@ -302,10 +311,10 @@
 		5F77F7712B3CA14F00BCBA92 /* BrowserViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */,
 				5FBD16B22B362D2200B8B1A5 /* BrowserViewModel.swift */,
-				5F77F7812B3CA70700BCBA92 /* BrowserViewModel+history.swift */,
+				5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */,
 				5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */,
+				5F77F7812B3CA70700BCBA92 /* BrowserViewModel+history.swift */,
 			);
 			path = BrowserViewModel;
 			sourceTree = "<group>";
@@ -313,10 +322,11 @@
 		5F77F7722B3CA15F00BCBA92 /* BrowserView */ = {
 			isa = PBXGroup;
 			children = (
+				5FBD16AA2B361C3900B8B1A5 /* BrowserView.swift */,
 				5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */,
+				5F77F7922B3E1AD200BCBA92 /* BrowserView+alert.swift */,
 				5FBD16CE2B376B2900B8B1A5 /* BrowserView+navigation.swift */,
 				5F77F77D2B3CA37200BCBA92 /* Sheet */,
-				5FBD16AA2B361C3900B8B1A5 /* BrowserView.swift */,
 			);
 			path = BrowserView;
 			sourceTree = "<group>";
@@ -375,6 +385,7 @@
 		5F77F77D2B3CA37200BCBA92 /* Sheet */ = {
 			isa = PBXGroup;
 			children = (
+				5F77F76E2B3C9FCA00BCBA92 /* SheetType.swift */,
 				5F77F77E2B3CA39500BCBA92 /* BrowserView+HistorySheet.swift */,
 			);
 			path = Sheet;
@@ -386,6 +397,15 @@
 				5F77F7852B3CB77200BCBA92 /* ShareViewController+utils.swift */,
 			);
 			path = "(Shared) Share Extension";
+			sourceTree = "<group>";
+		};
+		5F77F78B2B3DFF4300BCBA92 /* Panel */ = {
+			isa = PBXGroup;
+			children = (
+				5F77F78C2B3DFF5300BCBA92 /* PanelType.swift */,
+				5F77F78F2B3E072B00BCBA92 /* Panel.swift */,
+			);
+			path = Panel;
 			sourceTree = "<group>";
 		};
 		5F87CF032B33B59900E951E7 = {
@@ -522,7 +542,7 @@
 		5FBD16AE2B362CB600B8B1A5 /* Browser */ = {
 			isa = PBXGroup;
 			children = (
-				5F77F76E2B3C9FCA00BCBA92 /* Sheet.swift */,
+				5F77F78B2B3DFF4300BCBA92 /* Panel */,
 				5F77F7712B3CA14F00BCBA92 /* BrowserViewModel */,
 				5F77F7722B3CA15F00BCBA92 /* BrowserView */,
 				5F77F7732B3CA17100BCBA92 /* BrowserWebView */,
@@ -839,14 +859,17 @@
 				5F8949272B35089300AF3341 /* ContentView.swift in Sources */,
 				5F4130282B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */,
 				5FBD16BB2B36340500B8B1A5 /* BrowserWebView +UIViewRepresentable.swift in Sources */,
+				5F77F7932B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */,
 				5FBD16B32B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
 				5FBD16AB2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
 				5F06B1952B3A1B8B00A0A1BB /* KeyboardPublisher.swift in Sources */,
 				5F5E4BBE2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
-				5F77F76F2B3C9FCA00BCBA92 /* Sheet.swift in Sources */,
+				5F77F76F2B3C9FCA00BCBA92 /* SheetType.swift in Sources */,
 				5F77F7822B3CA70700BCBA92 /* BrowserViewModel+history.swift in Sources */,
 				5F7FBFBF2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */,
 				5FBD16C42B3676C600B8B1A5 /* ViewModifier.swift in Sources */,
+				5F77F78D2B3DFF5300BCBA92 /* PanelType.swift in Sources */,
+				5F77F7902B3E072B00BCBA92 /* Panel.swift in Sources */,
 				5FBD16BF2B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
 				5FBD16CF2B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */,
 				5F77F77F2B3CA39500BCBA92 /* BrowserView+HistorySheet.swift in Sources */,
@@ -869,12 +892,15 @@
 				5FBD16B42B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
 				5FBD16AC2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
 				5F5E4BBF2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
+				5F77F78E2B3DFF5300BCBA92 /* PanelType.swift in Sources */,
 				5F5FEFCF2B3B8DD700E4A5F0 /* FindToolbarModel.swift in Sources */,
-				5F77F7702B3C9FCA00BCBA92 /* Sheet.swift in Sources */,
+				5F77F7912B3E072B00BCBA92 /* Panel.swift in Sources */,
+				5F77F7702B3C9FCA00BCBA92 /* SheetType.swift in Sources */,
 				5F77F7802B3CA39500BCBA92 /* BrowserView+HistorySheet.swift in Sources */,
 				5FBD16C52B3676C600B8B1A5 /* ViewModifier.swift in Sources */,
 				5FBD16C02B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
 				5FBB632B2B38BC76008B18B9 /* StringUtils.swift in Sources */,
+				5F77F7942B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */,
 				5F7FBFC02B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */,
 				5FBB632E2B38C473008B18B9 /* URLUtils.swift in Sources */,
 				5F77F7832B3CA70700BCBA92 /* BrowserViewModel+history.swift in Sources */,

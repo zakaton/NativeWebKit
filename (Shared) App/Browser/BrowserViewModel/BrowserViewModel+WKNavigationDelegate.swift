@@ -35,7 +35,7 @@ extension BrowserViewModel: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         updateNavigationControls()
         logger.debug("loaded \(webView.url?.absoluteString ?? "nil", privacy: .public)")
-        updateThemeColor()
+        getThemeColorWithJavaScript()
     }
 
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {

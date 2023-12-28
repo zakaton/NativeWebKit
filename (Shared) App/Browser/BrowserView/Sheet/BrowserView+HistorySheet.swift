@@ -15,7 +15,7 @@ extension BrowserView {
             if let text {
                 Button(action: {
                     browserViewModel.webView.go(to: item)
-                    sheet = nil
+                    sheetType = nil
                 }, label: {
                     Text(text)
                 }).buttonStyle(.plain)

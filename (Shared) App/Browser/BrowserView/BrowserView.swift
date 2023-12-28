@@ -21,7 +21,7 @@ struct BrowserView: View {
     @State var showNavigationBar: Bool = true
     @State var isFindInteractionVisible: Bool = false
     @State var isKeyboardVisible: Bool = false
-    @State var sheet: Sheet?
+    @State var sheetType: SheetType?
 
     #if os(macOS)
     @FocusState var isFindFocused: Bool
@@ -31,6 +31,8 @@ struct BrowserView: View {
 
     @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+
+    var panel: Panel? { browserViewModel.panel }
 
     #if os(iOS)
     @State var orientation = UIDeviceOrientation.unknown
@@ -56,6 +58,11 @@ struct BrowserView: View {
                             $0.navigationTitle(title)
                         }
                     }
+                    .alert(panel?.title ?? "nil", isPresented: $browserViewModel.showPanel) {
+                        alertActionsView
+                    } message: {
+                        alertMessageView
+                    }
             }
             .modify {
                 #if os(macOS)
@@ -67,10 +74,10 @@ struct BrowserView: View {
                 #endif
             }
         }
-        .sheet(item: $sheet, onDismiss: {
+        .sheet(item: $sheetType, onDismiss: {
             logger.debug("sheet dismissed")
-        }) { sheet in
-            switch sheet {
+        }) { sheetType in
+            switch sheetType {
             case .history:
                 historySheet
                     .presentationDetents([.medium])
