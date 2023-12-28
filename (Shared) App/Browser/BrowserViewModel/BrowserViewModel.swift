@@ -2,7 +2,7 @@
 //  BrowserViewModel.swift
 //  NativeWebKit
 //
-//  Created by Zack Qattan on 12/22/23.
+//  Created by Zack Qattan + ChatGPT on 12/22/23.
 //
 
 import Combine
@@ -16,12 +16,6 @@ class BrowserViewModel: NSObject, ObservableObject {
     lazy var webView: WKWebView = {
         let configuration: WKWebViewConfiguration = .init()
         configuration.applicationNameForUserAgent = "NativeWebKit"
-
-        let preferences: WKPreferences = .init()
-        preferences.isElementFullscreenEnabled = true
-        preferences.javaScriptCanOpenWindowsAutomatically = true
-        configuration.preferences = preferences
-
         configuration.allowsAirPlayForMediaPlayback = true
         configuration.mediaTypesRequiringUserActionForPlayback = .all
         // configuration.preferences.inactiveSchedulingPolicy = .throttle
@@ -30,6 +24,19 @@ class BrowserViewModel: NSObject, ObservableObject {
         configuration.allowsInlineMediaPlayback = true
         configuration.allowsPictureInPictureMediaPlayback = true
         #endif
+
+        let defaultWebpagePreferences: WKWebpagePreferences = .init()
+        defaultWebpagePreferences.allowsContentJavaScript = true
+        configuration.defaultWebpagePreferences = defaultWebpagePreferences
+
+        let userContentController: WKUserContentController = .init()
+        // TODO: - stuff
+        configuration.userContentController = userContentController
+
+        let preferences: WKPreferences = .init()
+        preferences.isElementFullscreenEnabled = true
+        preferences.javaScriptCanOpenWindowsAutomatically = true
+        configuration.preferences = preferences
 
         let _webView = WKWebView(frame: .zero, configuration: configuration)
 
@@ -65,7 +72,7 @@ class BrowserViewModel: NSObject, ObservableObject {
         observations.append(titleObservation)
 
         let themeColorObservation = webView.observe(\.themeColor, options: [.new]) { [unowned self] _, value in
-            logger.debug("new theme color \(webView.themeColor.debugDescription)")
+            logger.debug("webView theme color \(webView.themeColor.debugDescription)")
             #if os(macOS)
             if let newThemeColor = value.newValue as? NSColor {
                 self.logger.debug("new theme color \(newThemeColor.description)")
@@ -97,6 +104,49 @@ class BrowserViewModel: NSObject, ObservableObject {
         observations.append(underPageBackgroundColorObservation)
     }
 
+    func updateThemeColor() {
+        // ChatGPT made getBackgroundColor
+        webView.evaluateJavaScript("""
+        function getBackgroundColor(element) {
+          // If no element is provided, default to document.body
+          element = element || document.body;
+
+          // Get the computed style of the current element
+          var computedStyle = window.getComputedStyle(element);
+
+          // Get the computed background color
+          var backgroundColor = computedStyle.backgroundColor;
+
+          // Parse the background color string into an array of numbers
+          var colorArray = backgroundColor.match(/\\d+/g).map(Number);
+
+          // If the array has fewer than 3 values, add 255 (fully opaque) for the alpha component
+          if (colorArray.length < 4) {
+            colorArray.push(255);
+          }
+
+          // If the alpha component is 0 (fully transparent), recursively check the parent element
+          if (colorArray[3] === 0 && element.parentElement) {
+            return getBackgroundColor(element.parentElement);
+          }
+
+          // Return the array representing RGBA components
+          return colorArray.map(value => value/255)
+        }
+        getBackgroundColor()
+        """, completionHandler: { [self] value, error in
+            if let error {
+                logger.error("error \(error.localizedDescription)")
+                return
+            }
+
+            if let rgba = value as? [Double], rgba.count == 4 {
+                logger.debug("themeColor rgba \(rgba)")
+                themeColor = .init(red: rgba[0], green: rgba[1], blue: rgba[2], opacity: rgba[3])
+            }
+        })
+    }
+
     static let defaultUrlString = "https://www.google.com"
 
     @Published var urlString = defaultUrlString
@@ -116,8 +166,7 @@ class BrowserViewModel: NSObject, ObservableObject {
         if let url {
             logger.debug("loading \(url.absoluteString)")
             webView.load(URLRequest(url: url))
-        }
-        else {
+        } else {
             let currentUrlString = urlString
             logger.warning("invalid urlString \"\(currentUrlString)\"")
             urlString = searchPrefix + currentUrlString.replacingOccurrences(of: " ", with: "+")
