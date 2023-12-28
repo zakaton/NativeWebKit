@@ -12,7 +12,7 @@ import SwiftUI
 struct Panel {
     // MARK: - Properties for Javascript alert, confirm, and prompt dialog boxes
 
-    var title: String { type.name }
+    var title: String { type.name.capitalized }
     let type: PanelType
 
     let message: String

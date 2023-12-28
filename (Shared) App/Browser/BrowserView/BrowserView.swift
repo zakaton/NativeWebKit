@@ -58,7 +58,7 @@ struct BrowserView: View {
                             $0.navigationTitle(title)
                         }
                     }
-                    .alert(panel?.title ?? "nil", isPresented: $browserViewModel.showPanel) {
+                    .alert(panel?.title ?? "", isPresented: $browserViewModel.showPanel) {
                         alertActionsView
                     } message: {
                         alertMessageView

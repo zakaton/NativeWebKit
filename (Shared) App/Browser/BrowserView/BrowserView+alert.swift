@@ -26,18 +26,18 @@ extension BrowserView {
                 }
             }
             TextField(defaultText ?? "", text: promptInputBinding)
-            Button("Ok") {
-                completionHandler(browserViewModel.panel!.promptInput)
-            }
             Button("Cancel") {
                 completionHandler(nil)
             }
-        case .confirm(completionHandler: let completionHandler):
             Button("Ok") {
-                completionHandler(true)
+                completionHandler(browserViewModel.panel!.promptInput)
             }
+        case .confirm(completionHandler: let completionHandler):
             Button("Cancel") {
                 completionHandler(false)
+            }
+            Button("Ok") {
+                completionHandler(true)
             }
         case .none:
             Button("Close") {}
