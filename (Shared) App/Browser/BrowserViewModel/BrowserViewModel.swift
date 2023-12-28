@@ -63,7 +63,7 @@ class BrowserViewModel: NSObject, ObservableObject {
 
     // MARK: - Url
 
-    static let defaultUrlString = "https://testpages.herokuapp.com/styled/alerts/alert-test.html"
+    static let defaultUrlString = "https://www.google.com"
 
     @Published var urlString = defaultUrlString
 
