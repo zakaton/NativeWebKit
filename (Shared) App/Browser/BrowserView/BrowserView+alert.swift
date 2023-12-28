@@ -5,6 +5,8 @@
 //  Created by Zack Qattan on 12/28/23.
 //
 
+// https://medium.com/@yeeedward/messaging-between-wkwebview-and-native-application-in-swiftui-e985f0bfacf
+
 import SwiftUI
 
 extension BrowserView {
