@@ -32,5 +32,5 @@
         "default_popup": "popup.html"
     },
 
-    "permissions": ["activeTab", "scripting", "externally_connectable", "nativeMessaging" ]
+    "permissions": ["activeTab", "scripting", "externally_connectable", "nativeMessaging", "host_permissions"]
 }

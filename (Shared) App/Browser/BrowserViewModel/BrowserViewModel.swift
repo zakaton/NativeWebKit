@@ -13,6 +13,31 @@ import WebKit
 
 @StaticLogger
 class BrowserViewModel: NSObject, ObservableObject {
+    static var models: [BrowserViewModel] = []
+    static var activeModel: BrowserViewModel? = .init()
+
+    override init() {
+        super.init()
+
+        Self.models.append(self)
+    }
+
+    deinit {
+        if isActiveModel {
+            logger.debug("removing active browserViewModel")
+            Self.activeModel = nil
+        }
+        Self.models.removeAll(where: { $0 == self })
+    }
+
+    var isActiveModel: Bool {
+        self == Self.activeModel
+    }
+
+    var index: Int! {
+        Self.models.firstIndex(of: self)
+    }
+
     // MARK: - WKWebView
 
     lazy var webView: WKWebView = {
@@ -32,7 +57,9 @@ class BrowserViewModel: NSObject, ObservableObject {
         configuration.defaultWebpagePreferences = defaultWebpagePreferences
 
         let userContentController: WKUserContentController = .init()
-        // TODO: - stuff
+        userContentController.removeAllScriptMessageHandlers()
+        userContentController.add(self, contentWorld: .page, name: "nativewebkit_noreply")
+        userContentController.addScriptMessageHandler(self, contentWorld: .page, name: "nativewebkit_reply")
         configuration.userContentController = userContentController
 
         let preferences: WKPreferences = .init()
@@ -49,6 +76,7 @@ class BrowserViewModel: NSObject, ObservableObject {
         _webView.isInspectable = true
         _webView.allowsBackForwardNavigationGestures = true
         _webView.allowsLinkPreview = true
+        _webView.underPageBackgroundColor = .white
 
         setWebViewNavigationDelegate(_webView)
         setWebViewUIDelegate(_webView)
@@ -63,7 +91,7 @@ class BrowserViewModel: NSObject, ObservableObject {
 
     // MARK: - Url
 
-    static let defaultUrlString = "https://www.google.com"
+    static let defaultUrlString = "http://localhost:5500/"
 
     @Published var urlString = defaultUrlString
 
@@ -226,4 +254,8 @@ class BrowserViewModel: NSObject, ObservableObject {
             showPanel = panel != nil
         }
     }
+
+    // MARK: - NativeWebKit
+
+    var nativeWebKit: NativeWebKit { .shared }
 }

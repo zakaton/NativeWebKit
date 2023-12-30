@@ -33,7 +33,7 @@ extension BrowserView {
 }
 
 #Preview("") {
-    BrowserView()
+    BrowserView(browserViewModel: .activeModel!)
         .modify {
             #if os(macOS)
             $0.frame(maxWidth: 600)

@@ -36,6 +36,16 @@
 		5F77F7912B3E072B00BCBA92 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F78F2B3E072B00BCBA92 /* Panel.swift */; };
 		5F77F7932B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7922B3E1AD200BCBA92 /* BrowserView+alert.swift */; };
 		5F77F7942B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7922B3E1AD200BCBA92 /* BrowserView+alert.swift */; };
+		5F77F7992B3F430800BCBA92 /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5F77F7982B3F430800BCBA92 /* flag.js */; };
+		5F77F79A2B3F430800BCBA92 /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5F77F7982B3F430800BCBA92 /* flag.js */; };
+		5F77F79D2B3F991B00BCBA92 /* NativeWebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */; };
+		5F77F79E2B3F991B00BCBA92 /* NativeWebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */; };
+		5F77F7A22B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7A12B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift */; };
+		5F77F7A32B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7A12B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift */; };
+		5F77F7A52B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7A42B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift */; };
+		5F77F7A62B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7A42B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift */; };
+		5F77F7A92B40A98900BCBA92 /* NativeWebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */; };
+		5F77F7AA2B40A98A00BCBA92 /* NativeWebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */; };
 		5F7FBFBA2B3A45DC0029F826 /* DeviceRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFB92B3A45DC0029F826 /* DeviceRotation.swift */; };
 		5F7FBFBD2B3B4C5B0029F826 /* BrowserView+orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBC2B3B4C5B0029F826 /* BrowserView+orientation.swift */; };
 		5F7FBFBF2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */; };
@@ -173,6 +183,10 @@
 		5F77F78C2B3DFF5300BCBA92 /* PanelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelType.swift; sourceTree = "<group>"; };
 		5F77F78F2B3E072B00BCBA92 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		5F77F7922B3E1AD200BCBA92 /* BrowserView+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+alert.swift"; sourceTree = "<group>"; };
+		5F77F7982B3F430800BCBA92 /* flag.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = flag.js; sourceTree = "<group>"; };
+		5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeWebKit.swift; sourceTree = "<group>"; };
+		5F77F7A12B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKScriptMessageHandlerWithReply.swift"; sourceTree = "<group>"; };
+		5F77F7A42B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKScriptMessageHandler.swift"; sourceTree = "<group>"; };
 		5F7FBFB92B3A45DC0029F826 /* DeviceRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotation.swift; sourceTree = "<group>"; };
 		5F7FBFBC2B3B4C5B0029F826 /* BrowserView+orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+orientation.swift"; sourceTree = "<group>"; };
 		5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+handleIncomingURL.swift"; sourceTree = "<group>"; };
@@ -282,6 +296,7 @@
 		5F0E4D7B2B350BA60027C202 /* (Shared) */ = {
 			isa = PBXGroup;
 			children = (
+				5F77F79B2B3F98DF00BCBA92 /* NativeWebKit */,
 				5FBD16C22B3676BE00B8B1A5 /* utils */,
 				5FD60D752B350DF700D6F98C /* Assets.xcassets */,
 			);
@@ -312,6 +327,8 @@
 			isa = PBXGroup;
 			children = (
 				5FBD16B22B362D2200B8B1A5 /* BrowserViewModel.swift */,
+				5F77F7A12B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift */,
+				5F77F7A42B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift */,
 				5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */,
 				5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */,
 				5F77F7812B3CA70700BCBA92 /* BrowserViewModel+history.swift */,
@@ -406,6 +423,14 @@
 				5F77F78F2B3E072B00BCBA92 /* Panel.swift */,
 			);
 			path = Panel;
+			sourceTree = "<group>";
+		};
+		5F77F79B2B3F98DF00BCBA92 /* NativeWebKit */ = {
+			isa = PBXGroup;
+			children = (
+				5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */,
+			);
+			path = NativeWebKit;
 			sourceTree = "<group>";
 		};
 		5F87CF032B33B59900E951E7 = {
@@ -515,6 +540,7 @@
 				5FA4BEA12B35119F00138B35 /* images */,
 				5FA4BEA32B35119F00138B35 /* manifest.json */,
 				5FA4BEA52B35119F00138B35 /* background.js */,
+				5F77F7982B3F430800BCBA92 /* flag.js */,
 				5FA4BEA72B35119F00138B35 /* content.js */,
 				5FA4BEA92B35119F00138B35 /* popup.html */,
 				5FA4BEAB2B35119F00138B35 /* popup.css */,
@@ -806,6 +832,7 @@
 				5FA4BEA62B35119F00138B35 /* background.js in Resources */,
 				5FA4BEAC2B35119F00138B35 /* popup.css in Resources */,
 				5FA4BEAA2B35119F00138B35 /* popup.html in Resources */,
+				5F77F7992B3F430800BCBA92 /* flag.js in Resources */,
 				5FA4BEA22B35119F00138B35 /* images in Resources */,
 				5FA4BEA42B35119F00138B35 /* manifest.json in Resources */,
 				5FA4BEA02B35119F00138B35 /* _locales in Resources */,
@@ -821,6 +848,7 @@
 				5FA4BEDD2B3516E300138B35 /* manifest.json in Resources */,
 				5FA4BEDF2B3516E300138B35 /* popup.js in Resources */,
 				5FA4BEDE2B3516E300138B35 /* popup.html in Resources */,
+				5F77F79A2B3F430800BCBA92 /* flag.js in Resources */,
 				5FA4BEDC2B3516E300138B35 /* content.js in Resources */,
 				5FA4BEE12B3516F100138B35 /* images in Resources */,
 				5FA4BEDB2B3516E300138B35 /* popup.css in Resources */,
@@ -858,6 +886,8 @@
 				5FBD16CD2B37621600B8B1A5 /* BrowserView+navigation_iOS.swift in Sources */,
 				5F8949272B35089300AF3341 /* ContentView.swift in Sources */,
 				5F4130282B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */,
+				5F77F79D2B3F991B00BCBA92 /* NativeWebKit.swift in Sources */,
+				5F77F7A52B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift in Sources */,
 				5FBD16BB2B36340500B8B1A5 /* BrowserWebView +UIViewRepresentable.swift in Sources */,
 				5F77F7932B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */,
 				5FBD16B32B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
@@ -868,6 +898,7 @@
 				5F77F7822B3CA70700BCBA92 /* BrowserViewModel+history.swift in Sources */,
 				5F7FBFBF2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */,
 				5FBD16C42B3676C600B8B1A5 /* ViewModifier.swift in Sources */,
+				5F77F7A22B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift in Sources */,
 				5F77F78D2B3DFF5300BCBA92 /* PanelType.swift in Sources */,
 				5F77F7902B3E072B00BCBA92 /* Panel.swift in Sources */,
 				5FBD16BF2B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
@@ -890,7 +921,10 @@
 				5FBD16BD2B36347000B8B1A5 /* BrowserWebView+NSViewRepresentable.swift in Sources */,
 				5FBD16C12B36539300B8B1A5 /* ContentView.swift in Sources */,
 				5FBD16B42B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
+				5F77F79E2B3F991B00BCBA92 /* NativeWebKit.swift in Sources */,
 				5FBD16AC2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
+				5F77F7A62B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift in Sources */,
+				5F77F7A32B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift in Sources */,
 				5F5E4BBF2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
 				5F77F78E2B3DFF5300BCBA92 /* PanelType.swift in Sources */,
 				5F5FEFCF2B3B8DD700E4A5F0 /* FindToolbarModel.swift in Sources */,
@@ -916,6 +950,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */,
+				5F77F7A92B40A98900BCBA92 /* NativeWebKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,6 +959,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FA4BED92B3516B300138B35 /* SafariWebExtensionHandler.swift in Sources */,
+				5F77F7AA2B40A98A00BCBA92 /* NativeWebKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

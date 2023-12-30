@@ -15,7 +15,7 @@ import WebKit
 
 @StaticLogger
 struct BrowserView: View {
-    @StateObject var browserViewModel = BrowserViewModel()
+    @ObservedObject var browserViewModel: BrowserViewModel
     @FocusState var isUrlFocused: Bool
     @State var expandSearchBar: Bool = false
     @State var showNavigationBar: Bool = true
@@ -88,6 +88,7 @@ struct BrowserView: View {
             handleIncomingURL(incomingURL)
         }
         .background(browserViewModel.themeColor)
+        .background(.white)
         .modify {
             #if os(iOS)
             $0.onRotate { newOrientation in
@@ -118,7 +119,7 @@ struct BrowserView: View {
 }
 
 #Preview("") {
-    BrowserView()
+    BrowserView(browserViewModel: .activeModel!)
         .modify {
             #if os(macOS)
             $0.frame(maxWidth: 300)

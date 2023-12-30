@@ -136,6 +136,6 @@ extension BrowserView {
 }
 
 #Preview("") {
-    BrowserView()
+    BrowserView(browserViewModel: .activeModel!)
         .frame(maxWidth: 400)
 }

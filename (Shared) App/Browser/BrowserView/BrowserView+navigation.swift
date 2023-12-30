@@ -157,5 +157,5 @@ extension BrowserView {
 }
 
 #Preview("") {
-    BrowserView()
+    BrowserView(browserViewModel: .activeModel!)
 }

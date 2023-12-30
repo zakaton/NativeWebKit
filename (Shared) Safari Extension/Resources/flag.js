@@ -1,0 +1,1 @@
+window.isNativeWebKitSafariExtensionInstalled = true

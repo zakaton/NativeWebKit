@@ -9,15 +9,10 @@ import Foundation
 
 extension BrowserView {
     var isPortrait: Bool {
-        if orientation == .unknown {
-            return horizontalSizeClass == .compact && verticalSizeClass == .regular
-        }
+        horizontalSizeClass == .compact && verticalSizeClass == .regular
+    }
 
-        return switch orientation {
-        case .landscapeLeft, .landscapeRight:
-            false
-        default:
-            true
-        }
+    var isLandscape: Bool {
+        horizontalSizeClass == .regular && verticalSizeClass == .compact
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        BrowserView()
+        BrowserView(browserViewModel: .activeModel!)
     }
 }
 

@@ -11,28 +11,32 @@ import UkatonMacros
 
 @StaticLogger
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
+    var nativeWebKit: NativeWebKit { .shared }
     func beginRequest(with context: NSExtensionContext) {
-        let request = context.inputItems.first as? NSExtensionItem
-
-        let profile: UUID?
-        if #available(iOS 17.0, macOS 14.0, *) {
-            profile = request?.userInfo?[SFExtensionProfileKey] as? UUID
-        } else {
-            profile = request?.userInfo?["profile"] as? UUID
+        guard let item = context.inputItems.first as? NSExtensionItem,
+              let userInfo = item.userInfo as? [String: Any],
+              let messageData = userInfo[SFExtensionMessageKey]
+        else {
+            context.completeRequest(returningItems: nil, completionHandler: nil)
+            return
         }
 
-        let message: Any?
-        if #available(iOS 17.0, macOS 14.0, *) {
-            message = request?.userInfo?[SFExtensionMessageKey]
-        } else {
-            message = request?.userInfo?["message"]
+        guard let message = messageData as? NKMessage else {
+            logger.error("invalid message format")
+            return
         }
 
-        logger.debug("Received message from browser.runtime.sendNativeMessage: \(String(describing: message)) (profile: \(profile?.uuidString ?? "none")")
+        logger.debug("received message \(String(describing: message), privacy: .public)")
+
+        guard let _response = nativeWebKit.handleMessage(message: message) else {
+            logger.error("nil response")
+            return
+        }
 
         let response = NSExtensionItem()
-        response.userInfo = [SFExtensionMessageKey: ["echo": message]]
+        response.userInfo = [SFExtensionMessageKey: _response]
 
+        logger.debug("response: \(response, privacy: .public)")
         context.completeRequest(returningItems: [response], completionHandler: nil)
     }
 }
