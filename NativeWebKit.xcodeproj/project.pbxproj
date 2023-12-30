@@ -46,6 +46,30 @@
 		5F77F7A62B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7A42B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift */; };
 		5F77F7A92B40A98900BCBA92 /* NativeWebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */; };
 		5F77F7AA2B40A98A00BCBA92 /* NativeWebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */; };
+		5F77F7AD2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7AC2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift */; };
+		5F77F7AE2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7AC2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift */; };
+		5F77F7AF2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7AC2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift */; };
+		5F77F7B02B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7AC2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift */; };
+		5F77F7B32B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7B22B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift */; };
+		5F77F7B42B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7B22B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift */; };
+		5F77F7B52B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7B22B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift */; };
+		5F77F7B62B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7B22B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift */; };
+		5F77F7B82B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7B72B40BBC100BCBA92 /* NKMessageTypeProtocol.swift */; };
+		5F77F7B92B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7B72B40BBC100BCBA92 /* NKMessageTypeProtocol.swift */; };
+		5F77F7BA2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7B72B40BBC100BCBA92 /* NKMessageTypeProtocol.swift */; };
+		5F77F7BB2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7B72B40BBC100BCBA92 /* NKMessageTypeProtocol.swift */; };
+		5F77F7BD2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */; };
+		5F77F7BE2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */; };
+		5F77F7BF2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */; };
+		5F77F7C02B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */; };
+		5F77F7C32B40CEAC00BCBA92 /* NativeWebKit+context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7C22B40CEAC00BCBA92 /* NativeWebKit+context.swift */; };
+		5F77F7C42B40CEAC00BCBA92 /* NativeWebKit+context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7C22B40CEAC00BCBA92 /* NativeWebKit+context.swift */; };
+		5F77F7C62B40CED400BCBA92 /* NKContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7C52B40CED400BCBA92 /* NKContext.swift */; };
+		5F77F7C72B40CED400BCBA92 /* NKContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7C52B40CED400BCBA92 /* NKContext.swift */; };
+		5F77F7C82B40CED400BCBA92 /* NKContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7C52B40CED400BCBA92 /* NKContext.swift */; };
+		5F77F7C92B40CED400BCBA92 /* NKContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7C52B40CED400BCBA92 /* NKContext.swift */; };
+		5F77F7CC2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7CB2B40CF3A00BCBA92 /* NativeWebKit+context.swift */; };
+		5F77F7CD2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7CB2B40CF3A00BCBA92 /* NativeWebKit+context.swift */; };
 		5F7FBFBA2B3A45DC0029F826 /* DeviceRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFB92B3A45DC0029F826 /* DeviceRotation.swift */; };
 		5F7FBFBD2B3B4C5B0029F826 /* BrowserView+orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBC2B3B4C5B0029F826 /* BrowserView+orientation.swift */; };
 		5F7FBFBF2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */; };
@@ -187,6 +211,13 @@
 		5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeWebKit.swift; sourceTree = "<group>"; };
 		5F77F7A12B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKScriptMessageHandlerWithReply.swift"; sourceTree = "<group>"; };
 		5F77F7A42B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKScriptMessageHandler.swift"; sourceTree = "<group>"; };
+		5F77F7AC2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+HeadphoneMotion.swift"; sourceTree = "<group>"; };
+		5F77F7B22B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKHeadphoneMotionMessageType.swift; sourceTree = "<group>"; };
+		5F77F7B72B40BBC100BCBA92 /* NKMessageTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKMessageTypeProtocol.swift; sourceTree = "<group>"; };
+		5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+CMHeadphoneMotionManagerDelegate.swift"; sourceTree = "<group>"; };
+		5F77F7C22B40CEAC00BCBA92 /* NativeWebKit+context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+context.swift"; sourceTree = "<group>"; };
+		5F77F7C52B40CED400BCBA92 /* NKContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKContext.swift; sourceTree = "<group>"; };
+		5F77F7CB2B40CF3A00BCBA92 /* NativeWebKit+context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+context.swift"; sourceTree = "<group>"; };
 		5F7FBFB92B3A45DC0029F826 /* DeviceRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotation.swift; sourceTree = "<group>"; };
 		5F7FBFBC2B3B4C5B0029F826 /* BrowserView+orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+orientation.swift"; sourceTree = "<group>"; };
 		5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+handleIncomingURL.swift"; sourceTree = "<group>"; };
@@ -429,6 +460,35 @@
 			isa = PBXGroup;
 			children = (
 				5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */,
+				5F77F7C52B40CED400BCBA92 /* NKContext.swift */,
+				5F77F7B72B40BBC100BCBA92 /* NKMessageTypeProtocol.swift */,
+				5F77F7B12B40B94800BCBA92 /* HeadphoneMotion */,
+			);
+			path = NativeWebKit;
+			sourceTree = "<group>";
+		};
+		5F77F7B12B40B94800BCBA92 /* HeadphoneMotion */ = {
+			isa = PBXGroup;
+			children = (
+				5F77F7AC2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift */,
+				5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */,
+				5F77F7B22B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift */,
+			);
+			path = HeadphoneMotion;
+			sourceTree = "<group>";
+		};
+		5F77F7C12B40CE9C00BCBA92 /* NativeWebKit */ = {
+			isa = PBXGroup;
+			children = (
+				5F77F7C22B40CEAC00BCBA92 /* NativeWebKit+context.swift */,
+			);
+			path = NativeWebKit;
+			sourceTree = "<group>";
+		};
+		5F77F7CA2B40CF2B00BCBA92 /* NativeWebKit */ = {
+			isa = PBXGroup;
+			children = (
+				5F77F7CB2B40CF3A00BCBA92 /* NativeWebKit+context.swift */,
 			);
 			path = NativeWebKit;
 			sourceTree = "<group>";
@@ -469,6 +529,7 @@
 			isa = PBXGroup;
 			children = (
 				5FBD16C62B36B63E00B8B1A5 /* NativeWebKitApp.swift */,
+				5F77F7C12B40CE9C00BCBA92 /* NativeWebKit */,
 				5FBD16AE2B362CB600B8B1A5 /* Browser */,
 				5F8949222B35089300AF3341 /* ContentView.swift */,
 			);
@@ -480,6 +541,7 @@
 			children = (
 				5FA4BE9E2B35119F00138B35 /* Resources */,
 				5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */,
+				5F77F7CA2B40CF2B00BCBA92 /* NativeWebKit */,
 			);
 			path = "(Shared) Safari Extension";
 			sourceTree = "<group>";
@@ -885,6 +947,7 @@
 				5FBB632A2B38BC76008B18B9 /* StringUtils.swift in Sources */,
 				5FBD16CD2B37621600B8B1A5 /* BrowserView+navigation_iOS.swift in Sources */,
 				5F8949272B35089300AF3341 /* ContentView.swift in Sources */,
+				5F77F7B82B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
 				5F4130282B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */,
 				5F77F79D2B3F991B00BCBA92 /* NativeWebKit.swift in Sources */,
 				5F77F7A52B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift in Sources */,
@@ -893,7 +956,9 @@
 				5FBD16B32B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
 				5FBD16AB2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
 				5F06B1952B3A1B8B00A0A1BB /* KeyboardPublisher.swift in Sources */,
+				5F77F7AD2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5F5E4BBE2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
+				5F77F7BD2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5F77F76F2B3C9FCA00BCBA92 /* SheetType.swift in Sources */,
 				5F77F7822B3CA70700BCBA92 /* BrowserViewModel+history.swift in Sources */,
 				5F7FBFBF2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */,
@@ -902,9 +967,12 @@
 				5F77F78D2B3DFF5300BCBA92 /* PanelType.swift in Sources */,
 				5F77F7902B3E072B00BCBA92 /* Panel.swift in Sources */,
 				5FBD16BF2B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
+				5F77F7B32B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
 				5FBD16CF2B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */,
 				5F77F77F2B3CA39500BCBA92 /* BrowserView+HistorySheet.swift in Sources */,
 				5F5E4BC12B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift in Sources */,
+				5F77F7C32B40CEAC00BCBA92 /* NativeWebKit+context.swift in Sources */,
+				5F77F7C62B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FBB632D2B38C473008B18B9 /* URLUtils.swift in Sources */,
 				5F7FBFC22B3B4E770029F826 /* BrowserView+toolbars.swift in Sources */,
 				5FBD16C82B37520F00B8B1A5 /* NativeWebKitApp.swift in Sources */,
@@ -918,11 +986,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FBD16CA2B3761E000B8B1A5 /* BrowserView+navigation_mac.swift in Sources */,
+				5F77F7AE2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5FBD16BD2B36347000B8B1A5 /* BrowserWebView+NSViewRepresentable.swift in Sources */,
 				5FBD16C12B36539300B8B1A5 /* ContentView.swift in Sources */,
+				5F77F7B92B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
+				5F77F7C72B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FBD16B42B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
 				5F77F79E2B3F991B00BCBA92 /* NativeWebKit.swift in Sources */,
+				5F77F7B42B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
 				5FBD16AC2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
+				5F77F7C42B40CEAC00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5F77F7A62B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift in Sources */,
 				5F77F7A32B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift in Sources */,
 				5F5E4BBF2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
@@ -938,6 +1011,7 @@
 				5F7FBFC02B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */,
 				5FBB632E2B38C473008B18B9 /* URLUtils.swift in Sources */,
 				5F77F7832B3CA70700BCBA92 /* BrowserViewModel+history.swift in Sources */,
+				5F77F7BE2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5FBD16D02B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */,
 				5FBD16C72B36B63E00B8B1A5 /* NativeWebKitApp.swift in Sources */,
 				5F4130292B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */,
@@ -949,8 +1023,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F77F7AF2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */,
+				5F77F7CC2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
+				5F77F7BF2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
+				5F77F7C82B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5F77F7A92B40A98900BCBA92 /* NativeWebKit.swift in Sources */,
+				5F77F7BA2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
+				5F77F7B52B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -958,8 +1038,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F77F7B02B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5FA4BED92B3516B300138B35 /* SafariWebExtensionHandler.swift in Sources */,
+				5F77F7CD2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
+				5F77F7C02B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
+				5F77F7C92B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5F77F7AA2B40A98A00BCBA92 /* NativeWebKit.swift in Sources */,
+				5F77F7BB2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
+				5F77F7B62B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1241,6 +1327,7 @@
 				INFOPLIST_FILE = "(iOS) App/-iOS--NativeWebKit-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = NativeWebKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1285,6 +1372,7 @@
 				INFOPLIST_FILE = "(iOS) App/-iOS--NativeWebKit-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = NativeWebKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1333,6 +1421,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = NativeWebKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1368,6 +1457,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = NativeWebKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1392,6 +1482,7 @@
 				INFOPLIST_FILE = "(iOS) Safari Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Extension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1426,6 +1517,7 @@
 				INFOPLIST_FILE = "(iOS) Safari Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Extension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1464,6 +1556,7 @@
 				INFOPLIST_FILE = "(Mac) Safari Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Extension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1497,6 +1590,7 @@
 				INFOPLIST_FILE = "(Mac) Safari Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Extension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

@@ -21,14 +21,9 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             return
         }
 
-        guard let message = messageData as? NKMessage else {
-            logger.error("invalid message format")
-            return
-        }
+        logger.debug("received message \(String(describing: messageData), privacy: .public)")
 
-        logger.debug("received message \(String(describing: message), privacy: .public)")
-
-        guard let _response = nativeWebKit.handleMessage(message: message) else {
+        guard let _response = nativeWebKit.handleMessage(messageData) else {
             logger.error("nil response")
             return
         }
