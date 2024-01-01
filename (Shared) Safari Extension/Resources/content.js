@@ -70,10 +70,13 @@ const _console = new Console();
 
 window.addEventListener("nativewebkit-send", async (event) => {
     const { id, message } = event.detail;
-    _console.log(`received nativewebkit-send request from ${id}`, message);
-    const response = await browser.runtime.sendMessage(message);
-    _console.log(`received response for ${id}`, response);
-    window.dispatchEvent(new CustomEvent(`nativewebkit-receive-${id}`, { detail: response }));
+    _console.log(`received nativewebkit-send request #${id}`, message);
+    const didReceiveResponse = await browser.runtime.sendMessage(message);
+    _console.log(`did background.js receive response for nativewebkit-send request #${id}?`, didReceiveResponse);
+    if (!didReceiveResponse) {
+        _console.error("didn't receive response from background.js");
+    }
+    window.dispatchEvent(new CustomEvent(`nativewebkit-receive-${id}`, { detail: didReceiveResponse }));
 });
 
 browser.runtime.onMessage.addListener((message) => {

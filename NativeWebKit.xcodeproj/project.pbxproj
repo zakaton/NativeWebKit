@@ -36,8 +36,6 @@
 		5F77F7912B3E072B00BCBA92 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F78F2B3E072B00BCBA92 /* Panel.swift */; };
 		5F77F7932B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7922B3E1AD200BCBA92 /* BrowserView+alert.swift */; };
 		5F77F7942B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7922B3E1AD200BCBA92 /* BrowserView+alert.swift */; };
-		5F77F7992B3F430800BCBA92 /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5F77F7982B3F430800BCBA92 /* flag.js */; };
-		5F77F79A2B3F430800BCBA92 /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5F77F7982B3F430800BCBA92 /* flag.js */; };
 		5F77F79D2B3F991B00BCBA92 /* NativeWebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */; };
 		5F77F79E2B3F991B00BCBA92 /* NativeWebKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */; };
 		5F77F7A22B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7A12B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift */; };
@@ -75,6 +73,16 @@
 		5F7FBFBF2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */; };
 		5F7FBFC02B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */; };
 		5F7FBFC22B3B4E770029F826 /* BrowserView+toolbars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFC12B3B4E770029F826 /* BrowserView+toolbars.swift */; };
+		5F8183002B4234040050DCB0 /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5F8182FF2B4234040050DCB0 /* flag.js */; };
+		5F8183022B4234DD0050DCB0 /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5F8183012B4234DD0050DCB0 /* flag.js */; };
+		5F8183042B432B080050DCB0 /* CoreMotion+array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183032B432B080050DCB0 /* CoreMotion+array.swift */; };
+		5F8183052B432B080050DCB0 /* CoreMotion+array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183032B432B080050DCB0 /* CoreMotion+array.swift */; };
+		5F8183062B432B080050DCB0 /* CoreMotion+array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183032B432B080050DCB0 /* CoreMotion+array.swift */; };
+		5F8183072B432B080050DCB0 /* CoreMotion+array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183032B432B080050DCB0 /* CoreMotion+array.swift */; };
+		5F8183092B432B290050DCB0 /* CoreMotion+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CoreMotion+name.swift */; };
+		5F81830A2B432B290050DCB0 /* CoreMotion+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CoreMotion+name.swift */; };
+		5F81830B2B432B290050DCB0 /* CoreMotion+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CoreMotion+name.swift */; };
+		5F81830C2B432B290050DCB0 /* CoreMotion+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CoreMotion+name.swift */; };
 		5F8949262B35089300AF3341 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8949202B35089300AF3341 /* Preview Assets.xcassets */; };
 		5F8949272B35089300AF3341 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8949222B35089300AF3341 /* ContentView.swift */; };
 		5F8949362B3508E500AF3341 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8949352B3508E500AF3341 /* Preview Assets.xcassets */; };
@@ -207,7 +215,6 @@
 		5F77F78C2B3DFF5300BCBA92 /* PanelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelType.swift; sourceTree = "<group>"; };
 		5F77F78F2B3E072B00BCBA92 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		5F77F7922B3E1AD200BCBA92 /* BrowserView+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+alert.swift"; sourceTree = "<group>"; };
-		5F77F7982B3F430800BCBA92 /* flag.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = flag.js; sourceTree = "<group>"; };
 		5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeWebKit.swift; sourceTree = "<group>"; };
 		5F77F7A12B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKScriptMessageHandlerWithReply.swift"; sourceTree = "<group>"; };
 		5F77F7A42B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKScriptMessageHandler.swift"; sourceTree = "<group>"; };
@@ -222,6 +229,10 @@
 		5F7FBFBC2B3B4C5B0029F826 /* BrowserView+orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+orientation.swift"; sourceTree = "<group>"; };
 		5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+handleIncomingURL.swift"; sourceTree = "<group>"; };
 		5F7FBFC12B3B4E770029F826 /* BrowserView+toolbars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+toolbars.swift"; sourceTree = "<group>"; };
+		5F8182FF2B4234040050DCB0 /* flag.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = flag.js; sourceTree = "<group>"; };
+		5F8183012B4234DD0050DCB0 /* flag.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = flag.js; sourceTree = "<group>"; };
+		5F8183032B432B080050DCB0 /* CoreMotion+array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreMotion+array.swift"; sourceTree = "<group>"; };
+		5F8183082B432B290050DCB0 /* CoreMotion+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreMotion+name.swift"; sourceTree = "<group>"; };
 		5F87CF0C2B33B59900E951E7 /* (iOS) NativeWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "(iOS) NativeWebKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F89491E2B35089300AF3341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F8949202B35089300AF3341 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -471,6 +482,8 @@
 			isa = PBXGroup;
 			children = (
 				5F77F7AC2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift */,
+				5F8183032B432B080050DCB0 /* CoreMotion+array.swift */,
+				5F8183082B432B290050DCB0 /* CoreMotion+name.swift */,
 				5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */,
 				5F77F7B22B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift */,
 			);
@@ -591,6 +604,7 @@
 			isa = PBXGroup;
 			children = (
 				5FA4BEAF2B35119F00138B35 /* Info.plist */,
+				5F8183012B4234DD0050DCB0 /* flag.js */,
 			);
 			path = "(iOS) Safari Extension";
 			sourceTree = "<group>";
@@ -602,7 +616,6 @@
 				5FA4BEA12B35119F00138B35 /* images */,
 				5FA4BEA32B35119F00138B35 /* manifest.json */,
 				5FA4BEA52B35119F00138B35 /* background.js */,
-				5F77F7982B3F430800BCBA92 /* flag.js */,
 				5FA4BEA72B35119F00138B35 /* content.js */,
 				5FA4BEA92B35119F00138B35 /* popup.html */,
 				5FA4BEAB2B35119F00138B35 /* popup.css */,
@@ -616,6 +629,7 @@
 			children = (
 				5FA4BED02B35121700138B35 /* Info.plist */,
 				5FA4BED12B35121700138B35 /* Extension.entitlements */,
+				5F8182FF2B4234040050DCB0 /* flag.js */,
 			);
 			path = "(Mac) Safari Extension";
 			sourceTree = "<group>";
@@ -894,7 +908,7 @@
 				5FA4BEA62B35119F00138B35 /* background.js in Resources */,
 				5FA4BEAC2B35119F00138B35 /* popup.css in Resources */,
 				5FA4BEAA2B35119F00138B35 /* popup.html in Resources */,
-				5F77F7992B3F430800BCBA92 /* flag.js in Resources */,
+				5F8183022B4234DD0050DCB0 /* flag.js in Resources */,
 				5FA4BEA22B35119F00138B35 /* images in Resources */,
 				5FA4BEA42B35119F00138B35 /* manifest.json in Resources */,
 				5FA4BEA02B35119F00138B35 /* _locales in Resources */,
@@ -910,7 +924,7 @@
 				5FA4BEDD2B3516E300138B35 /* manifest.json in Resources */,
 				5FA4BEDF2B3516E300138B35 /* popup.js in Resources */,
 				5FA4BEDE2B3516E300138B35 /* popup.html in Resources */,
-				5F77F79A2B3F430800BCBA92 /* flag.js in Resources */,
+				5F8183002B4234040050DCB0 /* flag.js in Resources */,
 				5FA4BEDC2B3516E300138B35 /* content.js in Resources */,
 				5FA4BEE12B3516F100138B35 /* images in Resources */,
 				5FA4BEDB2B3516E300138B35 /* popup.css in Resources */,
@@ -958,6 +972,7 @@
 				5F06B1952B3A1B8B00A0A1BB /* KeyboardPublisher.swift in Sources */,
 				5F77F7AD2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5F5E4BBE2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
+				5F8183042B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
 				5F77F7BD2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5F77F76F2B3C9FCA00BCBA92 /* SheetType.swift in Sources */,
 				5F77F7822B3CA70700BCBA92 /* BrowserViewModel+history.swift in Sources */,
@@ -966,6 +981,7 @@
 				5F77F7A22B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift in Sources */,
 				5F77F78D2B3DFF5300BCBA92 /* PanelType.swift in Sources */,
 				5F77F7902B3E072B00BCBA92 /* Panel.swift in Sources */,
+				5F8183092B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
 				5FBD16BF2B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
 				5F77F7B32B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
 				5FBD16CF2B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */,
@@ -1008,9 +1024,11 @@
 				5FBD16C02B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
 				5FBB632B2B38BC76008B18B9 /* StringUtils.swift in Sources */,
 				5F77F7942B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */,
+				5F81830A2B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
 				5F7FBFC02B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */,
 				5FBB632E2B38C473008B18B9 /* URLUtils.swift in Sources */,
 				5F77F7832B3CA70700BCBA92 /* BrowserViewModel+history.swift in Sources */,
+				5F8183052B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
 				5F77F7BE2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5FBD16D02B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */,
 				5FBD16C72B36B63E00B8B1A5 /* NativeWebKitApp.swift in Sources */,
@@ -1024,7 +1042,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F77F7AF2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
+				5F8183062B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
 				5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */,
+				5F81830B2B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
 				5F77F7CC2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5F77F7BF2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5F77F7C82B40CED400BCBA92 /* NKContext.swift in Sources */,
@@ -1039,7 +1059,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F77F7B02B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
+				5F8183072B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
 				5FA4BED92B3516B300138B35 /* SafariWebExtensionHandler.swift in Sources */,
+				5F81830C2B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
 				5F77F7CD2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5F77F7C02B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5F77F7C92B40CED400BCBA92 /* NKContext.swift in Sources */,

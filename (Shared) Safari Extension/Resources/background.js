@@ -80,21 +80,27 @@ const flagScript = {
 };
 
 try {
+    _console.log("trying to registerContentScripts...", [flagScript]);
     browser.scripting.registerContentScripts([flagScript]);
 } catch (error) {
-    console.error(error);
+    _console.error(error);
 }
 
 /**
+ * @typedef NKMessage
+ * @type {object}
+ * @param {string} type
+ */
+
+/**
  * background.js -> SafariWebExtensionHandler.swift)
- * @param {object} message
+ * @param {NKMessage|NKMessage[]} message
  */
 function sendMessageToApp(message) {
     _console.log("sending message to app", message);
     browser.runtime.sendNativeMessage("application.id", message, (response) => {
         _console.log("received response from app", response);
         if (response) {
-            response.type = response.type || message.type;
             sendMessageToBrowser(response);
         }
     });
@@ -118,7 +124,7 @@ async function sendMessageToBrowser(message) {
  * @param {(response:object)=>void} sendResponse
  */
 const browserRuntimeMessageListener = (message, sender, sendResponse) => {
-    _console.log("received message", message, "from sender", sender);
+    _console.log("received browser message", message, "from sender", sender);
     sendMessageToApp(message);
     sendResponse(true);
 };

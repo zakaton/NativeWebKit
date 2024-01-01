@@ -9,5 +9,8 @@ import Foundation
 
 enum NKHeadphoneMotionMessageType: String, NKMessageTypeProtocol {
     static let prefix: String = "hm"
-    case isEnabled
+    case isAvailable
+    case isActive
+    case startUpdates, stopUpdates
+    case getData
 }

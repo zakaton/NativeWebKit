@@ -48,7 +48,7 @@ class NativeWebKit: NSObject, HasNKContext {
             logger.error("no message type defined")
             return nil
         }
-        logger.debug("message type \(messageType)")
+        logger.debug("message type \(messageType, privacy: .public)")
 
         var response: NKResponse?
 
@@ -56,7 +56,11 @@ class NativeWebKit: NSObject, HasNKContext {
             response = handleHeadphoneMotionMessage(message, messageType: headphoneMotionMessageType)
         }
         else {
-            logger.warning("uncaught exception for message type \(messageType)")
+            logger.warning("uncaught exception for message type \(messageType, privacy: .public)")
+        }
+
+        if response != nil, response!["type"] == nil {
+            response!["type"] = messageType
         }
 
         return response
