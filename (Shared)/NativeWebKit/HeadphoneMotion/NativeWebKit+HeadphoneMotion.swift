@@ -41,14 +41,15 @@ extension NativeWebKit {
                timestamp != deviceMotion.timestamp
             {
                 response = [
-                    "timestamp": deviceMotion.timestamp,
-                    "sensorLocation": deviceMotion.sensorLocation.name,
-                    "quaternion": deviceMotion.attitude.quaternion.array,
-                    "userAcceleration": deviceMotion.userAcceleration.array,
-                    "gravity": deviceMotion.gravity.array,
-                    "rotationRate": deviceMotion.rotationRate.array,
-                    "euler": deviceMotion.attitude.array,
-                    "heading": deviceMotion.heading
+                    "motionData": [
+                        "timestamp": deviceMotion.timestamp,
+                        "sensorLocation": deviceMotion.sensorLocation.name,
+                        "quaternion": deviceMotion.attitude.quaternion.array,
+                        "userAcceleration": deviceMotion.userAcceleration.array,
+                        "gravity": deviceMotion.gravity.array,
+                        "rotationRate": deviceMotion.rotationRate.array,
+                        "euler": deviceMotion.attitude.array
+                    ]
                 ]
             }
             else {
