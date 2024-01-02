@@ -15,7 +15,7 @@ extension CMQuaternion {
 
 extension CMAttitude {
     var array: [Double] {
-        [pitch, yaw, roll]
+        [pitch, yaw, -roll]
     }
 }
 
