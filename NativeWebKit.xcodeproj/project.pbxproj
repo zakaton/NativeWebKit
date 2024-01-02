@@ -73,8 +73,6 @@
 		5F7FBFBF2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */; };
 		5F7FBFC02B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */; };
 		5F7FBFC22B3B4E770029F826 /* BrowserView+toolbars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7FBFC12B3B4E770029F826 /* BrowserView+toolbars.swift */; };
-		5F8183002B4234040050DCB0 /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5F8182FF2B4234040050DCB0 /* flag.js */; };
-		5F8183022B4234DD0050DCB0 /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5F8183012B4234DD0050DCB0 /* flag.js */; };
 		5F8183042B432B080050DCB0 /* CoreMotion+array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183032B432B080050DCB0 /* CoreMotion+array.swift */; };
 		5F8183052B432B080050DCB0 /* CoreMotion+array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183032B432B080050DCB0 /* CoreMotion+array.swift */; };
 		5F8183062B432B080050DCB0 /* CoreMotion+array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183032B432B080050DCB0 /* CoreMotion+array.swift */; };
@@ -131,6 +129,8 @@
 		5FBD16CD2B37621600B8B1A5 /* BrowserView+navigation_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16CB2B37620300B8B1A5 /* BrowserView+navigation_iOS.swift */; };
 		5FBD16CF2B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16CE2B376B2900B8B1A5 /* BrowserView+navigation.swift */; };
 		5FBD16D02B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16CE2B376B2900B8B1A5 /* BrowserView+navigation.swift */; };
+		5FC4777F2B44888500BCE86F /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FC4777E2B44888500BCE86F /* flag.js */; };
+		5FC477802B44888500BCE86F /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FC4777E2B44888500BCE86F /* flag.js */; };
 		5FD60D762B350DF700D6F98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD60D752B350DF700D6F98C /* Assets.xcassets */; };
 		5FD60D772B350DF700D6F98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD60D752B350DF700D6F98C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -229,8 +229,6 @@
 		5F7FBFBC2B3B4C5B0029F826 /* BrowserView+orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+orientation.swift"; sourceTree = "<group>"; };
 		5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+handleIncomingURL.swift"; sourceTree = "<group>"; };
 		5F7FBFC12B3B4E770029F826 /* BrowserView+toolbars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+toolbars.swift"; sourceTree = "<group>"; };
-		5F8182FF2B4234040050DCB0 /* flag.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = flag.js; sourceTree = "<group>"; };
-		5F8183012B4234DD0050DCB0 /* flag.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = flag.js; sourceTree = "<group>"; };
 		5F8183032B432B080050DCB0 /* CoreMotion+array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreMotion+array.swift"; sourceTree = "<group>"; };
 		5F8183082B432B290050DCB0 /* CoreMotion+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreMotion+name.swift"; sourceTree = "<group>"; };
 		5F87CF0C2B33B59900E951E7 /* (iOS) NativeWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "(iOS) NativeWebKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +269,7 @@
 		5FBD16C92B3761E000B8B1A5 /* BrowserView+navigation_mac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+navigation_mac.swift"; sourceTree = "<group>"; };
 		5FBD16CB2B37620300B8B1A5 /* BrowserView+navigation_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+navigation_iOS.swift"; sourceTree = "<group>"; };
 		5FBD16CE2B376B2900B8B1A5 /* BrowserView+navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+navigation.swift"; sourceTree = "<group>"; };
+		5FC4777E2B44888500BCE86F /* flag.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = flag.js; sourceTree = "<group>"; };
 		5FD60D752B350DF700D6F98C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -604,7 +603,6 @@
 			isa = PBXGroup;
 			children = (
 				5FA4BEAF2B35119F00138B35 /* Info.plist */,
-				5F8183012B4234DD0050DCB0 /* flag.js */,
 			);
 			path = "(iOS) Safari Extension";
 			sourceTree = "<group>";
@@ -618,6 +616,7 @@
 				5FA4BEA52B35119F00138B35 /* background.js */,
 				5FA4BEA72B35119F00138B35 /* content.js */,
 				5FA4BEA92B35119F00138B35 /* popup.html */,
+				5FC4777E2B44888500BCE86F /* flag.js */,
 				5FA4BEAB2B35119F00138B35 /* popup.css */,
 				5FA4BEAD2B35119F00138B35 /* popup.js */,
 			);
@@ -629,7 +628,6 @@
 			children = (
 				5FA4BED02B35121700138B35 /* Info.plist */,
 				5FA4BED12B35121700138B35 /* Extension.entitlements */,
-				5F8182FF2B4234040050DCB0 /* flag.js */,
 			);
 			path = "(Mac) Safari Extension";
 			sourceTree = "<group>";
@@ -908,7 +906,7 @@
 				5FA4BEA62B35119F00138B35 /* background.js in Resources */,
 				5FA4BEAC2B35119F00138B35 /* popup.css in Resources */,
 				5FA4BEAA2B35119F00138B35 /* popup.html in Resources */,
-				5F8183022B4234DD0050DCB0 /* flag.js in Resources */,
+				5FC4777F2B44888500BCE86F /* flag.js in Resources */,
 				5FA4BEA22B35119F00138B35 /* images in Resources */,
 				5FA4BEA42B35119F00138B35 /* manifest.json in Resources */,
 				5FA4BEA02B35119F00138B35 /* _locales in Resources */,
@@ -924,7 +922,7 @@
 				5FA4BEDD2B3516E300138B35 /* manifest.json in Resources */,
 				5FA4BEDF2B3516E300138B35 /* popup.js in Resources */,
 				5FA4BEDE2B3516E300138B35 /* popup.html in Resources */,
-				5F8183002B4234040050DCB0 /* flag.js in Resources */,
+				5FC477802B44888500BCE86F /* flag.js in Resources */,
 				5FA4BEDC2B3516E300138B35 /* content.js in Resources */,
 				5FA4BEE12B3516F100138B35 /* images in Resources */,
 				5FA4BEDB2B3516E300138B35 /* popup.css in Resources */,

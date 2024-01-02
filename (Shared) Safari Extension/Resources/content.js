@@ -79,6 +79,11 @@ window.addEventListener("nativewebkit-send", async (event) => {
     window.dispatchEvent(new CustomEvent(`nativewebkit-receive-${id}`, { detail: didReceiveResponse }));
 });
 
+window.addEventListener("is-nativewebkit-enabled", async (event) => {
+    _console.log(`received "is-nativewebkit-enabled" message from browser`);
+    window.dispatchEvent(new Event("nativewebkit-is-enabled"));
+});
+
 browser.runtime.onMessage.addListener((message) => {
     _console.log("received message from background.js: ", message);
     window.dispatchEvent(new CustomEvent("nativewebkit-receive", { detail: message }));

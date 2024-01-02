@@ -12,9 +12,7 @@
     },
 
     "background": {
-        "service_worker": "background.js",
-        "type": "module",
-        "persistent": "false"
+        "service_worker": "background.js"
     },
     
     "web_accessible_resources": [{

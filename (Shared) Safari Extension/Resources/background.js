@@ -68,23 +68,23 @@ class Console {
 
 const _console = new Console();
 
-// inject "flag.js" in every webpage (window.isNativeWebKitSafariExtensionInstalled = true)
-const flagScript = {
-    id: "nativewebkit-flag.js",
-    js: ["flag.js"],
-    matches: ["<all_urls>"],
-    run_at: "document_start",
-    all_frames: true,
-    world: "MAIN",
-    persistAcrossSessions: true,
-};
+ // inject "flag.js" in every webpage (window.isNativeWebKitSafariExtensionInstalled = true)
+ const flagScript = {
+     id: "nativewebkit-flag.js",
+     js: ["flag.js"],
+     matches: ["<all_urls>"],
+     run_at: "document_start",
+     all_frames: true,
+     world: "MAIN",
+     persistAcrossSessions: true,
+ };
 
-try {
-    _console.log("trying to registerContentScripts...", [flagScript]);
-    browser.scripting.registerContentScripts([flagScript]);
-} catch (error) {
-    _console.error(error);
-}
+ try {
+     _console.log("trying to registerContentScripts...", [flagScript]);
+     browser.scripting.registerContentScripts([flagScript]);
+ } catch (error) {
+     _console.error(error);
+ }
 
 /**
  * @typedef NKMessage
