@@ -91,7 +91,7 @@ class BrowserViewModel: NSObject, ObservableObject {
 
     // MARK: - Url
 
-    static let defaultUrlString = "http://localhost:5500/"
+    static let defaultUrlString = "http://192.168.1.44:5500/examples/headphone-motion/a-frame/"
 
     @Published var urlString = defaultUrlString
 

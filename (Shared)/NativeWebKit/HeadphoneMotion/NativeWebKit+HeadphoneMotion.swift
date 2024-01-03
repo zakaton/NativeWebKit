@@ -14,49 +14,77 @@ extension NativeWebKit {
         var response: NKResponse?
         switch messageType {
         case .isAvailable:
-            response = ["isAvailable": headphoneMotionManager.isDeviceMotionAvailable]
+            response = headphoneMotionIsAvailableMessage
         case .isActive:
-            response = ["isActive": headphoneMotionManager.isDeviceMotionActive]
+            response = headphoneMotionIsActiveMessage
         case .startUpdates:
-            if context == .app {
-                headphoneMotionManager.startDeviceMotionUpdates(to: .init(), withHandler: onMotionData)
+            if !headphoneMotionManager.isDeviceMotionActive {
+                if context == .app {
+                    headphoneMotionManager.startDeviceMotionUpdates(to: .init(), withHandler: onMotionData)
+                }
+                else {
+                    headphoneMotionManager.startDeviceMotionUpdates()
+                }
             }
             else {
-                headphoneMotionManager.startDeviceMotionUpdates()
+                logger.warning("headphoneMotionManager is already active")
             }
-            response = [
-                "type": NKHeadphoneMotionMessageType.isActive.name,
-                "isActive": headphoneMotionManager.isDeviceMotionActive
-            ]
         case .stopUpdates:
-            headphoneMotionManager.stopDeviceMotionUpdates()
-            response = [
-                "type": NKHeadphoneMotionMessageType.isActive.name,
-                "isActive": headphoneMotionManager.isDeviceMotionActive
-            ]
-        case .getData:
-            if headphoneMotionManager.isDeviceMotionActive,
-               let timestamp = message["timestamp"] as? Double,
-               let deviceMotion = headphoneMotionManager.deviceMotion,
-               timestamp != deviceMotion.timestamp
-            {
-                response = [
-                    "motionData": [
-                        "timestamp": deviceMotion.timestamp,
-                        "sensorLocation": deviceMotion.sensorLocation.name,
-                        "quaternion": deviceMotion.attitude.quaternion.array,
-                        "userAcceleration": deviceMotion.userAcceleration.array,
-                        "gravity": deviceMotion.gravity.array,
-                        "rotationRate": deviceMotion.rotationRate.array,
-                        "euler": deviceMotion.attitude.array
-                    ]
-                ]
+            if headphoneMotionManager.isDeviceMotionActive {
+                headphoneMotionManager.stopDeviceMotionUpdates()
             }
             else {
-                logger.debug("no headphone deviceMotion to return")
+                logger.warning("headphoneMotionManager is not active")
             }
+        case .getData:
+            guard headphoneMotionManager.isDeviceMotionActive else {
+                logger.warning("headphoneMotionManager is not active")
+                return nil
+            }
+            guard let timestamp = message["timestamp"] as? Double else {
+                logger.error("no timestamp was included in message")
+                return nil
+            }
+            guard let deviceMotion = headphoneMotionManager.deviceMotion else {
+                logger.log("no device motion found")
+                return nil
+            }
+            guard timestamp != deviceMotion.timestamp else {
+                logger.log("no new device motion data since last time")
+                return nil
+            }
+            response = headphoneMotionDataMessage(deviceMotion: deviceMotion)
         }
         return response
+    }
+
+    var headphoneMotionIsAvailableMessage: NKMessage {
+        [
+            "type": NKHeadphoneMotionMessageType.isAvailable.name,
+            "isAvailable": headphoneMotionManager.isDeviceMotionAvailable
+        ]
+    }
+
+    var headphoneMotionIsActiveMessage: NKMessage {
+        [
+            "type": NKHeadphoneMotionMessageType.isActive.name,
+            "isActive": headphoneMotionManager.isDeviceMotionActive
+        ]
+    }
+
+    func headphoneMotionDataMessage(deviceMotion: CMDeviceMotion) -> NKMessage {
+        [
+            "type": NKHeadphoneMotionMessageType.getData.name,
+            "motionData": [
+                "timestamp": deviceMotion.timestamp,
+                "sensorLocation": deviceMotion.sensorLocation.name,
+                "quaternion": deviceMotion.attitude.quaternion.array,
+                "userAcceleration": deviceMotion.userAcceleration.array,
+                "gravity": deviceMotion.gravity.array,
+                "rotationRate": deviceMotion.rotationRate.array,
+                "euler": deviceMotion.attitude.array
+            ]
+        ]
     }
 
     func onMotionData(deviceMotion: CMDeviceMotion?, error: Error?) {
@@ -70,7 +98,8 @@ extension NativeWebKit {
             return
         }
 
-        // TODO: - FILL
-        logger.debug("motion data :)")
+        #if IN_APP
+        dispatchMessageToWebpages(headphoneMotionDataMessage(deviceMotion: deviceMotion))
+        #endif
     }
 }

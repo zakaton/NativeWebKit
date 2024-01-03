@@ -58,8 +58,6 @@
 		5F77F7BB2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7B72B40BBC100BCBA92 /* NKMessageTypeProtocol.swift */; };
 		5F77F7BD2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */; };
 		5F77F7BE2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */; };
-		5F77F7BF2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */; };
-		5F77F7C02B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */; };
 		5F77F7C32B40CEAC00BCBA92 /* NativeWebKit+context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7C22B40CEAC00BCBA92 /* NativeWebKit+context.swift */; };
 		5F77F7C42B40CEAC00BCBA92 /* NativeWebKit+context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7C22B40CEAC00BCBA92 /* NativeWebKit+context.swift */; };
 		5F77F7C62B40CED400BCBA92 /* NKContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7C52B40CED400BCBA92 /* NKContext.swift */; };
@@ -131,6 +129,8 @@
 		5FBD16D02B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16CE2B376B2900B8B1A5 /* BrowserView+navigation.swift */; };
 		5FC4777F2B44888500BCE86F /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FC4777E2B44888500BCE86F /* flag.js */; };
 		5FC477802B44888500BCE86F /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FC4777E2B44888500BCE86F /* flag.js */; };
+		5FC477812B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */; };
+		5FC477822B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */; };
 		5FD60D762B350DF700D6F98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD60D752B350DF700D6F98C /* Assets.xcassets */; };
 		5FD60D772B350DF700D6F98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD60D752B350DF700D6F98C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -1044,8 +1044,8 @@
 				5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */,
 				5F81830B2B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
 				5F77F7CC2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
-				5F77F7BF2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5F77F7C82B40CED400BCBA92 /* NKContext.swift in Sources */,
+				5FC477812B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5F77F7A92B40A98900BCBA92 /* NativeWebKit.swift in Sources */,
 				5F77F7BA2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
 				5F77F7B52B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
@@ -1061,8 +1061,8 @@
 				5FA4BED92B3516B300138B35 /* SafariWebExtensionHandler.swift in Sources */,
 				5F81830C2B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
 				5F77F7CD2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
-				5F77F7C02B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5F77F7C92B40CED400BCBA92 /* NKContext.swift in Sources */,
+				5FC477822B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5F77F7AA2B40A98A00BCBA92 /* NativeWebKit.swift in Sources */,
 				5F77F7BB2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
 				5F77F7B62B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
@@ -1363,6 +1363,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-D IN_APP";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -1408,6 +1409,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-D IN_APP";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -1448,6 +1450,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-D IN_APP";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1484,6 +1487,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "-D IN_APP";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

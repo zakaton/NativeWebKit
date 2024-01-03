@@ -19,12 +19,12 @@ class NativeWebKit: NSObject, HasNKContext {
     // MARK: - CMHeadphoneMotionManager
 
     #if !os(visionOS)
-    lazy var headphoneMotionManager: CMHeadphoneMotionManager = {
-        logger.debug("lazy loading headphoneMotionManager")
-        let headphoneMotionManager: CMHeadphoneMotionManager = .init()
-        headphoneMotionManager.delegate = self
-        return headphoneMotionManager
-    }()
+        lazy var headphoneMotionManager: CMHeadphoneMotionManager = {
+            logger.debug("lazy loading headphoneMotionManager")
+            let headphoneMotionManager: CMHeadphoneMotionManager = .init()
+            headphoneMotionManager.delegate = self
+            return headphoneMotionManager
+        }()
     #endif
 
     // MARK: - Message Handling
@@ -65,4 +65,26 @@ class NativeWebKit: NSObject, HasNKContext {
 
         return response
     }
+
+    #if IN_APP
+        func dispatchMessageToWebpages(_ message: NKMessage) {
+            logger.debug("sending message to webpages \(message.debugDescription)")
+            guard let messageData = try? JSONSerialization.data(withJSONObject: message) else {
+                logger.error("unable to convert mesage to json")
+                return
+            }
+            guard let messageString = String(data: messageData, encoding: .utf8) else {
+                logger.error("unable to stringify mesage json")
+                return
+            }
+            logger.debug("sending message json to webpages \"\(messageString)\"")
+            DispatchQueue.main.async {
+                BrowserViewModel.models.forEach {
+                    $0.webView.evaluateJavaScript("""
+                        window.dispatchEvent(new CustomEvent("nativewebkit-receive", {detail: \(messageString)}))
+                    """)
+                }
+            }
+        }
+    #endif
 }
