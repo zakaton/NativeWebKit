@@ -3,11 +3,12 @@
 }
 
 body {
-    width: 100px;
+    width: fit-content;
     padding: 10px;
 
     font-family: system-ui;
     text-align: center;
+    margin: auto;
 }
 
 @media (prefers-color-scheme: dark) {

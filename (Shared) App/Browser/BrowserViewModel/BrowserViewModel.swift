@@ -93,7 +93,7 @@ class BrowserViewModel: NSObject, ObservableObject {
 
     // MARK: - Url
 
-    static let defaultUrlString = "https://192.168.1.44:5500/examples/audio-session/"
+    static let defaultUrlString = "https://192.168.1.44:5500"
 
     @Published var urlString = defaultUrlString
 
