@@ -44,7 +44,6 @@ class BrowserViewModel: NSObject, ObservableObject {
         let configuration: WKWebViewConfiguration = .init()
         configuration.applicationNameForUserAgent = "NativeWebKit"
         configuration.allowsAirPlayForMediaPlayback = true
-        configuration.allowsInlineMediaPlayback = true
         configuration.mediaTypesRequiringUserActionForPlayback = []
         #if !os(macOS)
         configuration.ignoresViewportScaleLimits = false
