@@ -44,4 +44,13 @@ extension BrowserViewModel: WKNavigationDelegate {
         didGetThemeColor = false
         updateNavigationControls()
     }
+
+    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        logger.debug("received authentication challenge \(challenge.debugDescription)")
+
+        let trust = challenge.protectionSpace.serverTrust!
+        let exceptions = SecTrustCopyExceptions(trust)
+        SecTrustSetExceptions(trust, exceptions)
+        completionHandler(.useCredential, URLCredential(trust: trust))
+    }
 }

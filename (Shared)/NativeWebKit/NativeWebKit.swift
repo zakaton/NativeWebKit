@@ -5,6 +5,7 @@
 //  Created by Zack Qattan on 12/29/23.
 //
 
+import AVFAudio
 import CoreMotion
 import Foundation
 import OSLog
@@ -55,6 +56,13 @@ class NativeWebKit: NSObject, HasNKContext {
         if let headphoneMotionMessageType: NKHeadphoneMotionMessageType = .init(rawValue: messageType) {
             response = handleHeadphoneMotionMessage(message, messageType: headphoneMotionMessageType)
         }
+        else if let audioSessionMessageType: NKAudioSessionMessageType = .init(rawValue: messageType) {
+            #if os(iOS)
+                response = handleAudioSessionMessage(message, messageType: audioSessionMessageType)
+            #else
+                logger.error("audioSession messages are not available on MacOS")
+            #endif
+        }
         else {
             logger.warning("uncaught exception for message type \(messageType, privacy: .public)")
         }
@@ -86,5 +94,11 @@ class NativeWebKit: NSObject, HasNKContext {
                 }
             }
         }
+    #endif
+
+    // MARK: - AVAudioSession
+
+    #if os(iOS)
+        lazy var audioSession: AVAudioSession = .sharedInstance()
     #endif
 }

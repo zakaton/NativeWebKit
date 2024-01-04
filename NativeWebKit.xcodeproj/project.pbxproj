@@ -131,6 +131,12 @@
 		5FC477802B44888500BCE86F /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FC4777E2B44888500BCE86F /* flag.js */; };
 		5FC477812B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */; };
 		5FC477822B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */; };
+		5FC477852B44E39800BCE86F /* NativeWebKit+AudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC477842B44E39800BCE86F /* NativeWebKit+AudioSession.swift */; };
+		5FC477872B44E39800BCE86F /* NativeWebKit+AudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC477842B44E39800BCE86F /* NativeWebKit+AudioSession.swift */; };
+		5FC4778A2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC477892B44E69B00BCE86F /* NKAudioSessionMessageType.swift */; };
+		5FC4778B2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC477892B44E69B00BCE86F /* NKAudioSessionMessageType.swift */; };
+		5FC4778C2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC477892B44E69B00BCE86F /* NKAudioSessionMessageType.swift */; };
+		5FC4778D2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC477892B44E69B00BCE86F /* NKAudioSessionMessageType.swift */; };
 		5FD60D762B350DF700D6F98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD60D752B350DF700D6F98C /* Assets.xcassets */; };
 		5FD60D772B350DF700D6F98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD60D752B350DF700D6F98C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -270,6 +276,8 @@
 		5FBD16CB2B37620300B8B1A5 /* BrowserView+navigation_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+navigation_iOS.swift"; sourceTree = "<group>"; };
 		5FBD16CE2B376B2900B8B1A5 /* BrowserView+navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+navigation.swift"; sourceTree = "<group>"; };
 		5FC4777E2B44888500BCE86F /* flag.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = flag.js; sourceTree = "<group>"; };
+		5FC477842B44E39800BCE86F /* NativeWebKit+AudioSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+AudioSession.swift"; sourceTree = "<group>"; };
+		5FC477892B44E69B00BCE86F /* NKAudioSessionMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKAudioSessionMessageType.swift; sourceTree = "<group>"; };
 		5FD60D752B350DF700D6F98C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -471,6 +479,7 @@
 			children = (
 				5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */,
 				5F77F7C52B40CED400BCBA92 /* NKContext.swift */,
+				5FC477832B44E38900BCE86F /* AudioSession */,
 				5F77F7B72B40BBC100BCBA92 /* NKMessageTypeProtocol.swift */,
 				5F77F7B12B40B94800BCBA92 /* HeadphoneMotion */,
 			);
@@ -678,6 +687,15 @@
 				5FBB63292B38BC76008B18B9 /* StringUtils.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		5FC477832B44E38900BCE86F /* AudioSession */ = {
+			isa = PBXGroup;
+			children = (
+				5FC477842B44E39800BCE86F /* NativeWebKit+AudioSession.swift */,
+				5FC477892B44E69B00BCE86F /* NKAudioSessionMessageType.swift */,
+			);
+			path = AudioSession;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -988,9 +1006,11 @@
 				5F77F7C32B40CEAC00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5F77F7C62B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FBB632D2B38C473008B18B9 /* URLUtils.swift in Sources */,
+				5FC477852B44E39800BCE86F /* NativeWebKit+AudioSession.swift in Sources */,
 				5F7FBFC22B3B4E770029F826 /* BrowserView+toolbars.swift in Sources */,
 				5FBD16C82B37520F00B8B1A5 /* NativeWebKitApp.swift in Sources */,
 				5F7FBFBA2B3A45DC0029F826 /* DeviceRotation.swift in Sources */,
+				5FC4778A2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
 				5F7FBFBD2B3B4C5B0029F826 /* BrowserView+orientation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1021,6 +1041,7 @@
 				5FBD16C52B3676C600B8B1A5 /* ViewModifier.swift in Sources */,
 				5FBD16C02B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
 				5FBB632B2B38BC76008B18B9 /* StringUtils.swift in Sources */,
+				5FC4778B2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
 				5F77F7942B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */,
 				5F81830A2B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
 				5F7FBFC02B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */,
@@ -1042,6 +1063,8 @@
 				5F77F7AF2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5F8183062B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
 				5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */,
+				5FC477872B44E39800BCE86F /* NativeWebKit+AudioSession.swift in Sources */,
+				5FC4778C2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
 				5F81830B2B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
 				5F77F7CC2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5F77F7C82B40CED400BCBA92 /* NKContext.swift in Sources */,
@@ -1063,6 +1086,7 @@
 				5F77F7CD2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5F77F7C92B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FC477822B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
+				5FC4778D2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
 				5F77F7AA2B40A98A00BCBA92 /* NativeWebKit.swift in Sources */,
 				5F77F7BB2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
 				5F77F7B62B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
@@ -1347,6 +1371,8 @@
 				INFOPLIST_FILE = "(iOS) App/-iOS--NativeWebKit-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = NativeWebKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSCameraUsageDescription = "NativeWebKit uses camera access to allow webpages to use the camera";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "NativeWebKit uses microphone access to allow webpages to use the microphone";
 				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -1393,6 +1419,8 @@
 				INFOPLIST_FILE = "(iOS) App/-iOS--NativeWebKit-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = NativeWebKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSCameraUsageDescription = "NativeWebKit uses camera access to allow webpages to use the camera";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "NativeWebKit uses microphone access to allow webpages to use the microphone";
 				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -1442,7 +1470,9 @@
 				INFOPLIST_FILE = "(Mac) App/-Mac--NativeWebKit-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = NativeWebKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSCameraUsageDescription = "NativeWebKit uses camera access to allow webpages to use the camera";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "NativeWebKit uses microphone access to allow webpages to use the microphone";
 				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1479,7 +1509,9 @@
 				INFOPLIST_FILE = "(Mac) App/-Mac--NativeWebKit-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = NativeWebKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSCameraUsageDescription = "NativeWebKit uses camera access to allow webpages to use the camera";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "NativeWebKit uses microphone access to allow webpages to use the microphone";
 				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -44,8 +44,8 @@ class BrowserViewModel: NSObject, ObservableObject {
         let configuration: WKWebViewConfiguration = .init()
         configuration.applicationNameForUserAgent = "NativeWebKit"
         configuration.allowsAirPlayForMediaPlayback = true
-        configuration.mediaTypesRequiringUserActionForPlayback = .all
-        // configuration.preferences.inactiveSchedulingPolicy = .throttle
+        configuration.allowsInlineMediaPlayback = true
+        configuration.mediaTypesRequiringUserActionForPlayback = []
         #if !os(macOS)
         configuration.ignoresViewportScaleLimits = false
         configuration.allowsInlineMediaPlayback = true
@@ -64,7 +64,9 @@ class BrowserViewModel: NSObject, ObservableObject {
 
         let preferences: WKPreferences = .init()
         preferences.isElementFullscreenEnabled = true
+        preferences.isFraudulentWebsiteWarningEnabled = true
         preferences.javaScriptCanOpenWindowsAutomatically = true
+        preferences.inactiveSchedulingPolicy = .throttle
         configuration.preferences = preferences
 
         let _webView = WKWebView(frame: .zero, configuration: configuration)
@@ -91,7 +93,7 @@ class BrowserViewModel: NSObject, ObservableObject {
 
     // MARK: - Url
 
-    static let defaultUrlString = "http://192.168.1.44:5500/examples/headphone-motion/a-frame/"
+    static let defaultUrlString = "https://192.168.1.44:5500/examples/audio-session/"
 
     @Published var urlString = defaultUrlString
 
