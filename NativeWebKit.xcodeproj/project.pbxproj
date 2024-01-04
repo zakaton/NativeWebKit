@@ -12,10 +12,10 @@
 		5F4130292B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */; };
 		5F4EB0C22B38F8B500EF179D /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C12B38F8B500EF179D /* icon.icns */; };
 		5F4EB0C42B38F8B500EF179D /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C32B38F8B500EF179D /* ShareViewController.swift */; };
-		5F4EB0CC2B38F8B500EF179D /* (Mac) Share Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F4EB0BF2B38F8B500EF179D /* (Mac) Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5F4EB0CC2B38F8B500EF179D /* NativeWebKit Share Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F4EB0BF2B38F8B500EF179D /* NativeWebKit Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5F4EB0D12B39024300EF179D /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5F4EB0D02B39024300EF179D /* UkatonMacros */; };
 		5F4EB0D92B39436E00EF179D /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4EB0D82B39436E00EF179D /* ShareViewController.swift */; };
-		5F4EB0E02B39436E00EF179D /* (iOS) Share Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F4EB0D62B39436E00EF179D /* (iOS) Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5F4EB0E02B39436E00EF179D /* NativeWebKit Share Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F4EB0D62B39436E00EF179D /* NativeWebKit Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5F4EB0E52B3943F000EF179D /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5F4EB0E42B3943F000EF179D /* UkatonMacros */; };
 		5F5E4BBE2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */; };
 		5F5E4BBF2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */; };
@@ -91,8 +91,8 @@
 		5FA4BEAA2B35119F00138B35 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA92B35119F00138B35 /* popup.html */; };
 		5FA4BEAC2B35119F00138B35 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEAB2B35119F00138B35 /* popup.css */; };
 		5FA4BEAE2B35119F00138B35 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEAD2B35119F00138B35 /* popup.js */; };
-		5FA4BEB22B35119F00138B35 /* (iOS) Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5FA4BE9A2B35119F00138B35 /* (iOS) Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5FA4BED42B35121700138B35 /* (Mac) Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5FA4BEBB2B35121700138B35 /* (Mac) Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5FA4BEB22B35119F00138B35 /* NativeWebKit Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5FA4BE9A2B35119F00138B35 /* NativeWebKit Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5FA4BED42B35121700138B35 /* NativeWebKit Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5FA4BEBB2B35121700138B35 /* NativeWebKit Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5FA4BED92B3516B300138B35 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */; };
 		5FA4BEDA2B3516E300138B35 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA52B35119F00138B35 /* background.js */; };
 		5FA4BEDB2B3516E300138B35 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEAB2B35119F00138B35 /* popup.css */; };
@@ -187,8 +187,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				5F4EB0E02B39436E00EF179D /* (iOS) Share Extension.appex in Embed Foundation Extensions */,
-				5FA4BEB22B35119F00138B35 /* (iOS) Safari Extension.appex in Embed Foundation Extensions */,
+				5F4EB0E02B39436E00EF179D /* NativeWebKit Share Extension.appex in Embed Foundation Extensions */,
+				5FA4BEB22B35119F00138B35 /* NativeWebKit Safari Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,8 +199,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				5F4EB0CC2B38F8B500EF179D /* (Mac) Share Extension.appex in Embed Foundation Extensions */,
-				5FA4BED42B35121700138B35 /* (Mac) Safari Extension.appex in Embed Foundation Extensions */,
+				5F4EB0CC2B38F8B500EF179D /* NativeWebKit Share Extension.appex in Embed Foundation Extensions */,
+				5FA4BED42B35121700138B35 /* NativeWebKit Safari Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,12 +210,12 @@
 /* Begin PBXFileReference section */
 		5F06B1942B3A1B8B00A0A1BB /* KeyboardPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPublisher.swift; sourceTree = "<group>"; };
 		5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKUIDelegate.swift"; sourceTree = "<group>"; };
-		5F4EB0BF2B38F8B500EF179D /* (Mac) Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(Mac) Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F4EB0BF2B38F8B500EF179D /* NativeWebKit Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F4EB0C12B38F8B500EF179D /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		5F4EB0C32B38F8B500EF179D /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		5F4EB0C82B38F8B500EF179D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F4EB0C92B38F8B500EF179D /* Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Share.entitlements; sourceTree = "<group>"; };
-		5F4EB0D62B39436E00EF179D /* (iOS) Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(iOS) Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F4EB0D62B39436E00EF179D /* NativeWebKit Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F4EB0D82B39436E00EF179D /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		5F4EB0DD2B39436E00EF179D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
@@ -245,17 +245,17 @@
 		5F7FBFC12B3B4E770029F826 /* BrowserView+toolbars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+toolbars.swift"; sourceTree = "<group>"; };
 		5F8183032B432B080050DCB0 /* CoreMotion+array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreMotion+array.swift"; sourceTree = "<group>"; };
 		5F8183082B432B290050DCB0 /* CoreMotion+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreMotion+name.swift"; sourceTree = "<group>"; };
-		5F87CF0C2B33B59900E951E7 /* (iOS) NativeWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "(iOS) NativeWebKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F87CF0C2B33B59900E951E7 /* NativeWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeWebKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F89491E2B35089300AF3341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F8949202B35089300AF3341 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F8949212B35089300AF3341 /* NativeWebKit.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = NativeWebKit.entitlements; sourceTree = "<group>"; };
 		5F8949222B35089300AF3341 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5F89492C2B3508E400AF3341 /* (Mac) NativeWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "(Mac) NativeWebKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F89492C2B3508E400AF3341 /* NativeWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeWebKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8949322B3508E500AF3341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F8949352B3508E500AF3341 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F8949372B3508E500AF3341 /* NativeWebKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NativeWebKit.entitlements; sourceTree = "<group>"; };
 		5FA4BE952B35113B00138B35 /* TODO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
-		5FA4BE9A2B35119F00138B35 /* (iOS) Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(iOS) Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FA4BE9A2B35119F00138B35 /* NativeWebKit Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
 		5FA4BE9F2B35119F00138B35 /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
 		5FA4BEA12B35119F00138B35 /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
@@ -266,7 +266,7 @@
 		5FA4BEAB2B35119F00138B35 /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
 		5FA4BEAD2B35119F00138B35 /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
 		5FA4BEAF2B35119F00138B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FA4BEBB2B35121700138B35 /* (Mac) Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(Mac) Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FA4BEBB2B35121700138B35 /* NativeWebKit Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA4BED02B35121700138B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FA4BED12B35121700138B35 /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
 		5FBB63272B38AA30008B18B9 /* -iOS--NativeWebKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "-iOS--NativeWebKit-Info.plist"; sourceTree = "<group>"; };
@@ -547,12 +547,12 @@
 		5F87CF0D2B33B59900E951E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F87CF0C2B33B59900E951E7 /* (iOS) NativeWebKit.app */,
-				5F89492C2B3508E400AF3341 /* (Mac) NativeWebKit.app */,
-				5FA4BE9A2B35119F00138B35 /* (iOS) Safari Extension.appex */,
-				5FA4BEBB2B35121700138B35 /* (Mac) Safari Extension.appex */,
-				5F4EB0BF2B38F8B500EF179D /* (Mac) Share Extension.appex */,
-				5F4EB0D62B39436E00EF179D /* (iOS) Share Extension.appex */,
+				5F87CF0C2B33B59900E951E7 /* NativeWebKit.app */,
+				5F89492C2B3508E400AF3341 /* NativeWebKit.app */,
+				5FA4BE9A2B35119F00138B35 /* NativeWebKit Safari Extension.appex */,
+				5FA4BEBB2B35121700138B35 /* NativeWebKit Safari Extension.appex */,
+				5F4EB0BF2B38F8B500EF179D /* NativeWebKit Share Extension.appex */,
+				5F4EB0D62B39436E00EF179D /* NativeWebKit Share Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -738,7 +738,7 @@
 				5F4EB0D02B39024300EF179D /* UkatonMacros */,
 			);
 			productName = Share;
-			productReference = 5F4EB0BF2B38F8B500EF179D /* (Mac) Share Extension.appex */;
+			productReference = 5F4EB0BF2B38F8B500EF179D /* NativeWebKit Share Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		5F4EB0D52B39436E00EF179D /* (iOS) Share Extension */ = {
@@ -758,7 +758,7 @@
 				5F4EB0E42B3943F000EF179D /* UkatonMacros */,
 			);
 			productName = Share;
-			productReference = 5F4EB0D62B39436E00EF179D /* (iOS) Share Extension.appex */;
+			productReference = 5F4EB0D62B39436E00EF179D /* NativeWebKit Share Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		5F87CF0B2B33B59900E951E7 /* (iOS) NativeWebKit */ = {
@@ -781,7 +781,7 @@
 				5FA4BEE32B361AB200138B35 /* UkatonMacros */,
 			);
 			productName = NativeWebKit;
-			productReference = 5F87CF0C2B33B59900E951E7 /* (iOS) NativeWebKit.app */;
+			productReference = 5F87CF0C2B33B59900E951E7 /* NativeWebKit.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5F89492B2B3508E400AF3341 /* (Mac) NativeWebKit */ = {
@@ -804,7 +804,7 @@
 				5FBD16A42B361B3400B8B1A5 /* UkatonMacros */,
 			);
 			productName = NativeWebKit;
-			productReference = 5F89492C2B3508E400AF3341 /* (Mac) NativeWebKit.app */;
+			productReference = 5F89492C2B3508E400AF3341 /* NativeWebKit.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5FA4BE992B35119F00138B35 /* (iOS) Safari Extension */ = {
@@ -824,7 +824,7 @@
 				5FBD16A62B361B3900B8B1A5 /* UkatonMacros */,
 			);
 			productName = Extension;
-			productReference = 5FA4BE9A2B35119F00138B35 /* (iOS) Safari Extension.appex */;
+			productReference = 5FA4BE9A2B35119F00138B35 /* NativeWebKit Safari Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		5FA4BEBA2B35121700138B35 /* (Mac) Safari Extension */ = {
@@ -844,7 +844,7 @@
 				5FBD16A82B361B3B00B8B1A5 /* UkatonMacros */,
 			);
 			productName = Extension;
-			productReference = 5FA4BEBB2B35121700138B35 /* (Mac) Safari Extension.appex */;
+			productReference = 5FA4BEBB2B35121700138B35 /* NativeWebKit Safari Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -1169,7 +1169,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.ShareExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NativeWebKit Share Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1199,7 +1199,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.ShareExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NativeWebKit Share Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1225,7 +1225,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.ShareExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NativeWebKit Share Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1255,7 +1255,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.ShareExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NativeWebKit Share Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1419,7 +1419,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-D IN_APP";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NativeWebKit;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1467,7 +1467,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-D IN_APP";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NativeWebKit;
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1510,7 +1510,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-D IN_APP";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NativeWebKit;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1549,7 +1549,7 @@
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-D IN_APP";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = NativeWebKit;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1579,7 +1579,7 @@
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.SafariExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NativeWebKit Safari Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1614,7 +1614,7 @@
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.SafariExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NativeWebKit Safari Extension";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1653,7 +1653,7 @@
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.SafariExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NativeWebKit Safari Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1687,7 +1687,7 @@
 					SafariServices,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.SafariExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NativeWebKit Safari Extension";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
