@@ -17,7 +17,7 @@
     
     "web_accessible_resources": [{
         "resources": [""],
-        "matches": ["<all_urls>"],
+        "matches": ["<all_urls>"]
     }],
 
     "content_scripts": [{
@@ -25,7 +25,6 @@
         "matches": [ "<all_urls>" ],
         "runAt": "document_start"
     }],
-
 
     "action": {
         "default_popup": "popup.html"
