@@ -20,7 +20,7 @@ extension NativeWebKit {
             logger.debug("AVAudioSession init error: \(error, privacy: .public)")
         }
 
-        var response: NKResponse?
+        let response: NKResponse? = nil
         switch messageType {
         case .blank:
             break

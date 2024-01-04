@@ -63,6 +63,9 @@ class NativeWebKit: NSObject, HasNKContext {
                 logger.error("audioSession messages are not available on MacOS")
             #endif
         }
+        else if let templateMessageType: NKTemplateMessageType = .init(rawValue: messageType) {
+            response = handleTemplateMessage(message, messageType: templateMessageType)
+        }
         else {
             logger.warning("uncaught exception for message type \(messageType, privacy: .public)")
         }
