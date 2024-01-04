@@ -73,18 +73,27 @@ const flagScript = {
     id: "nativewebkit-flag.js",
     js: ["flag.js"],
     matches: ["<all_urls>"],
-    run_at: "document_start",
-    all_frames: true,
+    runAt: "document_start",
+    allFrames: true,
     world: "MAIN",
     persistAcrossSessions: true,
 };
 
-try {
-    _console.log("trying to registerContentScripts...", [flagScript]);
-    browser.scripting.registerContentScripts([flagScript]);
-} catch (error) {
-    _console.error(error);
-}
+const injectFlagScript = async () => {
+    const registeredContentScripts = await browser.scripting.getRegisteredContentScripts();
+    _console.log("registeredContentScripts", registeredContentScripts);
+    const registeredFlagScript = registeredContentScripts.find((script) => script.id == flagScript.id);
+    _console.log("was flag script already registered?", registeredFlagScript);
+    if (!registeredFlagScript) {
+        try {
+            _console.log("trying to registerContentScripts...", [flagScript]);
+            browser.scripting.registerContentScripts([flagScript]);
+        } catch (error) {
+            _console.error(error);
+        }
+    }
+};
+injectFlagScript();
 
 /**
  * @typedef NKMessage

@@ -11,12 +11,12 @@ extension BrowserViewModel: WKScriptMessageHandlerWithReply {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage, replyHandler: @escaping (Any?, String?) -> Void) {
         logger.debug("received message \(String(describing: message.body), privacy: .public)")
         if let response = nativeWebKit.handleMessage(message.body) {
+            logger.log("response \(String(describing: response), privacy: .public)")
             replyHandler(response, nil)
         }
         else {
-            let errorString = "no message response"
-            logger.error("\(errorString)")
-            replyHandler(nil, errorString)
+            logger.log("no message response")
+            replyHandler(nil, nil)
         }
     }
 

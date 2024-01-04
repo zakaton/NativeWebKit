@@ -20,7 +20,7 @@ extension NativeWebKit {
         case .startUpdates:
             if !headphoneMotionManager.isDeviceMotionActive {
                 if context == .app {
-                    headphoneMotionManager.startDeviceMotionUpdates(to: .init(), withHandler: onMotionData)
+                    headphoneMotionManager.startDeviceMotionUpdates(to: .init(), withHandler: onHeadphoneMotionData)
                 }
                 else {
                     headphoneMotionManager.startDeviceMotionUpdates()
@@ -87,7 +87,7 @@ extension NativeWebKit {
         ]
     }
 
-    func onMotionData(deviceMotion: CMDeviceMotion?, error: Error?) {
+    func onHeadphoneMotionData(deviceMotion: CMDeviceMotion?, error: Error?) {
         if let error {
             logger.error("\(error.localizedDescription)")
             return
@@ -100,6 +100,18 @@ extension NativeWebKit {
 
         #if IN_APP
         dispatchMessageToWebpages(headphoneMotionDataMessage(deviceMotion: deviceMotion))
+        #endif
+    }
+
+    func onHeadphoneMotionManagerIsAvailableUpdate() {
+        #if IN_APP
+        dispatchMessageToWebpages(headphoneMotionIsAvailableMessage)
+        #endif
+    }
+
+    func onHeadphoneMotionManagerIsActiveUpdate() {
+        #if IN_APP
+        dispatchMessageToWebpages(headphoneMotionIsActiveMessage)
         #endif
     }
 }

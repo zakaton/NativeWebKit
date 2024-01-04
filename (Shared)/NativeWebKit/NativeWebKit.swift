@@ -17,6 +17,8 @@ typealias NKResponse = [String: Any]
 @StaticLogger
 @Singleton
 class NativeWebKit: NSObject, HasNKContext {
+    var observations: [NSKeyValueObservation] = []
+
     // MARK: - CMHeadphoneMotionManager
 
     #if !os(visionOS)
@@ -24,6 +26,19 @@ class NativeWebKit: NSObject, HasNKContext {
             logger.debug("lazy loading headphoneMotionManager")
             let headphoneMotionManager: CMHeadphoneMotionManager = .init()
             headphoneMotionManager.delegate = self
+
+            let isAvailableObservation = headphoneMotionManager.observe(\.isDeviceMotionAvailable, options: [.new]) { [unowned self] _, _ in
+                logger.debug("headphoneMotionManager.isDeviceMotionAvailable updated")
+                onHeadphoneMotionManagerIsAvailableUpdate()
+            }
+            observations.append(isAvailableObservation)
+
+            let isActiveObservation = headphoneMotionManager.observe(\.isDeviceMotionActive, options: [.new]) { [unowned self] _, _ in
+                logger.debug("headphoneMotionManager.isDeviceMotionActive updated")
+                onHeadphoneMotionManagerIsActiveUpdate()
+            }
+            observations.append(isActiveObservation)
+
             return headphoneMotionManager
         }()
     #endif

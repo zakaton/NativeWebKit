@@ -92,7 +92,7 @@ class BrowserViewModel: NSObject, ObservableObject {
 
     // MARK: - Url
 
-    static let defaultUrlString = "https://192.168.1.44:5500"
+    static let defaultUrlString = "https://www.google.com"
 
     @Published var urlString = defaultUrlString
 
@@ -111,6 +111,7 @@ class BrowserViewModel: NSObject, ObservableObject {
         if let url {
             logger.debug("loading \(url.absoluteString)")
             webView.load(URLRequest(url: url))
+
         } else {
             let currentUrlString = urlString
             logger.warning("invalid urlString \"\(currentUrlString)\"")
