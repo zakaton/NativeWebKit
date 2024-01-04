@@ -9,5 +9,5 @@ import Foundation
 
 enum NKAudioSessionMessageType: String, NKMessageTypeProtocol {
     static let prefix: String = "as"
-    case audio
+    case blank
 }

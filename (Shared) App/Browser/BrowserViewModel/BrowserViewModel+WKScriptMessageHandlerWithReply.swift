@@ -14,7 +14,7 @@ extension BrowserViewModel: WKScriptMessageHandlerWithReply {
             replyHandler(response, nil)
         }
         else {
-            let errorString = "invalid message format"
+            let errorString = "no message response"
             logger.error("\(errorString)")
             replyHandler(nil, errorString)
         }

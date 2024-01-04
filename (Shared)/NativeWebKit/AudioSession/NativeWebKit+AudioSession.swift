@@ -15,15 +15,14 @@ extension NativeWebKit {
         logger.debug("audioSession mode \(self.audioSession.mode.rawValue.debugDescription, privacy: .public)")
 
         do {
-            try audioSession.setCategory(.playAndRecord, mode: .gameChat, options: .mixWithOthers)
-            // try audioSession.setActive(true, options: [])
+            try audioSession.setCategory(.playAndRecord, mode: .default, options: .mixWithOthers)
         } catch {
             logger.debug("AVAudioSession init error: \(error, privacy: .public)")
         }
 
         var response: NKResponse?
         switch messageType {
-        case .audio:
+        case .blank:
             break
         }
         return response
