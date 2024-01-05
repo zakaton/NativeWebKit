@@ -48,9 +48,22 @@ extension BrowserViewModel: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         logger.debug("received authentication challenge \(challenge.debugDescription)")
 
-        let trust = challenge.protectionSpace.serverTrust!
-        let exceptions = SecTrustCopyExceptions(trust)
-        SecTrustSetExceptions(trust, exceptions)
-        completionHandler(.useCredential, URLCredential(trust: trust))
+        guard let serverTrust = challenge.protectionSpace.serverTrust else {
+            logger.error("serverTrust not found")
+            completionHandler(.cancelAuthenticationChallenge, nil)
+            return
+        }
+
+        SecTrustEvaluateAsyncWithError(serverTrust, .main) { serverTrust, trusted, error in
+            self.logger.debug("trusted? \(trusted)")
+            if let error {
+                self.logger.debug("error? \(error.localizedDescription)")
+            }
+
+            DispatchQueue.global(qos: .background).async {
+                let credential = URLCredential(trust: serverTrust)
+                completionHandler(.useCredential, credential)
+            }
+        }
     }
 }

@@ -27,6 +27,7 @@ class NativeWebKit: NSObject, HasNKContext {
             let headphoneMotionManager: CMHeadphoneMotionManager = .init()
             headphoneMotionManager.delegate = self
 
+            // TODO: - this doesn't work
             let isAvailableObservation = headphoneMotionManager.observe(\.isDeviceMotionAvailable, options: [.new]) { [unowned self] _, _ in
                 logger.debug("headphoneMotionManager.isDeviceMotionAvailable updated")
                 onHeadphoneMotionManagerIsAvailableUpdate()

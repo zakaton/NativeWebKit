@@ -68,6 +68,11 @@ class Console {
 
 const _console = new Console();
 
+/* 
+    TODO: - injecting flag.js doesn't work when Safari requits/reopens on iOS (moves from background page to service-worker context).
+    How to re-register when reopening Safari? How would the service-worker re-open? (needs to trigger content.js or something...)
+*/
+
 // inject "flag.js" in every webpage (window.isNativeWebKitSafariExtensionInstalled = true)
 const flagScript = {
     id: "nativewebkit-flag.js",
