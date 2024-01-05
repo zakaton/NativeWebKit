@@ -23,7 +23,7 @@ class Console {
     }
 
     /** @type {boolean} */
-    isLoggingEnabled = false;
+    isLoggingEnabled = true;
     /** @type {LogFunction} */
     get log() {
         return this.isLoggingEnabled ? this.#log : this.#emptyFunction;
@@ -31,7 +31,7 @@ class Console {
     #log = console.log.bind(console);
 
     /** @type {boolean} */
-    isWarningEnabled = false;
+    isWarningEnabled = true;
     /** @type {LogFunction} */
     get warn() {
         return this.isWarningEnabled ? this.#warn : this.#emptyFunction;
@@ -79,9 +79,9 @@ window.addEventListener("nativewebkit-send", async (event) => {
     window.dispatchEvent(new CustomEvent(`nativewebkit-receive-${id}`, { detail: didReceiveResponse }));
 });
 
-window.addEventListener("is-nativewebkit-enabled", async (event) => {
-    _console.log(`received "is-nativewebkit-enabled" message from browser`);
-    window.dispatchEvent(new Event("nativewebkit-is-enabled"));
+window.addEventListener("is-nativewebkit-extension-installed", async (event) => {
+    _console.log(`received "is-nativewebkit-extension-installed" message from browser`);
+    window.dispatchEvent(new Event("nativewebkit-extension-is-installed"));
 });
 
 browser.runtime.onMessage.addListener((message) => {
