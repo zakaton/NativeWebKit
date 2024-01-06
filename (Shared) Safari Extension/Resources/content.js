@@ -23,7 +23,7 @@ class Console {
     }
 
     /** @type {boolean} */
-    isLoggingEnabled = true;
+    isLoggingEnabled = false;
     /** @type {LogFunction} */
     get log() {
         return this.isLoggingEnabled ? this.#log : this.#emptyFunction;
@@ -31,7 +31,7 @@ class Console {
     #log = console.log.bind(console);
 
     /** @type {boolean} */
-    isWarningEnabled = true;
+    isWarningEnabled = false;
     /** @type {LogFunction} */
     get warn() {
         return this.isWarningEnabled ? this.#warn : this.#emptyFunction;
@@ -88,3 +88,6 @@ browser.runtime.onMessage.addListener((message) => {
     _console.log("received message from background.js: ", message);
     window.dispatchEvent(new CustomEvent("nativewebkit-receive", { detail: message }));
 });
+
+// wake up the background.js service worker if the user quit/re-opened Safari
+browser.runtime.sendMessage(null);

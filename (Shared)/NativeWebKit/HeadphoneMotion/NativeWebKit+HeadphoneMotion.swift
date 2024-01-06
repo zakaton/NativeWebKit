@@ -8,6 +8,27 @@
 import CoreMotion
 
 extension NativeWebKit {
+    func setupHeadphoneMotionManager() {
+        headphoneMotionManager.delegate = self
+
+        /*
+         TODO: - figure out how to observe \.isDeviceMotionAvailable
+         If you startDeviceMotionUpdates(), it doesn't trigger the headphoneMotionManagerDidConnect() event if there's no headphones connected.
+         This is fine if you're in Safari, but if you're in the app and don't poll for updates it doesn't trigger the "isActive" javascript event
+         */
+        let isAvailableObservation = headphoneMotionManager.observe(\.isDeviceMotionAvailable, options: [.new]) { [unowned self] _, _ in
+            logger.debug("headphoneMotionManager.isDeviceMotionAvailable updated")
+            onHeadphoneMotionManagerIsAvailableUpdate()
+        }
+        observations.append(isAvailableObservation)
+
+        let isActiveObservation = headphoneMotionManager.observe(\.isDeviceMotionActive, options: [.new]) { [unowned self] _, _ in
+            logger.debug("headphoneMotionManager.isDeviceMotionActive updated")
+            onHeadphoneMotionManagerIsActiveUpdate()
+        }
+        observations.append(isActiveObservation)
+    }
+
     func handleHeadphoneMotionMessage(_ message: NKMessage, messageType: NKHeadphoneMotionMessageType) -> NKResponse? {
         logger.debug("headphoneMotionMessageType \(messageType.name, privacy: .public)")
 

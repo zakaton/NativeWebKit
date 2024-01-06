@@ -23,23 +23,9 @@ class NativeWebKit: NSObject, HasNKContext {
 
     #if !os(visionOS)
         lazy var headphoneMotionManager: CMHeadphoneMotionManager = {
-            logger.debug("lazy loading headphoneMotionManager")
+            logger.debug("lazy loading headphoneMotionManager...")
             let headphoneMotionManager: CMHeadphoneMotionManager = .init()
-            headphoneMotionManager.delegate = self
-
-            // TODO: - this doesn't work
-            let isAvailableObservation = headphoneMotionManager.observe(\.isDeviceMotionAvailable, options: [.new]) { [unowned self] _, _ in
-                logger.debug("headphoneMotionManager.isDeviceMotionAvailable updated")
-                onHeadphoneMotionManagerIsAvailableUpdate()
-            }
-            observations.append(isAvailableObservation)
-
-            let isActiveObservation = headphoneMotionManager.observe(\.isDeviceMotionActive, options: [.new]) { [unowned self] _, _ in
-                logger.debug("headphoneMotionManager.isDeviceMotionActive updated")
-                onHeadphoneMotionManagerIsActiveUpdate()
-            }
-            observations.append(isActiveObservation)
-
+            setupHeadphoneMotionManager()
             return headphoneMotionManager
         }()
     #endif

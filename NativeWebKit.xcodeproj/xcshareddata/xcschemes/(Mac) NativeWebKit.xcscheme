@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5F89492B2B3508E400AF3341"
-               BuildableName = "(Mac) NativeWebKit.app"
+               BuildableName = "NativeWebKit.app"
                BlueprintName = "(Mac) NativeWebKit"
                ReferencedContainer = "container:NativeWebKit.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F89492B2B3508E400AF3341"
-            BuildableName = "(Mac) NativeWebKit.app"
+            BuildableName = "NativeWebKit.app"
             BlueprintName = "(Mac) NativeWebKit"
             ReferencedContainer = "container:NativeWebKit.xcodeproj">
          </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F89492B2B3508E400AF3341"
-            BuildableName = "(Mac) NativeWebKit.app"
+            BuildableName = "NativeWebKit.app"
             BlueprintName = "(Mac) NativeWebKit"
             ReferencedContainer = "container:NativeWebKit.xcodeproj">
          </BuildableReference>

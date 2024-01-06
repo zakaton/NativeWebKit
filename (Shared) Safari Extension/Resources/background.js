@@ -68,14 +68,9 @@ class Console {
 
 const _console = new Console();
 
-/* 
-    TODO: - injecting flag.js doesn't work when Safari requits/reopens on iOS (moves from background page to service-worker context).
-    How to re-register when reopening Safari? How would the service-worker re-open? (needs to trigger content.js or something...)
-*/
-
 // inject "flag.js" in every webpage (window.isNativeWebKitSafariExtensionInstalled = true)
-const flagScript = {
-    id: "nativewebkit-flag.js",
+const scriptsToInject = {
+    id: "nativewebkit-injection-scripts",
     js: ["flag.js"],
     matches: ["<all_urls>"],
     runAt: "document_start",
@@ -84,21 +79,55 @@ const flagScript = {
     persistAcrossSessions: true,
 };
 
-const injectFlagScript = async () => {
+const injectScripts = async () => {
     const registeredContentScripts = await browser.scripting.getRegisteredContentScripts();
     _console.log("registeredContentScripts", registeredContentScripts);
-    const registeredFlagScript = registeredContentScripts.find((script) => script.id == flagScript.id);
-    _console.log("was flag script already registered?", registeredFlagScript);
+    const registeredFlagScript = registeredContentScripts.find((script) => script.id == scriptsToInject.id);
+    _console.log("were injection scripts already registered?", registeredFlagScript);
     if (!registeredFlagScript) {
         try {
-            _console.log("trying to registerContentScripts...", [flagScript]);
-            browser.scripting.registerContentScripts([flagScript]);
+            _console.log("trying to registerContentScripts...", [scriptsToInject]);
+            browser.scripting.registerContentScripts([scriptsToInject]);
         } catch (error) {
             _console.error(error);
         }
     }
 };
-injectFlagScript();
+injectScripts();
+
+// inject scripts into all active tabs,
+// because injectScripts doesn't work when you quit/reopen Safari on iOS
+browser.tabs.onCreated.addListener(async (event) => {
+    _console.log("onCreated", event);
+    if (!event.active) {
+        return;
+    }
+    const tabId = event.id;
+    await executeInjectionScripts(tabId);
+});
+browser.tabs.onUpdated.addListener(async (tabId) => {
+    _console.log("onUpdated", tabId);
+    await executeInjectionScripts(tabId);
+});
+
+const executeInjectionScripts = async (tabId) => {
+    const tab = await browser.tabs.get(tabId);
+    console.log("executeInjectionScript?", tab);
+    if (!tab.active || tab.status == "loading") {
+        return;
+    }
+    _console.log("executeInjectionScript", tab, tabId);
+    try {
+        await browser.scripting.executeScript({
+            files: scriptsToInject.js,
+            world: "MAIN",
+            injectImmediately: true,
+            target: { tabId, allFrames: true },
+        });
+    } catch (error) {
+        _console.error("error for tabId", tabId, error);
+    }
+};
 
 /**
  * @typedef NKMessage
@@ -138,6 +167,9 @@ async function sendMessageToBrowser(message) {
  * @param {(response:object)=>void} sendResponse
  */
 const browserRuntimeMessageListener = (message, sender, sendResponse) => {
+    if (!message) {
+        return;
+    }
     _console.log("received browser message", message, "from sender", sender);
     sendMessageToApp(message);
     sendResponse(true);
