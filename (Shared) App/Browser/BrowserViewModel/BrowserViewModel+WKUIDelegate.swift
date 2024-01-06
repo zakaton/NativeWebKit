@@ -28,6 +28,7 @@ extension BrowserViewModel: WKUIDelegate {
     }
 
     func webView(_ webView: WKWebView, requestMediaCapturePermissionFor origin: WKSecurityOrigin, initiatedByFrame frame: WKFrameInfo, type: WKMediaCaptureType, decisionHandler: @escaping (WKPermissionDecision) -> Void) {
+        // TODO: - put up a panel every time?
         logger.debug("requesting media capture \(origin.debugDescription) with type \(type.rawValue.description)")
         decisionHandler(.grant)
     }
@@ -37,6 +38,7 @@ extension BrowserViewModel: WKUIDelegate {
     }
 
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        // TODO: - open in new tab
         if navigationAction.targetFrame == nil, let url = navigationAction.request.url {
             logger.debug("new link \(url.absoluteString)")
             urlString = url.absoluteString

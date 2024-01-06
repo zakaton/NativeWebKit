@@ -20,6 +20,7 @@ struct NativeWebKitApp: App {
         }
         .windowToolbarStyle(.unified(showsTitle: false))
         .commands {
+            // TODO: - figure out how to ge the title from WKWebView's backForwardList.backList[].title on iOS (currently blank)
 //            CommandMenu("History") {
 //                // TODO: - reference some global webViewModel's history
 //            }

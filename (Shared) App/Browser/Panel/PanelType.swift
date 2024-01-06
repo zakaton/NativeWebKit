@@ -13,6 +13,7 @@ enum PanelType: Identifiable {
     case alert(completionHandler: () -> Void)
     case prompt(completionHandler: (String?) -> Void, defaultText: String?)
     case confirm(completionHandler: (Bool) -> Void)
+    case notTrusted(completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void, serverTrust: SecTrust)
 
     var id: String { name }
 }
