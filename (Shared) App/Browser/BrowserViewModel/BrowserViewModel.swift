@@ -92,7 +92,11 @@ class BrowserViewModel: NSObject, ObservableObject {
 
     // MARK: - Url
 
+    #if DEBUG
+    static let defaultUrlString = "http://192.168.1.44:5500/examples/ar-session/test/"
+    #else
     static let defaultUrlString = "https://www.google.com"
+    #endif
 
     @Published var urlString = defaultUrlString
 

@@ -8,7 +8,7 @@
 import CoreMotion
 
 extension NativeWebKit {
-    func setupHeadphoneMotionManager() {
+    func setupHeadphoneMotionManager(_ headphoneMotionManager: CMHeadphoneMotionManager) {
         headphoneMotionManager.delegate = self
 
         /*
@@ -30,7 +30,7 @@ extension NativeWebKit {
     }
 
     func handleHeadphoneMotionMessage(_ message: NKMessage, messageType: NKHeadphoneMotionMessageType) -> NKResponse? {
-        logger.debug("headphoneMotionMessageType \(messageType.name, privacy: .public)")
+        logger.debug("headphoneMotionMessageType \(messageType.id, privacy: .public)")
 
         var response: NKResponse?
         switch messageType {

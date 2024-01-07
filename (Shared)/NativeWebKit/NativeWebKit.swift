@@ -5,10 +5,14 @@
 //  Created by Zack Qattan on 12/29/23.
 //
 
+#if os(iOS)
+    import ARKit
+#endif
 import AVFAudio
 import CoreMotion
 import Foundation
 import OSLog
+import SceneKit
 import UkatonMacros
 
 typealias NKMessage = [String: Any]
@@ -18,17 +22,6 @@ typealias NKResponse = [String: Any]
 @Singleton
 class NativeWebKit: NSObject, HasNKContext {
     var observations: [NSKeyValueObservation] = []
-
-    // MARK: - CMHeadphoneMotionManager
-
-    #if !os(visionOS)
-        lazy var headphoneMotionManager: CMHeadphoneMotionManager = {
-            logger.debug("lazy loading headphoneMotionManager...")
-            let headphoneMotionManager: CMHeadphoneMotionManager = .init()
-            setupHeadphoneMotionManager()
-            return headphoneMotionManager
-        }()
-    #endif
 
     // MARK: - Message Handling
 
@@ -55,7 +48,10 @@ class NativeWebKit: NSObject, HasNKContext {
 
         var response: NKResponse?
 
-        if let headphoneMotionMessageType: NKHeadphoneMotionMessageType = .init(rawValue: messageType) {
+        if let templateMessageType: NKTemplateMessageType = .init(rawValue: messageType) {
+            response = handleTemplateMessage(message, messageType: templateMessageType)
+        }
+        else if let headphoneMotionMessageType: NKHeadphoneMotionMessageType = .init(rawValue: messageType) {
             response = handleHeadphoneMotionMessage(message, messageType: headphoneMotionMessageType)
         }
         else if let audioSessionMessageType: NKAudioSessionMessageType = .init(rawValue: messageType) {
@@ -65,8 +61,12 @@ class NativeWebKit: NSObject, HasNKContext {
                 logger.error("audioSession messages are not available on MacOS")
             #endif
         }
-        else if let templateMessageType: NKTemplateMessageType = .init(rawValue: messageType) {
-            response = handleTemplateMessage(message, messageType: templateMessageType)
+        else if let arSessionMessageType: NKARSessionMessageType = .init(rawValue: messageType) {
+            #if os(iOS)
+                response = handleARSessionMessage(message, messageType: arSessionMessageType)
+            #else
+                logger.error("arSession messages are not available on MacOS")
+            #endif
         }
         else {
             logger.warning("uncaught exception for message type \(messageType, privacy: .public)")
@@ -101,9 +101,31 @@ class NativeWebKit: NSObject, HasNKContext {
         }
     #endif
 
+    // MARK: - CMHeadphoneMotionManager
+
+    #if !os(visionOS)
+        lazy var headphoneMotionManager: CMHeadphoneMotionManager = {
+            logger.debug("lazy loading headphoneMotionManager...")
+            let headphoneMotionManager: CMHeadphoneMotionManager = .init()
+            setupHeadphoneMotionManager(headphoneMotionManager)
+            return headphoneMotionManager
+        }()
+    #endif
+
     // MARK: - AVAudioSession
 
     #if os(iOS)
         lazy var audioSession: AVAudioSession = .sharedInstance()
+    #endif
+
+    // MARK: - ARSession
+
+    #if os(iOS)
+        lazy var sceneView: ARSCNView = {
+            logger.debug("lazy loading sceneView...")
+            let sceneView: ARSCNView = .init()
+            setupSceneView(sceneView)
+            return sceneView
+        }()
     #endif
 }

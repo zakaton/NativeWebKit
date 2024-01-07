@@ -9,7 +9,7 @@ import AVFAudio
 
 extension NativeWebKit {
     func handleAudioSessionMessage(_ message: NKMessage, messageType: NKAudioSessionMessageType) -> NKResponse? {
-        logger.debug("audioSessionMessageType \(messageType.name, privacy: .public)")
+        logger.debug("audioSessionMessageType \(messageType.id, privacy: .public)")
 
         logger.debug("audioSession category \(self.audioSession.category.rawValue.debugDescription, privacy: .public)")
         logger.debug("audioSession mode \(self.audioSession.mode.rawValue.debugDescription, privacy: .public)")

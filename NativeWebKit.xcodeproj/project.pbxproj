@@ -82,6 +82,16 @@
 		5F8949262B35089300AF3341 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8949202B35089300AF3341 /* Preview Assets.xcassets */; };
 		5F8949272B35089300AF3341 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8949222B35089300AF3341 /* ContentView.swift */; };
 		5F8949362B3508E500AF3341 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8949352B3508E500AF3341 /* Preview Assets.xcassets */; };
+		5F9007FD2B49C66300902A3D /* NKARSessionMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9007FC2B49C66300902A3D /* NKARSessionMessageType.swift */; };
+		5F9007FE2B49C66300902A3D /* NKARSessionMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9007FC2B49C66300902A3D /* NKARSessionMessageType.swift */; };
+		5F9007FF2B49C66300902A3D /* NKARSessionMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9007FC2B49C66300902A3D /* NKARSessionMessageType.swift */; };
+		5F9008002B49C66300902A3D /* NKARSessionMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9007FC2B49C66300902A3D /* NKARSessionMessageType.swift */; };
+		5F9008022B49C68E00902A3D /* NativeWebKit+ARSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008012B49C68E00902A3D /* NativeWebKit+ARSession.swift */; };
+		5F9008042B49C68E00902A3D /* NativeWebKit+ARSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008012B49C68E00902A3D /* NativeWebKit+ARSession.swift */; };
+		5F9008072B49CC3F00902A3D /* NativeWebKit+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008062B49CC3F00902A3D /* NativeWebKit+ARSCNViewDelegate.swift */; };
+		5F9008092B49CC3F00902A3D /* NativeWebKit+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008062B49CC3F00902A3D /* NativeWebKit+ARSCNViewDelegate.swift */; };
+		5F90080C2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F90080B2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift */; };
+		5F90080E2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F90080B2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift */; };
 		5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */; };
 		5FA4BEA02B35119F00138B35 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9F2B35119F00138B35 /* _locales */; };
 		5FA4BEA22B35119F00138B35 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA12B35119F00138B35 /* images */; };
@@ -254,6 +264,10 @@
 		5F8949322B3508E500AF3341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F8949352B3508E500AF3341 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F8949372B3508E500AF3341 /* NativeWebKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NativeWebKit.entitlements; sourceTree = "<group>"; };
+		5F9007FC2B49C66300902A3D /* NKARSessionMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKARSessionMessageType.swift; sourceTree = "<group>"; };
+		5F9008012B49C68E00902A3D /* NativeWebKit+ARSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+ARSession.swift"; sourceTree = "<group>"; };
+		5F9008062B49CC3F00902A3D /* NativeWebKit+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		5F90080B2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+ARSessionDelegate.swift"; sourceTree = "<group>"; };
 		5FA4BE952B35113B00138B35 /* TODO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		5FA4BE9A2B35119F00138B35 /* NativeWebKit Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
@@ -489,6 +503,7 @@
 			children = (
 				5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */,
 				5F77F7C52B40CED400BCBA92 /* NKContext.swift */,
+				5F9007FB2B49C5A300902A3D /* ARKit */,
 				5FC4778E2B4680DC00BCE86F /* Template */,
 				5FC477832B44E38900BCE86F /* AudioSession */,
 				5F77F7B72B40BBC100BCBA92 /* NKMessageTypeProtocol.swift */,
@@ -617,6 +632,17 @@
 				5F8949352B3508E500AF3341 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5F9007FB2B49C5A300902A3D /* ARKit */ = {
+			isa = PBXGroup;
+			children = (
+				5F9007FC2B49C66300902A3D /* NKARSessionMessageType.swift */,
+				5F9008012B49C68E00902A3D /* NativeWebKit+ARSession.swift */,
+				5F9008062B49CC3F00902A3D /* NativeWebKit+ARSCNViewDelegate.swift */,
+				5F90080B2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift */,
+			);
+			path = ARKit;
 			sourceTree = "<group>";
 		};
 		5FA4BE9B2B35119F00138B35 /* (iOS) Safari Extension */ = {
@@ -1014,7 +1040,9 @@
 				5F77F7BD2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5F77F76F2B3C9FCA00BCBA92 /* SheetType.swift in Sources */,
 				5F77F7822B3CA70700BCBA92 /* BrowserViewModel+history.swift in Sources */,
+				5F9008022B49C68E00902A3D /* NativeWebKit+ARSession.swift in Sources */,
 				5F7FBFBF2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */,
+				5F9007FD2B49C66300902A3D /* NKARSessionMessageType.swift in Sources */,
 				5FBD16C42B3676C600B8B1A5 /* ViewModifier.swift in Sources */,
 				5F77F7A22B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift in Sources */,
 				5F77F78D2B3DFF5300BCBA92 /* PanelType.swift in Sources */,
@@ -1025,12 +1053,14 @@
 				5FBD16CF2B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */,
 				5F77F77F2B3CA39500BCBA92 /* BrowserView+HistorySheet.swift in Sources */,
 				5F5E4BC12B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift in Sources */,
+				5F90080C2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift in Sources */,
 				5F77F7C32B40CEAC00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5F77F7C62B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FBB632D2B38C473008B18B9 /* URLUtils.swift in Sources */,
 				5FC477852B44E39800BCE86F /* NativeWebKit+AudioSession.swift in Sources */,
 				5F7FBFC22B3B4E770029F826 /* BrowserView+toolbars.swift in Sources */,
 				5FBD16C82B37520F00B8B1A5 /* NativeWebKitApp.swift in Sources */,
+				5F9008072B49CC3F00902A3D /* NativeWebKit+ARSCNViewDelegate.swift in Sources */,
 				5F7FBFBA2B3A45DC0029F826 /* DeviceRotation.swift in Sources */,
 				5FC4778A2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
 				5F7FBFBD2B3B4C5B0029F826 /* BrowserView+orientation.swift in Sources */,
@@ -1075,6 +1105,7 @@
 				5F77F7BE2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5FBD16D02B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */,
 				5FBD16C72B36B63E00B8B1A5 /* NativeWebKitApp.swift in Sources */,
+				5F9007FE2B49C66300902A3D /* NKARSessionMessageType.swift in Sources */,
 				5F4130292B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */,
 				5F5FEFD12B3B95DE00E4A5F0 /* BrowserView+findToolbar.swift in Sources */,
 			);
@@ -1090,8 +1121,12 @@
 				5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */,
 				5FC477872B44E39800BCE86F /* NativeWebKit+AudioSession.swift in Sources */,
 				5FC4778C2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
+				5F9008042B49C68E00902A3D /* NativeWebKit+ARSession.swift in Sources */,
+				5F9007FF2B49C66300902A3D /* NKARSessionMessageType.swift in Sources */,
+				5F9008092B49CC3F00902A3D /* NativeWebKit+ARSCNViewDelegate.swift in Sources */,
 				5F81830B2B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
 				5F77F7CC2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
+				5F90080E2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift in Sources */,
 				5FC477972B46812300BCE86F /* NativeWebKit+Template.swift in Sources */,
 				5F77F7C82B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FC477812B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
@@ -1109,6 +1144,7 @@
 				5F8183072B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
 				5FA4BED92B3516B300138B35 /* SafariWebExtensionHandler.swift in Sources */,
 				5F81830C2B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
+				5F9008002B49C66300902A3D /* NKARSessionMessageType.swift in Sources */,
 				5F77F7CD2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5F77F7C92B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FC477982B46812300BCE86F /* NativeWebKit+Template.swift in Sources */,

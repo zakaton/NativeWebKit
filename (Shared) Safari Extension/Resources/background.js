@@ -23,7 +23,7 @@ class Console {
     }
 
     /** @type {boolean} */
-    isLoggingEnabled = false;
+    isLoggingEnabled = true;
     /** @type {LogFunction} */
     get log() {
         return this.isLoggingEnabled ? this.#log : this.#emptyFunction;
@@ -31,7 +31,7 @@ class Console {
     #log = console.log.bind(console);
 
     /** @type {boolean} */
-    isWarningEnabled = false;
+    isWarningEnabled = true;
     /** @type {LogFunction} */
     get warn() {
         return this.isWarningEnabled ? this.#warn : this.#emptyFunction;
