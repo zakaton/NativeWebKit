@@ -7,12 +7,12 @@
 
 #if os(iOS)
     import ARKit
+    import RealityKit
 #endif
 import AVFAudio
 import CoreMotion
 import Foundation
 import OSLog
-import SceneKit
 import UkatonMacros
 
 typealias NKMessage = [String: Any]
@@ -62,10 +62,10 @@ class NativeWebKit: NSObject, HasNKContext {
             #endif
         }
         else if let arSessionMessageType: NKARSessionMessageType = .init(rawValue: messageType) {
-            #if os(iOS)
+            #if os(iOS) && IN_APP
                 response = handleARSessionMessage(message, messageType: arSessionMessageType)
             #else
-                logger.error("arSession messages are not available on MacOS")
+                logger.error("arSession messages are not available on MacOS or iOS Safari")
             #endif
         }
         else {
@@ -120,12 +120,13 @@ class NativeWebKit: NSObject, HasNKContext {
 
     // MARK: - ARSession
 
-    #if os(iOS)
-        lazy var sceneView: ARSCNView = {
-            logger.debug("lazy loading sceneView...")
-            let sceneView: ARSCNView = .init()
-            setupSceneView(sceneView)
-            return sceneView
+    #if os(iOS) && IN_APP
+        var isARSessionRunning: Bool = false
+        lazy var arView: ARView = {
+            logger.log("lazy loading arView...")
+            let arView: ARView = .init(frame: .zero)
+            setupARView(arView)
+            return arView
         }()
     #endif
 }

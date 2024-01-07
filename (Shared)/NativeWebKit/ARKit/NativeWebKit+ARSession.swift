@@ -7,13 +7,15 @@
 
 import ARKit
 import Foundation
+import RealityKit
 
 extension NativeWebKit {
-    func setupSceneView(_ sceneView: ARSCNView) {
-        sceneView.delegate = self
-        sceneView.session.delegate = self
-        sceneView.automaticallyUpdatesLighting = true
+    func setupARView(_ arView: ARView) {
+        arView.session.delegate = self
+        arView.session.pause()
     }
+
+    var arSession: ARSession { arView.session }
 
     func handleARSessionMessage(_ message: NKMessage, messageType: NKARSessionMessageType) -> NKResponse? {
         logger.debug("ARSessionMessageType \(messageType.id, privacy: .public)")
@@ -24,16 +26,27 @@ extension NativeWebKit {
             response = arSessionWorldTrackingSupportMessage
         case .faceTrackingSupport:
             response = arSessionFaceTrackingSupportMessage
-        case .startFaceTracking:
+        case .run:
             guard ARFaceTrackingConfiguration.isSupported else {
                 logger.warning("face tracking is not supported")
                 return nil
             }
+            if isARSessionRunning {
+                logger.warning("ARSession is already running - will reset")
+                arSession.pause()
+                isARSessionRunning = false
+            }
             let configuration = ARFaceTrackingConfiguration()
             configuration.maximumNumberOfTrackedFaces = 1
-            sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
-        case .pauseSession:
-            sceneView.session.pause()
+            arSession.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+            isARSessionRunning = true
+        case .pause:
+            guard isARSessionRunning else {
+                logger.log("ARSession is not running - no need to pause")
+                return nil
+            }
+            arSession.pause()
+            isARSessionRunning = false
         }
         return response
     }
@@ -41,7 +54,7 @@ extension NativeWebKit {
     var arSessionWorldTrackingSupportMessage: NKMessage {
         [
             "type": NKARSessionMessageType.worldTrackingSupport.name,
-            "support": [
+            "worldTrackingSupport": [
                 "isSupported": ARWorldTrackingConfiguration.isSupported,
                 "supportsUserFaceTracking": ARWorldTrackingConfiguration.supportsUserFaceTracking
             ]
@@ -51,7 +64,7 @@ extension NativeWebKit {
     var arSessionFaceTrackingSupportMessage: NKMessage {
         [
             "type": NKARSessionMessageType.faceTrackingSupport.name,
-            "support": [
+            "faceTrackingSupport": [
                 "isSupported": ARFaceTrackingConfiguration.isSupported,
                 "supportsWorldTracking": ARFaceTrackingConfiguration.supportsWorldTracking
             ]
