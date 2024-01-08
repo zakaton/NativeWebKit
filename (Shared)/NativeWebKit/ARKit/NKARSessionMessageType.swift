@@ -12,5 +12,6 @@ enum NKARSessionMessageType: String, NKMessageTypeProtocol {
     case worldTrackingSupport
     case faceTrackingSupport
     case run
+    case isRunning
     case pause
 }

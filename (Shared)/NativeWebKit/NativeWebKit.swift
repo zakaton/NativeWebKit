@@ -121,7 +121,7 @@ class NativeWebKit: NSObject, HasNKContext {
     // MARK: - ARSession
 
     #if os(iOS) && IN_APP
-        var isARSessionRunning: Bool = false
+        @Published var isARSessionRunning: Bool = false
         lazy var arView: ARView = {
             logger.log("lazy loading arView...")
             let arView: ARView = .init(frame: .zero)

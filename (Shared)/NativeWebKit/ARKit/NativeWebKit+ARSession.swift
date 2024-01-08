@@ -12,7 +12,6 @@ import RealityKit
 extension NativeWebKit {
     func setupARView(_ arView: ARView) {
         arView.session.delegate = self
-        arView.session.pause()
     }
 
     var arSession: ARSession { arView.session }
@@ -40,6 +39,9 @@ extension NativeWebKit {
             configuration.maximumNumberOfTrackedFaces = 1
             arSession.run(configuration, options: [.resetTracking, .removeExistingAnchors])
             isARSessionRunning = true
+            response = arSessionIsRunningMessage
+        case .isRunning:
+            response = arSessionIsRunningMessage
         case .pause:
             guard isARSessionRunning else {
                 logger.log("ARSession is not running - no need to pause")
@@ -47,6 +49,7 @@ extension NativeWebKit {
             }
             arSession.pause()
             isARSessionRunning = false
+            response = arSessionIsRunningMessage
         }
         return response
     }
@@ -68,6 +71,13 @@ extension NativeWebKit {
                 "isSupported": ARFaceTrackingConfiguration.isSupported,
                 "supportsWorldTracking": ARFaceTrackingConfiguration.supportsWorldTracking
             ]
+        ]
+    }
+
+    var arSessionIsRunningMessage: NKMessage {
+        [
+            "type": NKARSessionMessageType.isRunning.name,
+            "isRunning": isARSessionRunning
         ]
     }
 }

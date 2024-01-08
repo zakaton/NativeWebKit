@@ -77,13 +77,15 @@ class BrowserViewModel: NSObject, ObservableObject {
         _webView.isInspectable = true
         _webView.allowsBackForwardNavigationGestures = true
         _webView.allowsLinkPreview = true
-        _webView.underPageBackgroundColor = .white
+        _webView.underPageBackgroundColor = .clear
+        _webView.isOpaque = false
 
         setWebViewNavigationDelegate(_webView)
         setWebViewUIDelegate(_webView)
         setObservations(_webView)
         #if !os(macOS)
         setUIScrollViewDelegate(_webView)
+        _webView.scrollView.backgroundColor = .clear
         #endif
 
         _webView.load(URLRequest(url: url!))

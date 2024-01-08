@@ -38,6 +38,12 @@ struct BrowserView: View {
     @State var orientation = UIDeviceOrientation.unknown
     #endif
 
+    var nativeWebKit: NativeWebKit { .shared }
+
+    #if os(iOS)
+    @State var isARSessionRunning: Bool = false
+    #endif
+
     var body: some View {
         #if !os(macOS)
         if !isPortrait {
@@ -52,17 +58,32 @@ struct BrowserView: View {
                     findToolbar
                 }
                 #endif
-                BrowserWebView(viewModel: browserViewModel)
-                    .modify {
-                        if let title = browserViewModel.title {
-                            $0.navigationTitle(title)
+                ZStack {
+                    #if os(iOS)
+                    if isARSessionRunning {
+                        ARViewContainer()
+                            .edgesIgnoringSafeArea(.top)
+                    }
+                    #endif
+                    BrowserWebView(viewModel: browserViewModel)
+                        .modify {
+                            if let title = browserViewModel.title {
+                                $0.navigationTitle(title)
+                            }
                         }
-                    }
-                    .alert(panel?.title ?? "", isPresented: $browserViewModel.showPanel) {
-                        alertActionsView
-                    } message: {
-                        alertMessageView
-                    }
+                        .alert(panel?.title ?? "", isPresented: $browserViewModel.showPanel) {
+                            alertActionsView
+                        } message: {
+                            alertMessageView
+                        }
+                }
+                .modify {
+                    #if os(iOS)
+                    $0.onReceive(nativeWebKit.$isARSessionRunning, perform: {
+                        isARSessionRunning = $0
+                    })
+                    #endif
+                }
             }
             .modify {
                 #if os(macOS)
@@ -87,8 +108,20 @@ struct BrowserView: View {
             logger.debug("(ContentView) App was opened via URL: \(incomingURL)")
             handleIncomingURL(incomingURL)
         }
-        .background(browserViewModel.themeColor)
-        .background(.white)
+        .modify {
+            #if os(iOS)
+            if isARSessionRunning {
+                $0.background(.clear)
+            }
+            else {
+                $0.background(browserViewModel.themeColor)
+                    .background(.white)
+            }
+            #else
+            $0.background(browserViewModel.themeColor)
+                .background(.white)
+            #endif
+        }
         .modify {
             #if os(iOS)
             $0.onRotate { newOrientation in
