@@ -35,9 +35,12 @@ extension NativeWebKit {
                 arSession.pause()
                 isARSessionRunning = false
             }
-            let configuration = ARFaceTrackingConfiguration()
-            configuration.maximumNumberOfTrackedFaces = 1
-            configuration.isWorldTrackingEnabled = true
+            // let configuration = ARFaceTrackingConfiguration()
+            // configuration.maximumNumberOfTrackedFaces = 1
+            // configuration.isWorldTrackingEnabled = true
+            let configuration = ARWorldTrackingConfiguration()
+            configuration.sceneReconstruction = .meshWithClassification
+            configuration.userFaceTrackingEnabled = true
             arSession.run(configuration, options: [.resetTracking, .removeExistingAnchors])
             isARSessionRunning = true
             response = arSessionIsRunningMessage
@@ -61,6 +64,21 @@ extension NativeWebKit {
                 return nil
             }
             response = arSessionFrameMessage(frame: frame)
+        case .debugOptions:
+            if let newDebugOptions = message["debugOptions"] as? [String: Bool] {
+                logger.debug("new debug options: \(newDebugOptions, privacy: .public)")
+                ARView.DebugOptions.allCases.forEach { debugOption in
+                    if let enableDebugOption = newDebugOptions[debugOption.name!] {
+                        if enableDebugOption {
+                            arView.debugOptions.insert(debugOption)
+                        }
+                        else {
+                            arView.debugOptions.remove(debugOption)
+                        }
+                    }
+                }
+            }
+            response = arSessionDebugOptionsMessage
         }
         return response
     }
@@ -92,21 +110,63 @@ extension NativeWebKit {
         ]
     }
 
+    var arSessionDebugOptionsMessage: NKMessage {
+        let debugOptions = arView.debugOptions
+        var debugOptionsMessage: NKMessage = [:]
+        ARView.DebugOptions.allCases.forEach {
+            debugOptionsMessage[$0.name!] = debugOptions.contains($0)
+        }
+
+        let message: NKMessage = [
+            "type": NKARSessionMessageType.debugOptions.name,
+            "debugOptions": debugOptionsMessage
+        ]
+        return message
+    }
+
     func arSessionFrameMessage(frame: ARFrame) -> NKMessage {
         // can use frame.camera.transform or arView.cameraTransform
         let cameraTransform = arView.cameraTransform
-        var message: NKMessage = [
-            "type": NKARSessionMessageType.frame.name,
-            "frame": [
-                "camera": [
-                    "quaternion": cameraTransform.matrix.quaternion.array,
-                    "position": cameraTransform.matrix.position.array,
-                    "eulerAngles": frame.camera.eulerAngles.array
-                ]
-            ]
+        let cameraMessage: NKMessage = [
+            "quaternion": cameraTransform.matrix.quaternion.array,
+            "position": cameraTransform.matrix.position.array,
+            "eulerAngles": frame.camera.eulerAngles.array
         ]
+
+        var frameMessage: NKMessage = [
+            "camera": cameraMessage
+        ]
+
         let faceAnchors = frame.anchors.compactMap { $0 as? ARFaceAnchor }.filter { $0.isTracked }
-        logger.debug("face anchors? \(faceAnchors.count)")
+        var faceAnchorsMessage: [NKMessage]?
+        if !faceAnchors.isEmpty {
+            faceAnchorsMessage = faceAnchors.map {
+                [
+                    "identifier": $0.identifier.uuidString,
+                    "lookAtPoint": $0.lookAtPoint.array,
+                    "position": $0.transform.position.array,
+                    "quaternion": $0.transform.quaternion.array,
+                    "leftEye": [
+                        "position": $0.leftEyeTransform.position.array,
+                        "quaternion": $0.leftEyeTransform.quaternion.array
+                    ],
+                    "rightEye": [
+                        "position": $0.rightEyeTransform.position.array,
+                        "quaternion": $0.rightEyeTransform.quaternion.array
+                    ]
+                ]
+            }
+        }
+
+        if let faceAnchorsMessage {
+            frameMessage["faceAnchors"] = faceAnchorsMessage
+        }
+
+        let message: NKMessage = [
+            "type": NKARSessionMessageType.frame.name,
+            "frame": frameMessage
+        ]
+
         return message
     }
 }

@@ -77,8 +77,8 @@ class BrowserViewModel: NSObject, ObservableObject {
         _webView.isInspectable = true
         _webView.allowsBackForwardNavigationGestures = true
         _webView.allowsLinkPreview = true
-        _webView.underPageBackgroundColor = .clear
-        _webView.isOpaque = false
+
+        _webView.underPageBackgroundColor = .white
 
         setWebViewNavigationDelegate(_webView)
         setWebViewUIDelegate(_webView)
@@ -86,6 +86,7 @@ class BrowserViewModel: NSObject, ObservableObject {
         #if !os(macOS)
         setUIScrollViewDelegate(_webView)
         _webView.scrollView.backgroundColor = .clear
+        _webView.isOpaque = true
         #endif
 
         _webView.load(URLRequest(url: url!))
@@ -95,7 +96,7 @@ class BrowserViewModel: NSObject, ObservableObject {
     // MARK: - Url
 
     #if DEBUG
-    static let defaultUrlString = "http://192.168.1.44:5500/examples/ar-session/test/"
+    static let defaultUrlString = "http://192.168.1.44:5500/examples/ar-session/data/"
     #else
     static let defaultUrlString = "https://www.google.com"
     #endif

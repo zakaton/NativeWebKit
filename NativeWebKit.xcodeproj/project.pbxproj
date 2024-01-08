@@ -95,6 +95,7 @@
 		5F9008272B4B7C5300902A3D /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008252B4B7C4700902A3D /* MathUtils.swift */; };
 		5F9008282B4B7C5300902A3D /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008252B4B7C4700902A3D /* MathUtils.swift */; };
 		5F9008292B4B7C5400902A3D /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008252B4B7C4700902A3D /* MathUtils.swift */; };
+		5F9C57D72B4C73CF00764734 /* ARView.DebugOptions+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C57D62B4C73CF00764734 /* ARView.DebugOptions+utils.swift */; };
 		5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */; };
 		5FA4BEA02B35119F00138B35 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9F2B35119F00138B35 /* _locales */; };
 		5FA4BEA22B35119F00138B35 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA12B35119F00138B35 /* images */; };
@@ -274,6 +275,7 @@
 		5F90081D2B4B464600902A3D /* ARViewContainer+UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewContainer+UIViewRepresentable.swift"; sourceTree = "<group>"; };
 		5F9008232B4B50C700902A3D /* NativeWebKit+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
 		5F9008252B4B7C4700902A3D /* MathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
+		5F9C57D62B4C73CF00764734 /* ARView.DebugOptions+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView.DebugOptions+utils.swift"; sourceTree = "<group>"; };
 		5FA4BE952B35113B00138B35 /* TODO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		5FA4BE9A2B35119F00138B35 /* NativeWebKit Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
@@ -649,6 +651,7 @@
 				5F9008232B4B50C700902A3D /* NativeWebKit+ARSCNViewDelegate.swift */,
 				5F9008012B49C68E00902A3D /* NativeWebKit+ARSession.swift */,
 				5F90080B2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift */,
+				5F9C57D62B4C73CF00764734 /* ARView.DebugOptions+utils.swift */,
 			);
 			path = ARKit;
 			sourceTree = "<group>";
@@ -1098,6 +1101,7 @@
 				5FBD16CF2B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */,
 				5F77F77F2B3CA39500BCBA92 /* BrowserView+HistorySheet.swift in Sources */,
 				5F5E4BC12B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift in Sources */,
+				5F9C57D72B4C73CF00764734 /* ARView.DebugOptions+utils.swift in Sources */,
 				5F90080C2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift in Sources */,
 				5F77F7C32B40CEAC00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5F77F7C62B40CED400BCBA92 /* NKContext.swift in Sources */,

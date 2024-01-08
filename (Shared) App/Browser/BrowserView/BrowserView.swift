@@ -33,6 +33,7 @@ struct BrowserView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
 
     var panel: Panel? { browserViewModel.panel }
+    var webView: WKWebView { browserViewModel.webView }
 
     #if os(iOS)
     @State var orientation = UIDeviceOrientation.unknown
@@ -41,7 +42,12 @@ struct BrowserView: View {
     var nativeWebKit: NativeWebKit { .shared }
 
     #if os(iOS)
-    @State var isARSessionRunning: Bool = false
+    @State var isARSessionRunning: Bool = false {
+        didSet {
+            webView.isOpaque = !isARSessionRunning
+            webView.underPageBackgroundColor = isARSessionRunning ? .clear : .white
+        }
+    }
     #endif
 
     var body: some View {
@@ -108,20 +114,8 @@ struct BrowserView: View {
             logger.debug("(ContentView) App was opened via URL: \(incomingURL)")
             handleIncomingURL(incomingURL)
         }
-        .modify {
-            #if os(iOS)
-            if isARSessionRunning {
-                $0.background(.clear)
-            }
-            else {
-                $0.background(browserViewModel.themeColor)
-                    .background(.white)
-            }
-            #else
-            $0.background(browserViewModel.themeColor)
-                .background(.white)
-            #endif
-        }
+        .background(browserViewModel.themeColor)
+        .background(.white)
         .modify {
             #if os(iOS)
             $0.onRotate { newOrientation in

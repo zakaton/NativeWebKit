@@ -15,4 +15,5 @@ enum NKARSessionMessageType: String, NKMessageTypeProtocol {
     case isRunning
     case pause
     case frame
+    case debugOptions
 }
