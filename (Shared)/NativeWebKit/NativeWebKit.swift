@@ -80,7 +80,7 @@ class NativeWebKit: NSObject, HasNKContext {
     }
 
     #if IN_APP
-        func dispatchMessageToWebpages(_ message: NKMessage) {
+        func dispatchMessageToWebpages(_ message: NKMessage, activeOnly: Bool = false) {
             logger.debug("sending message to webpages \(message.debugDescription)")
             guard let messageData = try? JSONSerialization.data(withJSONObject: message) else {
                 logger.error("unable to convert mesage to json")
@@ -93,9 +93,11 @@ class NativeWebKit: NSObject, HasNKContext {
             logger.debug("sending message json to webpages \"\(messageString)\"")
             DispatchQueue.main.async {
                 BrowserViewModel.models.forEach {
-                    $0.webView.evaluateJavaScript("""
-                        window.dispatchEvent(new CustomEvent("nativewebkit-receive", {detail: \(messageString)}))
-                    """)
+                    if !activeOnly || $0.isActiveModel {
+                        $0.webView.evaluateJavaScript("""
+                            window.dispatchEvent(new CustomEvent("nativewebkit-receive", {detail: \(messageString)}))
+                        """)
+                    }
                 }
             }
         }

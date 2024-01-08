@@ -37,6 +37,7 @@ extension NativeWebKit {
             }
             let configuration = ARFaceTrackingConfiguration()
             configuration.maximumNumberOfTrackedFaces = 1
+            configuration.isWorldTrackingEnabled = true
             arSession.run(configuration, options: [.resetTracking, .removeExistingAnchors])
             isARSessionRunning = true
             response = arSessionIsRunningMessage
@@ -50,6 +51,16 @@ extension NativeWebKit {
             arSession.pause()
             isARSessionRunning = false
             response = arSessionIsRunningMessage
+        case .frame:
+            guard isARSessionRunning else {
+                logger.log("ARSession is not running")
+                return nil
+            }
+            guard let frame = arSession.currentFrame else {
+                logger.log("no ARFrame available")
+                return nil
+            }
+            response = arSessionFrameMessage(frame: frame)
         }
         return response
     }
@@ -79,5 +90,23 @@ extension NativeWebKit {
             "type": NKARSessionMessageType.isRunning.name,
             "isRunning": isARSessionRunning
         ]
+    }
+
+    func arSessionFrameMessage(frame: ARFrame) -> NKMessage {
+        // can use frame.camera.transform or arView.cameraTransform
+        let cameraTransform = arView.cameraTransform
+        var message: NKMessage = [
+            "type": NKARSessionMessageType.frame.name,
+            "frame": [
+                "camera": [
+                    "quaternion": cameraTransform.matrix.quaternion.array,
+                    "position": cameraTransform.matrix.position.array,
+                    "eulerAngles": frame.camera.eulerAngles.array
+                ]
+            ]
+        ]
+        let faceAnchors = frame.anchors.compactMap { $0 as? ARFaceAnchor }.filter { $0.isTracked }
+        logger.debug("face anchors? \(faceAnchors.count)")
+        return message
     }
 }

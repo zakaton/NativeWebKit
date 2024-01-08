@@ -88,10 +88,13 @@
 		5F9008002B49C66300902A3D /* NKARSessionMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9007FC2B49C66300902A3D /* NKARSessionMessageType.swift */; };
 		5F9008022B49C68E00902A3D /* NativeWebKit+ARSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008012B49C68E00902A3D /* NativeWebKit+ARSession.swift */; };
 		5F90080C2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F90080B2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift */; };
-		5F90080E2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F90080B2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift */; };
 		5F9008142B4B445000902A3D /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008132B4B445000902A3D /* ARViewContainer.swift */; };
 		5F90081E2B4B464600902A3D /* ARViewContainer+UIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F90081D2B4B464600902A3D /* ARViewContainer+UIViewRepresentable.swift */; };
 		5F9008242B4B50C700902A3D /* NativeWebKit+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008232B4B50C700902A3D /* NativeWebKit+ARSCNViewDelegate.swift */; };
+		5F9008262B4B7C4700902A3D /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008252B4B7C4700902A3D /* MathUtils.swift */; };
+		5F9008272B4B7C5300902A3D /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008252B4B7C4700902A3D /* MathUtils.swift */; };
+		5F9008282B4B7C5300902A3D /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008252B4B7C4700902A3D /* MathUtils.swift */; };
+		5F9008292B4B7C5400902A3D /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008252B4B7C4700902A3D /* MathUtils.swift */; };
 		5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */; };
 		5FA4BEA02B35119F00138B35 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9F2B35119F00138B35 /* _locales */; };
 		5FA4BEA22B35119F00138B35 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA12B35119F00138B35 /* images */; };
@@ -270,6 +273,7 @@
 		5F9008132B4B445000902A3D /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
 		5F90081D2B4B464600902A3D /* ARViewContainer+UIViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARViewContainer+UIViewRepresentable.swift"; sourceTree = "<group>"; };
 		5F9008232B4B50C700902A3D /* NativeWebKit+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		5F9008252B4B7C4700902A3D /* MathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
 		5FA4BE952B35113B00138B35 /* TODO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		5FA4BE9A2B35119F00138B35 /* NativeWebKit Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
@@ -756,6 +760,7 @@
 			isa = PBXGroup;
 			children = (
 				5FBD16C32B3676C600B8B1A5 /* ViewModifier.swift */,
+				5F9008252B4B7C4700902A3D /* MathUtils.swift */,
 				5FBB632C2B38C473008B18B9 /* URLUtils.swift */,
 				5FBB63292B38BC76008B18B9 /* StringUtils.swift */,
 			);
@@ -1070,6 +1075,7 @@
 				5FBD16B32B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
 				5FBD16AB2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
 				5F06B1952B3A1B8B00A0A1BB /* KeyboardPublisher.swift in Sources */,
+				5F9008262B4B7C4700902A3D /* MathUtils.swift in Sources */,
 				5F9008142B4B445000902A3D /* ARViewContainer.swift in Sources */,
 				5F77F7AD2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5F90081E2B4B464600902A3D /* ARViewContainer+UIViewRepresentable.swift in Sources */,
@@ -1114,6 +1120,7 @@
 				5FBD16BD2B36347000B8B1A5 /* BrowserWebView+NSViewRepresentable.swift in Sources */,
 				5FBD16C12B36539300B8B1A5 /* ContentView.swift in Sources */,
 				5F77F7B92B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
+				5F9008272B4B7C5300902A3D /* MathUtils.swift in Sources */,
 				5F77F7C72B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FBD16B42B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
 				5FC477912B4680EF00BCE86F /* NKTemplateMessageType.swift in Sources */,
@@ -1156,13 +1163,13 @@
 				5F77F7AF2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5FC477922B4680EF00BCE86F /* NKTemplateMessageType.swift in Sources */,
 				5F8183062B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
+				5F9008282B4B7C5300902A3D /* MathUtils.swift in Sources */,
 				5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */,
 				5FC477872B44E39800BCE86F /* NativeWebKit+AudioSession.swift in Sources */,
 				5FC4778C2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
 				5F9007FF2B49C66300902A3D /* NKARSessionMessageType.swift in Sources */,
 				5F81830B2B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
 				5F77F7CC2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
-				5F90080E2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift in Sources */,
 				5FC477972B46812300BCE86F /* NativeWebKit+Template.swift in Sources */,
 				5F77F7C82B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FC477812B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
@@ -1185,6 +1192,7 @@
 				5F77F7C92B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FC477982B46812300BCE86F /* NativeWebKit+Template.swift in Sources */,
 				5FC477822B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
+				5F9008292B4B7C5400902A3D /* MathUtils.swift in Sources */,
 				5FC4778D2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
 				5F77F7AA2B40A98A00BCBA92 /* NativeWebKit.swift in Sources */,
 				5F77F7BB2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
