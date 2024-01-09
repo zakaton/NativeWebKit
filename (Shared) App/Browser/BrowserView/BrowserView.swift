@@ -42,10 +42,10 @@ struct BrowserView: View {
     var nativeWebKit: NativeWebKit { .shared }
 
     #if os(iOS)
-    @State var isARSessionRunning: Bool = false {
+    @State var showARView: Bool = false {
         didSet {
-            webView.isOpaque = !isARSessionRunning
-            webView.underPageBackgroundColor = isARSessionRunning ? .clear : .white
+            webView.isOpaque = !showARView
+            webView.underPageBackgroundColor = showARView ? .clear : .white
         }
     }
     #endif
@@ -66,7 +66,7 @@ struct BrowserView: View {
                 #endif
                 ZStack {
                     #if os(iOS)
-                    if isARSessionRunning {
+                    if showARView {
                         ARViewContainer()
                             .edgesIgnoringSafeArea(.top)
                     }
@@ -85,9 +85,12 @@ struct BrowserView: View {
                 }
                 .modify {
                     #if os(iOS)
-                    $0.onReceive(nativeWebKit.$isARSessionRunning, perform: {
-                        isARSessionRunning = $0
-                    })
+                    $0.onReceive(nativeWebKit.$isARSessionRunning) {
+                        showARView = $0 && nativeWebKit.arView.cameraMode == .ar
+                    }
+                    .onReceive(nativeWebKit.arCameraModeSubject) {
+                        showARView = nativeWebKit.isARSessionRunning && $0 == .ar
+                    }
                     #endif
                 }
             }

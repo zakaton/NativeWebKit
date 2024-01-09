@@ -12,6 +12,16 @@ import RealityKit
 extension NativeWebKit {
     func setupARView(_ arView: ARView) {
         arView.session.delegate = self
+        arView.renderOptions.formUnion(.init([
+            .disableHDR,
+            .disableFaceMesh,
+            .disableMotionBlur,
+            .disableCameraGrain,
+            .disablePersonOcclusion,
+            .disableGroundingShadows,
+            .disableDepthOfField,
+            .disableAREnvironmentLighting
+        ]))
     }
 
     var arSession: ARSession { arView.session }
@@ -35,12 +45,12 @@ extension NativeWebKit {
                 arSession.pause()
                 isARSessionRunning = false
             }
-            // let configuration = ARFaceTrackingConfiguration()
-            // configuration.maximumNumberOfTrackedFaces = 1
-            // configuration.isWorldTrackingEnabled = true
-            let configuration = ARWorldTrackingConfiguration()
-            configuration.sceneReconstruction = .meshWithClassification
-            configuration.userFaceTrackingEnabled = true
+            let configuration = ARFaceTrackingConfiguration()
+            configuration.maximumNumberOfTrackedFaces = 1
+            configuration.isWorldTrackingEnabled = true
+//            let configuration = ARWorldTrackingConfiguration()
+//            configuration.sceneReconstruction = .meshWithClassification
+//            configuration.userFaceTrackingEnabled = true
             arSession.run(configuration, options: [.resetTracking, .removeExistingAnchors])
             isARSessionRunning = true
             response = arSessionIsRunningMessage
@@ -79,6 +89,16 @@ extension NativeWebKit {
                 }
             }
             response = arSessionDebugOptionsMessage
+        case .cameraMode:
+            if let cameraModeName = message["cameraMode"] as? String,
+               let cameraMode: ARView.CameraMode = .init(name: cameraModeName),
+               cameraMode != arView.cameraMode
+            {
+                logger.debug("updating camera mode to \(cameraMode.name)")
+                arView.cameraMode = cameraMode
+                arCameraModeSubject.send(cameraMode)
+            }
+            response = arViewCameraModeMessage
         }
         return response
     }
@@ -125,12 +145,16 @@ extension NativeWebKit {
     }
 
     func arSessionFrameMessage(frame: ARFrame) -> NKMessage {
+        let focalLengthKey = kCGImagePropertyExifFocalLength as String
+        let focalLength = frame.exifData[focalLengthKey] as! NSNumber
+
         // can use frame.camera.transform or arView.cameraTransform
         let cameraTransform = arView.cameraTransform
         let cameraMessage: NKMessage = [
             "quaternion": cameraTransform.matrix.quaternion.array,
             "position": cameraTransform.matrix.position.array,
-            "eulerAngles": frame.camera.eulerAngles.array
+            "eulerAngles": frame.camera.eulerAngles.array,
+            "focalLength": focalLength
         ]
 
         var frameMessage: NKMessage = [
@@ -141,7 +165,16 @@ extension NativeWebKit {
         var faceAnchorsMessage: [NKMessage]?
         if !faceAnchors.isEmpty {
             faceAnchorsMessage = faceAnchors.map {
-                [
+                var blendShapesMessage: NKMessage = [:]
+                for (blendShapeLocation, number) in $0.blendShapes {
+                    if let blendShapeLocationName = blendShapeLocation.name {
+                        blendShapesMessage[blendShapeLocationName] = number
+                    }
+                    else {
+                        logger.error("no name for blendshape \(blendShapeLocation.rawValue)")
+                    }
+                }
+                let message = [
                     "identifier": $0.identifier.uuidString,
                     "lookAtPoint": $0.lookAtPoint.array,
                     "position": $0.transform.position.array,
@@ -153,8 +186,10 @@ extension NativeWebKit {
                     "rightEye": [
                         "position": $0.rightEyeTransform.position.array,
                         "quaternion": $0.rightEyeTransform.quaternion.array
-                    ]
+                    ],
+                    "blendShapes": blendShapesMessage
                 ]
+                return message
             }
         }
 
@@ -168,5 +203,12 @@ extension NativeWebKit {
         ]
 
         return message
+    }
+
+    var arViewCameraModeMessage: NKMessage {
+        [
+            "type": NKARSessionMessageType.cameraMode.name,
+            "cameraMode": arView.cameraMode.name
+        ]
     }
 }

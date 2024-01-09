@@ -96,6 +96,8 @@
 		5F9008282B4B7C5300902A3D /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008252B4B7C4700902A3D /* MathUtils.swift */; };
 		5F9008292B4B7C5400902A3D /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008252B4B7C4700902A3D /* MathUtils.swift */; };
 		5F9C57D72B4C73CF00764734 /* ARView.DebugOptions+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C57D62B4C73CF00764734 /* ARView.DebugOptions+utils.swift */; };
+		5F9C57D92B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C57D82B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+utils.swift */; };
+		5F9C57DB2B4CC98F00764734 /* ARView.CameraMode+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C57DA2B4CC98F00764734 /* ARView.CameraMode+utils.swift */; };
 		5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */; };
 		5FA4BEA02B35119F00138B35 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9F2B35119F00138B35 /* _locales */; };
 		5FA4BEA22B35119F00138B35 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA12B35119F00138B35 /* images */; };
@@ -276,6 +278,8 @@
 		5F9008232B4B50C700902A3D /* NativeWebKit+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
 		5F9008252B4B7C4700902A3D /* MathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
 		5F9C57D62B4C73CF00764734 /* ARView.DebugOptions+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView.DebugOptions+utils.swift"; sourceTree = "<group>"; };
+		5F9C57D82B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARFaceAnchor.BlendShapeLocation+utils.swift"; sourceTree = "<group>"; };
+		5F9C57DA2B4CC98F00764734 /* ARView.CameraMode+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView.CameraMode+utils.swift"; sourceTree = "<group>"; };
 		5FA4BE952B35113B00138B35 /* TODO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		5FA4BE9A2B35119F00138B35 /* NativeWebKit Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
@@ -649,7 +653,9 @@
 			children = (
 				5F9007FC2B49C66300902A3D /* NKARSessionMessageType.swift */,
 				5F9008232B4B50C700902A3D /* NativeWebKit+ARSCNViewDelegate.swift */,
+				5F9C57D82B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+utils.swift */,
 				5F9008012B49C68E00902A3D /* NativeWebKit+ARSession.swift */,
+				5F9C57DA2B4CC98F00764734 /* ARView.CameraMode+utils.swift */,
 				5F90080B2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift */,
 				5F9C57D62B4C73CF00764734 /* ARView.DebugOptions+utils.swift */,
 			);
@@ -1068,6 +1074,7 @@
 				5FC477902B4680EF00BCE86F /* NKTemplateMessageType.swift in Sources */,
 				5FC477952B46812300BCE86F /* NativeWebKit+Template.swift in Sources */,
 				5FBD16CD2B37621600B8B1A5 /* BrowserView+navigation_iOS.swift in Sources */,
+				5F9C57DB2B4CC98F00764734 /* ARView.CameraMode+utils.swift in Sources */,
 				5F8949272B35089300AF3341 /* ContentView.swift in Sources */,
 				5F77F7B82B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
 				5F4130282B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */,
@@ -1082,6 +1089,7 @@
 				5F9008142B4B445000902A3D /* ARViewContainer.swift in Sources */,
 				5F77F7AD2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5F90081E2B4B464600902A3D /* ARViewContainer+UIViewRepresentable.swift in Sources */,
+				5F9C57D92B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+utils.swift in Sources */,
 				5F5E4BBE2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
 				5F8183042B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
 				5F77F7BD2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,

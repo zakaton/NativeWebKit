@@ -10,6 +10,7 @@
     import RealityKit
 #endif
 import AVFAudio
+import Combine
 import CoreMotion
 import Foundation
 import OSLog
@@ -124,6 +125,7 @@ class NativeWebKit: NSObject, HasNKContext {
 
     #if os(iOS) && IN_APP
         @Published var isARSessionRunning: Bool = false
+        @Published var arCameraModeSubject = PassthroughSubject<ARView.CameraMode, Never>()
         lazy var arView: ARView = {
             logger.log("lazy loading arView...")
             let arView: ARView = .init(frame: .zero)
