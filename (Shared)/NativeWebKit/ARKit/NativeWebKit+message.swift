@@ -159,4 +159,11 @@ extension NativeWebKit {
             "cameraMode": arView.cameraMode.name
         ]
     }
+
+    var arViewShowCameraMessage: NKMessage {
+        [
+            "type": NKARSessionMessageType.showCamera.name,
+            "showCamera": showARCamera
+        ]
+    }
 }

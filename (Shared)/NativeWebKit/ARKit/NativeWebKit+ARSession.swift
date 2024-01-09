@@ -115,7 +115,17 @@ extension NativeWebKit {
                 arCameraModeSubject.send(cameraMode)
             }
             response = arViewCameraModeMessage
+        case .showCamera:
+            if let newShowARCamera = message["showCamera"] as? Bool {
+                if newShowARCamera != showARCamera {
+                    logger.debug("updating showARCamera to \(newShowARCamera)")
+                    showARCamera = newShowARCamera
+                    arView.environment.background = showARCamera ? .cameraFeed() : .color(.clear)
+                }
+            }
+            response = arViewShowCameraMessage
         }
+
         return response
     }
 

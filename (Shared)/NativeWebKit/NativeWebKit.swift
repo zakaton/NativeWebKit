@@ -138,7 +138,8 @@ class NativeWebKit: NSObject, HasNKContext {
 
     #if os(iOS) && IN_APP
         @Published var isARSessionRunning: Bool = false
-        @Published var arCameraModeSubject = PassthroughSubject<ARView.CameraMode, Never>()
+        @Published var showARCamera: Bool = true
+        @Published var arCameraModeSubject = CurrentValueSubject<ARView.CameraMode, Never>(.ar)
         var arConfiguration: ARConfiguration?
         var arConfigurationType: NKARSessionConfigurationType? {
             if arConfiguration is ARWorldTrackingConfiguration {

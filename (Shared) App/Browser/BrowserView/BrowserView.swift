@@ -12,6 +12,10 @@ import OSLog
 import SwiftUI
 import UkatonMacros
 import WebKit
+#if os(iOS)
+import ARKit
+import RealityKit
+#endif
 
 @StaticLogger
 struct BrowserView: View {
@@ -42,8 +46,35 @@ struct BrowserView: View {
     var nativeWebKit: NativeWebKit { .shared }
 
     #if os(iOS)
+    @State var isARSessionRunning: Bool? {
+        didSet {
+            updateShowARView()
+        }
+    }
+
+    @State var arCameraMode: ARView.CameraMode? = nil {
+        didSet {
+            updateShowARView()
+        }
+    }
+
+    @State var showARCamera: Bool? {
+        didSet {
+            updateShowARView()
+        }
+    }
+
+    func updateShowARView() {
+        let newShowARView = isARSessionRunning == true && arCameraMode == .ar && showARCamera == true
+        if newShowARView != showARView {
+            logger.debug("updating showARView to \(showARView)")
+            showARView = newShowARView
+        }
+    }
+
     @State var showARView: Bool = false {
         didSet {
+            logger.debug("updating webView background due to new arView setup...")
             webView.isOpaque = !showARView
             webView.underPageBackgroundColor = showARView ? .clear : .white
         }
@@ -86,10 +117,13 @@ struct BrowserView: View {
                 .modify {
                     #if os(iOS)
                     $0.onReceive(nativeWebKit.$isARSessionRunning) {
-                        showARView = $0 && nativeWebKit.arView.cameraMode == .ar
+                        isARSessionRunning = $0
                     }
                     .onReceive(nativeWebKit.arCameraModeSubject) {
-                        showARView = nativeWebKit.isARSessionRunning && $0 == .ar
+                        arCameraMode = $0
+                    }
+                    .onReceive(nativeWebKit.$showARCamera) {
+                        showARCamera = $0
                     }
                     #endif
                 }
