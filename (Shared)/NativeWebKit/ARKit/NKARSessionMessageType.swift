@@ -17,4 +17,5 @@ enum NKARSessionMessageType: String, NKMessageTypeProtocol {
     case frame
     case debugOptions
     case cameraMode
+    case configuration
 }

@@ -80,6 +80,19 @@ class NativeWebKit: NSObject, HasNKContext {
         return response
     }
 
+    func wrapMultipleMessages(_ messages: NKMessage?...) -> NKMessage? {
+        logger.debug("wrapping multiple messages \(messages)")
+        let compactMessages = messages.compactMap { $0 }
+        guard !compactMessages.isEmpty else {
+            logger.log("no messages to send")
+            return nil
+        }
+        return [
+            "type": "messages",
+            "messages": compactMessages
+        ]
+    }
+
     #if IN_APP
         func dispatchMessageToWebpages(_ message: NKMessage, activeOnly: Bool = false) {
             logger.debug("sending message to webpages \(message.debugDescription)")
@@ -126,6 +139,17 @@ class NativeWebKit: NSObject, HasNKContext {
     #if os(iOS) && IN_APP
         @Published var isARSessionRunning: Bool = false
         @Published var arCameraModeSubject = PassthroughSubject<ARView.CameraMode, Never>()
+        var arConfiguration: ARConfiguration?
+        var arConfigurationType: NKARSessionConfigurationType? {
+            if arConfiguration is ARWorldTrackingConfiguration {
+                return .worldTracking
+            }
+            else if arConfiguration is ARFaceTrackingConfiguration {
+                return .faceTracking
+            }
+            return nil
+        }
+
         lazy var arView: ARView = {
             logger.log("lazy loading arView...")
             let arView: ARView = .init(frame: .zero)

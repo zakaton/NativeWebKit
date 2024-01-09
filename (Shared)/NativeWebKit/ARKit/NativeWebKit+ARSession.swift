@@ -12,6 +12,7 @@ import RealityKit
 extension NativeWebKit {
     func setupARView(_ arView: ARView) {
         arView.session.delegate = self
+        // arView.session.configuration?.worldAlignment = .camera
         arView.renderOptions.formUnion(.init([
             .disableHDR,
             .disableFaceMesh,
@@ -22,6 +23,11 @@ extension NativeWebKit {
             .disableDepthOfField,
             .disableAREnvironmentLighting
         ]))
+
+        let configurationObservation = arView.session.observe(\.configuration, options: [.new]) { [unowned self] _, _ in
+            logger.debug("arSession.configuration updated!")
+        }
+        observations.append(configurationObservation)
     }
 
     var arSession: ARSession { arView.session }
@@ -36,26 +42,36 @@ extension NativeWebKit {
         case .faceTrackingSupport:
             response = arSessionFaceTrackingSupportMessage
         case .run:
-            guard ARFaceTrackingConfiguration.isSupported else {
-                logger.warning("face tracking is not supported")
+            guard let configurationMessage = message["configuration"] as? NKMessage
+            else {
+                logger.error("no configuration found in message")
                 return nil
             }
+
+            guard let configuration = getARTrackingConfiguration(from: configurationMessage) else {
+                logger.error("unable to create configuration")
+                return nil
+            }
+
+            arConfiguration = configuration
+
             if isARSessionRunning {
                 logger.warning("ARSession is already running - will reset")
                 arSession.pause()
                 isARSessionRunning = false
             }
-            let configuration = ARFaceTrackingConfiguration()
-            configuration.maximumNumberOfTrackedFaces = 1
-            configuration.isWorldTrackingEnabled = true
-//            let configuration = ARWorldTrackingConfiguration()
-//            configuration.sceneReconstruction = .meshWithClassification
-//            configuration.userFaceTrackingEnabled = true
-            arSession.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+            arSession.run(arConfiguration!, options: [
+                .removeExistingAnchors,
+                .resetSceneReconstruction,
+                .resetTracking,
+                .stopTrackedRaycasts
+            ])
             isARSessionRunning = true
-            response = arSessionIsRunningMessage
+            response = wrapMultipleMessages(arSessionIsRunningMessage, arSessionConfigurationMessage)
         case .isRunning:
             response = arSessionIsRunningMessage
+        case .configuration:
+            response = arSessionConfigurationMessage
         case .pause:
             guard isARSessionRunning else {
                 logger.log("ARSession is not running - no need to pause")
@@ -103,112 +119,53 @@ extension NativeWebKit {
         return response
     }
 
-    var arSessionWorldTrackingSupportMessage: NKMessage {
-        [
-            "type": NKARSessionMessageType.worldTrackingSupport.name,
-            "worldTrackingSupport": [
-                "isSupported": ARWorldTrackingConfiguration.isSupported,
-                "supportsUserFaceTracking": ARWorldTrackingConfiguration.supportsUserFaceTracking
-            ]
-        ]
-    }
-
-    var arSessionFaceTrackingSupportMessage: NKMessage {
-        [
-            "type": NKARSessionMessageType.faceTrackingSupport.name,
-            "faceTrackingSupport": [
-                "isSupported": ARFaceTrackingConfiguration.isSupported,
-                "supportsWorldTracking": ARFaceTrackingConfiguration.supportsWorldTracking
-            ]
-        ]
-    }
-
-    var arSessionIsRunningMessage: NKMessage {
-        [
-            "type": NKARSessionMessageType.isRunning.name,
-            "isRunning": isARSessionRunning
-        ]
-    }
-
-    var arSessionDebugOptionsMessage: NKMessage {
-        let debugOptions = arView.debugOptions
-        var debugOptionsMessage: NKMessage = [:]
-        ARView.DebugOptions.allCases.forEach {
-            debugOptionsMessage[$0.name!] = debugOptions.contains($0)
+    func getARTrackingConfiguration(from message: NKMessage) -> ARConfiguration? {
+        guard let configurationTypeString = message["type"] as? String else {
+            logger.error("no configuration type found in message")
+            return nil
         }
 
-        let message: NKMessage = [
-            "type": NKARSessionMessageType.debugOptions.name,
-            "debugOptions": debugOptionsMessage
-        ]
-        return message
-    }
+        guard let configurationType = NKARSessionConfigurationType(rawValue: configurationTypeString) else {
+            logger.error("invalid configuration type \(configurationTypeString)")
+            return nil
+        }
 
-    func arSessionFrameMessage(frame: ARFrame) -> NKMessage {
-        let focalLengthKey = kCGImagePropertyExifFocalLength as String
-        let focalLength = frame.exifData[focalLengthKey] as! NSNumber
+        var configuration: ARConfiguration?
 
-        // can use frame.camera.transform or arView.cameraTransform
-        let cameraTransform = arView.cameraTransform
-        let cameraMessage: NKMessage = [
-            "quaternion": cameraTransform.matrix.quaternion.array,
-            "position": cameraTransform.matrix.position.array,
-            "eulerAngles": frame.camera.eulerAngles.array,
-            "focalLength": focalLength
-        ]
-
-        var frameMessage: NKMessage = [
-            "camera": cameraMessage
-        ]
-
-        let faceAnchors = frame.anchors.compactMap { $0 as? ARFaceAnchor }.filter { $0.isTracked }
-        var faceAnchorsMessage: [NKMessage]?
-        if !faceAnchors.isEmpty {
-            faceAnchorsMessage = faceAnchors.map {
-                var blendShapesMessage: NKMessage = [:]
-                for (blendShapeLocation, number) in $0.blendShapes {
-                    if let blendShapeLocationName = blendShapeLocation.name {
-                        blendShapesMessage[blendShapeLocationName] = number
-                    }
-                    else {
-                        logger.error("no name for blendshape \(blendShapeLocation.rawValue)")
-                    }
-                }
-                let message = [
-                    "identifier": $0.identifier.uuidString,
-                    "lookAtPoint": $0.lookAtPoint.array,
-                    "position": $0.transform.position.array,
-                    "quaternion": $0.transform.quaternion.array,
-                    "leftEye": [
-                        "position": $0.leftEyeTransform.position.array,
-                        "quaternion": $0.leftEyeTransform.quaternion.array
-                    ],
-                    "rightEye": [
-                        "position": $0.rightEyeTransform.position.array,
-                        "quaternion": $0.rightEyeTransform.quaternion.array
-                    ],
-                    "blendShapes": blendShapesMessage
-                ]
-                return message
+        switch configurationType {
+        case .faceTracking:
+            guard ARFaceTrackingConfiguration.isSupported else {
+                logger.warning("face tracking is not supported")
+                return nil
             }
+            let faceTrackingConfiguration = ARFaceTrackingConfiguration()
+            faceTrackingConfiguration.maximumNumberOfTrackedFaces = 1
+            if let isWorldTrackingEnabled = message["isWorldTrackingEnabled"] as? Bool {
+                if ARFaceTrackingConfiguration.supportsWorldTracking {
+                    faceTrackingConfiguration.isWorldTrackingEnabled = isWorldTrackingEnabled
+                }
+                else {
+                    logger.warning("ARFaceTrackingConfiguration doesn't support worldTracking")
+                }
+            }
+            configuration = faceTrackingConfiguration
+        case .worldTracking:
+            guard ARWorldTrackingConfiguration.isSupported else {
+                logger.warning("world tracking is not supported")
+                return nil
+            }
+            let worldTrackingConfiguration = ARWorldTrackingConfiguration()
+            if let userFaceTrackingEnabled = message["userFaceTrackingEnabled"] as? Bool {
+                if ARWorldTrackingConfiguration.supportsUserFaceTracking {
+                    worldTrackingConfiguration.userFaceTrackingEnabled = userFaceTrackingEnabled
+                }
+                else {
+                    logger.warning("ARFaceTrackingConfiguration doesn't support worldTracking")
+                }
+            }
+            configuration = worldTrackingConfiguration
         }
 
-        if let faceAnchorsMessage {
-            frameMessage["faceAnchors"] = faceAnchorsMessage
-        }
-
-        let message: NKMessage = [
-            "type": NKARSessionMessageType.frame.name,
-            "frame": frameMessage
-        ]
-
-        return message
-    }
-
-    var arViewCameraModeMessage: NKMessage {
-        [
-            "type": NKARSessionMessageType.cameraMode.name,
-            "cameraMode": arView.cameraMode.name
-        ]
+        return configuration
     }
 }

@@ -1,0 +1,164 @@
+//
+//  NativeWebKit+message.swift
+//  (iOS) NativeWebKit
+//
+//  Created by Zack Qattan on 1/9/24.
+//
+
+import ARKit
+import RealityKit
+
+extension NativeWebKit {
+    var arSessionWorldTrackingSupportMessage: NKMessage {
+        [
+            "type": NKARSessionMessageType.worldTrackingSupport.name,
+            "worldTrackingSupport": [
+                "isSupported": ARWorldTrackingConfiguration.isSupported,
+                "supportsUserFaceTracking": ARWorldTrackingConfiguration.supportsUserFaceTracking
+            ]
+        ]
+    }
+
+    var arSessionFaceTrackingSupportMessage: NKMessage {
+        [
+            "type": NKARSessionMessageType.faceTrackingSupport.name,
+            "faceTrackingSupport": [
+                "isSupported": ARFaceTrackingConfiguration.isSupported,
+                "supportsWorldTracking": ARFaceTrackingConfiguration.supportsWorldTracking
+            ]
+        ]
+    }
+
+    var arSessionIsRunningMessage: NKMessage {
+        [
+            "type": NKARSessionMessageType.isRunning.name,
+            "isRunning": isARSessionRunning
+        ]
+    }
+
+    var arSessionConfigurationMessage: NKMessage? {
+        guard let arConfigurationType else {
+            logger.warning("no configuration type defined")
+            return nil
+        }
+
+        let trackingInformation: NKMessage?
+        switch arConfigurationType {
+        case .worldTracking:
+            guard let worldTrackingConfiguration = arConfiguration as? ARWorldTrackingConfiguration else {
+                logger.error("unable to cast arSession.configuration as ARWorldTrackingConfiguration")
+                return nil
+            }
+            trackingInformation = [
+                "userFaceTrackingEnabled": worldTrackingConfiguration.userFaceTrackingEnabled
+            ]
+        case .faceTracking:
+            guard let faceTrackingConfiguration = arConfiguration as? ARFaceTrackingConfiguration else {
+                logger.error("unable to cast arSession.configuration as ARFaceTrackingConfiguration")
+                return nil
+            }
+            trackingInformation = [
+                "isWorldTrackingEnabled": faceTrackingConfiguration.isWorldTrackingEnabled,
+                "maximumNumberOfTrackedFaces": faceTrackingConfiguration.maximumNumberOfTrackedFaces
+            ]
+        }
+
+        guard let trackingInformation else {
+            logger.error("unable to get tracking information")
+            return nil
+        }
+
+        let configurationInformation: NKMessage = [
+            "type": arConfigurationType.name,
+            arConfigurationType.name: trackingInformation
+        ]
+        let message: NKMessage = [
+            "type": NKARSessionMessageType.configuration.name,
+            "configuration": configurationInformation
+        ]
+
+        return message
+    }
+
+    var arSessionDebugOptionsMessage: NKMessage {
+        let debugOptions = arView.debugOptions
+        var debugOptionsMessage: NKMessage = [:]
+        ARView.DebugOptions.allCases.forEach {
+            debugOptionsMessage[$0.name!] = debugOptions.contains($0)
+        }
+
+        let message: NKMessage = [
+            "type": NKARSessionMessageType.debugOptions.name,
+            "debugOptions": debugOptionsMessage
+        ]
+        return message
+    }
+
+    func arSessionFrameMessage(frame: ARFrame) -> NKMessage {
+        let focalLengthKey = kCGImagePropertyExifFocalLength as String
+        let focalLength = frame.exifData[focalLengthKey] as! NSNumber
+
+        // can use frame.camera.transform or arView.cameraTransform
+        let cameraTransform = arView.cameraTransform
+        let cameraMessage: NKMessage = [
+            "quaternion": cameraTransform.matrix.quaternion.array,
+            "position": cameraTransform.matrix.position.array,
+            "eulerAngles": frame.camera.eulerAngles.array,
+            "focalLength": focalLength
+        ]
+
+        var frameMessage: NKMessage = [
+            "camera": cameraMessage
+        ]
+
+        let faceAnchors = frame.anchors.compactMap { $0 as? ARFaceAnchor }.filter { $0.isTracked }
+        var faceAnchorsMessage: [NKMessage]?
+        if !faceAnchors.isEmpty {
+            faceAnchorsMessage = faceAnchors.map {
+                var blendShapesMessage: NKMessage = [:]
+                for (blendShapeLocation, number) in $0.blendShapes {
+                    if let blendShapeLocationName = blendShapeLocation.name {
+                        blendShapesMessage[blendShapeLocationName] = number
+                    }
+                    else {
+                        logger.error("no name for blendshape \(blendShapeLocation.rawValue)")
+                    }
+                }
+                let message = [
+                    "identifier": $0.identifier.uuidString,
+                    "lookAtPoint": $0.lookAtPoint.array,
+                    "position": $0.transform.position.array,
+                    "quaternion": $0.transform.quaternion.array,
+                    "leftEye": [
+                        "position": $0.leftEyeTransform.position.array,
+                        "quaternion": $0.leftEyeTransform.quaternion.array
+                    ],
+                    "rightEye": [
+                        "position": $0.rightEyeTransform.position.array,
+                        "quaternion": $0.rightEyeTransform.quaternion.array
+                    ],
+                    "blendShapes": blendShapesMessage
+                ]
+                return message
+            }
+        }
+
+        if let faceAnchorsMessage {
+            frameMessage["faceAnchors"] = faceAnchorsMessage
+        }
+
+        let message: NKMessage = [
+            "type": NKARSessionMessageType.frame.name,
+            "frame": frameMessage
+        ]
+
+        return message
+    }
+
+    var arViewCameraModeMessage: NKMessage {
+        [
+            "type": NKARSessionMessageType.cameraMode.name,
+            "cameraMode": arView.cameraMode.name
+        ]
+    }
+}
