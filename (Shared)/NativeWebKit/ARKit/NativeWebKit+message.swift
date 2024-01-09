@@ -42,14 +42,14 @@ extension NativeWebKit {
             return nil
         }
 
-        let trackingInformation: NKMessage?
+        let configurationInformation: NKMessage?
         switch arConfigurationType {
         case .worldTracking:
             guard let worldTrackingConfiguration = arConfiguration as? ARWorldTrackingConfiguration else {
                 logger.error("unable to cast arSession.configuration as ARWorldTrackingConfiguration")
                 return nil
             }
-            trackingInformation = [
+            configurationInformation = [
                 "userFaceTrackingEnabled": worldTrackingConfiguration.userFaceTrackingEnabled
             ]
         case .faceTracking:
@@ -57,21 +57,19 @@ extension NativeWebKit {
                 logger.error("unable to cast arSession.configuration as ARFaceTrackingConfiguration")
                 return nil
             }
-            trackingInformation = [
+            configurationInformation = [
                 "isWorldTrackingEnabled": faceTrackingConfiguration.isWorldTrackingEnabled,
                 "maximumNumberOfTrackedFaces": faceTrackingConfiguration.maximumNumberOfTrackedFaces
             ]
         }
 
-        guard let trackingInformation else {
+        guard var configurationInformation else {
             logger.error("unable to get tracking information")
             return nil
         }
 
-        let configurationInformation: NKMessage = [
-            "type": arConfigurationType.name,
-            arConfigurationType.name: trackingInformation
-        ]
+        configurationInformation["type"] = arConfigurationType.name
+
         let message: NKMessage = [
             "type": NKARSessionMessageType.configuration.name,
             "configuration": configurationInformation
