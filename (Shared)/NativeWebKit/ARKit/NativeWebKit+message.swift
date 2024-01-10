@@ -102,12 +102,26 @@ extension NativeWebKit {
             "quaternion": cameraTransform.matrix.quaternion.array,
             "position": cameraTransform.matrix.position.array,
             "eulerAngles": frame.camera.eulerAngles.array,
-            "focalLength": focalLength
+            "focalLength": focalLength,
+            "exposureOffset": frame.camera.exposureOffset
         ]
+        frame.
 
         var frameMessage: NKMessage = [
-            "camera": cameraMessage
+            "camera": cameraMessage,
+            "timestamp": frame.timestamp
         ]
+        if let lightEstimate = frame.lightEstimate {
+            var lightEstimateMessage: NKMessage = [
+                "ambientIntensity": lightEstimate.ambientIntensity,
+                "ambientColorTemperature": lightEstimate.ambientColorTemperature
+            ]
+            if let directionalLightEstimate = lightEstimate as? ARDirectionalLightEstimate {
+                frameMessage["primaryLightIntensity"] = directionalLightEstimate.primaryLightIntensity
+                frameMessage["primaryLightDirection"] = directionalLightEstimate.primaryLightDirection.array
+            }
+            frameMessage["lightEstimate"] = lightEstimateMessage
+        }
 
         let faceAnchors = frame.anchors.compactMap { $0 as? ARFaceAnchor }.filter { $0.isTracked }
         var faceAnchorsMessage: [NKMessage]?
