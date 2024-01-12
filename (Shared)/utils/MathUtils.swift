@@ -17,6 +17,10 @@ extension simd_float4 {
     var array: [Float] {
         [x, y, z, w]
     }
+
+    var array3: simd_float3 {
+        [x, y, z]
+    }
 }
 
 extension simd_quatf {
