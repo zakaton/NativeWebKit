@@ -141,7 +141,7 @@ extension NativeWebKit {
                     "lookAtPoint": $0.lookAtPoint.array,
                     "position": $0.transform.position.array,
                     "quaternion": $0.transform.quaternion.array,
-                    // "transform": $0.transform.array,
+                    // "transform": $0.transform.array, // waste to always send
                     "leftEye": [
                         "position": $0.leftEyeTransform.position.array,
                         "quaternion": $0.leftEyeTransform.quaternion.array
