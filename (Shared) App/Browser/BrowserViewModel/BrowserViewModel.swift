@@ -98,7 +98,7 @@ class BrowserViewModel: NSObject, ObservableObject {
     #if DEBUG
     static let defaultUrlString = "http://192.168.1.44:5500/examples/ar-session/data/"
     #else
-    static let defaultUrlString = "https://www.google.com"
+    static let defaultUrlString = "https://zakaton.github.io/NativeWebKit.js/"
     #endif
 
     @Published var urlString = defaultUrlString

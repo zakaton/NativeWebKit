@@ -34,4 +34,8 @@ extension simd_float4x4 {
     var quaternion: simd_quatf {
         .init(self)
     }
+
+    var array: [[Float]] {
+        [columns.0.array, columns.1.array, columns.2.array, columns.3.array]
+    }
 }

@@ -12,7 +12,6 @@ import RealityKit
 extension NativeWebKit {
     func setupARView(_ arView: ARView) {
         arView.session.delegate = self
-        // arView.session.configuration?.worldAlignment = .camera
         arView.renderOptions.formUnion(.init([
             .disableHDR,
             .disableFaceMesh,
@@ -175,6 +174,15 @@ extension NativeWebKit {
             }
             configuration = worldTrackingConfiguration
         }
+
+        guard let configuration else {
+            logger.debug("unable to create configuration")
+            return nil
+        }
+
+        // TODO: - any extra configuration stuff
+        configuration.isLightEstimationEnabled = true
+        configuration.providesAudioData = false
 
         return configuration
     }

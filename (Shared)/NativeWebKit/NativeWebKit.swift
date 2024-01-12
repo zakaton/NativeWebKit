@@ -24,6 +24,15 @@ typealias NKResponse = [String: Any]
 class NativeWebKit: NSObject, HasNKContext {
     var observations: [NSKeyValueObservation] = []
 
+    func webViewDidStartProvisionalNavigation() {
+        #if os(iOS) && IN_APP
+            if isARSessionRunning {
+                arSession.pause()
+                isARSessionRunning = false
+            }
+        #endif
+    }
+
     // MARK: - Message Handling
 
     @discardableResult

@@ -65,7 +65,8 @@ struct BrowserView: View {
     }
 
     func updateShowARView() {
-        let newShowARView = isARSessionRunning == true && arCameraMode == .ar && showARCamera == true
+        // originally added "&& showARView", but it seems that not showing the ARViewContainer removes the position/quaternion from the camera data, as if you set arCameraMode to .nonAR
+        let newShowARView = isARSessionRunning == true && arCameraMode == .ar
         if newShowARView != showARView {
             logger.debug("updating showARView to \(showARView)")
             showARView = newShowARView

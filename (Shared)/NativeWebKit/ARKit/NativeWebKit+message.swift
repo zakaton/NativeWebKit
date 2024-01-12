@@ -93,7 +93,7 @@ extension NativeWebKit {
     }
 
     func arSessionFrameMessage(frame: ARFrame) -> NKMessage {
-        let focalLengthKey = kCGImagePropertyExifFocalLength as String
+        let focalLengthKey = kCGImagePropertyExifFocalLenIn35mmFilm as String
         let focalLength = frame.exifData[focalLengthKey] as! NSNumber
 
         // can use frame.camera.transform or arView.cameraTransform
@@ -105,7 +105,6 @@ extension NativeWebKit {
             "focalLength": focalLength,
             "exposureOffset": frame.camera.exposureOffset
         ]
-        frame.
 
         var frameMessage: NKMessage = [
             "camera": cameraMessage,
@@ -117,8 +116,8 @@ extension NativeWebKit {
                 "ambientColorTemperature": lightEstimate.ambientColorTemperature
             ]
             if let directionalLightEstimate = lightEstimate as? ARDirectionalLightEstimate {
-                frameMessage["primaryLightIntensity"] = directionalLightEstimate.primaryLightIntensity
-                frameMessage["primaryLightDirection"] = directionalLightEstimate.primaryLightDirection.array
+                lightEstimateMessage["primaryLightIntensity"] = directionalLightEstimate.primaryLightIntensity
+                lightEstimateMessage["primaryLightDirection"] = directionalLightEstimate.primaryLightDirection.array
             }
             frameMessage["lightEstimate"] = lightEstimateMessage
         }

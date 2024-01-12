@@ -43,6 +43,7 @@ extension BrowserViewModel: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         didGetThemeColor = false
         updateNavigationControls()
+        nativeWebKit.webViewDidStartProvisionalNavigation()
     }
 
     func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
