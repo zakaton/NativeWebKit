@@ -1,6 +1,6 @@
 {
     "extension_name": {
-        "message": "NativeWebKit Extension",
+        "message": "NativeWebKit",
         "description": "The display name for the extension."
     },
     "extension_description": {
