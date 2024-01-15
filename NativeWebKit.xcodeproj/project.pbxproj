@@ -78,7 +78,7 @@
 		5F81830B2B432B290050DCB0 /* CoreMotion+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CoreMotion+name.swift */; };
 		5F81830C2B432B290050DCB0 /* CoreMotion+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CoreMotion+name.swift */; };
 		5F88A7A22B4D22AE003FDCAF /* NKARSessionConfigurationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88A7A12B4D22AE003FDCAF /* NKARSessionConfigurationType.swift */; };
-		5F88A7A42B4DBFB5003FDCAF /* NativeWebKit+message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88A7A32B4DBFB5003FDCAF /* NativeWebKit+message.swift */; };
+		5F88A7A42B4DBFB5003FDCAF /* NativeWebKit+ARSession+message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88A7A32B4DBFB5003FDCAF /* NativeWebKit+ARSession+message.swift */; };
 		5F8949262B35089300AF3341 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8949202B35089300AF3341 /* Preview Assets.xcassets */; };
 		5F8949272B35089300AF3341 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8949222B35089300AF3341 /* ContentView.swift */; };
 		5F8949362B3508E500AF3341 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8949352B3508E500AF3341 /* Preview Assets.xcassets */; };
@@ -265,7 +265,7 @@
 		5F8183082B432B290050DCB0 /* CoreMotion+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreMotion+name.swift"; sourceTree = "<group>"; };
 		5F87CF0C2B33B59900E951E7 /* NativeWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeWebKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F88A7A12B4D22AE003FDCAF /* NKARSessionConfigurationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKARSessionConfigurationType.swift; sourceTree = "<group>"; };
-		5F88A7A32B4DBFB5003FDCAF /* NativeWebKit+message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+message.swift"; sourceTree = "<group>"; };
+		5F88A7A32B4DBFB5003FDCAF /* NativeWebKit+ARSession+message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+ARSession+message.swift"; sourceTree = "<group>"; };
 		5F89491E2B35089300AF3341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F8949202B35089300AF3341 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F8949212B35089300AF3341 /* NativeWebKit.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = NativeWebKit.entitlements; sourceTree = "<group>"; };
@@ -659,7 +659,7 @@
 				5F9008232B4B50C700902A3D /* NativeWebKit+ARSCNViewDelegate.swift */,
 				5F9C57D82B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+utils.swift */,
 				5F9008012B49C68E00902A3D /* NativeWebKit+ARSession.swift */,
-				5F88A7A32B4DBFB5003FDCAF /* NativeWebKit+message.swift */,
+				5F88A7A32B4DBFB5003FDCAF /* NativeWebKit+ARSession+message.swift */,
 				5F88A7A12B4D22AE003FDCAF /* NKARSessionConfigurationType.swift */,
 				5F9C57DA2B4CC98F00764734 /* ARView.CameraMode+utils.swift */,
 				5F90080B2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift */,
@@ -1078,7 +1078,7 @@
 			files = (
 				5FBB632A2B38BC76008B18B9 /* StringUtils.swift in Sources */,
 				5FC477902B4680EF00BCE86F /* NKTemplateMessageType.swift in Sources */,
-				5F88A7A42B4DBFB5003FDCAF /* NativeWebKit+message.swift in Sources */,
+				5F88A7A42B4DBFB5003FDCAF /* NativeWebKit+ARSession+message.swift in Sources */,
 				5FC477952B46812300BCE86F /* NativeWebKit+Template.swift in Sources */,
 				5FBD16CD2B37621600B8B1A5 /* BrowserView+navigation_iOS.swift in Sources */,
 				5F9C57DB2B4CC98F00764734 /* ARView.CameraMode+utils.swift in Sources */,

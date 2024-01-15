@@ -84,7 +84,7 @@ struct BrowserView: View {
 
     var body: some View {
         #if !os(macOS)
-        if !isPortrait {
+        if !isPortrait, !showARView {
             toolbarItems
         }
         #endif
@@ -100,7 +100,8 @@ struct BrowserView: View {
                     #if os(iOS)
                     if showARView {
                         ARViewContainer()
-                            .edgesIgnoringSafeArea(.top)
+                            .edgesIgnoringSafeArea(.all)
+                            .ignoresSafeArea(.all)
                     }
                     #endif
                     BrowserWebView(viewModel: browserViewModel)
@@ -108,6 +109,23 @@ struct BrowserView: View {
                             if let title = browserViewModel.title {
                                 $0.navigationTitle(title)
                             }
+                        }
+                        .modify {
+                            #if os(iOS)
+                            if showARView {
+                                $0
+                                    .ignoresSafeArea(.all)
+                                    .overlay(alignment: .topTrailing) {
+                                        Button(action: {
+                                            nativeWebKit.pauseARSession(dispatchToWebpages: true)
+                                        }, label: {
+                                            Image(systemName: "xmark.circle.fill")
+                                                .imageScale(.large)
+                                        })
+                                        .padding(.trailing)
+                                    }
+                            }
+                            #endif
                         }
                         .alert(panel?.title ?? "", isPresented: $browserViewModel.showPanel) {
                             alertActionsView
@@ -176,7 +194,7 @@ struct BrowserView: View {
         }
 
         #if os(iOS)
-        if isPortrait {
+        if isPortrait, !showARView {
             toolbarItems
         }
         #endif

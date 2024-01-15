@@ -1,5 +1,5 @@
 //
-//  NativeWebKit+message.swift
+//  NativeWebKit+ARSession+message.swift
 //  (iOS) NativeWebKit
 //
 //  Created by Zack Qattan on 1/9/24.

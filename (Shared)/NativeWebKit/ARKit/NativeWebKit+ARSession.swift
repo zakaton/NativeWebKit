@@ -56,8 +56,7 @@ extension NativeWebKit {
 
             if isARSessionRunning {
                 logger.warning("ARSession is already running - will reset")
-                arSession.pause()
-                isARSessionRunning = false
+                pauseARSession()
             }
             arSession.run(arConfiguration!, options: [
                 .removeExistingAnchors,
@@ -76,8 +75,7 @@ extension NativeWebKit {
                 logger.log("ARSession is not running - no need to pause")
                 return nil
             }
-            arSession.pause()
-            isARSessionRunning = false
+            pauseARSession()
             response = arSessionIsRunningMessage
         case .frame:
             guard isARSessionRunning else {
@@ -126,6 +124,18 @@ extension NativeWebKit {
         }
 
         return response
+    }
+
+    func pauseARSession(dispatchToWebpages: Bool = false) {
+        guard isARSessionRunning else {
+            logger.warning("ARSession is already not running")
+            return
+        }
+        logger.debug("pausing ARSession...")
+        arSession.pause()
+        isARSessionRunning = false
+
+        dispatchMessageToWebpages(arSessionIsRunningMessage)
     }
 
     func getARTrackingConfiguration(from message: NKMessage) -> ARConfiguration? {
