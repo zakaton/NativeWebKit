@@ -135,13 +135,20 @@ extension NativeWebKit {
                         logger.error("no name for blendshape \(blendShapeLocation.rawValue)")
                     }
                 }
-
+                // TODO: - generate quaternion
+                var quaternion: simd_quatf?
+                if arConfigurationType == .worldTracking {
+                    // quaternion for faceAnchor when using worldTracking is incorrect
+                    quaternion = $0.transform.quaternionForFaceAnchorInWorldTracking
+                }
+                else {
+                    quaternion = $0.transform.quaternion
+                }
                 var message = [
                     "identifier": $0.identifier.uuidString,
                     "lookAtPoint": $0.lookAtPoint.array,
                     "position": $0.transform.position.array,
-                    "quaternion": $0.transform.quaternion.array,
-                    // "transform": $0.transform.array, // waste to always send
+                    "quaternion": quaternion!.array,
                     "leftEye": [
                         "position": $0.leftEyeTransform.position.array,
                         "quaternion": $0.leftEyeTransform.quaternion.array
@@ -152,10 +159,7 @@ extension NativeWebKit {
                     ],
                     "blendShapes": blendShapesMessage
                 ]
-                // quaternion for faceAnchor when using worldTracking is incorrect - need to send the whole transform
-                if arConfigurationType == .worldTracking {
-                    message["transform"] = $0.transform.array
-                }
+
                 return message
             }
         }

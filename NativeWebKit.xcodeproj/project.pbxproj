@@ -13,10 +13,8 @@
 		5F4EB0C22B38F8B500EF179D /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C12B38F8B500EF179D /* icon.icns */; };
 		5F4EB0C42B38F8B500EF179D /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C32B38F8B500EF179D /* ShareViewController.swift */; };
 		5F4EB0CC2B38F8B500EF179D /* NativeWebKit Share Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F4EB0BF2B38F8B500EF179D /* NativeWebKit Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5F4EB0D12B39024300EF179D /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5F4EB0D02B39024300EF179D /* UkatonMacros */; };
 		5F4EB0D92B39436E00EF179D /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4EB0D82B39436E00EF179D /* ShareViewController.swift */; };
 		5F4EB0E02B39436E00EF179D /* NativeWebKit Share Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F4EB0D62B39436E00EF179D /* NativeWebKit Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5F4EB0E52B3943F000EF179D /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5F4EB0E42B3943F000EF179D /* UkatonMacros */; };
 		5F5E4BBE2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */; };
 		5F5E4BBF2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */; };
 		5F5E4BC12B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BC02B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift */; };
@@ -120,14 +118,10 @@
 		5FA4BEDF2B3516E300138B35 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEAD2B35119F00138B35 /* popup.js */; };
 		5FA4BEE02B3516EE00138B35 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9F2B35119F00138B35 /* _locales */; };
 		5FA4BEE12B3516F100138B35 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA12B35119F00138B35 /* images */; };
-		5FA4BEE42B361AB200138B35 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FA4BEE32B361AB200138B35 /* UkatonMacros */; };
 		5FBB632A2B38BC76008B18B9 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB63292B38BC76008B18B9 /* StringUtils.swift */; };
 		5FBB632B2B38BC76008B18B9 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB63292B38BC76008B18B9 /* StringUtils.swift */; };
 		5FBB632D2B38C473008B18B9 /* URLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB632C2B38C473008B18B9 /* URLUtils.swift */; };
 		5FBB632E2B38C473008B18B9 /* URLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB632C2B38C473008B18B9 /* URLUtils.swift */; };
-		5FBD16A52B361B3400B8B1A5 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FBD16A42B361B3400B8B1A5 /* UkatonMacros */; };
-		5FBD16A72B361B3900B8B1A5 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FBD16A62B361B3900B8B1A5 /* UkatonMacros */; };
-		5FBD16A92B361B3B00B8B1A5 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FBD16A82B361B3B00B8B1A5 /* UkatonMacros */; };
 		5FBD16AB2B361C3900B8B1A5 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16AA2B361C3900B8B1A5 /* BrowserView.swift */; };
 		5FBD16AC2B361C3900B8B1A5 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16AA2B361C3900B8B1A5 /* BrowserView.swift */; };
 		5FBD16B32B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16B22B362D2200B8B1A5 /* BrowserViewModel.swift */; };
@@ -165,6 +159,12 @@
 		5FC477982B46812300BCE86F /* NativeWebKit+Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC477942B46812300BCE86F /* NativeWebKit+Template.swift */; };
 		5FD60D762B350DF700D6F98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD60D752B350DF700D6F98C /* Assets.xcassets */; };
 		5FD60D772B350DF700D6F98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FD60D752B350DF700D6F98C /* Assets.xcassets */; };
+		5FF1D1EE2B5500C9000DBF04 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FF1D1ED2B5500C9000DBF04 /* UkatonMacros */; };
+		5FF1D1F02B5500CC000DBF04 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FF1D1EF2B5500CC000DBF04 /* UkatonMacros */; };
+		5FF1D1F22B5500CF000DBF04 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FF1D1F12B5500CF000DBF04 /* UkatonMacros */; };
+		5FF1D1F42B5500D2000DBF04 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FF1D1F32B5500D2000DBF04 /* UkatonMacros */; };
+		5FF1D1F62B5500D5000DBF04 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FF1D1F52B5500D5000DBF04 /* UkatonMacros */; };
+		5FF1D1F82B5500D7000DBF04 /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5FF1D1F72B5500D7000DBF04 /* UkatonMacros */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -326,7 +326,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F4EB0D12B39024300EF179D /* UkatonMacros in Frameworks */,
+				5FF1D1F82B5500D7000DBF04 /* UkatonMacros in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +334,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F4EB0E52B3943F000EF179D /* UkatonMacros in Frameworks */,
+				5FF1D1F62B5500D5000DBF04 /* UkatonMacros in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FA4BEE42B361AB200138B35 /* UkatonMacros in Frameworks */,
+				5FF1D1EE2B5500C9000DBF04 /* UkatonMacros in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +350,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FBD16A52B361B3400B8B1A5 /* UkatonMacros in Frameworks */,
+				5FF1D1F02B5500CC000DBF04 /* UkatonMacros in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +358,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FBD16A72B361B3900B8B1A5 /* UkatonMacros in Frameworks */,
+				5FF1D1F22B5500CF000DBF04 /* UkatonMacros in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +366,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FBD16A92B361B3B00B8B1A5 /* UkatonMacros in Frameworks */,
+				5FF1D1F42B5500D2000DBF04 /* UkatonMacros in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,7 +817,7 @@
 			);
 			name = "(Mac) Share Extension";
 			packageProductDependencies = (
-				5F4EB0D02B39024300EF179D /* UkatonMacros */,
+				5FF1D1F72B5500D7000DBF04 /* UkatonMacros */,
 			);
 			productName = Share;
 			productReference = 5F4EB0BF2B38F8B500EF179D /* NativeWebKit Share Extension.appex */;
@@ -837,7 +837,7 @@
 			);
 			name = "(iOS) Share Extension";
 			packageProductDependencies = (
-				5F4EB0E42B3943F000EF179D /* UkatonMacros */,
+				5FF1D1F52B5500D5000DBF04 /* UkatonMacros */,
 			);
 			productName = Share;
 			productReference = 5F4EB0D62B39436E00EF179D /* NativeWebKit Share Extension.appex */;
@@ -860,7 +860,7 @@
 			);
 			name = "(iOS) NativeWebKit";
 			packageProductDependencies = (
-				5FA4BEE32B361AB200138B35 /* UkatonMacros */,
+				5FF1D1ED2B5500C9000DBF04 /* UkatonMacros */,
 			);
 			productName = NativeWebKit;
 			productReference = 5F87CF0C2B33B59900E951E7 /* NativeWebKit.app */;
@@ -883,7 +883,7 @@
 			);
 			name = "(Mac) NativeWebKit";
 			packageProductDependencies = (
-				5FBD16A42B361B3400B8B1A5 /* UkatonMacros */,
+				5FF1D1EF2B5500CC000DBF04 /* UkatonMacros */,
 			);
 			productName = NativeWebKit;
 			productReference = 5F89492C2B3508E400AF3341 /* NativeWebKit.app */;
@@ -903,7 +903,7 @@
 			);
 			name = "(iOS) Safari Extension";
 			packageProductDependencies = (
-				5FBD16A62B361B3900B8B1A5 /* UkatonMacros */,
+				5FF1D1F12B5500CF000DBF04 /* UkatonMacros */,
 			);
 			productName = Extension;
 			productReference = 5FA4BE9A2B35119F00138B35 /* NativeWebKit Safari Extension.appex */;
@@ -923,7 +923,7 @@
 			);
 			name = "(Mac) Safari Extension";
 			packageProductDependencies = (
-				5FBD16A82B361B3B00B8B1A5 /* UkatonMacros */,
+				5FF1D1F32B5500D2000DBF04 /* UkatonMacros */,
 			);
 			productName = Extension;
 			productReference = 5FA4BEBB2B35121700138B35 /* NativeWebKit Safari Extension.appex */;
@@ -969,7 +969,7 @@
 			);
 			mainGroup = 5F87CF032B33B59900E951E7;
 			packageReferences = (
-				5FA4BEE22B361AB200138B35 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */,
+				5FF1D1EC2B5500B9000DBF04 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */,
 			);
 			productRefGroup = 5F87CF0D2B33B59900E951E7 /* Products */;
 			projectDirPath = "";
@@ -1864,9 +1864,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5FA4BEE22B361AB200138B35 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */ = {
+		5FF1D1EC2B5500B9000DBF04 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = /Users/zakaton/Documents/GitHub/UkatonSwiftMacros;
+			repositoryURL = "https://github.com/zakaton/UkatonSwiftMacros.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -1875,34 +1875,34 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5F4EB0D02B39024300EF179D /* UkatonMacros */ = {
+		5FF1D1ED2B5500C9000DBF04 /* UkatonMacros */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5FA4BEE22B361AB200138B35 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
+			package = 5FF1D1EC2B5500B9000DBF04 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
 			productName = UkatonMacros;
 		};
-		5F4EB0E42B3943F000EF179D /* UkatonMacros */ = {
+		5FF1D1EF2B5500CC000DBF04 /* UkatonMacros */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5FA4BEE22B361AB200138B35 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
+			package = 5FF1D1EC2B5500B9000DBF04 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
 			productName = UkatonMacros;
 		};
-		5FA4BEE32B361AB200138B35 /* UkatonMacros */ = {
+		5FF1D1F12B5500CF000DBF04 /* UkatonMacros */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5FA4BEE22B361AB200138B35 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
+			package = 5FF1D1EC2B5500B9000DBF04 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
 			productName = UkatonMacros;
 		};
-		5FBD16A42B361B3400B8B1A5 /* UkatonMacros */ = {
+		5FF1D1F32B5500D2000DBF04 /* UkatonMacros */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5FA4BEE22B361AB200138B35 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
+			package = 5FF1D1EC2B5500B9000DBF04 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
 			productName = UkatonMacros;
 		};
-		5FBD16A62B361B3900B8B1A5 /* UkatonMacros */ = {
+		5FF1D1F52B5500D5000DBF04 /* UkatonMacros */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5FA4BEE22B361AB200138B35 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
+			package = 5FF1D1EC2B5500B9000DBF04 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
 			productName = UkatonMacros;
 		};
-		5FBD16A82B361B3B00B8B1A5 /* UkatonMacros */ = {
+		5FF1D1F72B5500D7000DBF04 /* UkatonMacros */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5FA4BEE22B361AB200138B35 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
+			package = 5FF1D1EC2B5500B9000DBF04 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
 			productName = UkatonMacros;
 		};
 /* End XCSwiftPackageProductDependency section */
