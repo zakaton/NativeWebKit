@@ -144,7 +144,7 @@ extension NativeWebKit {
                 else {
                     quaternion = $0.transform.quaternion
                 }
-                var message = [
+                let message = [
                     "identifier": $0.identifier.uuidString,
                     "lookAtPoint": $0.lookAtPoint.array,
                     "position": $0.transform.position.array,
