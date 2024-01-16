@@ -142,7 +142,7 @@ extension NativeWebKit {
                 var geometryMessage: NKMessage?
                 if arSessionMessageConfiguration[.faceAnchorGeometry] == true {
                     // sending face geometry data can slow things down...
-                    if lastTimeSentARFaceAnchorGeometry[$0.identifier] == nil || frame.timestamp - lastTimeSentARFaceAnchorGeometry[$0.identifier]! > 0.02 {
+                    if lastTimeSentARFaceAnchorGeometry[$0.identifier] == nil || frame.timestamp - lastTimeSentARFaceAnchorGeometry[$0.identifier]! > 0.01 {
                         lastTimeSentARFaceAnchorGeometry[$0.identifier] = frame.timestamp
 
                         geometryMessage = .init()
