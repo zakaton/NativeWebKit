@@ -26,10 +26,9 @@ class NativeWebKit: NSObject, HasNKContext {
 
     func webViewDidStartProvisionalNavigation() {
         #if os(iOS) && IN_APP
-            if isARSessionRunning {
-                arSession.pause()
-                isARSessionRunning = false
-            }
+            pauseARSession()
+            arSessionMessageConfiguration.removeAll(keepingCapacity: true)
+            didSendARInitialFaceAnchorGeometry.removeAll()
         #endif
     }
 
@@ -159,6 +158,10 @@ class NativeWebKit: NSObject, HasNKContext {
             }
             return nil
         }
+
+        var arSessionMessageConfiguration: NKARSessionMessageConfiguration = .init()
+        var didSendARInitialFaceAnchorGeometry: [UUID: Bool] = .init()
+        var lastTimeSentARFaceAnchorGeometry: [UUID: TimeInterval] = .init()
 
         lazy var arView: ARView = {
             logger.log("lazy loading arView...")

@@ -126,16 +126,37 @@ extension NativeWebKit {
         var faceAnchorsMessage: [NKMessage]?
         if !faceAnchors.isEmpty {
             faceAnchorsMessage = faceAnchors.map {
-                var blendShapesMessage: NKMessage = [:]
-                for (blendShapeLocation, number) in $0.blendShapes {
-                    if let blendShapeLocationName = blendShapeLocation.name {
-                        blendShapesMessage[blendShapeLocationName] = number
-                    }
-                    else {
-                        logger.error("no name for blendshape \(blendShapeLocation.rawValue)")
+                var blendShapesMessage: NKMessage?
+                if arSessionMessageConfiguration[.faceAnchorBlendshapes] == true {
+                    blendShapesMessage = .init()
+                    for (blendShapeLocation, number) in $0.blendShapes {
+                        if let blendShapeLocationName = blendShapeLocation.name {
+                            blendShapesMessage![blendShapeLocationName] = number
+                        }
+                        else {
+                            logger.error("no name for blendshape \(blendShapeLocation.rawValue)")
+                        }
                     }
                 }
-                // TODO: - generate quaternion
+
+                var geometryMessage: NKMessage?
+                if arSessionMessageConfiguration[.faceAnchorGeometry] == true {
+                    // sending face geometry data can slow things down...
+                    if lastTimeSentARFaceAnchorGeometry[$0.identifier] == nil || frame.timestamp - lastTimeSentARFaceAnchorGeometry[$0.identifier]! > 0.02 {
+                        lastTimeSentARFaceAnchorGeometry[$0.identifier] = frame.timestamp
+
+                        geometryMessage = .init()
+                        geometryMessage!["vertices"] = $0.geometry.vertices.map { $0.array }
+                        if didSendARInitialFaceAnchorGeometry[$0.identifier] != true {
+                            logger.debug("first time sending face geometry for \($0.identifier.uuidString)")
+                            geometryMessage!["triangleCount"] = $0.geometry.triangleCount
+                            geometryMessage!["triangleIndices"] = $0.geometry.triangleIndices
+                            geometryMessage!["textureCoordinates"] = $0.geometry.textureCoordinates.map { $0.array }
+                            didSendARInitialFaceAnchorGeometry[$0.identifier] = true
+                        }
+                    }
+                }
+
                 var quaternion: simd_quatf?
                 if arConfigurationType == .worldTracking {
                     // quaternion for faceAnchor when using worldTracking is incorrect
@@ -144,7 +165,7 @@ extension NativeWebKit {
                 else {
                     quaternion = $0.transform.quaternion
                 }
-                let message = [
+                var message = [
                     "identifier": $0.identifier.uuidString,
                     "lookAtPoint": $0.lookAtPoint.array,
                     "position": $0.transform.position.array,
@@ -156,9 +177,14 @@ extension NativeWebKit {
                     "rightEye": [
                         "position": $0.rightEyeTransform.position.array,
                         "quaternion": $0.rightEyeTransform.quaternion.array
-                    ],
-                    "blendShapes": blendShapesMessage
+                    ]
                 ]
+                if let blendShapesMessage {
+                    message["blendShapes"] = blendShapesMessage
+                }
+                if let geometryMessage {
+                    message["geometry"] = geometryMessage
+                }
 
                 return message
             }
@@ -187,6 +213,13 @@ extension NativeWebKit {
         [
             "type": NKARSessionMessageType.showCamera.name,
             "showCamera": showARCamera
+        ]
+    }
+
+    var arSessionMessageConfigurationMessage: NKMessage {
+        [
+            "type": NKARSessionMessageType.messageConfiguration.name,
+            "messageConfiguration": arSessionMessageConfiguration.json
         ]
     }
 }

@@ -118,6 +118,7 @@
 		5FA4BEDF2B3516E300138B35 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEAD2B35119F00138B35 /* popup.js */; };
 		5FA4BEE02B3516EE00138B35 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9F2B35119F00138B35 /* _locales */; };
 		5FA4BEE12B3516F100138B35 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA12B35119F00138B35 /* images */; };
+		5FAA4E7F2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA4E7E2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift */; };
 		5FBB632A2B38BC76008B18B9 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB63292B38BC76008B18B9 /* StringUtils.swift */; };
 		5FBB632B2B38BC76008B18B9 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB63292B38BC76008B18B9 /* StringUtils.swift */; };
 		5FBB632D2B38C473008B18B9 /* URLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB632C2B38C473008B18B9 /* URLUtils.swift */; };
@@ -299,6 +300,7 @@
 		5FA4BEBB2B35121700138B35 /* NativeWebKit Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA4BED02B35121700138B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FA4BED12B35121700138B35 /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
+		5FAA4E7E2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKARSessionMessageConfiguration.swift; sourceTree = "<group>"; };
 		5FBB63272B38AA30008B18B9 /* -iOS--NativeWebKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "-iOS--NativeWebKit-Info.plist"; sourceTree = "<group>"; };
 		5FBB63282B38AA85008B18B9 /* -Mac--NativeWebKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "-Mac--NativeWebKit-Info.plist"; sourceTree = "<group>"; };
 		5FBB63292B38BC76008B18B9 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
@@ -664,6 +666,7 @@
 				5F9C57DA2B4CC98F00764734 /* ARView.CameraMode+utils.swift */,
 				5F90080B2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift */,
 				5F9C57D62B4C73CF00764734 /* ARView.DebugOptions+utils.swift */,
+				5FAA4E7E2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift */,
 			);
 			path = ARKit;
 			sourceTree = "<group>";
@@ -1076,6 +1079,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FAA4E7F2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift in Sources */,
 				5FBB632A2B38BC76008B18B9 /* StringUtils.swift in Sources */,
 				5FC477902B4680EF00BCE86F /* NKTemplateMessageType.swift in Sources */,
 				5F88A7A42B4DBFB5003FDCAF /* NativeWebKit+ARSession+message.swift in Sources */,

@@ -13,6 +13,12 @@ extension simd_float3 {
     }
 }
 
+extension simd_float2 {
+    var array: [Float] {
+        [x, y]
+    }
+}
+
 extension simd_float4 {
     var array: [Float] {
         [x, y, z, w]

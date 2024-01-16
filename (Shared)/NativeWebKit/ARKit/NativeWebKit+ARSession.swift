@@ -121,6 +121,21 @@ extension NativeWebKit {
                 }
             }
             response = arViewShowCameraMessage
+        case .messageConfiguration:
+            guard let newMessageConfiguration = message["messageConfiguration"] as? [String: Bool] else {
+                logger.debug("no messageConfiguration found")
+                return nil
+            }
+            newMessageConfiguration.forEach { rawFlag, enabled in
+                guard let flag: NKARSessionMessageConfigurationFlag = .init(rawValue: rawFlag) else {
+                    logger.error("invalid NKARSessionMessageConfigurationFlag flag \(rawFlag)")
+                    return
+                }
+                arSessionMessageConfiguration[flag] = enabled
+            }
+            let _arSessionMessageConfiguration = arSessionMessageConfiguration
+            logger.debug("new arSessionMessageConfiguration \(_arSessionMessageConfiguration, privacy: .public)")
+            response = arSessionMessageConfigurationMessage
         }
 
         return response
@@ -134,7 +149,6 @@ extension NativeWebKit {
         logger.debug("pausing ARSession...")
         arSession.pause()
         isARSessionRunning = false
-
         dispatchMessageToWebpages(arSessionIsRunningMessage)
     }
 
