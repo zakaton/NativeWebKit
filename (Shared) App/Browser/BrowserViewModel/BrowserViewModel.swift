@@ -96,7 +96,7 @@ class BrowserViewModel: NSObject, ObservableObject {
     // MARK: - Url
 
     #if DEBUG
-    static let defaultUrlString = "http://192.168.1.44:5500/examples/ar-session/face-geometry/"
+    static let defaultUrlString = "https://192.168.1.44:5500/"
     #else
     static let defaultUrlString = "https://zakaton.github.io/NativeWebKit.js/"
     #endif

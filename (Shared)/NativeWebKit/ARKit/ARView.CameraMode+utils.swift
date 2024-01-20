@@ -9,7 +9,7 @@ import RealityKit
 
 extension ARView.CameraMode {
     var name: String {
-        return switch self {
+        switch self {
         case .ar:
             "ar"
         case .nonAR:

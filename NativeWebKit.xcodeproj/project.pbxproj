@@ -119,6 +119,8 @@
 		5FA4BEE02B3516EE00138B35 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9F2B35119F00138B35 /* _locales */; };
 		5FA4BEE12B3516F100138B35 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA12B35119F00138B35 /* images */; };
 		5FAA4E7F2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA4E7E2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift */; };
+		5FB995E12B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB995E02B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+utils.swift */; };
+		5FB995E32B5C53F900902C85 /* ARPlaneAnchor.Classification+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB995E22B5C53F900902C85 /* ARPlaneAnchor.Classification+utils.swift */; };
 		5FBB632A2B38BC76008B18B9 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB63292B38BC76008B18B9 /* StringUtils.swift */; };
 		5FBB632B2B38BC76008B18B9 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB63292B38BC76008B18B9 /* StringUtils.swift */; };
 		5FBB632D2B38C473008B18B9 /* URLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB632C2B38C473008B18B9 /* URLUtils.swift */; };
@@ -301,6 +303,8 @@
 		5FA4BED02B35121700138B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FA4BED12B35121700138B35 /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
 		5FAA4E7E2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKARSessionMessageConfiguration.swift; sourceTree = "<group>"; };
+		5FB995E02B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARWorldTrackingConfiguration.PlaneDetection+utils.swift"; sourceTree = "<group>"; };
+		5FB995E22B5C53F900902C85 /* ARPlaneAnchor.Classification+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARPlaneAnchor.Classification+utils.swift"; sourceTree = "<group>"; };
 		5FBB63272B38AA30008B18B9 /* -iOS--NativeWebKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "-iOS--NativeWebKit-Info.plist"; sourceTree = "<group>"; };
 		5FBB63282B38AA85008B18B9 /* -Mac--NativeWebKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "-Mac--NativeWebKit-Info.plist"; sourceTree = "<group>"; };
 		5FBB63292B38BC76008B18B9 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
@@ -667,6 +671,8 @@
 				5F90080B2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift */,
 				5F9C57D62B4C73CF00764734 /* ARView.DebugOptions+utils.swift */,
 				5FAA4E7E2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift */,
+				5FB995E02B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+utils.swift */,
+				5FB995E22B5C53F900902C85 /* ARPlaneAnchor.Classification+utils.swift */,
 			);
 			path = ARKit;
 			sourceTree = "<group>";
@@ -1095,6 +1101,7 @@
 				5F77F7932B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */,
 				5FBD16B32B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
 				5FBD16AB2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
+				5FB995E32B5C53F900902C85 /* ARPlaneAnchor.Classification+utils.swift in Sources */,
 				5F06B1952B3A1B8B00A0A1BB /* KeyboardPublisher.swift in Sources */,
 				5F9008262B4B7C4700902A3D /* MathUtils.swift in Sources */,
 				5F9008142B4B445000902A3D /* ARViewContainer.swift in Sources */,
@@ -1116,6 +1123,7 @@
 				5F77F78D2B3DFF5300BCBA92 /* PanelType.swift in Sources */,
 				5F77F7902B3E072B00BCBA92 /* Panel.swift in Sources */,
 				5F8183092B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
+				5FB995E12B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+utils.swift in Sources */,
 				5FBD16BF2B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
 				5F77F7B32B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
 				5FBD16CF2B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */,

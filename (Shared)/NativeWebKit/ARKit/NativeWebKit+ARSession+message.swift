@@ -49,8 +49,10 @@ extension NativeWebKit {
                 logger.error("unable to cast arSession.configuration as ARWorldTrackingConfiguration")
                 return nil
             }
+            let planeDetectionStrings = ARWorldTrackingConfiguration.PlaneDetection.allCases.filter { worldTrackingConfiguration.planeDetection.contains($0) }.compactMap { $0.name }
             configurationInformation = [
-                "userFaceTrackingEnabled": worldTrackingConfiguration.userFaceTrackingEnabled
+                "userFaceTrackingEnabled": worldTrackingConfiguration.userFaceTrackingEnabled,
+                "planeDetection": planeDetectionStrings
             ]
         case .faceTracking:
             guard let faceTrackingConfiguration = arConfiguration as? ARFaceTrackingConfiguration else {
@@ -127,22 +129,28 @@ extension NativeWebKit {
         if !faceAnchors.isEmpty {
             faceAnchorsMessage = faceAnchors.map {
                 var blendShapesMessage: NKMessage?
-                if arSessionMessageConfiguration[.faceAnchorBlendshapes] == true {
+                if arSessionMessageConfiguration[.faceAnchorBlendshapes] == true || arSessionMessageConfiguration[.faceAnchorEyes] == true {
                     blendShapesMessage = .init()
-                    for (blendShapeLocation, number) in $0.blendShapes {
-                        if let blendShapeLocationName = blendShapeLocation.name {
-                            blendShapesMessage![blendShapeLocationName] = number
+                    if arSessionMessageConfiguration[.faceAnchorBlendshapes] == true {
+                        for (blendShapeLocation, number) in $0.blendShapes {
+                            if let blendShapeLocationName = blendShapeLocation.name {
+                                blendShapesMessage![blendShapeLocationName] = number
+                            }
+                            else {
+                                logger.error("no name for blendshape \(blendShapeLocation.rawValue)")
+                            }
                         }
-                        else {
-                            logger.error("no name for blendshape \(blendShapeLocation.rawValue)")
-                        }
+                    }
+                    else {
+                        blendShapesMessage![ARFaceAnchor.BlendShapeLocation.eyeBlinkLeft.name!] = $0.blendShapes[.eyeBlinkLeft]
+                        blendShapesMessage![ARFaceAnchor.BlendShapeLocation.eyeBlinkRight.name!] = $0.blendShapes[.eyeBlinkRight]
                     }
                 }
 
                 var geometryMessage: NKMessage?
                 if arSessionMessageConfiguration[.faceAnchorGeometry] == true {
                     // sending face geometry data can slow things down...
-                    if lastTimeSentARFaceAnchorGeometry[$0.identifier] == nil || frame.timestamp - lastTimeSentARFaceAnchorGeometry[$0.identifier]! > 0.01 {
+                    if lastTimeSentARFaceAnchorGeometry[$0.identifier] == nil || frame.timestamp - lastTimeSentARFaceAnchorGeometry[$0.identifier]! > 0.02 {
                         lastTimeSentARFaceAnchorGeometry[$0.identifier] = frame.timestamp
 
                         geometryMessage = .init()
@@ -167,18 +175,20 @@ extension NativeWebKit {
                 }
                 var message = [
                     "identifier": $0.identifier.uuidString,
-                    "lookAtPoint": $0.lookAtPoint.array,
                     "position": $0.transform.position.array,
-                    "quaternion": quaternion!.array,
-                    "leftEye": [
+                    "quaternion": quaternion!.array
+                ]
+                if arSessionMessageConfiguration[.faceAnchorEyes] == true {
+                    message["leftEye"] = [
                         "position": $0.leftEyeTransform.position.array,
                         "quaternion": $0.leftEyeTransform.quaternion.array
-                    ],
-                    "rightEye": [
+                    ]
+                    message["rightEye"] = [
                         "position": $0.rightEyeTransform.position.array,
                         "quaternion": $0.rightEyeTransform.quaternion.array
                     ]
-                ]
+                    message["lookAtPoint"] = $0.lookAtPoint.array
+                }
                 if let blendShapesMessage {
                     message["blendShapes"] = blendShapesMessage
                 }
@@ -192,6 +202,31 @@ extension NativeWebKit {
 
         if let faceAnchorsMessage {
             frameMessage["faceAnchors"] = faceAnchorsMessage
+        }
+
+        let planeAnchors = frame.anchors.compactMap { $0 as? ARPlaneAnchor }
+        var planeAnchorsMessage: [NKMessage]?
+        if !planeAnchors.isEmpty {
+            planeAnchorsMessage = planeAnchors.map {
+                let planeExtent = $0.planeExtent
+                let planeExtentMessage: NKMessage = [
+                    "height": planeExtent.height,
+                    "width": planeExtent.width,
+                    "rotationOnYAxis": planeExtent.rotationOnYAxis
+                ]
+                let message = [
+                    "identifier": $0.identifier.uuidString,
+                    "position": $0.transform.position.array,
+                    "center": $0.center.array,
+                    "quaternion": $0.transform.quaternion.array,
+                    "classification": $0.classification.name,
+                    "planeExtent": planeExtentMessage
+                ]
+                return message
+            }
+        }
+        if let planeAnchorsMessage {
+            frameMessage["planeAnchors"] = planeAnchorsMessage
         }
 
         let message: NKMessage = [

@@ -9,7 +9,7 @@ import ARKit
 
 extension ARFaceAnchor.BlendShapeLocation {
     var name: String? {
-        return switch self {
+        switch self {
         case .browDownLeft:
             "browDownLeft"
         case .browDownRight:

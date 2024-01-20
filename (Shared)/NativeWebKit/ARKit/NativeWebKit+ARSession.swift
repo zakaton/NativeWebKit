@@ -149,7 +149,9 @@ extension NativeWebKit {
         logger.debug("pausing ARSession...")
         arSession.pause()
         isARSessionRunning = false
-        dispatchMessageToWebpages(arSessionIsRunningMessage)
+        if dispatchToWebpages {
+            dispatchMessageToWebpages(arSessionIsRunningMessage)
+        }
     }
 
     func getARTrackingConfiguration(from message: NKMessage) -> ARConfiguration? {
@@ -195,6 +197,13 @@ extension NativeWebKit {
                 else {
                     logger.warning("ARFaceTrackingConfiguration doesn't support worldTracking")
                 }
+            }
+            if let planeDetectionStrings = message["planeDetection"] as? [String] {
+                logger.debug("planeDetectionStrings \(planeDetectionStrings, privacy: .public)")
+                let planeDetectionArray = planeDetectionStrings.compactMap { ARWorldTrackingConfiguration.PlaneDetection(name: $0) }
+                logger.debug("planeDetectionArray \(planeDetectionArray, privacy: .public)")
+                let planeDetection: ARWorldTrackingConfiguration.PlaneDetection = .init(planeDetectionArray)
+                worldTrackingConfiguration.planeDetection = planeDetection
             }
             configuration = worldTrackingConfiguration
         }

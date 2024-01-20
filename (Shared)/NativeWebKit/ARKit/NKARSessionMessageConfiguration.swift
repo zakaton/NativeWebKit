@@ -11,6 +11,7 @@ enum NKARSessionMessageConfigurationFlag: String, CaseIterable {
     var name: String { rawValue }
     case faceAnchorBlendshapes
     case faceAnchorGeometry
+    case faceAnchorEyes
 }
 
 typealias NKARSessionMessageConfiguration = [NKARSessionMessageConfigurationFlag: Bool]
