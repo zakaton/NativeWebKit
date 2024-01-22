@@ -29,6 +29,7 @@ class NativeWebKit: NSObject, HasNKContext {
             pauseARSession()
             arSessionMessageConfiguration.removeAll(keepingCapacity: true)
             didSendARInitialFaceAnchorGeometry.removeAll()
+            arView.debugOptions = .init()
         #endif
     }
 
@@ -103,7 +104,7 @@ class NativeWebKit: NSObject, HasNKContext {
 
     #if IN_APP
         func dispatchMessageToWebpages(_ message: NKMessage, activeOnly: Bool = false) {
-            logger.debug("sending message to webpages \(message.debugDescription)")
+            // logger.debug("sending message to webpages \(message.debugDescription)")
             guard let messageData = try? JSONSerialization.data(withJSONObject: message) else {
                 logger.error("unable to convert mesage to json")
                 return
@@ -112,7 +113,7 @@ class NativeWebKit: NSObject, HasNKContext {
                 logger.error("unable to stringify mesage json")
                 return
             }
-            logger.debug("sending message json to webpages \"\(messageString)\"")
+            // logger.debug("sending message json to webpages \"\(messageString)\"")
             DispatchQueue.main.async {
                 BrowserViewModel.models.forEach {
                     if !activeOnly || $0.isActiveModel {

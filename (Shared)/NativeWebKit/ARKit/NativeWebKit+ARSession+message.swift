@@ -29,6 +29,15 @@ extension NativeWebKit {
         ]
     }
 
+    var arSessionBodyTrackingSupportMessage: NKMessage {
+        [
+            "type": NKARSessionMessageType.bodyTrackingSupport.name,
+            "bodyTrackingSupport": [
+                "isSupported": ARBodyTrackingConfiguration.isSupported
+            ]
+        ]
+    }
+
     var arSessionIsRunningMessage: NKMessage {
         [
             "type": NKARSessionMessageType.isRunning.name,
@@ -63,14 +72,24 @@ extension NativeWebKit {
                 "isWorldTrackingEnabled": faceTrackingConfiguration.isWorldTrackingEnabled,
                 "maximumNumberOfTrackedFaces": faceTrackingConfiguration.maximumNumberOfTrackedFaces
             ]
+        case .bodyTracking:
+            guard let bodyTrackingConfiguration = arConfiguration as? ARBodyTrackingConfiguration else {
+                logger.error("unable to cast arSession.configuration as ARBodyTrackingConfiguration")
+                return nil
+            }
+            configurationInformation = [:]
         }
 
         guard var configurationInformation else {
-            logger.error("unable to get tracking information")
+            logger.error("unable to get configuration information")
             return nil
         }
 
         configurationInformation["type"] = arConfigurationType.name
+        if let arConfiguration, !arConfiguration.frameSemantics.isEmpty {
+            let frameSemanticsArray = ARConfiguration.FrameSemantics.allCases.filter { arConfiguration.frameSemantics.contains($0) }
+            configurationInformation["frameSemantics"] = frameSemanticsArray.compactMap { $0.name }
+        }
 
         let message: NKMessage = [
             "type": NKARSessionMessageType.configuration.name,
@@ -168,7 +187,7 @@ extension NativeWebKit {
                 var quaternion: simd_quatf?
                 if arConfigurationType == .worldTracking {
                     // quaternion for faceAnchor when using worldTracking is incorrect
-                    quaternion = $0.transform.quaternionForFaceAnchorInWorldTracking
+                    quaternion = $0.transform.quaternion2
                 }
                 else {
                     quaternion = $0.transform.quaternion
@@ -221,12 +240,42 @@ extension NativeWebKit {
                     "quaternion": $0.transform.quaternion.array,
                     "classification": $0.classification.name,
                     "planeExtent": planeExtentMessage
+                    // "alignment": $0.alignment.name
                 ]
                 return message
             }
         }
         if let planeAnchorsMessage {
             frameMessage["planeAnchors"] = planeAnchorsMessage
+        }
+
+        let bodyAnchors = frame.anchors.compactMap { $0 as? ARBodyAnchor }
+        var bodyAnchorsMessage: [NKMessage]?
+        if !bodyAnchors.isEmpty {
+            bodyAnchorsMessage = bodyAnchors.map { bodyAnchor in
+                var skeletonMessage: NKMessage = [:]
+                bodyAnchor.skeleton.definition.jointNames.enumerated().forEach { index, jointName in
+                    let transform = bodyAnchor.skeleton.jointLocalTransforms[index]
+                    skeletonMessage[jointName] = [
+                        "position": transform.position.array,
+                        "quaternion": transform.quaternion.array
+                    ]
+                }
+
+                let message = [
+                    "identifier": bodyAnchor.identifier.uuidString,
+                    "isTracked": bodyAnchor.isTracked,
+                    "position": bodyAnchor.transform.position.array,
+                    "quaternion": bodyAnchor.transform.quaternion.array,
+                    "estimatedScaleFactor": bodyAnchor.estimatedScaleFactor,
+                    "skeleton": skeletonMessage,
+                    "count": bodyAnchor.skeleton.jointLocalTransforms.count
+                ]
+                return message
+            }
+        }
+        if let bodyAnchorsMessage {
+            frameMessage["bodyAnchors"] = bodyAnchorsMessage
         }
 
         let message: NKMessage = [

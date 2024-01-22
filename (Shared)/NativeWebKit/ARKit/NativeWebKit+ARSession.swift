@@ -40,6 +40,8 @@ extension NativeWebKit {
             response = arSessionWorldTrackingSupportMessage
         case .faceTrackingSupport:
             response = arSessionFaceTrackingSupportMessage
+        case .bodyTrackingSupport:
+            response = arSessionBodyTrackingSupportMessage
         case .run:
             guard let configurationMessage = message["configuration"] as? NKMessage
             else {
@@ -195,7 +197,7 @@ extension NativeWebKit {
                     worldTrackingConfiguration.userFaceTrackingEnabled = userFaceTrackingEnabled
                 }
                 else {
-                    logger.warning("ARFaceTrackingConfiguration doesn't support worldTracking")
+                    logger.warning("ARWorldTrackingConfiguration doesn't support faceTracking")
                 }
             }
             if let planeDetectionStrings = message["planeDetection"] as? [String] {
@@ -206,11 +208,27 @@ extension NativeWebKit {
                 worldTrackingConfiguration.planeDetection = planeDetection
             }
             configuration = worldTrackingConfiguration
+        case .bodyTracking:
+            guard ARBodyTrackingConfiguration.isSupported else {
+                logger.warning("body tracking is not supported")
+                return nil
+            }
+            let bodyTrackingConfiguration = ARBodyTrackingConfiguration()
+            bodyTrackingConfiguration.automaticSkeletonScaleEstimationEnabled = true
+            configuration = bodyTrackingConfiguration
         }
 
         guard let configuration else {
             logger.debug("unable to create configuration")
             return nil
+        }
+
+        if let frameSemanticsStrings = message["frameSemantics"] as? [String] {
+            logger.debug("frameSemanticsStrings \(frameSemanticsStrings, privacy: .public)")
+            let frameSemanticsArray = frameSemanticsStrings.compactMap { ARConfiguration.FrameSemantics(name: $0) }
+            logger.debug("frameSemanticsArray \(frameSemanticsArray, privacy: .public)")
+            let frameSemantics: ARConfiguration.FrameSemantics = .init(frameSemanticsArray)
+            configuration.frameSemantics = frameSemantics
         }
 
         // TODO: - any extra configuration stuff

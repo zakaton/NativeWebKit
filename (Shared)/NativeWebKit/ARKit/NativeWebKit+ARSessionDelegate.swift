@@ -24,6 +24,7 @@ extension NativeWebKit: ARSessionDelegate {
 
     func session(_ session: ARSession, didRemove anchors: [ARAnchor]) {
         // logger.debug("didRemove anchors")
+        
     }
 
     func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {

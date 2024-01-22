@@ -1,5 +1,5 @@
 //
-//  ARPlaneAnchor.Classification+utils.swift
+//  ARPlaneAnchor.Classification+name.swift
 //  (iOS) NativeWebKit
 //
 //  Created by Zack Qattan on 1/20/24.

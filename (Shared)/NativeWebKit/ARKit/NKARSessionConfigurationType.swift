@@ -11,4 +11,5 @@ enum NKARSessionConfigurationType: String {
     var name: String { rawValue }
     case worldTracking
     case faceTracking
+    case bodyTracking
 }

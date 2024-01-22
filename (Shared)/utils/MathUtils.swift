@@ -45,7 +45,7 @@ extension simd_float4x4 {
         .init(self)
     }
 
-    var quaternionForFaceAnchorInWorldTracking: simd_quatf {
+    var quaternion2: simd_quatf {
         /*
          Getting the usual quaternion from a faceAnchor's matrix is completely off.
          I was able to get the right quaternion values from the matrix using THREE.js's Matrix4.decompose.

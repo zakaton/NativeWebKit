@@ -73,10 +73,10 @@
 		5F8183052B432B080050DCB0 /* CoreMotion+array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183032B432B080050DCB0 /* CoreMotion+array.swift */; };
 		5F8183062B432B080050DCB0 /* CoreMotion+array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183032B432B080050DCB0 /* CoreMotion+array.swift */; };
 		5F8183072B432B080050DCB0 /* CoreMotion+array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183032B432B080050DCB0 /* CoreMotion+array.swift */; };
-		5F8183092B432B290050DCB0 /* CoreMotion+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CoreMotion+name.swift */; };
-		5F81830A2B432B290050DCB0 /* CoreMotion+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CoreMotion+name.swift */; };
-		5F81830B2B432B290050DCB0 /* CoreMotion+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CoreMotion+name.swift */; };
-		5F81830C2B432B290050DCB0 /* CoreMotion+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CoreMotion+name.swift */; };
+		5F8183092B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift */; };
+		5F81830A2B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift */; };
+		5F81830B2B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift */; };
+		5F81830C2B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8183082B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift */; };
 		5F88A7A22B4D22AE003FDCAF /* NKARSessionConfigurationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88A7A12B4D22AE003FDCAF /* NKARSessionConfigurationType.swift */; };
 		5F88A7A42B4DBFB5003FDCAF /* NativeWebKit+ARSession+message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88A7A32B4DBFB5003FDCAF /* NativeWebKit+ARSession+message.swift */; };
 		5F8949262B35089300AF3341 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8949202B35089300AF3341 /* Preview Assets.xcassets */; };
@@ -96,7 +96,7 @@
 		5F9008282B4B7C5300902A3D /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008252B4B7C4700902A3D /* MathUtils.swift */; };
 		5F9008292B4B7C5400902A3D /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9008252B4B7C4700902A3D /* MathUtils.swift */; };
 		5F9C57D72B4C73CF00764734 /* ARView.DebugOptions+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C57D62B4C73CF00764734 /* ARView.DebugOptions+utils.swift */; };
-		5F9C57D92B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C57D82B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+utils.swift */; };
+		5F9C57D92B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C57D82B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+name.swift */; };
 		5F9C57DB2B4CC98F00764734 /* ARView.CameraMode+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9C57DA2B4CC98F00764734 /* ARView.CameraMode+utils.swift */; };
 		5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9C2B35119F00138B35 /* SafariWebExtensionHandler.swift */; };
 		5FA4BEA02B35119F00138B35 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9F2B35119F00138B35 /* _locales */; };
@@ -119,8 +119,10 @@
 		5FA4BEE02B3516EE00138B35 /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BE9F2B35119F00138B35 /* _locales */; };
 		5FA4BEE12B3516F100138B35 /* images in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4BEA12B35119F00138B35 /* images */; };
 		5FAA4E7F2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA4E7E2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift */; };
-		5FB995E12B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB995E02B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+utils.swift */; };
-		5FB995E32B5C53F900902C85 /* ARPlaneAnchor.Classification+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB995E22B5C53F900902C85 /* ARPlaneAnchor.Classification+utils.swift */; };
+		5FB995E12B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB995E02B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+name.swift */; };
+		5FB995E32B5C53F900902C85 /* ARPlaneAnchor.Classification+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB995E22B5C53F900902C85 /* ARPlaneAnchor.Classification+name.swift */; };
+		5FB995E52B5DAD5D00902C85 /* ARPlaneAnchor.Alignment+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB995E42B5DAD5D00902C85 /* ARPlaneAnchor.Alignment+name.swift */; };
+		5FB995E72B5DD1C400902C85 /* ARConfiguration.FrameSemantics+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB995E62B5DD1C400902C85 /* ARConfiguration.FrameSemantics+name.swift */; };
 		5FBB632A2B38BC76008B18B9 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB63292B38BC76008B18B9 /* StringUtils.swift */; };
 		5FBB632B2B38BC76008B18B9 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB63292B38BC76008B18B9 /* StringUtils.swift */; };
 		5FBB632D2B38C473008B18B9 /* URLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB632C2B38C473008B18B9 /* URLUtils.swift */; };
@@ -265,7 +267,7 @@
 		5F7FBFBE2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+handleIncomingURL.swift"; sourceTree = "<group>"; };
 		5F7FBFC12B3B4E770029F826 /* BrowserView+toolbars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserView+toolbars.swift"; sourceTree = "<group>"; };
 		5F8183032B432B080050DCB0 /* CoreMotion+array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreMotion+array.swift"; sourceTree = "<group>"; };
-		5F8183082B432B290050DCB0 /* CoreMotion+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreMotion+name.swift"; sourceTree = "<group>"; };
+		5F8183082B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMDeviceMotion.SensorLocation+name.swift"; sourceTree = "<group>"; };
 		5F87CF0C2B33B59900E951E7 /* NativeWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeWebKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F88A7A12B4D22AE003FDCAF /* NKARSessionConfigurationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKARSessionConfigurationType.swift; sourceTree = "<group>"; };
 		5F88A7A32B4DBFB5003FDCAF /* NativeWebKit+ARSession+message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+ARSession+message.swift"; sourceTree = "<group>"; };
@@ -285,7 +287,7 @@
 		5F9008232B4B50C700902A3D /* NativeWebKit+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
 		5F9008252B4B7C4700902A3D /* MathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
 		5F9C57D62B4C73CF00764734 /* ARView.DebugOptions+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView.DebugOptions+utils.swift"; sourceTree = "<group>"; };
-		5F9C57D82B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARFaceAnchor.BlendShapeLocation+utils.swift"; sourceTree = "<group>"; };
+		5F9C57D82B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARFaceAnchor.BlendShapeLocation+name.swift"; sourceTree = "<group>"; };
 		5F9C57DA2B4CC98F00764734 /* ARView.CameraMode+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARView.CameraMode+utils.swift"; sourceTree = "<group>"; };
 		5FA4BE952B35113B00138B35 /* TODO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		5FA4BE9A2B35119F00138B35 /* NativeWebKit Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -303,8 +305,10 @@
 		5FA4BED02B35121700138B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FA4BED12B35121700138B35 /* Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Extension.entitlements; sourceTree = "<group>"; };
 		5FAA4E7E2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKARSessionMessageConfiguration.swift; sourceTree = "<group>"; };
-		5FB995E02B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARWorldTrackingConfiguration.PlaneDetection+utils.swift"; sourceTree = "<group>"; };
-		5FB995E22B5C53F900902C85 /* ARPlaneAnchor.Classification+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARPlaneAnchor.Classification+utils.swift"; sourceTree = "<group>"; };
+		5FB995E02B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARWorldTrackingConfiguration.PlaneDetection+name.swift"; sourceTree = "<group>"; };
+		5FB995E22B5C53F900902C85 /* ARPlaneAnchor.Classification+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARPlaneAnchor.Classification+name.swift"; sourceTree = "<group>"; };
+		5FB995E42B5DAD5D00902C85 /* ARPlaneAnchor.Alignment+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARPlaneAnchor.Alignment+name.swift"; sourceTree = "<group>"; };
+		5FB995E62B5DD1C400902C85 /* ARConfiguration.FrameSemantics+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARConfiguration.FrameSemantics+name.swift"; sourceTree = "<group>"; };
 		5FBB63272B38AA30008B18B9 /* -iOS--NativeWebKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "-iOS--NativeWebKit-Info.plist"; sourceTree = "<group>"; };
 		5FBB63282B38AA85008B18B9 /* -Mac--NativeWebKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "-Mac--NativeWebKit-Info.plist"; sourceTree = "<group>"; };
 		5FBB63292B38BC76008B18B9 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
@@ -539,7 +543,7 @@
 			children = (
 				5F77F7AC2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift */,
 				5F8183032B432B080050DCB0 /* CoreMotion+array.swift */,
-				5F8183082B432B290050DCB0 /* CoreMotion+name.swift */,
+				5F8183082B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift */,
 				5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */,
 				5F77F7B22B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift */,
 			);
@@ -663,7 +667,7 @@
 			children = (
 				5F9007FC2B49C66300902A3D /* NKARSessionMessageType.swift */,
 				5F9008232B4B50C700902A3D /* NativeWebKit+ARSCNViewDelegate.swift */,
-				5F9C57D82B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+utils.swift */,
+				5F9C57D82B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+name.swift */,
 				5F9008012B49C68E00902A3D /* NativeWebKit+ARSession.swift */,
 				5F88A7A32B4DBFB5003FDCAF /* NativeWebKit+ARSession+message.swift */,
 				5F88A7A12B4D22AE003FDCAF /* NKARSessionConfigurationType.swift */,
@@ -671,8 +675,10 @@
 				5F90080B2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift */,
 				5F9C57D62B4C73CF00764734 /* ARView.DebugOptions+utils.swift */,
 				5FAA4E7E2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift */,
-				5FB995E02B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+utils.swift */,
-				5FB995E22B5C53F900902C85 /* ARPlaneAnchor.Classification+utils.swift */,
+				5FB995E02B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+name.swift */,
+				5FB995E22B5C53F900902C85 /* ARPlaneAnchor.Classification+name.swift */,
+				5FB995E42B5DAD5D00902C85 /* ARPlaneAnchor.Alignment+name.swift */,
+				5FB995E62B5DD1C400902C85 /* ARConfiguration.FrameSemantics+name.swift */,
 			);
 			path = ARKit;
 			sourceTree = "<group>";
@@ -1098,16 +1104,18 @@
 				5F77F79D2B3F991B00BCBA92 /* NativeWebKit.swift in Sources */,
 				5F77F7A52B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift in Sources */,
 				5FBD16BB2B36340500B8B1A5 /* BrowserWebView +UIViewRepresentable.swift in Sources */,
+				5FB995E52B5DAD5D00902C85 /* ARPlaneAnchor.Alignment+name.swift in Sources */,
 				5F77F7932B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */,
 				5FBD16B32B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
 				5FBD16AB2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
-				5FB995E32B5C53F900902C85 /* ARPlaneAnchor.Classification+utils.swift in Sources */,
+				5FB995E32B5C53F900902C85 /* ARPlaneAnchor.Classification+name.swift in Sources */,
 				5F06B1952B3A1B8B00A0A1BB /* KeyboardPublisher.swift in Sources */,
 				5F9008262B4B7C4700902A3D /* MathUtils.swift in Sources */,
 				5F9008142B4B445000902A3D /* ARViewContainer.swift in Sources */,
 				5F77F7AD2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5F90081E2B4B464600902A3D /* ARViewContainer+UIViewRepresentable.swift in Sources */,
-				5F9C57D92B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+utils.swift in Sources */,
+				5FB995E72B5DD1C400902C85 /* ARConfiguration.FrameSemantics+name.swift in Sources */,
+				5F9C57D92B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+name.swift in Sources */,
 				5F5E4BBE2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
 				5F8183042B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
 				5F77F7BD2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
@@ -1122,8 +1130,8 @@
 				5F77F7A22B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift in Sources */,
 				5F77F78D2B3DFF5300BCBA92 /* PanelType.swift in Sources */,
 				5F77F7902B3E072B00BCBA92 /* Panel.swift in Sources */,
-				5F8183092B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
-				5FB995E12B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+utils.swift in Sources */,
+				5F8183092B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift in Sources */,
+				5FB995E12B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+name.swift in Sources */,
 				5FBD16BF2B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
 				5F77F7B32B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
 				5FBD16CF2B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */,
@@ -1173,7 +1181,7 @@
 				5FBB632B2B38BC76008B18B9 /* StringUtils.swift in Sources */,
 				5FC4778B2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
 				5F77F7942B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */,
-				5F81830A2B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
+				5F81830A2B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift in Sources */,
 				5F7FBFC02B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */,
 				5FBB632E2B38C473008B18B9 /* URLUtils.swift in Sources */,
 				5F77F7832B3CA70700BCBA92 /* BrowserViewModel+history.swift in Sources */,
@@ -1200,7 +1208,7 @@
 				5FC477872B44E39800BCE86F /* NativeWebKit+AudioSession.swift in Sources */,
 				5FC4778C2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
 				5F9007FF2B49C66300902A3D /* NKARSessionMessageType.swift in Sources */,
-				5F81830B2B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
+				5F81830B2B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift in Sources */,
 				5F77F7CC2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5FC477972B46812300BCE86F /* NativeWebKit+Template.swift in Sources */,
 				5F77F7C82B40CED400BCBA92 /* NKContext.swift in Sources */,
@@ -1218,7 +1226,7 @@
 				5F77F7B02B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5F8183072B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
 				5FA4BED92B3516B300138B35 /* SafariWebExtensionHandler.swift in Sources */,
-				5F81830C2B432B290050DCB0 /* CoreMotion+name.swift in Sources */,
+				5F81830C2B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift in Sources */,
 				5F9008002B49C66300902A3D /* NKARSessionMessageType.swift in Sources */,
 				5F77F7CD2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5F77F7C92B40CED400BCBA92 /* NKContext.swift in Sources */,

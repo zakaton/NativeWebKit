@@ -1,5 +1,5 @@
 //
-//  CoreMotion+name.swift
+//  CMDeviceMotion.SensorLocation+name.swift
 //  NativeWebKit
 //
 //  Created by Zack Qattan on 1/1/24.

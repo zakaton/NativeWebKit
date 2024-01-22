@@ -1,5 +1,5 @@
 //
-//  ARWorldTrackingConfiguration.PlaneDetection+utils.swift
+//  ARWorldTrackingConfiguration.PlaneDetection+name.swift
 //  (iOS) NativeWebKit
 //
 //  Created by Zack Qattan on 1/20/24.

@@ -11,6 +11,7 @@ enum NKARSessionMessageType: String, NKMessageTypeProtocol {
     static let prefix: String = "ars"
     case worldTrackingSupport
     case faceTrackingSupport
+    case bodyTrackingSupport
     case run
     case isRunning
     case pause
