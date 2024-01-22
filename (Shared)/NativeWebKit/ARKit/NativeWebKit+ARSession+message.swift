@@ -255,11 +255,13 @@ extension NativeWebKit {
             bodyAnchorsMessage = bodyAnchors.map { bodyAnchor in
                 var skeletonMessage: NKMessage = [:]
                 bodyAnchor.skeleton.definition.jointNames.enumerated().forEach { index, jointName in
-                    let transform = bodyAnchor.skeleton.jointLocalTransforms[index]
-                    skeletonMessage[jointName] = [
-                        "position": transform.position.array,
-                        "quaternion": transform.quaternion.array
-                    ]
+                    if bodyAnchor.skeleton.isJointTracked(index) {
+                        let transform = bodyAnchor.skeleton.jointLocalTransforms[index]
+                        skeletonMessage[jointName] = [
+                            "position": transform.position.array,
+                            "quaternion": transform.quaternion.array
+                        ]
+                    }
                 }
 
                 let message = [
@@ -268,8 +270,7 @@ extension NativeWebKit {
                     "position": bodyAnchor.transform.position.array,
                     "quaternion": bodyAnchor.transform.quaternion.array,
                     "estimatedScaleFactor": bodyAnchor.estimatedScaleFactor,
-                    "skeleton": skeletonMessage,
-                    "count": bodyAnchor.skeleton.jointLocalTransforms.count
+                    "skeleton": skeletonMessage
                 ]
                 return message
             }
