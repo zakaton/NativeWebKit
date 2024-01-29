@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		5F06B1952B3A1B8B00A0A1BB /* KeyboardPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F06B1942B3A1B8B00A0A1BB /* KeyboardPublisher.swift */; };
+		5F0AA2F02B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2EF2B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift */; };
+		5F0AA2F12B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2EF2B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift */; };
+		5F0AA2F22B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2EF2B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift */; };
+		5F0AA2F32B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2EF2B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift */; };
+		5F0AA2F52B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2F42B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift */; };
+		5F0AA2F62B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2F42B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift */; };
+		5F0AA2F72B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2F42B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift */; };
+		5F0AA2F82B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2F42B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift */; };
+		5F0AA2FA2B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2F92B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift */; };
+		5F0AA2FB2B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2F92B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift */; };
+		5F0AA2FC2B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2F92B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift */; };
+		5F0AA2FD2B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2F92B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift */; };
+		5F0AA2FF2B680EE000AF62D5 /* CBManagerState+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */; };
+		5F0AA3002B680EE000AF62D5 /* CBManagerState+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */; };
+		5F0AA3012B680EE000AF62D5 /* CBManagerState+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */; };
+		5F0AA3022B680EE000AF62D5 /* CBManagerState+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */; };
 		5F4130282B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */; };
 		5F4130292B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */; };
 		5F4EB0C22B38F8B500EF179D /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C12B38F8B500EF179D /* icon.icns */; };
@@ -232,6 +248,10 @@
 
 /* Begin PBXFileReference section */
 		5F06B1942B3A1B8B00A0A1BB /* KeyboardPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPublisher.swift; sourceTree = "<group>"; };
+		5F0AA2EF2B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKCoreBluetoothMessageType.swift; sourceTree = "<group>"; };
+		5F0AA2F42B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+CoreBluetooth.swift"; sourceTree = "<group>"; };
+		5F0AA2F92B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+CBCentralManagerDelegate.swift"; sourceTree = "<group>"; };
+		5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBManagerState+name.swift"; sourceTree = "<group>"; };
 		5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKUIDelegate.swift"; sourceTree = "<group>"; };
 		5F4EB0BF2B38F8B500EF179D /* NativeWebKit Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F4EB0C12B38F8B500EF179D /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
@@ -392,6 +412,17 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		5F0AA2EE2B680B9F00AF62D5 /* CoreBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				5F0AA2EF2B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift */,
+				5F0AA2F92B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift */,
+				5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */,
+				5F0AA2F42B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift */,
+			);
+			path = CoreBluetooth;
+			sourceTree = "<group>";
+		};
 		5F0E4D7B2B350BA60027C202 /* (Shared) */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +558,7 @@
 		5F77F79B2B3F98DF00BCBA92 /* NativeWebKit */ = {
 			isa = PBXGroup;
 			children = (
+				5F0AA2EE2B680B9F00AF62D5 /* CoreBluetooth */,
 				5F77F79C2B3F991B00BCBA92 /* NativeWebKit.swift */,
 				5F9007FB2B49C5A300902A3D /* ARKit */,
 				5F77F7C52B40CED400BCBA92 /* NKContext.swift */,
@@ -1092,7 +1124,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FAA4E7F2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift in Sources */,
+				5F0AA2F02B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift in Sources */,
 				5FBB632A2B38BC76008B18B9 /* StringUtils.swift in Sources */,
+				5F0AA2FF2B680EE000AF62D5 /* CBManagerState+name.swift in Sources */,
 				5FC477902B4680EF00BCE86F /* NKTemplateMessageType.swift in Sources */,
 				5F88A7A42B4DBFB5003FDCAF /* NativeWebKit+ARSession+message.swift in Sources */,
 				5FC477952B46812300BCE86F /* NativeWebKit+Template.swift in Sources */,
@@ -1138,11 +1172,13 @@
 				5F77F77F2B3CA39500BCBA92 /* BrowserView+HistorySheet.swift in Sources */,
 				5F5E4BC12B37733B00230300 /* BrowserViewModel+UIScrollViewDelegate.swift in Sources */,
 				5F9C57D72B4C73CF00764734 /* ARView.DebugOptions+utils.swift in Sources */,
+				5F0AA2F52B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift in Sources */,
 				5F90080C2B49CC5F00902A3D /* NativeWebKit+ARSessionDelegate.swift in Sources */,
 				5F77F7C32B40CEAC00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5F77F7C62B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FBB632D2B38C473008B18B9 /* URLUtils.swift in Sources */,
 				5FC477852B44E39800BCE86F /* NativeWebKit+AudioSession.swift in Sources */,
+				5F0AA2FA2B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift in Sources */,
 				5F7FBFC22B3B4E770029F826 /* BrowserView+toolbars.swift in Sources */,
 				5FBD16C82B37520F00B8B1A5 /* NativeWebKitApp.swift in Sources */,
 				5F7FBFBA2B3A45DC0029F826 /* DeviceRotation.swift in Sources */,
@@ -1169,13 +1205,16 @@
 				5FBD16AC2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
 				5F77F7C42B40CEAC00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5F77F7A62B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift in Sources */,
+				5F0AA2F12B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift in Sources */,
 				5F77F7A32B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift in Sources */,
 				5F5E4BBF2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
 				5F77F78E2B3DFF5300BCBA92 /* PanelType.swift in Sources */,
 				5F5FEFCF2B3B8DD700E4A5F0 /* FindToolbarModel.swift in Sources */,
 				5F77F7912B3E072B00BCBA92 /* Panel.swift in Sources */,
+				5F0AA2F62B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift in Sources */,
 				5F77F7702B3C9FCA00BCBA92 /* SheetType.swift in Sources */,
 				5F77F7802B3CA39500BCBA92 /* BrowserView+HistorySheet.swift in Sources */,
+				5F0AA3002B680EE000AF62D5 /* CBManagerState+name.swift in Sources */,
 				5FBD16C52B3676C600B8B1A5 /* ViewModifier.swift in Sources */,
 				5FBD16C02B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
 				5FBB632B2B38BC76008B18B9 /* StringUtils.swift in Sources */,
@@ -1190,6 +1229,7 @@
 				5F77F7BE2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5FBD16D02B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */,
 				5FBD16C72B36B63E00B8B1A5 /* NativeWebKitApp.swift in Sources */,
+				5F0AA2FB2B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift in Sources */,
 				5F9007FE2B49C66300902A3D /* NKARSessionMessageType.swift in Sources */,
 				5F4130292B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */,
 				5F5FEFD12B3B95DE00E4A5F0 /* BrowserView+findToolbar.swift in Sources */,
@@ -1201,7 +1241,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F77F7AF2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
+				5F0AA3012B680EE000AF62D5 /* CBManagerState+name.swift in Sources */,
 				5FC477922B4680EF00BCE86F /* NKTemplateMessageType.swift in Sources */,
+				5F0AA2F22B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift in Sources */,
 				5F8183062B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
 				5F9008282B4B7C5300902A3D /* MathUtils.swift in Sources */,
 				5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */,
@@ -1211,9 +1253,11 @@
 				5F81830B2B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift in Sources */,
 				5F77F7CC2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5FC477972B46812300BCE86F /* NativeWebKit+Template.swift in Sources */,
+				5F0AA2F72B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift in Sources */,
 				5F77F7C82B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FC477812B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5F77F7A92B40A98900BCBA92 /* NativeWebKit.swift in Sources */,
+				5F0AA2FC2B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift in Sources */,
 				5F77F7BA2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
 				5F77F7B52B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
 			);
@@ -1223,11 +1267,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F0AA2F82B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift in Sources */,
 				5F77F7B02B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5F8183072B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
 				5FA4BED92B3516B300138B35 /* SafariWebExtensionHandler.swift in Sources */,
 				5F81830C2B432B290050DCB0 /* CMDeviceMotion.SensorLocation+name.swift in Sources */,
 				5F9008002B49C66300902A3D /* NKARSessionMessageType.swift in Sources */,
+				5F0AA3022B680EE000AF62D5 /* CBManagerState+name.swift in Sources */,
+				5F0AA2FD2B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift in Sources */,
 				5F77F7CD2B40CF3A00BCBA92 /* NativeWebKit+context.swift in Sources */,
 				5F77F7C92B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FC477982B46812300BCE86F /* NativeWebKit+Template.swift in Sources */,
@@ -1236,6 +1283,7 @@
 				5FC4778D2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
 				5F77F7AA2B40A98A00BCBA92 /* NativeWebKit.swift in Sources */,
 				5F77F7BB2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
+				5F0AA2F32B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift in Sources */,
 				5FC477932B4680EF00BCE86F /* NKTemplateMessageType.swift in Sources */,
 				5F77F7B62B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
 			);
@@ -1519,6 +1567,7 @@
 				INFOPLIST_FILE = "(iOS) App/-iOS--NativeWebKit-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = NativeWebKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSCameraUsageDescription = "NativeWebKit uses camera access to allow webpages to use the camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "NativeWebKit uses microphone access to allow webpages to use the microphone";
 				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
@@ -1567,6 +1616,7 @@
 				INFOPLIST_FILE = "(iOS) App/-iOS--NativeWebKit-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = NativeWebKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSCameraUsageDescription = "NativeWebKit uses camera access to allow webpages to use the camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "NativeWebKit uses microphone access to allow webpages to use the microphone";
 				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
@@ -1618,6 +1668,7 @@
 				INFOPLIST_FILE = "(Mac) App/-Mac--NativeWebKit-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = NativeWebKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSCameraUsageDescription = "NativeWebKit uses camera access to allow webpages to use the camera";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "NativeWebKit uses microphone access to allow webpages to use the microphone";
@@ -1657,6 +1708,7 @@
 				INFOPLIST_FILE = "(Mac) App/-Mac--NativeWebKit-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = NativeWebKit;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSCameraUsageDescription = "NativeWebKit uses camera access to allow webpages to use the camera";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "NativeWebKit uses microphone access to allow webpages to use the microphone";
@@ -1685,6 +1737,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "(iOS) Safari Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Extension;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -1720,6 +1773,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "(iOS) Safari Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Extension;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -1759,6 +1813,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "(Mac) Safari Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Extension;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1793,6 +1848,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "(Mac) Safari Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Extension;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
 				LD_RUNPATH_SEARCH_PATHS = (

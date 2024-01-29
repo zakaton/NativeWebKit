@@ -11,6 +11,7 @@
 #endif
 import AVFAudio
 import Combine
+import CoreBluetooth
 import CoreMotion
 import Foundation
 import OSLog
@@ -31,6 +32,9 @@ class NativeWebKit: NSObject, HasNKContext {
             didSendARInitialFaceAnchorGeometry.removeAll()
             arView.debugOptions = .init()
         #endif
+        if cbCentralManager.isScanning {
+            cbCentralManager.stopScan()
+        }
     }
 
     // MARK: - Message Handling
@@ -77,6 +81,9 @@ class NativeWebKit: NSObject, HasNKContext {
             #else
                 logger.error("arSession messages are not available on MacOS or iOS Safari")
             #endif
+        }
+        else if let coreBluetoothMessageType: NKCoreBluetoothMessageType = .init(rawValue: messageType) {
+            response = handleCoreBluetoothMessage(message, messageType: coreBluetoothMessageType)
         }
         else {
             logger.warning("uncaught exception for message type \(messageType, privacy: .public)")
@@ -171,4 +178,8 @@ class NativeWebKit: NSObject, HasNKContext {
             return arView
         }()
     #endif
+
+    // MARK: - CoreBluetooth
+
+    lazy var cbCentralManager: CBCentralManager = .init(delegate: self, queue: .main)
 }
