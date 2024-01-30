@@ -24,6 +24,18 @@
 		5F0AA3002B680EE000AF62D5 /* CBManagerState+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */; };
 		5F0AA3012B680EE000AF62D5 /* CBManagerState+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */; };
 		5F0AA3022B680EE000AF62D5 /* CBManagerState+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */; };
+		5F0AA3042B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3032B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift */; };
+		5F0AA3052B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3032B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift */; };
+		5F0AA3062B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3032B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift */; };
+		5F0AA3072B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3032B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift */; };
+		5F0AA3092B684F1300AF62D5 /* ArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3082B684F1300AF62D5 /* ArrayUtils.swift */; };
+		5F0AA30A2B684F1300AF62D5 /* ArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3082B684F1300AF62D5 /* ArrayUtils.swift */; };
+		5F0AA30B2B684F1300AF62D5 /* ArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3082B684F1300AF62D5 /* ArrayUtils.swift */; };
+		5F0AA30C2B684F1300AF62D5 /* ArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3082B684F1300AF62D5 /* ArrayUtils.swift */; };
+		5F0AA3132B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3122B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift */; };
+		5F0AA3142B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3122B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift */; };
+		5F0AA3152B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3122B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift */; };
+		5F0AA3162B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3122B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift */; };
 		5F4130282B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */; };
 		5F4130292B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */; };
 		5F4EB0C22B38F8B500EF179D /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C12B38F8B500EF179D /* icon.icns */; };
@@ -252,6 +264,9 @@
 		5F0AA2F42B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+CoreBluetooth.swift"; sourceTree = "<group>"; };
 		5F0AA2F92B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+CBCentralManagerDelegate.swift"; sourceTree = "<group>"; };
 		5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBManagerState+name.swift"; sourceTree = "<group>"; };
+		5F0AA3032B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKCoreBluetoothDiscoveredDevice.swift; sourceTree = "<group>"; };
+		5F0AA3082B684F1300AF62D5 /* ArrayUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayUtils.swift; sourceTree = "<group>"; };
+		5F0AA3122B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+cbScanTimer.swift"; sourceTree = "<group>"; };
 		5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKUIDelegate.swift"; sourceTree = "<group>"; };
 		5F4EB0BF2B38F8B500EF179D /* NativeWebKit Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F4EB0C12B38F8B500EF179D /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
@@ -419,6 +434,8 @@
 				5F0AA2F92B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift */,
 				5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */,
 				5F0AA2F42B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift */,
+				5F0AA3032B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift */,
+				5F0AA3122B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift */,
 			);
 			path = CoreBluetooth;
 			sourceTree = "<group>";
@@ -825,6 +842,7 @@
 				5F9008252B4B7C4700902A3D /* MathUtils.swift */,
 				5FBB632C2B38C473008B18B9 /* URLUtils.swift */,
 				5FBB63292B38BC76008B18B9 /* StringUtils.swift */,
+				5F0AA3082B684F1300AF62D5 /* ArrayUtils.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -1131,6 +1149,7 @@
 				5F88A7A42B4DBFB5003FDCAF /* NativeWebKit+ARSession+message.swift in Sources */,
 				5FC477952B46812300BCE86F /* NativeWebKit+Template.swift in Sources */,
 				5FBD16CD2B37621600B8B1A5 /* BrowserView+navigation_iOS.swift in Sources */,
+				5F0AA3042B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift in Sources */,
 				5F9C57DB2B4CC98F00764734 /* ARView.CameraMode+utils.swift in Sources */,
 				5F8949272B35089300AF3341 /* ContentView.swift in Sources */,
 				5F77F7B82B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
@@ -1141,6 +1160,7 @@
 				5FB995E52B5DAD5D00902C85 /* ARPlaneAnchor.Alignment+name.swift in Sources */,
 				5F77F7932B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */,
 				5FBD16B32B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
+				5F0AA3132B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift in Sources */,
 				5FBD16AB2B361C3900B8B1A5 /* BrowserView.swift in Sources */,
 				5FB995E32B5C53F900902C85 /* ARPlaneAnchor.Classification+name.swift in Sources */,
 				5F06B1952B3A1B8B00A0A1BB /* KeyboardPublisher.swift in Sources */,
@@ -1159,6 +1179,7 @@
 				5F9008022B49C68E00902A3D /* NativeWebKit+ARSession.swift in Sources */,
 				5F7FBFBF2B3B4C920029F826 /* BrowserView+handleIncomingURL.swift in Sources */,
 				5F9007FD2B49C66300902A3D /* NKARSessionMessageType.swift in Sources */,
+				5F0AA3092B684F1300AF62D5 /* ArrayUtils.swift in Sources */,
 				5FBD16C42B3676C600B8B1A5 /* ViewModifier.swift in Sources */,
 				5F88A7A22B4D22AE003FDCAF /* NKARSessionConfigurationType.swift in Sources */,
 				5F77F7A22B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift in Sources */,
@@ -1210,12 +1231,15 @@
 				5F5E4BBF2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
 				5F77F78E2B3DFF5300BCBA92 /* PanelType.swift in Sources */,
 				5F5FEFCF2B3B8DD700E4A5F0 /* FindToolbarModel.swift in Sources */,
+				5F0AA30A2B684F1300AF62D5 /* ArrayUtils.swift in Sources */,
 				5F77F7912B3E072B00BCBA92 /* Panel.swift in Sources */,
 				5F0AA2F62B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift in Sources */,
 				5F77F7702B3C9FCA00BCBA92 /* SheetType.swift in Sources */,
+				5F0AA3052B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift in Sources */,
 				5F77F7802B3CA39500BCBA92 /* BrowserView+HistorySheet.swift in Sources */,
 				5F0AA3002B680EE000AF62D5 /* CBManagerState+name.swift in Sources */,
 				5FBD16C52B3676C600B8B1A5 /* ViewModifier.swift in Sources */,
+				5F0AA3142B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift in Sources */,
 				5FBD16C02B36523C00B8B1A5 /* BrowserWebView.swift in Sources */,
 				5FBB632B2B38BC76008B18B9 /* StringUtils.swift in Sources */,
 				5FC4778B2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
@@ -1241,9 +1265,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F77F7AF2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
+				5F0AA3152B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift in Sources */,
 				5F0AA3012B680EE000AF62D5 /* CBManagerState+name.swift in Sources */,
 				5FC477922B4680EF00BCE86F /* NKTemplateMessageType.swift in Sources */,
 				5F0AA2F22B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift in Sources */,
+				5F0AA3062B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift in Sources */,
 				5F8183062B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
 				5F9008282B4B7C5300902A3D /* MathUtils.swift in Sources */,
 				5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */,
@@ -1258,6 +1284,7 @@
 				5FC477812B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5F77F7A92B40A98900BCBA92 /* NativeWebKit.swift in Sources */,
 				5F0AA2FC2B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift in Sources */,
+				5F0AA30B2B684F1300AF62D5 /* ArrayUtils.swift in Sources */,
 				5F77F7BA2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
 				5F77F7B52B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
 			);
@@ -1267,6 +1294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F0AA3072B684B9400AF62D5 /* NKCoreBluetoothDiscoveredDevice.swift in Sources */,
+				5F0AA3162B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift in Sources */,
 				5F0AA2F82B680BCB00AF62D5 /* NativeWebKit+CoreBluetooth.swift in Sources */,
 				5F77F7B02B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5F8183072B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
@@ -1282,6 +1311,7 @@
 				5F9008292B4B7C5400902A3D /* MathUtils.swift in Sources */,
 				5FC4778D2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
 				5F77F7AA2B40A98A00BCBA92 /* NativeWebKit.swift in Sources */,
+				5F0AA30C2B684F1300AF62D5 /* ArrayUtils.swift in Sources */,
 				5F77F7BB2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
 				5F0AA2F32B680BB600AF62D5 /* NKCoreBluetoothMessageType.swift in Sources */,
 				5FC477932B4680EF00BCE86F /* NKTemplateMessageType.swift in Sources */,

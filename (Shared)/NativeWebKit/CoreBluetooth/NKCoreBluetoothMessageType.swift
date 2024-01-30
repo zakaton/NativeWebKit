@@ -12,5 +12,7 @@ enum NKCoreBluetoothMessageType: String, NKMessageTypeProtocol {
     case state
     case isScanning
     case startScan
+    case discoveredDevices
+    case discoveredDevice
     case stopScan
 }
