@@ -18,14 +18,34 @@ extension NativeWebKit: CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String: Any], rssi RSSI: NSNumber) {
         logger.debug("centralManager didDiscover \(peripheral.name ?? peripheral.identifier.uuidString, privacy: .public)")
 
-        let discoveredDevice: NKCoreBluetoothDiscoveredDevice = .init(peripheral: peripheral, rssi: RSSI, advertisementData: advertisementData)
+        let discoveredPeripheral: NKCoreBluetoothDiscoveredPeripheral = .init(peripheral: peripheral, rssi: RSSI, advertisementData: advertisementData)
 
-        cbDiscoveredDevices.replaceOrAppend(discoveredDevice, firstMatchingKeyPath: \.peripheral)
+        cbDiscoveredPeripherals.replaceOrAppend(discoveredPeripheral, firstMatchingKeyPath: \.peripheral)
 
         #if IN_APP
-        dispatchMessageToWebpages(coreBluetoothDiscoveredDeviceMessage(discoveredDevice: discoveredDevice), activeOnly: true)
+        dispatchMessageToWebpages(coreBluetoothDiscoveredPeripheralMessage(discoveredPeripheral: discoveredPeripheral), activeOnly: true)
         #else
-        cbUpdatedDiscoveredDevices.insert(peripheral.identifier)
+        cbUpdatedDiscoveredPeripherals.insert(peripheral.identifier.uuidString)
         #endif
+    }
+
+    func centralManager(_ central: CBCentralManager, willRestoreState dict: [String: Any]) {
+        logger.debug("will restore state \(dict.debugDescription)")
+    }
+
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        logger.debug("did connect to peripheral \(peripheral.name ?? peripheral.identifier.uuidString, privacy: .public)")
+    }
+
+    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+        logger.debug("failed to connect to peripheral \(peripheral.name ?? peripheral.identifier.uuidString, privacy: .public): \(error?.localizedDescription ?? "no error")")
+    }
+
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        logger.debug("did disconnect from peripheral \(peripheral.name ?? peripheral.identifier.uuidString, privacy: .public): \(error?.localizedDescription ?? "no error")")
+    }
+
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, timestamp: CFAbsoluteTime, isReconnecting: Bool, error: Error?) {
+        logger.debug("did disconnect from peripheral \(peripheral.name ?? peripheral.identifier.uuidString, privacy: .public) at \(timestamp, privacy: .public) (reconnecting? \(isReconnecting, privacy: .public): \(error?.localizedDescription ?? "no error")")
     }
 }

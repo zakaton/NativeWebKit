@@ -13,6 +13,8 @@ extension NativeWebKit {
             logger.warning("cbScanTimer is already running")
             return
         }
+        logger.debug("started cbScanTimer")
+
         cbScanTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(cbCheckDevices), userInfo: nil, repeats: true)
         cbScanTimer?.tolerance = 0.2
     }
@@ -22,18 +24,19 @@ extension NativeWebKit {
             logger.warning("no cbScanTimer to stop")
             return
         }
+        logger.debug("stopped cbScanTimer")
 
         cbScanTimer!.invalidate()
         cbScanTimer = nil
     }
 
     @objc func cbCheckDevices() {
-        cbDiscoveredDevices.removeAll(where: {
+        cbDiscoveredPeripherals.removeAll(where: {
             $0.peripheral.state == .disconnected && $0.dateCreated.timeIntervalSinceNow < -4
         })
 
-        cbUpdatedDiscoveredDevices = cbUpdatedDiscoveredDevices.filter { identifier in
-            cbDiscoveredDevices.contains { $0.peripheral.identifier == identifier }
+        cbUpdatedDiscoveredPeripherals = cbUpdatedDiscoveredPeripherals.filter { identifierString in
+            cbDiscoveredPeripherals.contains { $0.peripheral.identifier.uuidString == identifierString }
         }
     }
 }

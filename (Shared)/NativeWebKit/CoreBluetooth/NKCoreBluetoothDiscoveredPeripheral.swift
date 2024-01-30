@@ -1,5 +1,5 @@
 //
-//  NKCoreBluetoothDiscoveredDevice.swift
+//  NKCoreBluetoothDiscoveredPeripheral.swift
 //  NativeWebKit
 //
 //  Created by Zack Qattan on 1/29/24.
@@ -7,7 +7,7 @@
 
 import CoreBluetooth
 
-struct NKCoreBluetoothDiscoveredDevice {
+struct NKCoreBluetoothDiscoveredPeripheral {
     let peripheral: CBPeripheral
 
     let rssi: NSNumber
