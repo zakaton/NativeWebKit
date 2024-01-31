@@ -11,7 +11,7 @@ extension NativeWebKit: CBCentralManagerDelegate {
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         logger.debug("centralManagerDidUpdateState \(central.state.name, privacy: .public)")
         #if IN_APP
-        dispatchMessageToWebpages(coreBluetoothStateMessage, activeOnly: true)
+        dispatchMessageToWebpages(cbCentralStateMessage, activeOnly: true)
         #endif
     }
 
@@ -23,7 +23,7 @@ extension NativeWebKit: CBCentralManagerDelegate {
         cbDiscoveredPeripherals.replaceOrAppend(discoveredPeripheral, firstMatchingKeyPath: \.peripheral)
 
         #if IN_APP
-        dispatchMessageToWebpages(coreBluetoothDiscoveredPeripheralMessage(discoveredPeripheral: discoveredPeripheral), activeOnly: true)
+        dispatchMessageToWebpages(cbCentralDiscoveredPeripheralMessage(discoveredPeripheral: discoveredPeripheral), activeOnly: true)
         #else
         cbUpdatedDiscoveredPeripherals.insert(peripheral.identifier.uuidString)
         #endif

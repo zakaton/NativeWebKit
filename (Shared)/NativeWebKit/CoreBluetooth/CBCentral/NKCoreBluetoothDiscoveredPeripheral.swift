@@ -32,7 +32,7 @@ struct NKCoreBluetoothDiscoveredPeripheral {
         return json
     }
 
-    let dateCreated: Date = .now
+    let lastTimeUpdated: Date = .now
 
     var json: [String: Any] {
         var json: [String: Any] = [

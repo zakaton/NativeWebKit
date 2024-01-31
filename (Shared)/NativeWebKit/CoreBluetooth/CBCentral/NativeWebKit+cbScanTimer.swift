@@ -32,7 +32,7 @@ extension NativeWebKit {
 
     @objc func cbCheckDevices() {
         cbDiscoveredPeripherals.removeAll(where: {
-            $0.peripheral.state == .disconnected && $0.dateCreated.timeIntervalSinceNow < -4
+            $0.lastTimeUpdated.timeIntervalSinceNow < -4
         })
 
         cbUpdatedDiscoveredPeripherals = cbUpdatedDiscoveredPeripherals.filter { identifierString in

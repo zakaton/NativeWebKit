@@ -1,5 +1,5 @@
 //
-//  NKCoreBluetoothMessageType.swift
+//  NKCBCentralMessageType.swift
 //  NativeWebKit
 //
 //  Created by Zack Qattan on 1/29/24.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum NKCoreBluetoothMessageType: String, NKMessageTypeProtocol {
-    static let prefix: String = "cb"
+enum NKCBCentralMessageType: String, NKMessageTypeProtocol {
+    static let prefix: String = "cbc"
     case state
     case isScanning
     case startScan
@@ -16,7 +16,7 @@ enum NKCoreBluetoothMessageType: String, NKMessageTypeProtocol {
     case discoveredPeripherals
     case stopScan
     case connect
-    case connectionState
+    case peripheralConnectionState
     case disconnect
     case disconnectAll
     case connectedPeripherals

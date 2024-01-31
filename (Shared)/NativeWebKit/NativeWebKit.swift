@@ -82,8 +82,8 @@ class NativeWebKit: NSObject, HasNKContext {
                 logger.error("arSession messages are not available on MacOS or iOS Safari")
             #endif
         }
-        else if let coreBluetoothMessageType: NKCoreBluetoothMessageType = .init(rawValue: messageType) {
-            response = handleCoreBluetoothMessage(message, messageType: coreBluetoothMessageType)
+        else if let cbCentralMessageType: NKCBCentralMessageType = .init(rawValue: messageType) {
+            response = handleCBCentralMessage(message, messageType: cbCentralMessageType)
         }
         else {
             logger.warning("uncaught exception for message type \(messageType, privacy: .public)")

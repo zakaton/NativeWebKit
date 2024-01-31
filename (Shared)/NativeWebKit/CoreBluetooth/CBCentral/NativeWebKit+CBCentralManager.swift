@@ -1,5 +1,5 @@
 //
-//  NativeWebKit+CoreBluetooth.swift
+//  NativeWebKit+CBCentral.swift
 //  NativeWebKit
 //
 //  Created by Zack Qattan on 1/29/24.
@@ -8,27 +8,27 @@
 import CoreBluetooth
 
 extension NativeWebKit {
-    func handleCoreBluetoothMessage(_ message: NKMessage, messageType: NKCoreBluetoothMessageType) -> NKResponse? {
-        logger.debug("coreBluetoothMessageType \(messageType.id, privacy: .public)")
+    func handleCBCentralMessage(_ message: NKMessage, messageType: NKCBCentralMessageType) -> NKResponse? {
+        logger.debug("coreBluetoothCentralMessageType \(messageType.id, privacy: .public)")
 
         var response: NKResponse?
         switch messageType {
         case .state:
-            response = coreBluetoothStateMessage
+            response = cbCentralStateMessage
         case .isScanning:
-            response = coreBluetoothIsScanningMessage
+            response = cbCentralIsScanningMessage
         case .startScan:
             let scanOptions = message["scanOptions"] as? NKMessage
             cbStartScan(scanOptions: scanOptions)
-            response = coreBluetoothIsScanningMessage
+            response = cbCentralIsScanningMessage
         case .discoveredPeripherals:
-            response = coreBluetoothDiscoveredPeripheralsMessage
+            response = cbCentralDiscoveredPeripheralsMessage
         case .discoveredPeripheral:
             // only used for messaging from the app directly into the webpage
             break
         case .stopScan:
             cbStopScan()
-            response = coreBluetoothIsScanningMessage
+            response = cbCentralIsScanningMessage
         case .connect:
             if let connectOptions = message["connectOptions"] as? NKMessage {
                 response = cbConnect(connectOptions: connectOptions)
@@ -36,9 +36,9 @@ extension NativeWebKit {
             else {
                 logger.error("no connectOptions found in message")
             }
-        case .connectionState:
+        case .peripheralConnectionState:
             if let identifierString = message["identifier"] as? String {
-                response = coreBluetoothConnectionStateMessage(identifierString: identifierString)
+                response = cbPeripheralConnectionStateMessage(identifierString: identifierString)
             }
             else {
                 logger.error("no identifier found in message")
@@ -47,7 +47,7 @@ extension NativeWebKit {
             if let identifierString = message["identifier"] as? String {
                 if let discoveredPeripheralIndex = cbGetDiscoveredPeripheralIndexByIdentifier(identifierString) {
                     cbCentralManager.cancelPeripheralConnection(cbDiscoveredPeripherals[discoveredPeripheralIndex].peripheral)
-                    response = coreBluetoothConnectionStateMessage(identifierString: identifierString)
+                    response = cbPeripheralConnectionStateMessage(identifierString: identifierString)
                 }
                 else {
                     logger.error("no discoveredPeripheral found with identifier \(identifierString, privacy: .public)")
@@ -158,31 +158,31 @@ extension NativeWebKit {
         }
         cbCentralManager.connect(cbDiscoveredPeripherals[discoveredPeripheralIndex].peripheral, options: options)
 
-        return coreBluetoothConnectionStateMessage(identifierString: identifierString)
+        return cbPeripheralConnectionStateMessage(identifierString: identifierString)
     }
 
-    var coreBluetoothStateMessage: NKMessage {
+    var cbCentralStateMessage: NKMessage {
         [
-            "type": NKCoreBluetoothMessageType.state.name,
+            "type": NKCBCentralMessageType.state.name,
             "state": cbCentralManager.state.name
         ]
     }
 
-    var coreBluetoothIsScanningMessage: NKMessage {
+    var cbCentralIsScanningMessage: NKMessage {
         [
-            "type": NKCoreBluetoothMessageType.isScanning.name,
+            "type": NKCBCentralMessageType.isScanning.name,
             "isScanning": cbCentralManager.isScanning
         ]
     }
 
-    func coreBluetoothDiscoveredPeripheralMessage(discoveredPeripheral: NKCoreBluetoothDiscoveredPeripheral) -> NKMessage {
+    func cbCentralDiscoveredPeripheralMessage(discoveredPeripheral: NKCoreBluetoothDiscoveredPeripheral) -> NKMessage {
         [
-            "type": NKCoreBluetoothMessageType.discoveredPeripheral.name,
+            "type": NKCBCentralMessageType.discoveredPeripheral.name,
             "discoveredPeripheral": discoveredPeripheral.json
         ]
     }
 
-    var coreBluetoothDiscoveredPeripheralsMessage: NKMessage {
+    var cbCentralDiscoveredPeripheralsMessage: NKMessage {
         let discoveredPeripheralsJsons = cbUpdatedDiscoveredPeripherals.compactMap { identifierString in
             if let discoveredPeripheralIndex = cbGetDiscoveredPeripheralIndexByIdentifier(identifierString) {
                 return cbDiscoveredPeripherals[discoveredPeripheralIndex].json
@@ -192,20 +192,23 @@ extension NativeWebKit {
         cbUpdatedDiscoveredPeripherals.removeAll(keepingCapacity: true)
 
         return [
-            "type": NKCoreBluetoothMessageType.discoveredPeripherals.name,
+            "type": NKCBCentralMessageType.discoveredPeripherals.name,
             "discoveredPeripherals": discoveredPeripheralsJsons
         ]
     }
 
-    func coreBluetoothConnectionStateMessage(identifierString: String) -> NKMessage? {
+    func cbPeripheralConnectionStateMessage(identifierString: String) -> NKMessage? {
         guard let discoveredPeripheralIndex = cbGetDiscoveredPeripheralIndexByIdentifier(identifierString) else {
             logger.error("couldn't find discoveredPeripheral with identifier \(identifierString, privacy: .public)")
             return nil
         }
 
         return [
-            "type": NKCoreBluetoothMessageType.connectionState.name,
-            "connectionState": cbDiscoveredPeripherals[discoveredPeripheralIndex].peripheral.state.name
+            "type": NKCBCentralMessageType.peripheralConnectionState.name,
+            "peripheralConnectionState": [
+                "identifier": identifierString,
+                "connectionState": cbDiscoveredPeripherals[discoveredPeripheralIndex].peripheral.state.name
+            ]
         ]
     }
 }
