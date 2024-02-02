@@ -1,5 +1,5 @@
 //
-//  NKCoreBluetoothDiscoveredPeripheral.swift
+//  NKCBDiscoveredPeripheral.swift
 //  NativeWebKit
 //
 //  Created by Zack Qattan on 1/29/24.
@@ -7,18 +7,20 @@
 
 import CoreBluetooth
 
-struct NKCoreBluetoothDiscoveredPeripheral {
+struct NKCBDiscoveredPeripheral {
     let peripheral: CBPeripheral
+    var name: String? { peripheral.name }
+    var identifier: String { peripheral.identifier.uuidString }
 
     let rssi: NSNumber
     let advertisementData: [String: Any]
     var advertisementDataJson: [String: Any] {
         var json: [String: Any] = [:]
 
-        let timestamp = self.advertisementData["kCBAdvDataTimestamp"] as! Double
+        let timestamp = advertisementData["kCBAdvDataTimestamp"] as! Double
         json["timestamp"] = timestamp
 
-        if let serviceData = self.advertisementData["kCBAdvDataServiceData"] as? [CBUUID: Any] {
+        if let serviceData = advertisementData["kCBAdvDataServiceData"] as? [CBUUID: Any] {
             var serviceDataJson: [String: Any] = [:]
             serviceData.forEach { uuid, anyValue in
                 if let data = anyValue as? Data {
@@ -36,12 +38,12 @@ struct NKCoreBluetoothDiscoveredPeripheral {
 
     var json: [String: Any] {
         var json: [String: Any] = [
-            "identifier": peripheral.identifier.uuidString,
-            "rssi": self.rssi,
-            "advertisementData": self.advertisementDataJson
+            "identifier": identifier,
+            "rssi": rssi,
+            "advertisementData": advertisementDataJson
         ]
 
-        if let name = peripheral.name {
+        if let name {
             json["name"] = name
         }
 

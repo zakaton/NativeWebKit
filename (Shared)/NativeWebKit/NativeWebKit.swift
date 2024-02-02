@@ -179,10 +179,12 @@ class NativeWebKit: NSObject, HasNKContext {
         }()
     #endif
 
-    // MARK: - CoreBluetooth
+    // MARK: - CBCentral
 
     lazy var cbCentralManager: CBCentralManager = .init(delegate: self, queue: .main)
-    var cbDiscoveredPeripherals: [NKCoreBluetoothDiscoveredPeripheral] = []
+    var cbDiscoveredPeripherals: [String: NKCBDiscoveredPeripheral] = [:]
+    var cbPeripherals: [String: NKCBPeripheral] = [:]
     var cbUpdatedDiscoveredPeripherals: Set<String> = []
+    var cbDisconnectedPeripherals: Set<String> = []
     var cbScanTimer: Timer?
 }

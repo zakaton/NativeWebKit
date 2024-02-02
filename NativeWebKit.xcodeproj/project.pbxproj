@@ -24,10 +24,10 @@
 		5F0AA3002B680EE000AF62D5 /* CBManagerState+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */; };
 		5F0AA3012B680EE000AF62D5 /* CBManagerState+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */; };
 		5F0AA3022B680EE000AF62D5 /* CBManagerState+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */; };
-		5F0AA3042B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3032B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift */; };
-		5F0AA3052B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3032B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift */; };
-		5F0AA3062B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3032B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift */; };
-		5F0AA3072B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3032B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift */; };
+		5F0AA3042B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3032B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift */; };
+		5F0AA3052B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3032B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift */; };
+		5F0AA3062B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3032B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift */; };
+		5F0AA3072B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3032B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift */; };
 		5F0AA3092B684F1300AF62D5 /* ArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3082B684F1300AF62D5 /* ArrayUtils.swift */; };
 		5F0AA30A2B684F1300AF62D5 /* ArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3082B684F1300AF62D5 /* ArrayUtils.swift */; };
 		5F0AA30B2B684F1300AF62D5 /* ArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3082B684F1300AF62D5 /* ArrayUtils.swift */; };
@@ -40,6 +40,18 @@
 		5F0AA3192B69708900AF62D5 /* CBPeripheralState+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3172B69708900AF62D5 /* CBPeripheralState+name.swift */; };
 		5F0AA31A2B69708900AF62D5 /* CBPeripheralState+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3172B69708900AF62D5 /* CBPeripheralState+name.swift */; };
 		5F0AA31B2B69708900AF62D5 /* CBPeripheralState+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3172B69708900AF62D5 /* CBPeripheralState+name.swift */; };
+		5F0AA31E2B6AE2BD00AF62D5 /* NKCBPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA31D2B6AE2BD00AF62D5 /* NKCBPeripheral.swift */; };
+		5F0AA31F2B6AE2BD00AF62D5 /* NKCBPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA31D2B6AE2BD00AF62D5 /* NKCBPeripheral.swift */; };
+		5F0AA3202B6AE2BD00AF62D5 /* NKCBPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA31D2B6AE2BD00AF62D5 /* NKCBPeripheral.swift */; };
+		5F0AA3212B6AE2BD00AF62D5 /* NKCBPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA31D2B6AE2BD00AF62D5 /* NKCBPeripheral.swift */; };
+		5F0AA3232B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3222B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift */; };
+		5F0AA3242B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3222B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift */; };
+		5F0AA3252B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3222B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift */; };
+		5F0AA3262B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3222B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift */; };
+		5F0AA3282B6B154A00AF62D5 /* CBPeripheral+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3272B6B154A00AF62D5 /* CBPeripheral+utils.swift */; };
+		5F0AA3292B6B154A00AF62D5 /* CBPeripheral+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3272B6B154A00AF62D5 /* CBPeripheral+utils.swift */; };
+		5F0AA32A2B6B154A00AF62D5 /* CBPeripheral+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3272B6B154A00AF62D5 /* CBPeripheral+utils.swift */; };
+		5F0AA32B2B6B154A00AF62D5 /* CBPeripheral+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3272B6B154A00AF62D5 /* CBPeripheral+utils.swift */; };
 		5F4130282B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */; };
 		5F4130292B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */; };
 		5F4EB0C22B38F8B500EF179D /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C12B38F8B500EF179D /* icon.icns */; };
@@ -268,10 +280,13 @@
 		5F0AA2F42B680BCB00AF62D5 /* NativeWebKit+CBCentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+CBCentralManager.swift"; sourceTree = "<group>"; };
 		5F0AA2F92B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+CBCentralManagerDelegate.swift"; sourceTree = "<group>"; };
 		5F0AA2FE2B680EE000AF62D5 /* CBManagerState+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBManagerState+name.swift"; sourceTree = "<group>"; };
-		5F0AA3032B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKCoreBluetoothDiscoveredPeripheral.swift; sourceTree = "<group>"; };
+		5F0AA3032B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKCBDiscoveredPeripheral.swift; sourceTree = "<group>"; };
 		5F0AA3082B684F1300AF62D5 /* ArrayUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayUtils.swift; sourceTree = "<group>"; };
 		5F0AA3122B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+cbScanTimer.swift"; sourceTree = "<group>"; };
 		5F0AA3172B69708900AF62D5 /* CBPeripheralState+name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBPeripheralState+name.swift"; sourceTree = "<group>"; };
+		5F0AA31D2B6AE2BD00AF62D5 /* NKCBPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NKCBPeripheral.swift; sourceTree = "<group>"; };
+		5F0AA3222B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+CBPeripheralDelegate.swift"; sourceTree = "<group>"; };
+		5F0AA3272B6B154A00AF62D5 /* CBPeripheral+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBPeripheral+utils.swift"; sourceTree = "<group>"; };
 		5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKUIDelegate.swift"; sourceTree = "<group>"; };
 		5F4EB0BF2B38F8B500EF179D /* NativeWebKit Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F4EB0C12B38F8B500EF179D /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
@@ -446,10 +461,13 @@
 			isa = PBXGroup;
 			children = (
 				5F0AA2F92B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift */,
-				5F0AA3032B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift */,
+				5F0AA3032B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift */,
 				5F0AA3122B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift */,
 				5F0AA2F42B680BCB00AF62D5 /* NativeWebKit+CBCentralManager.swift */,
 				5F0AA2EF2B680BB600AF62D5 /* NKCBCentralMessageType.swift */,
+				5F0AA31D2B6AE2BD00AF62D5 /* NKCBPeripheral.swift */,
+				5F0AA3222B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift */,
+				5F0AA3272B6B154A00AF62D5 /* CBPeripheral+utils.swift */,
 			);
 			path = CBCentral;
 			sourceTree = "<group>";
@@ -1163,7 +1181,7 @@
 				5F88A7A42B4DBFB5003FDCAF /* NativeWebKit+ARSession+message.swift in Sources */,
 				5FC477952B46812300BCE86F /* NativeWebKit+Template.swift in Sources */,
 				5FBD16CD2B37621600B8B1A5 /* BrowserView+navigation_iOS.swift in Sources */,
-				5F0AA3042B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift in Sources */,
+				5F0AA3042B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift in Sources */,
 				5F9C57DB2B4CC98F00764734 /* ARView.CameraMode+utils.swift in Sources */,
 				5F8949272B35089300AF3341 /* ContentView.swift in Sources */,
 				5F77F7B82B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
@@ -1172,6 +1190,7 @@
 				5F77F7A52B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift in Sources */,
 				5FBD16BB2B36340500B8B1A5 /* BrowserWebView +UIViewRepresentable.swift in Sources */,
 				5FB995E52B5DAD5D00902C85 /* ARPlaneAnchor.Alignment+name.swift in Sources */,
+				5F0AA31E2B6AE2BD00AF62D5 /* NKCBPeripheral.swift in Sources */,
 				5F77F7932B3E1AD200BCBA92 /* BrowserView+alert.swift in Sources */,
 				5FBD16B32B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
 				5F0AA3132B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift in Sources */,
@@ -1182,6 +1201,7 @@
 				5F9008142B4B445000902A3D /* ARViewContainer.swift in Sources */,
 				5F77F7AD2B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
 				5F90081E2B4B464600902A3D /* ARViewContainer+UIViewRepresentable.swift in Sources */,
+				5F0AA3282B6B154A00AF62D5 /* CBPeripheral+utils.swift in Sources */,
 				5FB995E72B5DD1C400902C85 /* ARConfiguration.FrameSemantics+name.swift in Sources */,
 				5F9C57D92B4CA1FE00764734 /* ARFaceAnchor.BlendShapeLocation+name.swift in Sources */,
 				5F5E4BBE2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
@@ -1219,6 +1239,7 @@
 				5FBD16C82B37520F00B8B1A5 /* NativeWebKitApp.swift in Sources */,
 				5F7FBFBA2B3A45DC0029F826 /* DeviceRotation.swift in Sources */,
 				5FC4778A2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
+				5F0AA3232B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift in Sources */,
 				5F7FBFBD2B3B4C5B0029F826 /* BrowserView+orientation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1233,6 +1254,8 @@
 				5FBD16C12B36539300B8B1A5 /* ContentView.swift in Sources */,
 				5F77F7B92B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
 				5F9008272B4B7C5300902A3D /* MathUtils.swift in Sources */,
+				5F0AA3292B6B154A00AF62D5 /* CBPeripheral+utils.swift in Sources */,
+				5F0AA3242B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift in Sources */,
 				5F77F7C72B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FBD16B42B362D2200B8B1A5 /* BrowserViewModel.swift in Sources */,
 				5FC477912B4680EF00BCE86F /* NKTemplateMessageType.swift in Sources */,
@@ -1243,6 +1266,7 @@
 				5F77F7A62B3F9C9600BCBA92 /* BrowserViewModel+WKScriptMessageHandler.swift in Sources */,
 				5F0AA2F12B680BB600AF62D5 /* NKCBCentralMessageType.swift in Sources */,
 				5F77F7A32B3F9C0100BCBA92 /* BrowserViewModel+WKScriptMessageHandlerWithReply.swift in Sources */,
+				5F0AA31F2B6AE2BD00AF62D5 /* NKCBPeripheral.swift in Sources */,
 				5F5E4BBF2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */,
 				5F77F78E2B3DFF5300BCBA92 /* PanelType.swift in Sources */,
 				5F5FEFCF2B3B8DD700E4A5F0 /* FindToolbarModel.swift in Sources */,
@@ -1250,7 +1274,7 @@
 				5F77F7912B3E072B00BCBA92 /* Panel.swift in Sources */,
 				5F0AA2F62B680BCB00AF62D5 /* NativeWebKit+CBCentralManager.swift in Sources */,
 				5F77F7702B3C9FCA00BCBA92 /* SheetType.swift in Sources */,
-				5F0AA3052B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift in Sources */,
+				5F0AA3052B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift in Sources */,
 				5F77F7802B3CA39500BCBA92 /* BrowserView+HistorySheet.swift in Sources */,
 				5F0AA3002B680EE000AF62D5 /* CBManagerState+name.swift in Sources */,
 				5FBD16C52B3676C600B8B1A5 /* ViewModifier.swift in Sources */,
@@ -1285,7 +1309,7 @@
 				5F0AA3012B680EE000AF62D5 /* CBManagerState+name.swift in Sources */,
 				5FC477922B4680EF00BCE86F /* NKTemplateMessageType.swift in Sources */,
 				5F0AA2F22B680BB600AF62D5 /* NKCBCentralMessageType.swift in Sources */,
-				5F0AA3062B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift in Sources */,
+				5F0AA3062B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift in Sources */,
 				5F8183062B432B080050DCB0 /* CoreMotion+array.swift in Sources */,
 				5F9008282B4B7C5300902A3D /* MathUtils.swift in Sources */,
 				5FA4BE9D2B35119F00138B35 /* SafariWebExtensionHandler.swift in Sources */,
@@ -1299,8 +1323,11 @@
 				5F0AA2F72B680BCB00AF62D5 /* NativeWebKit+CBCentralManager.swift in Sources */,
 				5F77F7C82B40CED400BCBA92 /* NKContext.swift in Sources */,
 				5FC477812B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
+				5F0AA3202B6AE2BD00AF62D5 /* NKCBPeripheral.swift in Sources */,
+				5F0AA32A2B6B154A00AF62D5 /* CBPeripheral+utils.swift in Sources */,
 				5F77F7A92B40A98900BCBA92 /* NativeWebKit.swift in Sources */,
 				5F0AA2FC2B680CBF00AF62D5 /* NativeWebKit+CBCentralManagerDelegate.swift in Sources */,
+				5F0AA3252B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift in Sources */,
 				5F0AA30B2B684F1300AF62D5 /* ArrayUtils.swift in Sources */,
 				5F77F7BA2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,
 				5F77F7B52B40BA3F00BCBA92 /* NKHeadphoneMotionMessageType.swift in Sources */,
@@ -1311,7 +1338,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F0AA3072B684B9400AF62D5 /* NKCoreBluetoothDiscoveredPeripheral.swift in Sources */,
+				5F0AA32B2B6B154A00AF62D5 /* CBPeripheral+utils.swift in Sources */,
+				5F0AA3072B684B9400AF62D5 /* NKCBDiscoveredPeripheral.swift in Sources */,
 				5F0AA3162B687BB300AF62D5 /* NativeWebKit+cbScanTimer.swift in Sources */,
 				5F0AA2F82B680BCB00AF62D5 /* NativeWebKit+CBCentralManager.swift in Sources */,
 				5F77F7B02B40B93800BCBA92 /* NativeWebKit+HeadphoneMotion.swift in Sources */,
@@ -1328,6 +1356,8 @@
 				5FC477822B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */,
 				5F9008292B4B7C5400902A3D /* MathUtils.swift in Sources */,
 				5FC4778D2B44E69B00BCE86F /* NKAudioSessionMessageType.swift in Sources */,
+				5F0AA3212B6AE2BD00AF62D5 /* NKCBPeripheral.swift in Sources */,
+				5F0AA3262B6AE3DF00AF62D5 /* NativeWebKit+CBPeripheralDelegate.swift in Sources */,
 				5F77F7AA2B40A98A00BCBA92 /* NativeWebKit.swift in Sources */,
 				5F0AA30C2B684F1300AF62D5 /* ArrayUtils.swift in Sources */,
 				5F77F7BB2B40BBC100BCBA92 /* NKMessageTypeProtocol.swift in Sources */,

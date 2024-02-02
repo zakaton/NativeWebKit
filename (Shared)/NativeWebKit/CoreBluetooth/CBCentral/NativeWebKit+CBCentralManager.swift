@@ -37,17 +37,19 @@ extension NativeWebKit {
                 logger.error("no connectOptions found in message")
             }
         case .peripheralConnectionState:
-            if let identifierString = message["identifier"] as? String {
-                response = cbPeripheralConnectionStateMessage(identifierString: identifierString)
+            if let identifierString = message["identifier"] as? String, let peripheral = cbRetrievePeripheral(identifierString: identifierString) {
+                response = cbPeripheralConnectionStateMessage(peripheral: peripheral)
             }
             else {
                 logger.error("no identifier found in message")
             }
         case .disconnect:
             if let identifierString = message["identifier"] as? String {
-                if let discoveredPeripheralIndex = cbGetDiscoveredPeripheralIndexByIdentifier(identifierString) {
-                    cbCentralManager.cancelPeripheralConnection(cbDiscoveredPeripherals[discoveredPeripheralIndex].peripheral)
-                    response = cbPeripheralConnectionStateMessage(identifierString: identifierString)
+                if let peripheral = cbRetrievePeripheral(identifierString: identifierString) {
+                    cbCentralManager.cancelPeripheralConnection(peripheral)
+                    #if !IN_APP
+                    response = cbPeripheralConnectionStateMessage(peripheral: peripheral)
+                    #endif
                 }
                 else {
                     logger.error("no discoveredPeripheral found with identifier \(identifierString, privacy: .public)")
@@ -57,18 +59,47 @@ extension NativeWebKit {
                 logger.error("no identifier found in message")
             }
         case .disconnectAll:
-            cbDiscoveredPeripherals.filter { $0.peripheral.state != .disconnected }.forEach {
-                cbCentralManager.cancelPeripheralConnection($0.peripheral)
+            cbDiscoveredPeripherals.filter { $0.value.peripheral.state != .disconnected }.forEach {
+                cbCentralManager.cancelPeripheralConnection($0.value.peripheral)
             }
         case .connectedPeripherals:
+            let serviceUUIDs = message["serviceUUIDs"] as? [String]
+            response = cbConnectedPeripheralsMessage(serviceUUIDs: serviceUUIDs)
+        case .disconnectedPeripherals:
+            response = cbDisconnectedPeripheralsMessage
+        case .readRSSI:
+            guard let identifiers = message["identifiers"] as? [String] else {
+                logger.error("no identifiers in message")
+                return nil
+            }
+            let peripherals = cbCentralManager.retrievePeripherals(withIdentifiers: identifiers.compactMap { .init(uuidString: $0) })
+            peripherals.forEach { $0.readRSSI() }
+        case .getRSSI:
+            guard let peripherals = message["peripherals"] as? [NKMessage] else {
+                logger.error("no peripherals in message")
+                return nil
+            }
+            response = cbPeripheralRSSIsMessage(peripherals: peripherals)
+        // TODO: - FILL
+        case .getService:
+            // TODO: - FILL
+            break
+        case .getServices:
             // TODO: - FILL
             break
         }
         return response
     }
 
-    func cbGetDiscoveredPeripheralIndexByIdentifier(_ identifierString: String) -> Int? {
-        cbDiscoveredPeripherals.firstIndex(where: { $0.peripheral.identifier.uuidString == identifierString })
+    func cbRetrievePeripheral(identifierString: String) -> CBPeripheral? {
+        if let identifier: UUID = .init(uuidString: identifierString) {
+            let peripherals = cbCentralManager.retrievePeripherals(withIdentifiers: [identifier])
+            return peripherals[0]
+        }
+        else {
+            logger.error("invalid identifierString \(identifierString, privacy: .public)")
+            return nil
+        }
     }
 
     func cbStartScan(scanOptions: NKMessage?) {
@@ -97,6 +128,7 @@ extension NativeWebKit {
                 }
                 logger.debug("scanning with options \(options.debugDescription, privacy: .public)")
             }
+
             cbCentralManager.scanForPeripherals(withServices: serviceUUIDs, options: options)
         }
         else {
@@ -122,9 +154,14 @@ extension NativeWebKit {
             logger.error("no identifier string found")
             return nil
         }
-        guard let discoveredPeripheralIndex = cbGetDiscoveredPeripheralIndexByIdentifier(identifierString) else {
-            logger.error("no discovered device found with identifier \(identifierString, privacy: .public)")
+        guard let peripheral = cbRetrievePeripheral(identifierString: identifierString) else {
+            logger.error("no peripheral found for identifierString \(identifierString, privacy: .public)")
             return nil
+        }
+
+        if cbPeripherals[peripheral.identifierString] == nil {
+            cbPeripherals[peripheral.identifierString] = .init(peripheral: peripheral)
+            peripheral.delegate = self
         }
 
         var options: [String: Any]?
@@ -156,9 +193,13 @@ extension NativeWebKit {
                 options![CBConnectPeripheralOptionStartDelayKey] = startDelay
             }
         }
-        cbCentralManager.connect(cbDiscoveredPeripherals[discoveredPeripheralIndex].peripheral, options: options)
+        cbCentralManager.connect(peripheral, options: options)
 
-        return cbPeripheralConnectionStateMessage(identifierString: identifierString)
+        #if IN_APP
+        return nil
+        #else
+        return cbPeripheralConnectionStateMessage(peripheral: peripheral)
+        #endif
     }
 
     var cbCentralStateMessage: NKMessage {
@@ -175,7 +216,7 @@ extension NativeWebKit {
         ]
     }
 
-    func cbCentralDiscoveredPeripheralMessage(discoveredPeripheral: NKCoreBluetoothDiscoveredPeripheral) -> NKMessage {
+    func cbCentralDiscoveredPeripheralMessage(discoveredPeripheral: NKCBDiscoveredPeripheral) -> NKMessage {
         [
             "type": NKCBCentralMessageType.discoveredPeripheral.name,
             "discoveredPeripheral": discoveredPeripheral.json
@@ -184,8 +225,8 @@ extension NativeWebKit {
 
     var cbCentralDiscoveredPeripheralsMessage: NKMessage {
         let discoveredPeripheralsJsons = cbUpdatedDiscoveredPeripherals.compactMap { identifierString in
-            if let discoveredPeripheralIndex = cbGetDiscoveredPeripheralIndexByIdentifier(identifierString) {
-                return cbDiscoveredPeripherals[discoveredPeripheralIndex].json
+            if let discoveredPeripheral = cbDiscoveredPeripherals[identifierString] {
+                return discoveredPeripheral.json
             }
             return nil
         }
@@ -197,18 +238,93 @@ extension NativeWebKit {
         ]
     }
 
-    func cbPeripheralConnectionStateMessage(identifierString: String) -> NKMessage? {
-        guard let discoveredPeripheralIndex = cbGetDiscoveredPeripheralIndexByIdentifier(identifierString) else {
-            logger.error("couldn't find discoveredPeripheral with identifier \(identifierString, privacy: .public)")
+    func cbPeripheralConnectionStateMessage(peripheral: CBPeripheral) -> NKMessage {
+        cbDisconnectedPeripherals.remove(peripheral.identifierString)
+        return [
+            "type": NKCBCentralMessageType.peripheralConnectionState.name,
+            "peripheralConnectionState": [
+                "identifier": peripheral.identifierString,
+                "connectionState": peripheral.state.name
+            ]
+        ]
+    }
+
+    func cbConnectedPeripheralsMessage(serviceUUIDs: [String]? = []) -> NKMessage? {
+        var connectedPeripheralsMessage = cbPeripherals.map { $0.value.json }
+
+        logger.debug("serviceUUIDs: \(serviceUUIDs?.debugDescription ?? "nil", privacy: .public)")
+
+        if let serviceUUIDs {
+            let _serviceUUIDs: [CBUUID] = serviceUUIDs.map { .init(string: $0) }
+            let peripherals = cbCentralManager.retrieveConnectedPeripherals(withServices: _serviceUUIDs)
+            connectedPeripheralsMessage += peripherals.compactMap {
+                if cbPeripherals[$0.identifierString] == nil {
+                    return NKCBPeripheral(peripheral: $0).json
+                }
+                else {
+                    return nil
+                }
+            }
+        }
+
+        guard !connectedPeripheralsMessage.isEmpty else {
             return nil
         }
 
         return [
-            "type": NKCBCentralMessageType.peripheralConnectionState.name,
-            "peripheralConnectionState": [
-                "identifier": identifierString,
-                "connectionState": cbDiscoveredPeripherals[discoveredPeripheralIndex].peripheral.state.name
-            ]
+            "type": NKCBCentralMessageType.connectedPeripherals.name,
+            "connectedPeripherals": connectedPeripheralsMessage
+        ]
+    }
+
+    var cbDisconnectedPeripheralsMessage: NKMessage? {
+        let disconnectedPeripheralsMessage = Array(cbDisconnectedPeripherals)
+
+        guard !cbDiscoveredPeripherals.isEmpty else {
+            return nil
+        }
+        cbDisconnectedPeripherals.removeAll()
+
+        return [
+            "type": NKCBCentralMessageType.disconnectedPeripherals.name,
+            "disconnectedPeripherals": disconnectedPeripheralsMessage
+        ]
+    }
+
+    func cbPeripheralRSSIsMessage(peripherals: [NKMessage]) -> NKMessage {
+        let peripheralRSSIs: [NKMessage] = peripherals.compactMap {
+            guard let identifierString = $0["identifier"] as? String else {
+                logger.error("no identifier found in message")
+                return nil
+            }
+            let timestamp = $0["timestamp"] as? TimeInterval
+            guard let rssiJson = cbPeripherals[identifierString]?.rssiJson(since: timestamp) else {
+                logger.error("no peripheral found for identifier \(identifierString)")
+                return nil
+            }
+
+            return rssiJson
+        }
+
+        return [
+            "type": NKCBCentralMessageType.getRSSI.name,
+            "peripheralRSSIs": peripheralRSSIs
+        ]
+    }
+
+    func cbPeripheralRSSIsMessage(peripherals: [CBPeripheral]) -> NKMessage {
+        let peripheralRSSIs: [NKMessage] = peripherals.compactMap {
+            guard let rssiJson = cbPeripherals[$0.identifierString]?.rssiJson() else {
+                logger.error("no peripheral found for identifier \($0.identifierString)")
+                return nil
+            }
+
+            return rssiJson
+        }
+
+        return [
+            "type": NKCBCentralMessageType.getRSSI.name,
+            "peripheralRSSIs": peripheralRSSIs
         ]
     }
 }

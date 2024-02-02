@@ -20,4 +20,9 @@ enum NKCBCentralMessageType: String, NKMessageTypeProtocol {
     case disconnect
     case disconnectAll
     case connectedPeripherals
+    case disconnectedPeripherals
+    case readRSSI
+    case getRSSI
+    case getService
+    case getServices
 }
