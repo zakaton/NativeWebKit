@@ -1,5 +1,5 @@
 //
-//  CBManagerState+name.swift
+//  CBManagerState+utils.swift
 //  NativeWebKit
 //
 //  Created by Zack Qattan on 1/29/24.

@@ -1,5 +1,5 @@
 //
-//  StringUtils.swift
+//  String+utils.swift
 //  NativeWebKit
 //
 //  Created by Zack Qattan on 12/24/23.

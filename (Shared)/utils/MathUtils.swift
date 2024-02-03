@@ -1,6 +1,6 @@
 //
 //  MathUtils.swift
-//  (iOS) NativeWebKit
+//  NativeWebKit
 //
 //  Created by Zack Qattan on 1/7/24.
 //

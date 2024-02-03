@@ -1,3 +1,10 @@
+//
+//  URL+utils.swift
+//  NativeWebKit
+//
+//  Created by Zack Qattan on 12/24/23.
+//
+
 import Foundation
 
 extension URL {

@@ -19,6 +19,14 @@ struct NKCBPeripheral {
 
     var lastTimeRSSIUpdated: TimeInterval?
 
+    var lastTimeNameUpdated: TimeInterval?
+    var lastTimeServicesUpdated: TimeInterval?
+    var lastTimeIncludedServicesUpdated: [CBService: TimeInterval] = [:]
+    var lastTimeCharacteristicsUpdated: [CBService: TimeInterval] = [:]
+    var lastTimeCharacteristicValuesUpdated: [CBCharacteristic: TimeInterval] = [:]
+    var lastTimeDescriptorsUpdated: [CBCharacteristic: TimeInterval] = [:]
+    var lastTimeDescriptorValueUpdated: [CBDescriptor: TimeInterval] = [:]
+
     func rssiJson(since timestamp: TimeInterval? = nil) -> [String: Any]? {
         guard let rssi, let lastTimeRSSIUpdated else {
             return nil

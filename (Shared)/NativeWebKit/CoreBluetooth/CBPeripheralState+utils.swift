@@ -1,5 +1,5 @@
 //
-//  CBPeripheralState+name.swift
+//  CBPeripheralState+utils.swift
 //  NativeWebKit
 //
 //  Created by Zack Qattan on 1/30/24.

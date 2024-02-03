@@ -1,5 +1,5 @@
 //
-//  NativeWebKit+Template.swift
+//  NativeWebKit+Template+message.swift
 //  NativeWebKit
 //
 //  Created by Zack Qattan on 1/3/24.
