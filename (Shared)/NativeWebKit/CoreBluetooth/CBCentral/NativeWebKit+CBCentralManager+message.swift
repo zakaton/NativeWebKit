@@ -94,25 +94,17 @@ extension NativeWebKit {
             let includedServiceUUIDs = cbGetIncludedServiceUUIDs(message: message)
 
             service.peripheral?.discoverIncludedServices(includedServiceUUIDs, for: service)
-        case .getService:
-            guard let service = cbGetService(message: message)
-            else {
-                return nil
-            }
-            response = cbGetServiceMessage(service: service)
         case .getServices:
             guard let services = cbGetServices(message: message)
             else {
                 return nil
             }
-            // TODO: - Check timestamp
             response = cbGetServicesMessage(services: services)
         case .getIncludedServices:
             guard let service = cbGetService(message: message)
             else {
                 return nil
             }
-            // TODO: - Check timestamp
             let includedServices = cbGetIncludedServices(message: message) ?? service.includedServices ?? []
             response = cbGetIncludedServicesMessage(service: service, includedServices: includedServices)
         case .discoverCharacteristics:
@@ -124,31 +116,21 @@ extension NativeWebKit {
             let characteristicUUIDs = cbGetCharacteristicUUIDs(message: message)
 
             service.peripheral?.discoverCharacteristics(characteristicUUIDs, for: service)
-        case .getCharacteristic:
-            guard let characteristic = cbGetCharacteristic(message: message)
-            else {
-                return nil
-            }
-            // TODO: - Check timestamp
-            response = cbGetCharacteristicMessage(characteristic: characteristic)
         case .getCharacteristics:
             guard let characteristics = cbGetCharacteristics(message: message) else {
                 return nil
             }
-            // TODO: - Check timestamp
             response = cbGetCharacteristicsMessage(characteristics: characteristics)
         case .discoverDescriptors:
             guard let characteristic = cbGetCharacteristic(message: message)
             else {
                 return nil
             }
-            // TODO: - Check timestamp
             characteristic.peripheral?.discoverDescriptors(for: characteristic)
         case .getDescriptors:
             guard let descriptors = cbGetDescriptors(message: message) else {
                 return nil
             }
-            // TODO: - Check timestamp
             response = cbGetDescriptorsMessage(descriptors: descriptors)
         case .readCharacteristicValue:
             guard let characteristic = cbGetCharacteristic(message: message)
@@ -171,8 +153,33 @@ extension NativeWebKit {
             guard let characteristic = cbGetCharacteristic(message: message) else {
                 return nil
             }
-            // TODO: - check timestamp
+            if let timestamp = message["timestamp"] as? Double, let peripheral = characteristic.peripheral {
+                guard timestamp != cbPeripherals[peripheral.identifierString]?.lastTimeCharacteristicValuesUpdated[characteristic] else {
+                    logger.debug("characteristic value hasn't updated since last time")
+                    return nil
+                }
+            }
+
             response = cbGetCharacteristicValueMessage(characteristic: characteristic)
+
+        case .updatedCharacteristicValues:
+            guard let timestamp = message["timestamp"] as? Double else {
+                logger.error("no timestamp found in message")
+                return nil
+            }
+
+            var updatedCharacteristics: [CBCharacteristic] = []
+            cbPeripherals.values.forEach { cbPeripheral in
+                cbPeripheral.lastTimeCharacteristicValuesUpdated.forEach { characteristic, lastTimeUpdated in
+                    if timestamp != lastTimeUpdated {
+                        updatedCharacteristics.append(characteristic)
+                    }
+                }
+            }
+
+            if !updatedCharacteristics.isEmpty {
+                response = cbUpdatedCharacteristicValuesMessage(updatedCharacteristics: updatedCharacteristics)
+            }
 
         case .setCharacteristicNotifyValue:
             guard let characteristic = cbGetCharacteristic(message: message)
@@ -180,12 +187,12 @@ extension NativeWebKit {
                 return nil
             }
 
-            guard let enabled = message["enabled"] as? Bool else {
-                logger.error("no enabled found in message")
+            guard let notifyValue = message["notifyValue"] as? Bool else {
+                logger.error("no notifyValue found in message")
                 return nil
             }
 
-            characteristic.peripheral?.setNotifyValue(enabled, for: characteristic)
+            characteristic.peripheral?.setNotifyValue(notifyValue, for: characteristic)
         case .getCharacteristicNotifyValue:
             guard let characteristic = cbGetCharacteristic(message: message)
             else {
@@ -215,7 +222,14 @@ extension NativeWebKit {
             else {
                 return nil
             }
-            // TODO: - check timestamp
+
+            if let timestamp = message["timestamp"] as? Double, let peripheral = descriptor.peripheral {
+                guard timestamp != cbPeripherals[peripheral.identifierString]?.lastTimeDescriptorValueUpdated[descriptor] else {
+                    logger.debug("descriptor value hasn't updated since last time")
+                    return nil
+                }
+            }
+
             response = cbGetDescriptorValueMessage(descriptor: descriptor)
         }
         return response

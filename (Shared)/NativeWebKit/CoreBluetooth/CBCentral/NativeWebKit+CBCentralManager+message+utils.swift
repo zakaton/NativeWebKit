@@ -41,7 +41,7 @@ extension NativeWebKit {
         }
         guard let serviceUUIDStrings = message["serviceUUIDs"] as? [String] else {
             logger.error("no serviceUUIDs found in message")
-            return nil
+            return peripheral.services
         }
         return serviceUUIDStrings.compactMap { serviceUUIDString in
             peripheral.services?.first(where: { $0.uuidString == serviceUUIDString })

@@ -134,16 +134,6 @@ extension NativeWebKit {
         ]
     }
 
-    func cbGetServiceMessage(service: CBService) -> NKMessage {
-        [
-            "type": NKCBCentralMessageType.getService.name,
-            "getService": [
-                "identifier": service.peripheral?.identifierString ?? "",
-                "service": service.json
-            ]
-        ]
-    }
-
     func cbGetServicesMessage(services: [CBService]) -> NKMessage {
         [
             "type": NKCBCentralMessageType.getServices.name,
@@ -166,17 +156,6 @@ extension NativeWebKit {
         ]
     }
 
-    func cbGetCharacteristicMessage(characteristic: CBCharacteristic) -> NKMessage {
-        [
-            "type": NKCBCentralMessageType.getCharacteristic.name,
-            "getCharacteristic": [
-                "identifier": characteristic.peripheralIdentifierString ?? "",
-                "serviceUUID": characteristic.service?.uuidString ?? "",
-                "characteristic": characteristic.json
-            ]
-        ]
-    }
-
     func cbGetCharacteristicsMessage(characteristics: [CBCharacteristic]) -> NKMessage {
         [
             "type": NKCBCentralMessageType.getCharacteristics.name,
@@ -184,6 +163,38 @@ extension NativeWebKit {
                 "identifier": characteristics[0].service?.peripheralIdentifierString ?? "",
                 "serviceUUID": characteristics[0].service?.uuidString ?? "",
                 "characteristics": characteristics.map { $0.json }
+            ]
+        ]
+    }
+
+    func cbGetCharacteristicValueMessage(characteristic: CBCharacteristic) -> NKMessage {
+        [
+            "type": NKCBCentralMessageType.getCharacteristicValue.name,
+            "getCharacteristicValue": [
+                "identifier": characteristic.peripheralIdentifierString ?? "",
+                "serviceUUID": characteristic.service?.uuidString ?? "",
+                "characteristicUUID": characteristic.uuidString,
+                "value": characteristic.value?.bytes ?? [],
+                "timestamp": characteristic.lastTimeValueUpdated ?? 0.0
+            ]
+        ]
+    }
+
+    func cbUpdatedCharacteristicValuesMessage(updatedCharacteristics: [CBCharacteristic]) -> NKMessage {
+        [
+            "type": NKCBCentralMessageType.updatedCharacteristicValues.name,
+            "updatedCharacteristicValues": updatedCharacteristics.map { $0.updatedValueJson }
+        ]
+    }
+
+    func cbGetCharacteristicNotifyValueMessage(characteristic: CBCharacteristic) -> NKMessage {
+        [
+            "type": NKCBCentralMessageType.getCharacteristicNotifyValue.name,
+            "getCharacteristicNotifyValue": [
+                "identifier": characteristic.service?.peripheral?.identifierString ?? "",
+                "serviceUUID": characteristic.service?.uuidString ?? "",
+                "characteristicUUID": characteristic.uuidString,
+                "isNotifying": characteristic.isNotifying
             ]
         ]
     }
@@ -196,30 +207,6 @@ extension NativeWebKit {
                 "serviceUUID": descriptors[0].characteristic?.service?.uuidString ?? "",
                 "characteristicUUID": descriptors[0].characteristic?.uuidString ?? "",
                 "descriptors": descriptors.map { $0.json }
-            ]
-        ]
-    }
-
-    func cbGetCharacteristicValueMessage(characteristic: CBCharacteristic) -> NKMessage {
-        [
-            "type": NKCBCentralMessageType.getCharacteristicValue.name,
-            "getCharacteristicValue": [
-                "identifier": characteristic.peripheralIdentifierString ?? "",
-                "serviceUUID": characteristic.service?.uuidString ?? "",
-                "characteristicUUID": characteristic.uuidString,
-                "value": characteristic.value?.bytes ?? []
-            ]
-        ]
-    }
-
-    func cbGetCharacteristicNotifyValueMessage(characteristic: CBCharacteristic) -> NKMessage {
-        [
-            "type": NKCBCentralMessageType.getCharacteristicNotifyValue.name,
-            "getCharacteristicNotifyValue": [
-                "identifier": characteristic.service?.peripheral?.identifierString ?? "",
-                "serviceUUID": characteristic.service?.uuidString ?? "",
-                "characteristicUUID": characteristic.uuidString,
-                "isNotifying": characteristic.isNotifying
             ]
         ]
     }

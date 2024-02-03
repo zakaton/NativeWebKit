@@ -34,10 +34,8 @@ enum NKCBCentralMessageType: String, NKMessageTypeProtocol {
     case discoverCharacteristics
     case discoverDescriptors
     
-    case getService
     case getServices
     case getIncludedServices
-    case getCharacteristic
     case getCharacteristics
     case getDescriptors
 
@@ -46,6 +44,7 @@ enum NKCBCentralMessageType: String, NKMessageTypeProtocol {
     case setCharacteristicNotifyValue
     
     case getCharacteristicValue
+    case updatedCharacteristicValues
     case getCharacteristicNotifyValue
 
     case readDescriptorValue

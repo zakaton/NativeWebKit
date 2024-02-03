@@ -27,4 +27,20 @@ extension CBCharacteristic {
             "descriptors": descriptors?.map { $0.json } ?? []
         ]
     }
+
+    var updatedValueJson: NKMessage {
+        [
+            "identifier": peripheralIdentifierString ?? "",
+            "serviceUUID": service?.uuidString ?? "",
+            "characteristicUUID": uuidString,
+            "value": value?.bytes ?? []
+        ]
+    }
+
+    var lastTimeValueUpdated: Double? {
+        guard let peripheralIdentifierString else {
+            return nil
+        }
+        return NativeWebKit.shared.cbPeripherals[peripheralIdentifierString]?.lastTimeCharacteristicValuesUpdated[self]
+    }
 }
