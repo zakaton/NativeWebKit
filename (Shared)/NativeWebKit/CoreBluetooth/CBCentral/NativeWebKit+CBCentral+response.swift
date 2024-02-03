@@ -137,16 +137,20 @@ extension NativeWebKit {
     func cbGetServiceMessage(service: CBService) -> NKMessage {
         [
             "type": NKCBCentralMessageType.getService.name,
-            "identifier": service.peripheral?.identifierString ?? "",
-            "service": service.json
+            "getService": [
+                "identifier": service.peripheral?.identifierString ?? "",
+                "service": service.json
+            ]
         ]
     }
 
     func cbGetServicesMessage(services: [CBService]) -> NKMessage {
         [
             "type": NKCBCentralMessageType.getServices.name,
-            "identifier": services[0].peripheralIdentifierString ?? "",
-            "services": services.map { $0.json }
+            "getServices": [
+                "identifier": services[0].peripheralIdentifierString ?? "",
+                "services": services.map { $0.json }
+            ]
         ]
     }
 
@@ -154,68 +158,82 @@ extension NativeWebKit {
         let _includedServices = includedServices ?? service.includedServices ?? []
         return [
             "type": NKCBCentralMessageType.getIncludedServices.name,
-            "identifier": service.peripheralIdentifierString ?? "",
-            "serviceUUID": service.json,
-            "includedServiceUUIDs": _includedServices.map { $0.uuidString }
+            "getIncludedServices": [
+                "identifier": service.peripheralIdentifierString ?? "",
+                "serviceUUID": service.json,
+                "includedServiceUUIDs": _includedServices.map { $0.uuidString }
+            ]
         ]
     }
 
     func cbGetCharacteristicMessage(characteristic: CBCharacteristic) -> NKMessage {
         [
             "type": NKCBCentralMessageType.getCharacteristic.name,
-            "identifier": characteristic.peripheralIdentifierString ?? "",
-            "serviceUUID": characteristic.service?.uuidString ?? "",
-            "characteristic": characteristic.json
+            "getCharacteristic": [
+                "identifier": characteristic.peripheralIdentifierString ?? "",
+                "serviceUUID": characteristic.service?.uuidString ?? "",
+                "characteristic": characteristic.json
+            ]
         ]
     }
 
     func cbGetCharacteristicsMessage(characteristics: [CBCharacteristic]) -> NKMessage {
         [
             "type": NKCBCentralMessageType.getCharacteristics.name,
-            "identifier": characteristics[0].service?.peripheralIdentifierString ?? "",
-            "serviceUUID": characteristics[0].service?.uuidString ?? "",
-            "characteristics": characteristics.map { $0.json }
+            "getCharacteristics": [
+                "identifier": characteristics[0].service?.peripheralIdentifierString ?? "",
+                "serviceUUID": characteristics[0].service?.uuidString ?? "",
+                "characteristics": characteristics.map { $0.json }
+            ]
         ]
     }
 
     func cbGetDescriptorsMessage(descriptors: [CBDescriptor]) -> NKMessage {
         [
             "type": NKCBCentralMessageType.getDescriptors.name,
-            "identifier": descriptors[0].characteristic?.peripheralIdentifierString ?? "",
-            "serviceUUID": descriptors[0].characteristic?.service?.uuidString ?? "",
-            "characteristicUUID": descriptors[0].characteristic?.uuidString ?? "",
-            "descriptors": descriptors.map { $0.json }
+            "getDescriptors": [
+                "identifier": descriptors[0].characteristic?.peripheralIdentifierString ?? "",
+                "serviceUUID": descriptors[0].characteristic?.service?.uuidString ?? "",
+                "characteristicUUID": descriptors[0].characteristic?.uuidString ?? "",
+                "descriptors": descriptors.map { $0.json }
+            ]
         ]
     }
 
     func cbGetCharacteristicValueMessage(characteristic: CBCharacteristic) -> NKMessage {
         [
             "type": NKCBCentralMessageType.getCharacteristicValue.name,
-            "identifier": characteristic.peripheralIdentifierString ?? "",
-            "serviceUUID": characteristic.service?.uuidString ?? "",
-            "characteristicUUID": characteristic.uuidString,
-            "value": characteristic.value?.bytes ?? []
+            "getCharacteristicValue": [
+                "identifier": characteristic.peripheralIdentifierString ?? "",
+                "serviceUUID": characteristic.service?.uuidString ?? "",
+                "characteristicUUID": characteristic.uuidString,
+                "value": characteristic.value?.bytes ?? []
+            ]
         ]
     }
 
     func cbGetCharacteristicNotifyValueMessage(characteristic: CBCharacteristic) -> NKMessage {
         [
-            "type": NKCBCentralMessageType.getCharacteristicValue.name,
-            "identifier": characteristic.service?.peripheral?.identifierString ?? "",
-            "serviceUUID": characteristic.service?.uuidString ?? "",
-            "characteristicUUID": characteristic.uuidString,
-            "value": characteristic.isNotifying
+            "type": NKCBCentralMessageType.getCharacteristicNotifyValue.name,
+            "getCharacteristicNotifyValue": [
+                "identifier": characteristic.service?.peripheral?.identifierString ?? "",
+                "serviceUUID": characteristic.service?.uuidString ?? "",
+                "characteristicUUID": characteristic.uuidString,
+                "isNotifying": characteristic.isNotifying
+            ]
         ]
     }
 
     func cbGetDescriptorValueMessage(descriptor: CBDescriptor) -> NKMessage {
         [
-            "type": NKCBCentralMessageType.getCharacteristicValue.name,
-            "identifier": descriptor.peripheralIdentifierString ?? "",
-            "serviceUUID": descriptor.characteristic?.service?.uuidString ?? "",
-            "characteristicUUID": descriptor.characteristic?.uuidString ?? "",
-            "descriptorUUID": descriptor.uuidString,
-            "value": descriptor.valueJson ?? ""
+            "type": NKCBCentralMessageType.getDescriptorValue.name,
+            "getDescriptorValue": [
+                "identifier": descriptor.peripheralIdentifierString ?? "",
+                "serviceUUID": descriptor.characteristic?.service?.uuidString ?? "",
+                "characteristicUUID": descriptor.characteristic?.uuidString ?? "",
+                "descriptorUUID": descriptor.uuidString,
+                "value": descriptor.valueJson ?? ""
+            ]
         ]
     }
 }

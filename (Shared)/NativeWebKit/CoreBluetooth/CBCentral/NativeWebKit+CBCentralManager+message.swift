@@ -105,12 +105,14 @@ extension NativeWebKit {
             else {
                 return nil
             }
+            // TODO: - Check timestamp
             response = cbGetServicesMessage(services: services)
         case .getIncludedServices:
             guard let service = cbGetService(message: message)
             else {
                 return nil
             }
+            // TODO: - Check timestamp
             let includedServices = cbGetIncludedServices(message: message) ?? service.includedServices ?? []
             response = cbGetIncludedServicesMessage(service: service, includedServices: includedServices)
         case .discoverCharacteristics:
@@ -127,23 +129,26 @@ extension NativeWebKit {
             else {
                 return nil
             }
+            // TODO: - Check timestamp
             response = cbGetCharacteristicMessage(characteristic: characteristic)
         case .getCharacteristics:
             guard let characteristics = cbGetCharacteristics(message: message) else {
                 return nil
             }
+            // TODO: - Check timestamp
             response = cbGetCharacteristicsMessage(characteristics: characteristics)
         case .discoverDescriptors:
             guard let characteristic = cbGetCharacteristic(message: message)
             else {
                 return nil
             }
-
+            // TODO: - Check timestamp
             characteristic.peripheral?.discoverDescriptors(for: characteristic)
         case .getDescriptors:
             guard let descriptors = cbGetDescriptors(message: message) else {
                 return nil
             }
+            // TODO: - Check timestamp
             response = cbGetDescriptorsMessage(descriptors: descriptors)
         case .readCharacteristicValue:
             guard let characteristic = cbGetCharacteristic(message: message)
@@ -166,6 +171,7 @@ extension NativeWebKit {
             guard let characteristic = cbGetCharacteristic(message: message) else {
                 return nil
             }
+            // TODO: - check timestamp
             response = cbGetCharacteristicValueMessage(characteristic: characteristic)
 
         case .setCharacteristicNotifyValue:
@@ -209,7 +215,7 @@ extension NativeWebKit {
             else {
                 return nil
             }
-
+            // TODO: - check timestamp
             response = cbGetDescriptorValueMessage(descriptor: descriptor)
         }
         return response
