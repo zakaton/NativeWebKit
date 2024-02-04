@@ -83,7 +83,7 @@ struct BrowserView: View {
     #endif
 
     var body: some View {
-        #if !os(macOS)
+        #if os(iOS)
         if !isPortrait, !showARView {
             toolbarItems
         }

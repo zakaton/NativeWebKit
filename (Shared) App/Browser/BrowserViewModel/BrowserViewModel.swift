@@ -45,7 +45,7 @@ class BrowserViewModel: NSObject, ObservableObject {
         configuration.applicationNameForUserAgent = "NativeWebKit"
         configuration.allowsAirPlayForMediaPlayback = true
         configuration.mediaTypesRequiringUserActionForPlayback = []
-        #if !os(macOS)
+        #if os(iOS)
         configuration.ignoresViewportScaleLimits = false
         configuration.allowsInlineMediaPlayback = true
         configuration.allowsPictureInPictureMediaPlayback = true
@@ -70,7 +70,7 @@ class BrowserViewModel: NSObject, ObservableObject {
 
         let _webView = WKWebView(frame: .zero, configuration: configuration)
 
-        #if !os(macOS)
+        #if os(iOS)
         _webView.isFindInteractionEnabled = true
         #endif
 
@@ -83,7 +83,7 @@ class BrowserViewModel: NSObject, ObservableObject {
         setWebViewNavigationDelegate(_webView)
         setWebViewUIDelegate(_webView)
         setObservations(_webView)
-        #if !os(macOS)
+        #if os(iOS)
         setUIScrollViewDelegate(_webView)
         _webView.scrollView.backgroundColor = .clear
         _webView.isOpaque = true

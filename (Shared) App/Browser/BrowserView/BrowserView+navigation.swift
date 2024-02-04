@@ -125,7 +125,7 @@ extension BrowserView {
             .focused($isUrlFocused)
             .autocorrectionDisabled(true)
             .modify {
-                #if !os(macOS)
+                #if os(iOS)
                 $0
                     .keyboardType(.webSearch)
                     .onChange(of: isUrlFocused) { _, _ in

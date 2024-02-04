@@ -1,15 +1,13 @@
 //
 //  ShareViewController+utils.swift
-//  NativeWebKit
+//  (Shared) Share Extension
 //
 //  Created by Zack Qattan on 12/27/23.
 //
-// Users/zakaton/Documents/GitHub/NativeWebKit/(Shared) Share Extension/ShareViewController+utils.swift:11:8 No such module 'Social'
 
 import CoreServices
 import Foundation
 import OSLog
-import Social
 import UkatonMacros
 import UniformTypeIdentifiers
 

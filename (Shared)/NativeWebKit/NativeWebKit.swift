@@ -66,7 +66,11 @@ class NativeWebKit: NSObject, HasNKContext {
             response = handleTemplateMessage(message, messageType: templateMessageType)
         }
         else if let headphoneMotionMessageType: NKHeadphoneMotionMessageType = .init(rawValue: messageType) {
-            response = handleHeadphoneMotionMessage(message, messageType: headphoneMotionMessageType)
+            #if !os(visionOS)
+                response = handleHeadphoneMotionMessage(message, messageType: headphoneMotionMessageType)
+            #else
+                logger.error("headphoneMotion messages are not available on VisionOS")
+            #endif
         }
         else if let audioSessionMessageType: NKAudioSessionMessageType = .init(rawValue: messageType) {
             #if os(iOS)

@@ -1,6 +1,6 @@
 //
 //  ShareViewController.swift
-//  Share
+//  (Mac) Share Extension)
 //
 //  Created by Zack Qattan on 12/24/23.
 //
@@ -11,7 +11,6 @@ import AppKit
 import CoreServices
 import Foundation
 import OSLog
-import Social
 import UkatonMacros
 import UniformTypeIdentifiers
 

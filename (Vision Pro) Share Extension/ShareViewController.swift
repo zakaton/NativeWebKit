@@ -1,6 +1,6 @@
 //
 //  ShareViewController.swift
-//  VisionPro
+//  (Vision Pro) Share Extension
 //
 //  Created by Zack Qattan on 2/3/24.
 //
@@ -8,7 +8,6 @@
 import CoreServices
 import Foundation
 import OSLog
-import Social
 import UIKit
 import UkatonMacros
 import UniformTypeIdentifiers
