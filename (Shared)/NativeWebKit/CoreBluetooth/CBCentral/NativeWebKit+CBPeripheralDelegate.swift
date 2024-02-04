@@ -95,7 +95,7 @@ extension NativeWebKit: CBPeripheralDelegate {
     }
 
     func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: (any Error)?) {
-        logger.debug("peripheral didUpdateNotificationStateFor \(characteristic.uuidString, privacy: .public)")
+        logger.debug("peripheral didUpdateNotificationStateFor \(characteristic.uuidString, privacy: .public) \(characteristic.isNotifying)")
         #if IN_APP
         dispatchMessageToWebpages(cbGetCharacteristicNotifyValueMessage(characteristic: characteristic))
         #endif

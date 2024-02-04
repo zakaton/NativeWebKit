@@ -135,11 +135,15 @@ extension NativeWebKit {
     }
 
     func cbGetServicesMessage(services: [CBService]) -> NKMessage {
-        [
+        var servicesMessage: NKMessage = [:]
+        services.forEach {
+            servicesMessage[$0.uuidString] = $0.json
+        }
+        return [
             "type": NKCBCentralMessageType.getServices.name,
             "getServices": [
                 "identifier": services[0].peripheralIdentifierString ?? "",
-                "services": services.map { $0.json }
+                "services": servicesMessage
             ]
         ]
     }

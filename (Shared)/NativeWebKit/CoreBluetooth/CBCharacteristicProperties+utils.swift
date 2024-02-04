@@ -28,6 +28,8 @@ extension CBCharacteristicProperties {
             "writeWithoutResponse"
         case .indicate:
             "indicate"
+        case .notify:
+            "notify"
         default:
             nil
         }

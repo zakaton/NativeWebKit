@@ -49,6 +49,12 @@ struct NKCBPeripheral {
             "connectionState": peripheral.state.name
         ]
 
+        var servicesMessage: NKMessage = [:]
+        peripheral.services?.forEach {
+            servicesMessage[$0.uuidString] = $0.json
+        }
+        json["services"] = servicesMessage
+
         if let rssi {
             json["rssi"] = rssi
         }

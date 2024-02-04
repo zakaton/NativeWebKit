@@ -12,7 +12,17 @@
 		<key>(Mac) Share Extension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>(Vision Pro) Safari Extension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>3</integer>
+		</dict>
+		<key>(Vision Pro) Share Extension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>(iOS) NativeWebKit.xcscheme_^#shared#^_</key>
 		<dict>
@@ -22,9 +32,14 @@
 		<key>(iOS) Share Extension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>6</integer>
 		</dict>
 		<key>Share.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>VisionPro.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
@@ -32,6 +47,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>5F54AA8A2B6F2B320064D07C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5F87CF0B2B33B59900E951E7</key>
 		<dict>
 			<key>primary</key>

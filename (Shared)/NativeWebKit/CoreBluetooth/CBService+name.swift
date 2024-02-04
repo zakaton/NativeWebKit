@@ -17,11 +17,15 @@ extension CBService {
     }
 
     var json: NKMessage {
-        [
+        var characteristicsMessage: NKMessage = [:]
+        characteristics?.forEach {
+            characteristicsMessage[$0.uuidString] = $0.json
+        }
+        return [
             "uuid": uuidString,
             "isPrimary": isPrimary,
             "includedServiceUUIDs": includedServices?.map { $0.uuidString } ?? [],
-            "characteristics": characteristics?.map { $0.json } ?? []
+            "characteristics": characteristicsMessage
         ]
     }
 }

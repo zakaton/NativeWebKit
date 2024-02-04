@@ -21,10 +21,15 @@ extension CBCharacteristic {
     }
 
     var json: NKMessage {
-        [
+        var descriptorsMessage: NKMessage = [:]
+        descriptors?.forEach {
+            descriptorsMessage[$0.uuidString] = $0.json
+        }
+        return [
             "uuid": uuidString,
             "properties": properties.json,
-            "descriptors": descriptors?.map { $0.json } ?? []
+            "descriptors": descriptorsMessage,
+            "isNotifying": isNotifying
         ]
     }
 
@@ -33,7 +38,8 @@ extension CBCharacteristic {
             "identifier": peripheralIdentifierString ?? "",
             "serviceUUID": service?.uuidString ?? "",
             "characteristicUUID": uuidString,
-            "value": value?.bytes ?? []
+            "value": value?.bytes ?? [],
+            "timestamp": lastTimeValueUpdated ?? 0.0
         ]
     }
 
