@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "VisionPro-Front.png",
       "idiom" : "vision",
       "scale" : "2x"
     }

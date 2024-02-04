@@ -96,21 +96,11 @@
 		5F54AA7F2B6DCEA10064D07C /* Data+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54AA7D2B6DCEA10064D07C /* Data+utils.swift */; };
 		5F54AA802B6DCEA10064D07C /* Data+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54AA7D2B6DCEA10064D07C /* Data+utils.swift */; };
 		5F54AA812B6DCEA10064D07C /* Data+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54AA7D2B6DCEA10064D07C /* Data+utils.swift */; };
-		5F54AA902B6F2B320064D07C /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 5F54AA8F2B6F2B320064D07C /* RealityKitContent */; };
 		5F54AA992B6F2B340064D07C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F54AA982B6F2B340064D07C /* Preview Assets.xcassets */; };
 		5F54AA9E2B6F2B590064D07C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F54AA952B6F2B340064D07C /* Assets.xcassets */; };
 		5F54AA9F2B6F2B590064D07C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54AA932B6F2B320064D07C /* ContentView.swift */; };
 		5F54AAA02B6F2B590064D07C /* VisionProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54AA912B6F2B320064D07C /* VisionProApp.swift */; };
 		5F54AAA22B6F2BA10064D07C /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5F54AAA12B6F2BA10064D07C /* UkatonMacros */; };
-		5F54AAAA2B6F2C280064D07C /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54AAA92B6F2C280064D07C /* SafariWebExtensionHandler.swift */; };
-		5F54AAAD2B6F2C280064D07C /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 5F54AAAC2B6F2C280064D07C /* _locales */; };
-		5F54AAAF2B6F2C280064D07C /* images in Resources */ = {isa = PBXBuildFile; fileRef = 5F54AAAE2B6F2C280064D07C /* images */; };
-		5F54AAB12B6F2C280064D07C /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F54AAB02B6F2C280064D07C /* manifest.json */; };
-		5F54AAB32B6F2C280064D07C /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 5F54AAB22B6F2C280064D07C /* background.js */; };
-		5F54AAB52B6F2C280064D07C /* content.js in Resources */ = {isa = PBXBuildFile; fileRef = 5F54AAB42B6F2C280064D07C /* content.js */; };
-		5F54AAB72B6F2C280064D07C /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 5F54AAB62B6F2C280064D07C /* popup.html */; };
-		5F54AAB92B6F2C280064D07C /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 5F54AAB82B6F2C280064D07C /* popup.css */; };
-		5F54AABB2B6F2C280064D07C /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 5F54AABA2B6F2C280064D07C /* popup.js */; };
 		5F54AABF2B6F2C280064D07C /* (Vision Pro) Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F54AAA72B6F2C280064D07C /* (Vision Pro) Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5F54AACB2B6F2C5A0064D07C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54AACA2B6F2C5A0064D07C /* ShareViewController.swift */; };
 		5F54AACF2B6F2C5A0064D07C /* (Vision Pro) Share Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F54AAC82B6F2C5A0064D07C /* (Vision Pro) Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -257,6 +247,7 @@
 		5FBD16CD2B37621600B8B1A5 /* BrowserView+navigation_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16CB2B37620300B8B1A5 /* BrowserView+navigation_iOS.swift */; };
 		5FBD16CF2B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16CE2B376B2900B8B1A5 /* BrowserView+navigation.swift */; };
 		5FBD16D02B376B2900B8B1A5 /* BrowserView+navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16CE2B376B2900B8B1A5 /* BrowserView+navigation.swift */; };
+		5FBDFAF92B6F87DC00474D91 /* ShareViewController+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7852B3CB77200BCBA92 /* ShareViewController+utils.swift */; };
 		5FC4777F2B44888500BCE86F /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FC4777E2B44888500BCE86F /* flag.js */; };
 		5FC477802B44888500BCE86F /* flag.js in Resources */ = {isa = PBXBuildFile; fileRef = 5FC4777E2B44888500BCE86F /* flag.js */; };
 		5FC477812B44B26A00BCE86F /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F77F7BC2B40C1E200BCBA92 /* NativeWebKit+CMHeadphoneMotionManagerDelegate.swift */; };
@@ -409,15 +400,6 @@
 		5F54AA982B6F2B340064D07C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F54AA9A2B6F2B340064D07C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F54AAA72B6F2C280064D07C /* (Vision Pro) Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(Vision Pro) Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F54AAA92B6F2C280064D07C /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		5F54AAAC2B6F2C280064D07C /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
-		5F54AAAE2B6F2C280064D07C /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
-		5F54AAB02B6F2C280064D07C /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
-		5F54AAB22B6F2C280064D07C /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
-		5F54AAB42B6F2C280064D07C /* content.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = content.js; sourceTree = "<group>"; };
-		5F54AAB62B6F2C280064D07C /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
-		5F54AAB82B6F2C280064D07C /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
-		5F54AABA2B6F2C280064D07C /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
 		5F54AABC2B6F2C280064D07C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F54AAC82B6F2C5A0064D07C /* (Vision Pro) Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(Vision Pro) Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F54AACA2B6F2C5A0064D07C /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -536,7 +518,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F54AA902B6F2B320064D07C /* RealityKitContent in Frameworks */,
 				5F54AAA22B6F2BA10064D07C /* UkatonMacros in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,38 +674,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		5F54AAA82B6F2C280064D07C /* Extension */ = {
+		5F54AAA82B6F2C280064D07C /* (Vision Pro) Safari Extension */ = {
 			isa = PBXGroup;
 			children = (
-				5F54AAA92B6F2C280064D07C /* SafariWebExtensionHandler.swift */,
 				5F54AABC2B6F2C280064D07C /* Info.plist */,
-				5F54AAAB2B6F2C280064D07C /* Resources */,
 			);
-			path = Extension;
+			path = "(Vision Pro) Safari Extension";
 			sourceTree = "<group>";
 		};
-		5F54AAAB2B6F2C280064D07C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5F54AAAC2B6F2C280064D07C /* _locales */,
-				5F54AAAE2B6F2C280064D07C /* images */,
-				5F54AAB02B6F2C280064D07C /* manifest.json */,
-				5F54AAB22B6F2C280064D07C /* background.js */,
-				5F54AAB42B6F2C280064D07C /* content.js */,
-				5F54AAB62B6F2C280064D07C /* popup.html */,
-				5F54AAB82B6F2C280064D07C /* popup.css */,
-				5F54AABA2B6F2C280064D07C /* popup.js */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		5F54AAC92B6F2C5A0064D07C /* VisionPro */ = {
+		5F54AAC92B6F2C5A0064D07C /* (Vision Pro) Share Extension */ = {
 			isa = PBXGroup;
 			children = (
 				5F54AACA2B6F2C5A0064D07C /* ShareViewController.swift */,
 				5F54AACC2B6F2C5A0064D07C /* Info.plist */,
 			);
-			path = VisionPro;
+			path = "(Vision Pro) Share Extension";
 			sourceTree = "<group>";
 		};
 		5F77F7712B3CA14F00BCBA92 /* BrowserViewModel */ = {
@@ -882,16 +846,16 @@
 				5F87CF1E2B33B66A00E951E7 /* (Shared) App */,
 				5F89491B2B35089300AF3341 /* (iOS) App */,
 				5F89492D2B3508E400AF3341 /* (Mac) App */,
+				5F54AA8C2B6F2B320064D07C /* (Vision Pro) App */,
 				5F87CF1F2B33B67800E951E7 /* (Shared) Safari Extension */,
 				5FA4BE9B2B35119F00138B35 /* (iOS) Safari Extension */,
 				5FA4BEBC2B35121700138B35 /* (Mac) Safari Extension */,
+				5F54AAA82B6F2C280064D07C /* (Vision Pro) Safari Extension */,
 				5F77F7842B3CB76100BCBA92 /* (Shared) Share Extension */,
 				5F4EB0D72B39436E00EF179D /* (iOS) Share Extension */,
 				5F4EB0C02B38F8B500EF179D /* (Mac) Share Extension */,
-				5F54AA8C2B6F2B320064D07C /* (Vision Pro) App */,
+				5F54AAC92B6F2C5A0064D07C /* (Vision Pro) Share Extension */,
 				5F54AA8D2B6F2B320064D07C /* Packages */,
-				5F54AAA82B6F2C280064D07C /* Extension */,
-				5F54AAC92B6F2C5A0064D07C /* VisionPro */,
 				5F87CF0D2B33B59900E951E7 /* Products */,
 				5FBD16A32B361B3400B8B1A5 /* Frameworks */,
 			);
@@ -1193,7 +1157,6 @@
 			);
 			name = "(Vision Pro) NativeWebKit";
 			packageProductDependencies = (
-				5F54AA8F2B6F2B320064D07C /* RealityKitContent */,
 				5F54AAA12B6F2BA10064D07C /* UkatonMacros */,
 			);
 			productName = VisionPro;
@@ -1423,14 +1386,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F54AAB32B6F2C280064D07C /* background.js in Resources */,
-				5F54AAB92B6F2C280064D07C /* popup.css in Resources */,
-				5F54AAB72B6F2C280064D07C /* popup.html in Resources */,
-				5F54AAAF2B6F2C280064D07C /* images in Resources */,
-				5F54AAB12B6F2C280064D07C /* manifest.json in Resources */,
-				5F54AAAD2B6F2C280064D07C /* _locales in Resources */,
-				5F54AAB52B6F2C280064D07C /* content.js in Resources */,
-				5F54AABB2B6F2C280064D07C /* popup.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1525,7 +1480,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F54AAAA2B6F2C280064D07C /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1533,6 +1487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FBDFAF92B6F87DC00474D91 /* ShareViewController+utils.swift in Sources */,
 				5F54AACB2B6F2C5A0064D07C /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1951,7 +1906,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"VisionPro/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "(Vision\\ Pro)\\ App/Preview\\ Content";
 				DEVELOPMENT_TEAM = X3KF23SMC7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1963,7 +1918,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				OTHER_SWIFT_FLAGS = "-D IN_APP";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1971,7 +1926,7 @@
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 7;
 				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Debug;
@@ -1984,7 +1939,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"VisionPro/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "(Vision\\ Pro)\\ App/Preview\\ Content";
 				DEVELOPMENT_TEAM = X3KF23SMC7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1996,7 +1951,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				OTHER_SWIFT_FLAGS = "-D IN_APP";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2004,7 +1959,7 @@
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 7;
 				VALIDATE_PRODUCT = YES;
 				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
@@ -2017,7 +1972,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X3KF23SMC7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Extension/Info.plist;
+				INFOPLIST_FILE = "(Vision Pro) Safari Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Extension;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -2050,7 +2005,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X3KF23SMC7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Extension/Info.plist;
+				INFOPLIST_FILE = "(Vision Pro) Safari Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Extension;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -2084,8 +2039,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X3KF23SMC7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VisionPro/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = VisionPro;
+				INFOPLIST_FILE = "(Vision Pro) Share Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Open in NativeWebKit";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2093,8 +2048,8 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.VisionPro;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.ShareExtension;
+				PRODUCT_NAME = "NativeWebKit Share Extension";
 				SDKROOT = xros;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
@@ -2112,8 +2067,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X3KF23SMC7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VisionPro/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = VisionPro;
+				INFOPLIST_FILE = "(Vision Pro) Share Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Share;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2121,7 +2076,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.VisionPro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = xros;
 				SKIP_INSTALL = YES;
@@ -2684,10 +2639,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5F54AA8F2B6F2B320064D07C /* RealityKitContent */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RealityKitContent;
-		};
 		5F54AAA12B6F2BA10064D07C /* UkatonMacros */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5FF1D1EC2B5500B9000DBF04 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
