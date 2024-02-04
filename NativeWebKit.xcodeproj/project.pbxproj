@@ -64,6 +64,7 @@
 		5F0AA3382B6D64C700AF62D5 /* CBCharacteristicWriteType+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3362B6D64C700AF62D5 /* CBCharacteristicWriteType+name.swift */; };
 		5F0AA3392B6D64C700AF62D5 /* CBCharacteristicWriteType+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3362B6D64C700AF62D5 /* CBCharacteristicWriteType+name.swift */; };
 		5F0AA33A2B6D64C700AF62D5 /* CBCharacteristicWriteType+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AA3362B6D64C700AF62D5 /* CBCharacteristicWriteType+name.swift */; };
+		5F3B2D4A2B6F8C9400C3FE7D /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5F3B2D492B6F8C9400C3FE7D /* UkatonMacros */; };
 		5F4130282B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */; };
 		5F4130292B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4130272B3A061700E10637 /* BrowserViewModel+WKUIDelegate.swift */; };
 		5F4EB0C22B38F8B500EF179D /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F4EB0C12B38F8B500EF179D /* icon.icns */; };
@@ -100,7 +101,6 @@
 		5F54AA9E2B6F2B590064D07C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F54AA952B6F2B340064D07C /* Assets.xcassets */; };
 		5F54AA9F2B6F2B590064D07C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54AA932B6F2B320064D07C /* ContentView.swift */; };
 		5F54AAA02B6F2B590064D07C /* VisionProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54AA912B6F2B320064D07C /* VisionProApp.swift */; };
-		5F54AAA22B6F2BA10064D07C /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5F54AAA12B6F2BA10064D07C /* UkatonMacros */; };
 		5F54AABF2B6F2C280064D07C /* (Vision Pro) Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F54AAA72B6F2C280064D07C /* (Vision Pro) Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5F54AACB2B6F2C5A0064D07C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54AACA2B6F2C5A0064D07C /* ShareViewController.swift */; };
 		5F54AACF2B6F2C5A0064D07C /* (Vision Pro) Share Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F54AAC82B6F2C5A0064D07C /* (Vision Pro) Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -393,7 +393,6 @@
 		5F54AA782B6DCC470064D07C /* NativeWebKit+CBCentralManager+message+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeWebKit+CBCentralManager+message+utils.swift"; sourceTree = "<group>"; };
 		5F54AA7D2B6DCEA10064D07C /* Data+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+utils.swift"; sourceTree = "<group>"; };
 		5F54AA8B2B6F2B320064D07C /* (Vision Pro) NativeWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "(Vision Pro) NativeWebKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F54AA8E2B6F2B320064D07C /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		5F54AA912B6F2B320064D07C /* VisionProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionProApp.swift; sourceTree = "<group>"; };
 		5F54AA932B6F2B320064D07C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5F54AA952B6F2B340064D07C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -401,7 +400,7 @@
 		5F54AA9A2B6F2B340064D07C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F54AAA72B6F2C280064D07C /* (Vision Pro) Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(Vision Pro) Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F54AABC2B6F2C280064D07C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F54AAC82B6F2C5A0064D07C /* (Vision Pro) Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(Vision Pro) Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F54AAC82B6F2C5A0064D07C /* (Vision Pro) Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "(Vision Pro) Share Extension.appex"; path = "NativeWebKit Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F54AACA2B6F2C5A0064D07C /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		5F54AACC2B6F2C5A0064D07C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
@@ -518,7 +517,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F54AAA22B6F2BA10064D07C /* UkatonMacros in Frameworks */,
+				5F3B2D4A2B6F8C9400C3FE7D /* UkatonMacros in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,7 +660,6 @@
 		5F54AA8D2B6F2B320064D07C /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				5F54AA8E2B6F2B320064D07C /* RealityKitContent */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -1157,7 +1155,7 @@
 			);
 			name = "(Vision Pro) NativeWebKit";
 			packageProductDependencies = (
-				5F54AAA12B6F2BA10064D07C /* UkatonMacros */,
+				5F3B2D492B6F8C9400C3FE7D /* UkatonMacros */,
 			);
 			productName = VisionPro;
 			productReference = 5F54AA8B2B6F2B320064D07C /* (Vision Pro) NativeWebKit.app */;
@@ -2639,7 +2637,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5F54AAA12B6F2BA10064D07C /* UkatonMacros */ = {
+		5F3B2D492B6F8C9400C3FE7D /* UkatonMacros */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5FF1D1EC2B5500B9000DBF04 /* XCRemoteSwiftPackageReference "UkatonSwiftMacros" */;
 			productName = UkatonMacros;
