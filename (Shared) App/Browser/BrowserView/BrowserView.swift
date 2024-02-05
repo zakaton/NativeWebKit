@@ -27,7 +27,7 @@ struct BrowserView: View {
     @State var isKeyboardVisible: Bool = false
     @State var sheetType: SheetType?
 
-    #if os(macOS)
+    #if !os(iOS)
     @FocusState var isFindFocused: Bool
     @State var findString: String = ""
     @ObservedObject var findToolbarModel: FindToolbarModel = .shared
@@ -91,7 +91,7 @@ struct BrowserView: View {
 
         GeometryReader { geometry in
             VStack(spacing: 0) {
-                #if os(macOS)
+                #if !os(iOS)
                 if findToolbarModel.isVisible {
                     findToolbar
                 }
@@ -148,9 +148,9 @@ struct BrowserView: View {
                 }
             }
             .modify {
-                #if os(macOS)
+                #if !os(iOS)
                 $0.toolbar {
-                    ToolbarItemGroup(placement: .navigation) {
+                    ToolbarItemGroup(placement: .automatic) {
                         toolbarItems(geometry: geometry)
                     }
                 }

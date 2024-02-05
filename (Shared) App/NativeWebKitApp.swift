@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct NativeWebKitApp: App {
-    #if os(macOS)
+    #if !os(iOS)
     @ObservedObject var findToolbar: FindToolbarModel = .shared
     #endif
 

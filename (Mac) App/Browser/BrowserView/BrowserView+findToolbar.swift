@@ -44,7 +44,9 @@ extension BrowserView {
                     Image(systemName: "magnifyingglass")
                         .imageScale(.small)
                 }
+                #if os(macOS)
                 .buttonStyle(.accessoryBar)
+                #endif
                 TextField("Search", text: $findString)
                     .focused($isFindFocused)
                     .textFieldStyle(.plain)
@@ -60,7 +62,9 @@ extension BrowserView {
                     } label: {
                         Image(systemName: "xmark.circle")
                     }
+                    #if os(macOS)
                     .buttonStyle(.accessoryBar)
+                    #endif
                 }
             }
             .frame(maxWidth: 200)
@@ -79,19 +83,21 @@ extension BrowserView {
                 }
                 .accessibilityLabel("find previous")
                 .disabled(!(findToolbarModel.matchFound ?? false))
-                .buttonStyle(.accessoryBar)
-                .padding(.top, 1)
-                .padding(.horizontal, 2)
-                .overlay {
-                    UnevenRoundedRectangle(cornerRadii: .init(
-                        topLeading: 5,
-                        bottomLeading: 5,
-                        bottomTrailing: 0,
-                        topTrailing: 0
-                    ),
-                    style: .continuous)
-                        .stroke(Color.gray, lineWidth: 1)
-                }
+                #if os(macOS)
+                    .buttonStyle(.accessoryBar)
+                #endif
+                    .padding(.top, 1)
+                    .padding(.horizontal, 2)
+                    .overlay {
+                        UnevenRoundedRectangle(cornerRadii: .init(
+                            topLeading: 5,
+                            bottomLeading: 5,
+                            bottomTrailing: 0,
+                            topTrailing: 0
+                        ),
+                        style: .continuous)
+                            .stroke(Color.gray, lineWidth: 1)
+                    }
 
                 Button {
                     find()
@@ -100,19 +106,21 @@ extension BrowserView {
                 }
                 .accessibilityLabel("find next")
                 .disabled(!(findToolbarModel.matchFound ?? false))
-                .buttonStyle(.accessoryBar)
-                .padding(.top, 1)
-                .padding(.horizontal, 2)
-                .overlay {
-                    UnevenRoundedRectangle(cornerRadii: .init(
-                        topLeading: 0,
-                        bottomLeading: 0,
-                        bottomTrailing: 5,
-                        topTrailing: 5
-                    ),
-                    style: .continuous)
-                        .stroke(Color.gray, lineWidth: 1)
-                }
+                #if os(macOS)
+                    .buttonStyle(.accessoryBar)
+                #endif
+                    .padding(.top, 1)
+                    .padding(.horizontal, 2)
+                    .overlay {
+                        UnevenRoundedRectangle(cornerRadii: .init(
+                            topLeading: 0,
+                            bottomLeading: 0,
+                            bottomTrailing: 5,
+                            topTrailing: 5
+                        ),
+                        style: .continuous)
+                            .stroke(Color.gray, lineWidth: 1)
+                    }
             }
 
             Button(role: .cancel) {
@@ -122,7 +130,9 @@ extension BrowserView {
             } label: {
                 Text("Done")
             }
+            #if os(macOS)
             .buttonStyle(.accessoryBarAction)
+            #endif
         }
         .padding(.top, 5)
         .padding(.trailing, 5)

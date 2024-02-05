@@ -191,9 +191,9 @@
 		5F54AA812B6DCEA10064D07C /* Data+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54AA7D2B6DCEA10064D07C /* Data+utils.swift */; };
 		5F54AA992B6F2B340064D07C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F54AA982B6F2B340064D07C /* Preview Assets.xcassets */; };
 		5F54AA9E2B6F2B590064D07C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F54AA952B6F2B340064D07C /* Assets.xcassets */; };
-		5F54AABF2B6F2C280064D07C /* (Vision Pro) Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F54AAA72B6F2C280064D07C /* (Vision Pro) Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5F54AABF2B6F2C280064D07C /* NativeWebKit Safari Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F54AAA72B6F2C280064D07C /* NativeWebKit Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5F54AACB2B6F2C5A0064D07C /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F54AACA2B6F2C5A0064D07C /* ShareViewController.swift */; };
-		5F54AACF2B6F2C5A0064D07C /* (Vision Pro) Share Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F54AAC82B6F2C5A0064D07C /* (Vision Pro) Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5F54AACF2B6F2C5A0064D07C /* NativeWebKit Share Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5F54AAC82B6F2C5A0064D07C /* NativeWebKit Share Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5F54AAD42B6F2C680064D07C /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5F54AAD32B6F2C680064D07C /* UkatonMacros */; };
 		5F54AAD62B6F2C6B0064D07C /* UkatonMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 5F54AAD52B6F2C6B0064D07C /* UkatonMacros */; };
 		5F5E4BBE2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */; };
@@ -314,6 +314,9 @@
 		5FAA4E7F2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAA4E7E2B55C94900B797F3 /* NKARSessionMessageConfiguration.swift */; };
 		5FB078132B6FB0ED0085259E /* BrowserWebView +UIViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16BA2B36340500B8B1A5 /* BrowserWebView +UIViewRepresentable.swift */; };
 		5FB078142B6FB1040085259E /* BrowserView+navigation_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16CB2B37620300B8B1A5 /* BrowserView+navigation_iOS.swift */; };
+		5FB078162B6FB7240085259E /* FindToolbarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5FEFCE2B3B8DD700E4A5F0 /* FindToolbarModel.swift */; };
+		5FB078172B6FB7800085259E /* BrowserView+findToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5FEFD02B3B95DE00E4A5F0 /* BrowserView+findToolbar.swift */; };
+		5FB078182B6FB85B0085259E /* BrowserView+navigation_mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD16C92B3761E000B8B1A5 /* BrowserView+navigation_mac.swift */; };
 		5FB995E12B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB995E02B5C4EA200902C85 /* ARWorldTrackingConfiguration.PlaneDetection+name.swift */; };
 		5FB995E32B5C53F900902C85 /* ARPlaneAnchor.Classification+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB995E22B5C53F900902C85 /* ARPlaneAnchor.Classification+name.swift */; };
 		5FB995E52B5DAD5D00902C85 /* ARPlaneAnchor.Alignment+name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB995E42B5DAD5D00902C85 /* ARPlaneAnchor.Alignment+name.swift */; };
@@ -420,8 +423,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				5F54AACF2B6F2C5A0064D07C /* (Vision Pro) Share Extension.appex in Embed Foundation Extensions */,
-				5F54AABF2B6F2C280064D07C /* (Vision Pro) Safari Extension.appex in Embed Foundation Extensions */,
+				5F54AACF2B6F2C5A0064D07C /* NativeWebKit Share Extension.appex in Embed Foundation Extensions */,
+				5F54AABF2B6F2C280064D07C /* NativeWebKit Safari Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,9 +493,9 @@
 		5F54AA952B6F2B340064D07C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F54AA982B6F2B340064D07C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F54AA9A2B6F2B340064D07C /* -Vision Pro--NativeWebKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "-Vision Pro--NativeWebKit-Info.plist"; sourceTree = "<group>"; };
-		5F54AAA72B6F2C280064D07C /* (Vision Pro) Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "(Vision Pro) Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F54AAA72B6F2C280064D07C /* NativeWebKit Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F54AABC2B6F2C280064D07C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F54AAC82B6F2C5A0064D07C /* (Vision Pro) Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = "(Vision Pro) Share Extension.appex"; path = "NativeWebKit Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F54AAC82B6F2C5A0064D07C /* NativeWebKit Share Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NativeWebKit Share Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F54AACA2B6F2C5A0064D07C /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		5F54AACC2B6F2C5A0064D07C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F5E4BBD2B376E8100230300 /* BrowserViewModel+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserViewModel+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
@@ -740,7 +743,6 @@
 		5F54AA8C2B6F2B320064D07C /* (Vision Pro) App */ = {
 			isa = PBXGroup;
 			children = (
-				5FB0780C2B6FB0760085259E /* Browser */,
 				5F54AA912B6F2B320064D07C /* VisionProApp.swift */,
 				5F54AA952B6F2B340064D07C /* Assets.xcassets */,
 				5F54AA9A2B6F2B340064D07C /* -Vision Pro--NativeWebKit-Info.plist */,
@@ -961,8 +963,8 @@
 				5F4EB0BF2B38F8B500EF179D /* NativeWebKit Share Extension.appex */,
 				5F4EB0D62B39436E00EF179D /* NativeWebKit Share Extension.appex */,
 				5F54AA8B2B6F2B320064D07C /* NativeWebKit.app */,
-				5F54AAA72B6F2C280064D07C /* (Vision Pro) Safari Extension.appex */,
-				5F54AAC82B6F2C5A0064D07C /* (Vision Pro) Share Extension.appex */,
+				5F54AAA72B6F2C280064D07C /* NativeWebKit Safari Extension.appex */,
+				5F54AAC82B6F2C5A0064D07C /* NativeWebKit Share Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1118,29 +1120,6 @@
 			path = "(Mac) Safari Extension";
 			sourceTree = "<group>";
 		};
-		5FB0780C2B6FB0760085259E /* Browser */ = {
-			isa = PBXGroup;
-			children = (
-				5FB0780E2B6FB0860085259E /* BrowserWebView */,
-				5FB0780D2B6FB07C0085259E /* BrowserView */,
-			);
-			path = Browser;
-			sourceTree = "<group>";
-		};
-		5FB0780D2B6FB07C0085259E /* BrowserView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BrowserView;
-			sourceTree = "<group>";
-		};
-		5FB0780E2B6FB0860085259E /* BrowserWebView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BrowserWebView;
-			sourceTree = "<group>";
-		};
 		5FBD16A32B361B3400B8B1A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1294,7 +1273,7 @@
 				5F54AAD52B6F2C6B0064D07C /* UkatonMacros */,
 			);
 			productName = Extension;
-			productReference = 5F54AAA72B6F2C280064D07C /* (Vision Pro) Safari Extension.appex */;
+			productReference = 5F54AAA72B6F2C280064D07C /* NativeWebKit Safari Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		5F54AAC72B6F2C5A0064D07C /* (Vision Pro) Share Extension */ = {
@@ -1314,7 +1293,7 @@
 				5F54AAD32B6F2C680064D07C /* UkatonMacros */,
 			);
 			productName = VisionPro;
-			productReference = 5F54AAC82B6F2C5A0064D07C /* (Vision Pro) Share Extension.appex */;
+			productReference = 5F54AAC82B6F2C5A0064D07C /* NativeWebKit Share Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		5F87CF0B2B33B59900E951E7 /* (iOS) NativeWebKit */ = {
@@ -1604,6 +1583,7 @@
 				5F0409BC2B6F92E500F0D96A /* NativeWebKit+CBCentral+utils.swift in Sources */,
 				5F0409BD2B6F92E500F0D96A /* CBCharacteristic+utils.swift in Sources */,
 				5F0409FB2B6F934C00F0D96A /* ContentView.swift in Sources */,
+				5FB078172B6FB7800085259E /* BrowserView+findToolbar.swift in Sources */,
 				5F0409BE2B6F92E500F0D96A /* NativeWebKit.swift in Sources */,
 				5F0409E12B6F92F400F0D96A /* NKARSessionMessageType.swift in Sources */,
 				5F0409BF2B6F92E500F0D96A /* NativeWebKit+CBCentralManagerDelegate.swift in Sources */,
@@ -1634,6 +1614,7 @@
 				5F0409F92B6F934800F0D96A /* SheetType.swift in Sources */,
 				5F0409C92B6F92E500F0D96A /* NKCBPeripheral.swift in Sources */,
 				5F0409FE2B6FABAA00F0D96A /* NKMessageTypeProtocol.swift in Sources */,
+				5FB078162B6FB7240085259E /* FindToolbarModel.swift in Sources */,
 				5F040A102B6FAD0300F0D96A /* NKAudioSessionMessageType.swift in Sources */,
 				5F0409CA2B6F92E500F0D96A /* CBManagerState+utils.swift in Sources */,
 				5F0409CB2B6F92E500F0D96A /* NativeWebKit+CBCentral+scan.swift in Sources */,
@@ -1642,6 +1623,7 @@
 				5F0409B02B6F92CA00F0D96A /* Data+utils.swift in Sources */,
 				5FB078132B6FB0ED0085259E /* BrowserWebView +UIViewRepresentable.swift in Sources */,
 				5F0409B42B6F92DD00F0D96A /* NKTemplateMessageType.swift in Sources */,
+				5FB078182B6FB85B0085259E /* BrowserView+navigation_mac.swift in Sources */,
 				5F0409B52B6F92DD00F0D96A /* NativeWebKit+Template+message.swift in Sources */,
 				5F0409B12B6F92CA00F0D96A /* ViewModifier.swift in Sources */,
 				5F0409B22B6F92CA00F0D96A /* MathUtils.swift in Sources */,
@@ -2122,12 +2104,14 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "NativeWebKit uses microphone access to allow webpages to use the microphone";
+				INFOPLIST_OUTPUT_FORMAT = "same-as-input";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
 				OTHER_SWIFT_FLAGS = "-D IN_APP";
+				PLIST_FILE_OUTPUT_FORMAT = "same-as-input";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit;
 				PRODUCT_NAME = NativeWebKit;
 				SDKROOT = xros;
@@ -2155,12 +2139,14 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "NativeWebKit uses microphone access to allow webpages to use the microphone";
+				INFOPLIST_OUTPUT_FORMAT = "same-as-input";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
 				OTHER_SWIFT_FLAGS = "-D IN_APP";
+				PLIST_FILE_OUTPUT_FORMAT = "same-as-input";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit;
 				PRODUCT_NAME = NativeWebKit;
 				SDKROOT = xros;
@@ -2184,6 +2170,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Extension;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
+				INFOPLIST_OUTPUT_FORMAT = "same-as-input";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2194,8 +2182,9 @@
 					"-framework",
 					SafariServices,
 				);
+				PLIST_FILE_OUTPUT_FORMAT = "same-as-input";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.SafariExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NativeWebKit Safari Extension";
 				SDKROOT = xros;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
@@ -2217,6 +2206,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Extension;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "NativeWebKit uses CoreBluetooth to add Web Bluetooth functionality";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMotionUsageDescription = "We send headphone motion data to webpages that request it";
+				INFOPLIST_OUTPUT_FORMAT = "same-as-input";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2227,8 +2218,9 @@
 					"-framework",
 					SafariServices,
 				);
+				PLIST_FILE_OUTPUT_FORMAT = "same-as-input";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.SafariExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NativeWebKit Safari Extension";
 				SDKROOT = xros;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
@@ -2250,12 +2242,14 @@
 				INFOPLIST_FILE = "(Vision Pro) Share Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Open in NativeWebKit";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_OUTPUT_FORMAT = "same-as-input";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				PLIST_FILE_OUTPUT_FORMAT = "same-as-input";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.ShareExtension;
 				PRODUCT_NAME = "NativeWebKit Share Extension";
 				SDKROOT = xros;
@@ -2263,7 +2257,7 @@
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 7;
 				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Debug;
@@ -2278,20 +2272,22 @@
 				INFOPLIST_FILE = "(Vision Pro) Share Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Share;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_OUTPUT_FORMAT = "same-as-input";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				PLIST_FILE_OUTPUT_FORMAT = "same-as-input";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zakaton.NativeWebKit.ShareExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NativeWebKit Share Extension";
 				SDKROOT = xros;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = 7;
 				VALIDATE_PRODUCT = YES;
 				XROS_DEPLOYMENT_TARGET = 1.0;
 			};

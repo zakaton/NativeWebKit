@@ -5,6 +5,9 @@
 //  Created by Zack Qattan on 12/27/23.
 //
 
+#if os(macOS)
+import AppKit
+#endif
 import CoreServices
 import Foundation
 import OSLog

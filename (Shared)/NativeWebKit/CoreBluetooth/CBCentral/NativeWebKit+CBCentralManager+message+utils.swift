@@ -39,12 +39,11 @@ extension NativeWebKit {
         guard let peripheral = cbGetPeripheral(message: message) else {
             return nil
         }
-        guard let serviceUUIDStrings = message["serviceUUIDs"] as? [String] else {
-            logger.error("no serviceUUIDs found in message")
-            return peripheral.services
+        guard let serviceUUIDs = cbGetServiceUUIDs(message: message) else {
+            return nil
         }
-        return serviceUUIDStrings.compactMap { serviceUUIDString in
-            peripheral.services?.first(where: { $0.uuidString == serviceUUIDString })
+        return serviceUUIDs.compactMap { serviceUUID in
+            peripheral.services?.first(where: { $0.uuid == serviceUUID })
         }
     }
 

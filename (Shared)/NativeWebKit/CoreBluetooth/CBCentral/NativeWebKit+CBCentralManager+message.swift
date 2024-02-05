@@ -95,8 +95,9 @@ extension NativeWebKit {
 
             service.peripheral?.discoverIncludedServices(includedServiceUUIDs, for: service)
         case .getServices:
-            guard let services = cbGetServices(message: message)
+            guard let services = cbGetServices(message: message), !services.isEmpty
             else {
+                logger.debug("no services")
                 return nil
             }
             response = cbGetServicesMessage(services: services)
@@ -106,6 +107,10 @@ extension NativeWebKit {
                 return nil
             }
             let includedServices = cbGetIncludedServices(message: message) ?? service.includedServices ?? []
+            guard includedServices.isEmpty else {
+                logger.debug("no includedServices")
+                return nil
+            }
             response = cbGetIncludedServicesMessage(service: service, includedServices: includedServices)
         case .discoverCharacteristics:
             guard let service = cbGetService(message: message)
@@ -117,7 +122,8 @@ extension NativeWebKit {
 
             service.peripheral?.discoverCharacteristics(characteristicUUIDs, for: service)
         case .getCharacteristics:
-            guard let characteristics = cbGetCharacteristics(message: message) else {
+            guard let characteristics = cbGetCharacteristics(message: message), !characteristics.isEmpty else {
+                logger.debug("no characteristics")
                 return nil
             }
             response = cbGetCharacteristicsMessage(characteristics: characteristics)
@@ -128,7 +134,8 @@ extension NativeWebKit {
             }
             characteristic.peripheral?.discoverDescriptors(for: characteristic)
         case .getDescriptors:
-            guard let descriptors = cbGetDescriptors(message: message) else {
+            guard let descriptors = cbGetDescriptors(message: message), !descriptors.isEmpty else {
+                logger.debug("no descriptors")
                 return nil
             }
             response = cbGetDescriptorsMessage(descriptors: descriptors)

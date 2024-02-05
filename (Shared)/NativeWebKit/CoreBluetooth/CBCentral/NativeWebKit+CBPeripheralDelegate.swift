@@ -39,7 +39,7 @@ extension NativeWebKit: CBPeripheralDelegate {
     }
 
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: (any Error)?) {
-        logger.debug("peripheral didDiscoverServices, error: \(error?.localizedDescription ?? "no error")")
+        logger.debug("peripheral didDiscoverServices, error: \(error?.localizedDescription ?? "no error", privacy: .public)")
         if cbPeripherals[peripheral.identifierString] != nil {
             cbPeripherals[peripheral.identifierString]?.lastTimeServicesUpdated = Date.now.timeIntervalSince1970
             #if IN_APP
@@ -49,7 +49,7 @@ extension NativeWebKit: CBPeripheralDelegate {
     }
 
     func peripheral(_ peripheral: CBPeripheral, didDiscoverIncludedServicesFor service: CBService, error: (any Error)?) {
-        logger.debug("didDiscoverIncludedServicesFor service \(service.uuidString, privacy: .public) error: \(error?.localizedDescription ?? "no error")")
+        logger.debug("didDiscoverIncludedServicesFor service \(service.uuidString, privacy: .public) error: \(error?.localizedDescription ?? "no error", privacy: .public)")
         if cbPeripherals[peripheral.identifierString] != nil {
             cbPeripherals[peripheral.identifierString]?.lastTimeIncludedServicesUpdated[service] = Date.now.timeIntervalSince1970
             #if IN_APP
@@ -59,7 +59,7 @@ extension NativeWebKit: CBPeripheralDelegate {
     }
 
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: (any Error)?) {
-        logger.debug("didDiscoverCharacteristicsFor service \(service.uuidString, privacy: .public) error: \(error?.localizedDescription ?? "no error")")
+        logger.debug("didDiscoverCharacteristicsFor service \(service.uuidString, privacy: .public) error: \(error?.localizedDescription ?? "no error", privacy: .public)")
         if cbPeripherals[peripheral.identifierString] != nil {
             cbPeripherals[peripheral.identifierString]?.lastTimeCharacteristicsUpdated[service] = Date.now.timeIntervalSince1970
             #if IN_APP

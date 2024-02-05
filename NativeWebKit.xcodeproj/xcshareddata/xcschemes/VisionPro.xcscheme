@@ -16,7 +16,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5F54AA8A2B6F2B320064D07C"
-               BuildableName = "(Vision Pro) NativeWebKit.app"
+               BuildableName = "NativeWebKit.app"
                BlueprintName = "(Vision Pro) NativeWebKit"
                ReferencedContainer = "container:NativeWebKit.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F54AA8A2B6F2B320064D07C"
-            BuildableName = "(Vision Pro) NativeWebKit.app"
+            BuildableName = "NativeWebKit.app"
             BlueprintName = "(Vision Pro) NativeWebKit"
             ReferencedContainer = "container:NativeWebKit.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5F54AA8A2B6F2B320064D07C"
-            BuildableName = "(Vision Pro) NativeWebKit.app"
+            BuildableName = "NativeWebKit.app"
             BlueprintName = "(Vision Pro) NativeWebKit"
             ReferencedContainer = "container:NativeWebKit.xcodeproj">
          </BuildableReference>
